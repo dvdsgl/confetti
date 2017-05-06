@@ -81,6 +81,14 @@ public class Event {
         return Calendar.current.dateComponents([.day], from: Date(), to: nextOccurrence).day!
     }
     
+    public var weeksAway: Int {
+        return daysAway / 7;
+    }
+    
+    public var monthsAway: Int {
+        return Calendar.current.dateComponents([.month], from: Date(), to: nextOccurrence).month!
+    }
+    
     var nextAge: Int? {
         guard let year = year else { return nil }
 
