@@ -10,15 +10,26 @@ public class Person {
     public static let ellen = Person(
         firstName: "Ellen"
     )
+    
     public static let david = Person(
         firstName: "David"
+    )
+    
+    public static let stu = Person(
+        firstName: "Stu"
+    )
+    
+    public static let steve = Person(
+        firstName: "Steve"
     )
 }
 
 public class Event {
     public static let samples = [
         Event(person: Person.david, month: 3, day: 25, year: 1986),
-        Event(person: Person.ellen, month: 2, day: 27, year: 1991)
+        Event(person: Person.ellen, month: 2, day: 28, year: 1991),
+        Event(person: Person.stu, month: 10, day: 27, year: 1979),
+        Event(person: Person.steve, month: 12, day: 2, year: 1956),
     ]
     
     static let suffixes = [
@@ -48,11 +59,32 @@ public class Event {
     }
     
     public var description: String {
-        var base = "\(person.firstName): \(monthName) \(day)\(th)"
-        if let year = year {
-            base = "\(base), \(year)"
+        // Turning (nextAge) on 
+        var base = "\(monthName) \(day)\(th)"
+        if let nextAge = nextAge {
+            base = "Turning \(nextAge) on \(base)"
+        } else {
+            base = "Birthday on \(base)"
         }
         return base
+    }
+    
+    var nextOccurrence: Date {
+        return Calendar.current.nextDate(after: Date(),
+                                  matching: DateComponents(month: month, day: day),
+                                  matchingPolicy: .nextTime,
+                                  repeatedTimePolicy: .first,
+                                  direction: .forward)!
+    }
+    
+    var nextAge: Int? {
+        guard let year = year else { return nil }
+
+        let calendar = Calendar.current
+        let components = DateComponents(year: year, month: month, day: day)
+        let first = calendar.date(from: components)!
+        
+        return calendar.dateComponents([.year], from: first, to: nextOccurrence).year
     }
     
     var monthName: String {

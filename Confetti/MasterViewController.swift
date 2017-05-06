@@ -5,6 +5,13 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
+    
+    public static let defaultHeight = 80;
+    
+    public func setEvent(_ event: Event) {
+        nameLabel.text = event.person.firstName
+        descriptionLabel.text = event.description
+    }
 }
 
 class MasterViewController: UITableViewController {
@@ -71,12 +78,13 @@ class MasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EventTableViewCell
 
         let event = objects[indexPath.row]
-        cell.nameLabel.text = event.person.firstName
+        cell.setEvent(event)
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80;
+        return CGFloat(EventTableViewCell.defaultHeight);
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
