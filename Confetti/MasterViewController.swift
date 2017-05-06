@@ -1,6 +1,8 @@
 import UIKit
 import ConfettiKit
 
+import  SDWebImage
+
 class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoView: UIImageView!
@@ -14,6 +16,10 @@ class EventTableViewCell: UITableViewCell {
     public func setEvent(_ event: Event) {
         nameLabel.text = event.person.firstName
         descriptionLabel.text = event.description
+        
+        if let photoUrl = event.person.photoUrl {
+            photoView.sd_setImage(with: URL(string: photoUrl))
+        }
         
         if event.daysAway < soonDaysAway {
             countdown.text = "\(event.daysAway) days"

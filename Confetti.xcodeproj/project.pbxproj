@@ -21,6 +21,9 @@
 		63C759D81EBE5A2400939D7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C759D61EBE5A2400939D7B /* LaunchScreen.storyboard */; };
 		63C759E31EBE5A2400939D7B /* ConfettiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C759E21EBE5A2400939D7B /* ConfettiTests.swift */; };
 		63C759EE1EBE5A2400939D7B /* ConfettiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C759ED1EBE5A2400939D7B /* ConfettiUITests.swift */; };
+		63EAD9FB1EBE87E10041A272 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EAD9FA1EBE87E10041A272 /* SDWebImage.framework */; };
+		63EAD9FC1EBE87E10041A272 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63EAD9FA1EBE87E10041A272 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63EAD9FF1EBE881A0041A272 /* SDWebImage.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63EAD9FE1EBE881A0041A272 /* SDWebImage.framework.dSYM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,9 +71,20 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				63EAD9FC1EBE87E10041A272 /* SDWebImage.framework in Embed Frameworks */,
 				63A8998F1EBE64A200C5FB04 /* ConfettiKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63EAD9FD1EBE88070041A272 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				63EAD9FF1EBE881A0041A272 /* SDWebImage.framework.dSYM in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -98,6 +112,8 @@
 		63C759E91EBE5A2400939D7B /* ConfettiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConfettiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C759ED1EBE5A2400939D7B /* ConfettiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiUITests.swift; sourceTree = "<group>"; };
 		63C759EF1EBE5A2400939D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63EAD9FA1EBE87E10041A272 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		63EAD9FE1EBE881A0041A272 /* SDWebImage.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SDWebImage.framework.dSYM; path = Carthage/Build/iOS/SDWebImage.framework.dSYM; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63EAD9FB1EBE87E10041A272 /* SDWebImage.framework in Frameworks */,
 				63A8998E1EBE64A200C5FB04 /* ConfettiKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,6 +180,8 @@
 		63C759BF1EBE5A2400939D7B = {
 			isa = PBXGroup;
 			children = (
+				63EAD9FE1EBE881A0041A272 /* SDWebImage.framework.dSYM */,
+				63EAD9FA1EBE87E10041A272 /* SDWebImage.framework */,
 				63A899331EBE5DEF00C5FB04 /* Dates.playground */,
 				63C759CA1EBE5A2400939D7B /* Confetti */,
 				63C759E11EBE5A2400939D7B /* ConfettiTests */,
@@ -276,6 +295,8 @@
 				63C759C51EBE5A2400939D7B /* Frameworks */,
 				63C759C61EBE5A2400939D7B /* Resources */,
 				63A899721EBE61AB00C5FB04 /* Embed Frameworks */,
+				63EAD9FD1EBE88070041A272 /* CopyFiles */,
+				63EADA001EBE88360041A272 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -425,6 +446,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63EADA001EBE88360041A272 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		63A899741EBE64A200C5FB04 /* Sources */ = {
@@ -692,6 +730,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W9D824R4EW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Confetti/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.confetti.Confetti;
@@ -706,6 +748,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W9D824R4EW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Confetti/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.confetti.Confetti;
@@ -782,6 +828,7 @@
 				63A899911EBE64A200C5FB04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63A899961EBE64A200C5FB04 /* Build configuration list for PBXNativeTarget "ConfettiKitTests" */ = {
 			isa = XCConfigurationList;
@@ -790,6 +837,7 @@
 				63A899931EBE64A200C5FB04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63C759C31EBE5A2400939D7B /* Build configuration list for PBXProject "Confetti" */ = {
 			isa = XCConfigurationList;

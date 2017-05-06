@@ -2,25 +2,31 @@ import Foundation
 
 public class Person {
     public let firstName: String
+    public let photoUrl: String?
     
-    public init(firstName: String) {
+    public init(firstName: String, photoUrl: String?) {
         self.firstName = firstName
+        self.photoUrl = photoUrl
     }
     
     public static let ellen = Person(
-        firstName: "Ellen"
+        firstName: "Ellen",
+        photoUrl: "https://confettiapp.com/v1/test/faces/ellen.jpg"
     )
     
     public static let david = Person(
-        firstName: "David"
+        firstName: "David",
+        photoUrl: "https://confettiapp.com/v1/test/faces/david.jpg"
     )
     
     public static let stu = Person(
-        firstName: "Stu"
+        firstName: "Stu",
+        photoUrl: "https://confettiapp.com/v1/test/faces/stu.jpg"
     )
     
     public static let steve = Person(
-        firstName: "Steve"
+        firstName: "Steve",
+        photoUrl: "https://confettiapp.com/v1/test/faces/steve.jpg"
     )
 }
 
