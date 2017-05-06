@@ -38,7 +38,7 @@ public class Event {
     var year: Int?
     var month: Int
     var day: Int
-    let person: Person
+    public let person: Person
     
     public init(person: Person, month: Int, day: Int, year: Int?) {
         self.person = person

@@ -1,13 +1,11 @@
-//
-//  MasterViewController.swift
-//  Confetti
-//
-//  Created by David Siegel on 5/6/17.
-//  Copyright © 2017 confetti. All rights reserved.
-//
-
 import UIKit
 import ConfettiKit
+
+class EventTableViewCell: UITableViewCell {
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+}
 
 class MasterViewController: UITableViewController {
 
@@ -25,6 +23,9 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 60
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -69,10 +70,10 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EventTableViewCell
 
-        let object = objects[indexPath.row]
-        cell.textLabel!.text = object.description
+        let event = objects[indexPath.row]
+        cell.nameLabel.text = event.person.firstName
         return cell
     }
 
