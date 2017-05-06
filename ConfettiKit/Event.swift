@@ -77,6 +77,10 @@ public class Event {
                                   direction: .forward)!
     }
     
+    public var daysAway: Int {
+        return Calendar.current.dateComponents([.day], from: Date(), to: nextOccurrence).day!
+    }
+    
     var nextAge: Int? {
         guard let year = year else { return nil }
 

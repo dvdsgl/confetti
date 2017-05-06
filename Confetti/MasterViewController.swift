@@ -4,6 +4,7 @@ import ConfettiKit
 class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var countdown: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
     public static let defaultHeight = 80;
@@ -11,13 +12,14 @@ class EventTableViewCell: UITableViewCell {
     public func setEvent(_ event: Event) {
         nameLabel.text = event.person.firstName
         descriptionLabel.text = event.description
+        countdown.text = String(event.daysAway)
     }
 }
 
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var objects = Event.samples
+    var objects = Event.samples.sorted(by: { $0.daysAway < $1.daysAway })
 
     override func viewDidLoad() {
         super.viewDidLoad()
