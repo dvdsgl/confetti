@@ -23,9 +23,7 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
-        
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 60
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -75,6 +73,10 @@ class MasterViewController: UITableViewController {
         let event = objects[indexPath.row]
         cell.nameLabel.text = event.person.firstName
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80;
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
