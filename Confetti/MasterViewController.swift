@@ -13,7 +13,7 @@ class EventTableViewCell: UITableViewCell {
     
     let soonDaysAway = 20
     
-    public func setEvent(_ event: Event) {
+    public func setEvent(_ event: EventViewModel) {
         nameLabel.text = event.person.firstName
         descriptionLabel.text = event.description
         
@@ -34,7 +34,7 @@ class EventTableViewCell: UITableViewCell {
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var objects = Event.samples.sorted(by: { $0.daysAway < $1.daysAway })
+    var objects = Events.samples.sorted(by: { $0.daysAway < $1.daysAway })
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +62,7 @@ class MasterViewController: UITableViewController {
 
     func insertNewObject(_ sender: Any) {
         let birthday = Event(person: Person.david, month: 3, day: 25, year: 1986)
-        objects.insert(birthday, at: 0)
+        objects.insert(EventViewModel(birthday), at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .automatic)
     }

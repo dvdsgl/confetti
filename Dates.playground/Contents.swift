@@ -13,7 +13,7 @@ let month = 3
 let formatter = DateFormatter()
 formatter.monthSymbols[month]
 
-let e = Event(person: Person.david, month: 3, day: 8, year: 1986)
+let e = EventViewModel(Event(person: Person.david, month: 3, day: 8, year: 1986))
 e.description
 
 // Get next date
