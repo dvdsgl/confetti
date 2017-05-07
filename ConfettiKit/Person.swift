@@ -19,8 +19,8 @@ public class Person {
         photoUrl: "https://confettiapp.com/v1/test/faces/david.jpg"
     )
     
-    public static let antonio = Person(
-        firstName: "Antonio",
+    public static let vinicius = Person(
+        firstName: "Vinicius",
         photoUrl: "https://confettiapp.com/v1/test/faces/vinicius.jpg"
     )
     
@@ -37,5 +37,10 @@ public class Person {
     public static let hannah = Person(
         firstName: "Hannah",
         photoUrl: "https://confettiapp.com/v1/test/faces/hannah.jpg"
+    )
+    
+    public static let ian = Person(
+        firstName: "Ian",
+        photoUrl: "https://confettiapp.com/v1/test/faces/ianj.jpg"
     )
 }
