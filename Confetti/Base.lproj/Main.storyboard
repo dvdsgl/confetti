@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RMx-3f-FxP">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,19 +33,19 @@
             <objects>
                 <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="80" id="WCw-Qf-5nD" customClass="EventTableViewCell" customModule="Confetti" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="22" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="22" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="79.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stuart Bray" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jud-hQ-N8I">
-                                            <rect key="frame" x="72" y="19" width="219" height="21"/>
+                                            <rect key="frame" x="72" y="19" width="258" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -58,13 +59,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turning 29 on Jan 16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETe-7L-0a6">
-                                            <rect key="frame" x="72" y="42" width="219" height="20"/>
+                                            <rect key="frame" x="72" y="42" width="258" height="20"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="auS-kG-FO7" customClass="CountdownLabel" customModule="Confetti" customModuleProvider="target">
-                                            <rect key="frame" x="301" y="30" width="60" height="20"/>
+                                            <rect key="frame" x="340" y="30" width="60" height="20"/>
                                             <color key="backgroundColor" red="0.9129173755645752" green="0.19869227707386017" blue="0.53340387344360352" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="Ucb-Va-yOc"/>
@@ -99,6 +100,7 @@
                                     <outlet property="descriptionLabel" destination="ETe-7L-0a6" id="lpS-pY-e0Y"/>
                                     <outlet property="nameLabel" destination="Jud-hQ-N8I" id="vkb-5w-271"/>
                                     <outlet property="photoView" destination="nwU-YD-ntk" id="SKp-Qu-zGX"/>
+                                    <segue destination="V2r-Qg-27t" kind="push" id="jjZ-WC-XEg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -113,6 +115,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="708" y="-630.13493253373315"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9oV-9S-hYP">
+            <objects>
+                <viewController id="V2r-Qg-27t" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4BA-Rj-0Da"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cf5-qV-wVW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S1K-aE-es2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXa-bs-BnH" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                <rect key="frame" x="77" y="435" width="260" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="KW3-3X-6t7"/>
+                                    <constraint firstAttribute="height" constant="50" id="L6F-yK-zzb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <color key="tintColor" red="0.011764705882352941" green="0.60392156862745094" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Call"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                        <color key="value" red="1" green="0.0" blue="0.0099468241870000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWv-6r-emS" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                <rect key="frame" x="77" y="505" width="260" height="50"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <color key="tintColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Message"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                        <color key="value" red="0.74901960779999999" green="0.37254901959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M21-oy-RQu" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                <rect key="frame" x="77" y="575" width="260" height="50"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <color key="tintColor" red="0.74901960784313726" green="0.37254901960784315" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="FaceTime"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                        <color key="value" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="M21-oy-RQu" firstAttribute="height" secondItem="DXa-bs-BnH" secondAttribute="height" id="7vF-pc-New"/>
+                            <constraint firstItem="DXa-bs-BnH" firstAttribute="centerY" secondItem="S1K-aE-es2" secondAttribute="centerY" multiplier="1.25" id="EpM-bg-48Y"/>
+                            <constraint firstItem="M21-oy-RQu" firstAttribute="top" secondItem="NWv-6r-emS" secondAttribute="bottom" constant="20" id="KjZ-fv-GJN"/>
+                            <constraint firstItem="NWv-6r-emS" firstAttribute="height" secondItem="DXa-bs-BnH" secondAttribute="height" id="OaE-Sr-0zc"/>
+                            <constraint firstItem="M21-oy-RQu" firstAttribute="centerX" secondItem="DXa-bs-BnH" secondAttribute="centerX" id="TrG-6x-lsi"/>
+                            <constraint firstItem="NWv-6r-emS" firstAttribute="top" secondItem="DXa-bs-BnH" secondAttribute="bottom" constant="20" id="UJn-Mn-CDG"/>
+                            <constraint firstItem="NWv-6r-emS" firstAttribute="centerX" secondItem="DXa-bs-BnH" secondAttribute="centerX" id="Xa2-1d-VdM"/>
+                            <constraint firstItem="DXa-bs-BnH" firstAttribute="centerX" secondItem="S1K-aE-es2" secondAttribute="centerX" id="b3B-VT-RF0"/>
+                            <constraint firstItem="NWv-6r-emS" firstAttribute="width" secondItem="DXa-bs-BnH" secondAttribute="width" id="fOM-eo-zhe"/>
+                            <constraint firstItem="M21-oy-RQu" firstAttribute="width" secondItem="DXa-bs-BnH" secondAttribute="width" id="gKA-tS-vvc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pQA-3C-oMQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hlb-jo-bKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1437.5999999999999" y="-630.13493253373315"/>
         </scene>
     </scenes>
 </document>

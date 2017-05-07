@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		006F3C241EBFA9FF005D0EFD /* RoundRectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006F3C231EBFA9FF005D0EFD /* RoundRectangleButton.swift */; };
 		2B99A6DD2F36878252083607 /* Pods_ConfettiKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D827EF384F7695BF9B075F7B /* Pods_ConfettiKitTests.framework */; };
 		4CE7AAF76EAB2CB4A8637F11 /* Pods_Confetti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE7682F3E4A76FA241467F4 /* Pods_Confetti.framework */; };
 		634DDB611EBF7DD700789E72 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 634DDB601EBF7DD700789E72 /* Auth0.plist */; };
@@ -88,6 +89,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		006F3C231EBFA9FF005D0EFD /* RoundRectangleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundRectangleButton.swift; sourceTree = "<group>"; };
 		058AB1329A7CACA3A8BE667E /* Pods-ConfettiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfettiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConfettiUITests/Pods-ConfettiUITests.release.xcconfig"; sourceTree = "<group>"; };
 		0A41DBE0420DCA78EF793164 /* Pods-Confetti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Confetti.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Confetti/Pods-Confetti.debug.xcconfig"; sourceTree = "<group>"; };
 		0B63A4F26F01264008D98D10 /* Pods-ConfettiKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfettiKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConfettiKitTests/Pods-ConfettiKitTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 		63CE74871EBEB2DD0018B77D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				006F3C231EBFA9FF005D0EFD /* RoundRectangleButton.swift */,
 				63CE74851EBEB2C10018B77D /* CountdownLabel.swift */,
 				63CE74831EBEAB4F0018B77D /* EventTableViewCell.swift */,
 			);
@@ -764,6 +767,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				006F3C241EBFA9FF005D0EFD /* RoundRectangleButton.swift in Sources */,
 				63CE74841EBEAB4F0018B77D /* EventTableViewCell.swift in Sources */,
 				63C759D01EBE5A2400939D7B /* DetailViewController.swift in Sources */,
 				63C759CE1EBE5A2400939D7B /* MasterViewController.swift in Sources */,
