@@ -26,4 +26,9 @@ public class Colors {
         purple,
         green,
     ]
+    
+    public static func accentFor<H: Hashable>(_ object: H) -> UIColor {
+        let hash = abs(object.hashValue)
+        return accents[hash % accents.count]
+    }
 }

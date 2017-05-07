@@ -1,53 +1,6 @@
 import UIKit
 import ConfettiKit
 
-import AvatarImageView
-import SDWebImage
-import DynamicColor
-
-class EventTableViewCell: UITableViewCell {
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var photoView: AvatarImageView!
-    @IBOutlet weak var countdown: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    
-    public static let defaultHeight: CGFloat = 80;
-    
-    struct AvatarConfig: AvatarImageViewConfiguration {
-        var shape: Shape = .circle
-    }
-    
-    struct AvatarData: AvatarImageViewDataSource {
-        var name: String
-        
-        var bgColor: UIColor? {
-            return Colors.accents[abs(avatarId) % Colors.accents.count]
-        }
-        
-        init(name: String) {
-            self.name = name
-        }
-    }
-    
-    override func awakeFromNib() {
-        photoView.layer.cornerRadius = photoView.bounds.width / 2
-    }
-    
-    public func setEvent(_ event: EventViewModel) {
-        nameLabel.text = event.person.firstName
-        descriptionLabel.text = event.description
-        
-        photoView.configuration = AvatarConfig()
-        photoView.dataSource = AvatarData(name: event.person.firstName)
-        
-        if let photoUrl = event.person.photoUrl {
-            photoView.sd_setImage(with: URL(string: photoUrl))
-        }
-        
-        countdown.text = event.countdown
-    }
-}
-
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
@@ -55,8 +8,6 @@ class MasterViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        navigationItem.leftBarButtonItem = editButtonItem
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         navigationItem.rightBarButtonItem = addButton
