@@ -1,26 +1,46 @@
 import UIKit
 import ConfettiKit
 
+import Lock
+
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = Events.samples.sorted(by: { $0.daysAway < $1.daysAway })
-
+    
+    var didShowLogin = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         navigationItem.rightBarButtonItem = addButton
-        if let split = splitViewController {
-            let controllers = split.viewControllers
-            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
-        }
-
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
-        super.viewWillAppear(animated)
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (didShowLogin) { return }
+        
+        Lock
+            .classic()
+            .withOptions {
+                $0.closable = false
+            }
+            .withStyle {
+                $0.title = "Confetti"
+                $0.primaryColor = Colors.cyan
+            }
+            .onAuth {
+                print("Obtained credentials \($0)")
+            }
+            .onError {
+                print("Failed with \($0)")
+            }
+            .onCancel {
+                print("User cancelled")
+            }
+            .present(from: self)
+        
+        didShowLogin = true
     }
 
     override func didReceiveMemoryWarning() {

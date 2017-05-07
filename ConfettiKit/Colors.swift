@@ -16,6 +16,8 @@ public class Colors {
     public static let purple = UIColor(hex: 0xbf5fff)
     public static let green = UIColor(hex: 0x2ecc71)
     
+    public static let lightGray = UIColor(hex: 0xc6d2d6)
+    
     public static let accents = [
         blue,
         orange,

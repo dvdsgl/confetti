@@ -24,6 +24,10 @@ public class EventViewModel {
         self.event = event
     }
     
+    public var isSoon: Bool {
+        return daysAway <= EventViewModel.soonDaysAway
+    }
+    
     public var description: String {
         // Turning (nextAge) on
         var base = "\(monthName) \(event.day)\(th)"
