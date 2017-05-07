@@ -2,6 +2,8 @@ import Foundation
 
 public class EventViewModel {
     
+    static let soonDaysAway = 20
+    
     static let suffixes = [
         /*0*/"th",
         /*1*/"st",
@@ -55,6 +57,23 @@ public class EventViewModel {
     
     public var monthsAway: Int {
         return Calendar.current.dateComponents([.month], from: Date(), to: nextOccurrence).month!
+    }
+    
+    public var countdown: String {
+        switch (daysAway, weeksAway, monthsAway) {
+        case (0, _, _):
+            return "today"
+        case (1, _, _):
+            return "tomorrow"
+        case (2...EventViewModel.soonDaysAway, _, _):
+            return "\(daysAway) days"
+        case (_, 0..<4, _):
+            return "\(weeksAway) weeks"
+        case (_, _, let months) where months < 12:
+            return "\(months) months"
+        default:
+            return "a year"
+        }
     }
     
     var nextAge: Int? {

@@ -11,8 +11,6 @@ class EventTableViewCell: UITableViewCell {
     
     public static let defaultHeight = 80;
     
-    let soonDaysAway = 20
-    
     public func setEvent(_ event: EventViewModel) {
         nameLabel.text = event.person.firstName
         descriptionLabel.text = event.description
@@ -21,13 +19,7 @@ class EventTableViewCell: UITableViewCell {
             photoView.sd_setImage(with: URL(string: photoUrl))
         }
         
-        if event.daysAway < soonDaysAway {
-            countdown.text = "\(event.daysAway) days"
-        } else if event.weeksAway < 4 {
-            countdown.text = "\(event.weeksAway) weeks"
-        } else {
-            countdown.text = "\(event.monthsAway) months"
-        }
+        countdown.text = event.countdown
     }
 }
 
