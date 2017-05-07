@@ -1,0 +1,20 @@
+PODS:
+  - AvatarImageView (2.0.3)
+  - DynamicColor (3.3)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+
+DEPENDENCIES:
+  - AvatarImageView (~> 2.0.3)
+  - DynamicColor (~> 3.3)
+  - SDWebImage (~> 4.0.0)
+
+SPEC CHECKSUMS:
+  AvatarImageView: 25541e2051124e730c7a1b97f5e5b9345fbc1cfc
+  DynamicColor: 3cdaa1e01c16e93ba744e0630f768373e0fc7a7d
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+
+PODFILE CHECKSUM: 5c8d332edce6054819180a740a9125d913c383a2
+
+COCOAPODS: 1.2.1

@@ -1,19 +1,44 @@
 import UIKit
 import ConfettiKit
 
-import  SDWebImage
+import AvatarImageView
+import SDWebImage
+import DynamicColor
 
 class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var photoView: AvatarImageView!
     @IBOutlet weak var countdown: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    public static let defaultHeight = 80;
+    public static let defaultHeight: CGFloat = 80;
+    
+    struct AvatarConfig: AvatarImageViewConfiguration {
+        var shape: Shape = .circle
+    }
+    
+    struct AvatarData: AvatarImageViewDataSource {
+        var name: String
+        
+        var bgColor: UIColor? {
+            return Colors.accents[abs(avatarId) % Colors.accents.count]
+        }
+        
+        init(name: String) {
+            self.name = name
+        }
+    }
+    
+    override func awakeFromNib() {
+        photoView.layer.cornerRadius = photoView.bounds.width / 2
+    }
     
     public func setEvent(_ event: EventViewModel) {
         nameLabel.text = event.person.firstName
         descriptionLabel.text = event.description
+        
+        photoView.configuration = AvatarConfig()
+        photoView.dataSource = AvatarData(name: event.person.firstName)
         
         if let photoUrl = event.person.photoUrl {
             photoView.sd_setImage(with: URL(string: photoUrl))
@@ -85,6 +110,9 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EventTableViewCell
+        
+        //cell.photoView!.configuration = AvatarImageViewConfiguration()
+        
 
         let event = objects[indexPath.row]
         cell.setEvent(event)

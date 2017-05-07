@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B99A6DD2F36878252083607 /* Pods_ConfettiKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D827EF384F7695BF9B075F7B /* Pods_ConfettiKitTests.framework */; };
+		4CE7AAF76EAB2CB4A8637F11 /* Pods_Confetti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE7682F3E4A76FA241467F4 /* Pods_Confetti.framework */; };
 		63A899821EBE64A200C5FB04 /* ConfettiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A899791EBE64A200C5FB04 /* ConfettiKit.framework */; };
 		63A899891EBE64A200C5FB04 /* ConfettiKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A899881EBE64A200C5FB04 /* ConfettiKitTests.swift */; };
 		63A8998B1EBE64A200C5FB04 /* ConfettiKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 63A8997B1EBE64A200C5FB04 /* ConfettiKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -21,12 +23,13 @@
 		63C759D81EBE5A2400939D7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C759D61EBE5A2400939D7B /* LaunchScreen.storyboard */; };
 		63C759E31EBE5A2400939D7B /* ConfettiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C759E21EBE5A2400939D7B /* ConfettiTests.swift */; };
 		63C759EE1EBE5A2400939D7B /* ConfettiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C759ED1EBE5A2400939D7B /* ConfettiUITests.swift */; };
-		63EAD9FB1EBE87E10041A272 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EAD9FA1EBE87E10041A272 /* SDWebImage.framework */; };
-		63EAD9FC1EBE87E10041A272 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63EAD9FA1EBE87E10041A272 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		63EAD9FF1EBE881A0041A272 /* SDWebImage.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 63EAD9FE1EBE881A0041A272 /* SDWebImage.framework.dSYM */; };
+		63CE74821EBEA5690018B77D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE74811EBEA5690018B77D /* Colors.swift */; };
 		63EADA021EBE95550041A272 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EADA011EBE95550041A272 /* Person.swift */; };
 		63EADA041EBE95670041A272 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EADA031EBE95670041A272 /* EventViewModel.swift */; };
 		63EADA061EBE95AE0041A272 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EADA051EBE95AE0041A272 /* Events.swift */; };
+		7813281E3A0B2B8B48976717 /* Pods_ConfettiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE72D581AAF59BBD7A051E2A /* Pods_ConfettiTests.framework */; };
+		8B0759FBDBC0D067ABCE4AFB /* Pods_ConfettiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 707F228161936E4961F0BCEF /* Pods_ConfettiUITests.framework */; };
+		F0E66AE237A5A1F297CE0011 /* Pods_ConfettiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5466EB41C41CF483B197F8B /* Pods_ConfettiKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,25 +77,20 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				63EAD9FC1EBE87E10041A272 /* SDWebImage.framework in Embed Frameworks */,
 				63A8998F1EBE64A200C5FB04 /* ConfettiKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		63EAD9FD1EBE88070041A272 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
-			files = (
-				63EAD9FF1EBE881A0041A272 /* SDWebImage.framework.dSYM in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		058AB1329A7CACA3A8BE667E /* Pods-ConfettiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfettiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConfettiUITests/Pods-ConfettiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0A41DBE0420DCA78EF793164 /* Pods-Confetti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Confetti.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Confetti/Pods-Confetti.debug.xcconfig"; sourceTree = "<group>"; };
+		0B63A4F26F01264008D98D10 /* Pods-ConfettiKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfettiKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConfettiKitTests/Pods-ConfettiKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1CAEB242B4E0AFFBC9D9E2D7 /* Pods-ConfettiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfettiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConfettiTests/Pods-ConfettiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2FE7682F3E4A76FA241467F4 /* Pods_Confetti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Confetti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E8EA2E53200EC727D5F4B94 /* Pods-ConfettiKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfettiKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConfettiKitTests/Pods-ConfettiKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		63A899331EBE5DEF00C5FB04 /* Dates.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Dates.playground; sourceTree = "<group>"; };
 		63A899791EBE64A200C5FB04 /* ConfettiKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ConfettiKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A8997B1EBE64A200C5FB04 /* ConfettiKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfettiKit.h; sourceTree = "<group>"; };
@@ -115,11 +113,19 @@
 		63C759E91EBE5A2400939D7B /* ConfettiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConfettiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C759ED1EBE5A2400939D7B /* ConfettiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiUITests.swift; sourceTree = "<group>"; };
 		63C759EF1EBE5A2400939D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63EAD9FA1EBE87E10041A272 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
-		63EAD9FE1EBE881A0041A272 /* SDWebImage.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SDWebImage.framework.dSYM; path = Carthage/Build/iOS/SDWebImage.framework.dSYM; sourceTree = "<group>"; };
+		63CE74811EBEA5690018B77D /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		63EADA011EBE95550041A272 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		63EADA031EBE95670041A272 /* EventViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		63EADA051EBE95AE0041A272 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		6C67EFC6D4D01231451EF038 /* Pods-ConfettiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfettiUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConfettiUITests/Pods-ConfettiUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		707F228161936E4961F0BCEF /* Pods_ConfettiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConfettiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90EFCA0BDEC54191782418EC /* Pods-ConfettiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfettiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConfettiTests/Pods-ConfettiTests.release.xcconfig"; sourceTree = "<group>"; };
+		96662998826635DF2D0CF38E /* Pods-ConfettiKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfettiKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConfettiKit/Pods-ConfettiKit.debug.xcconfig"; sourceTree = "<group>"; };
+		ABE5FDA3FA1627668F298F13 /* Pods-ConfettiKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfettiKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConfettiKit/Pods-ConfettiKit.release.xcconfig"; sourceTree = "<group>"; };
+		D827EF384F7695BF9B075F7B /* Pods_ConfettiKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConfettiKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5466EB41C41CF483B197F8B /* Pods_ConfettiKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConfettiKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF815076B01D9F841A86F59C /* Pods-Confetti.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Confetti.release.xcconfig"; path = "Pods/Target Support Files/Pods-Confetti/Pods-Confetti.release.xcconfig"; sourceTree = "<group>"; };
+		FE72D581AAF59BBD7A051E2A /* Pods_ConfettiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConfettiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E66AE237A5A1F297CE0011 /* Pods_ConfettiKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63A899821EBE64A200C5FB04 /* ConfettiKit.framework in Frameworks */,
+				2B99A6DD2F36878252083607 /* Pods_ConfettiKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,8 +150,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63EAD9FB1EBE87E10041A272 /* SDWebImage.framework in Frameworks */,
 				63A8998E1EBE64A200C5FB04 /* ConfettiKit.framework in Frameworks */,
+				4CE7AAF76EAB2CB4A8637F11 /* Pods_Confetti.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7813281E3A0B2B8B48976717 /* Pods_ConfettiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,12 +167,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B0759FBDBC0D067ABCE4AFB /* Pods_ConfettiUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CAEB769E639670617C41436 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A41DBE0420DCA78EF793164 /* Pods-Confetti.debug.xcconfig */,
+				EF815076B01D9F841A86F59C /* Pods-Confetti.release.xcconfig */,
+				96662998826635DF2D0CF38E /* Pods-ConfettiKit.debug.xcconfig */,
+				ABE5FDA3FA1627668F298F13 /* Pods-ConfettiKit.release.xcconfig */,
+				0B63A4F26F01264008D98D10 /* Pods-ConfettiKitTests.debug.xcconfig */,
+				4E8EA2E53200EC727D5F4B94 /* Pods-ConfettiKitTests.release.xcconfig */,
+				1CAEB242B4E0AFFBC9D9E2D7 /* Pods-ConfettiTests.debug.xcconfig */,
+				90EFCA0BDEC54191782418EC /* Pods-ConfettiTests.release.xcconfig */,
+				6C67EFC6D4D01231451EF038 /* Pods-ConfettiUITests.debug.xcconfig */,
+				058AB1329A7CACA3A8BE667E /* Pods-ConfettiUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		63A8997A1EBE64A200C5FB04 /* ConfettiKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +200,7 @@
 				63EADA011EBE95550041A272 /* Person.swift */,
 				63A8997B1EBE64A200C5FB04 /* ConfettiKit.h */,
 				63A8997C1EBE64A200C5FB04 /* Info.plist */,
+				63CE74811EBEA5690018B77D /* Colors.swift */,
 			);
 			path = ConfettiKit;
 			sourceTree = "<group>";
@@ -189,8 +217,6 @@
 		63C759BF1EBE5A2400939D7B = {
 			isa = PBXGroup;
 			children = (
-				63EAD9FE1EBE881A0041A272 /* SDWebImage.framework.dSYM */,
-				63EAD9FA1EBE87E10041A272 /* SDWebImage.framework */,
 				63A899331EBE5DEF00C5FB04 /* Dates.playground */,
 				63C759CA1EBE5A2400939D7B /* Confetti */,
 				63C759E11EBE5A2400939D7B /* ConfettiTests */,
@@ -198,6 +224,8 @@
 				63A8997A1EBE64A200C5FB04 /* ConfettiKit */,
 				63A899871EBE64A200C5FB04 /* ConfettiKitTests */,
 				63C759C91EBE5A2400939D7B /* Products */,
+				4CAEB769E639670617C41436 /* Pods */,
+				85EA98AE1279C0C2BB986C33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,6 +273,18 @@
 			path = ConfettiUITests;
 			sourceTree = "<group>";
 		};
+		85EA98AE1279C0C2BB986C33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FE7682F3E4A76FA241467F4 /* Pods_Confetti.framework */,
+				E5466EB41C41CF483B197F8B /* Pods_ConfettiKit.framework */,
+				D827EF384F7695BF9B075F7B /* Pods_ConfettiKitTests.framework */,
+				FE72D581AAF59BBD7A051E2A /* Pods_ConfettiTests.framework */,
+				707F228161936E4961F0BCEF /* Pods_ConfettiUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -263,10 +303,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63A899951EBE64A200C5FB04 /* Build configuration list for PBXNativeTarget "ConfettiKit" */;
 			buildPhases = (
+				383E2E24856D8BE590A818BA /* [CP] Check Pods Manifest.lock */,
 				63A899741EBE64A200C5FB04 /* Sources */,
 				63A899751EBE64A200C5FB04 /* Frameworks */,
 				63A899761EBE64A200C5FB04 /* Headers */,
 				63A899771EBE64A200C5FB04 /* Resources */,
+				EB6267965A95DF1DE7CD9CDD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -281,9 +323,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63A899961EBE64A200C5FB04 /* Build configuration list for PBXNativeTarget "ConfettiKitTests" */;
 			buildPhases = (
+				CFCB2FC6D5F1A1CD9BBB7446 /* [CP] Check Pods Manifest.lock */,
 				63A8997D1EBE64A200C5FB04 /* Sources */,
 				63A8997E1EBE64A200C5FB04 /* Frameworks */,
 				63A8997F1EBE64A200C5FB04 /* Resources */,
+				9E905D53E37862D15ACFCB89 /* [CP] Embed Pods Frameworks */,
+				B9E28AC7159B2E63DE8EEAAC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -300,12 +345,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63C759F21EBE5A2400939D7B /* Build configuration list for PBXNativeTarget "Confetti" */;
 			buildPhases = (
+				5F3A0C3C883920982E7AFC33 /* [CP] Check Pods Manifest.lock */,
 				63C759C41EBE5A2400939D7B /* Sources */,
 				63C759C51EBE5A2400939D7B /* Frameworks */,
 				63C759C61EBE5A2400939D7B /* Resources */,
 				63A899721EBE61AB00C5FB04 /* Embed Frameworks */,
-				63EAD9FD1EBE88070041A272 /* CopyFiles */,
-				63EADA001EBE88360041A272 /* ShellScript */,
+				852E6C3203C620B44DB2153D /* [CP] Embed Pods Frameworks */,
+				90F21DE8B9C502BFBF0AD872 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -321,9 +367,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63C759F51EBE5A2400939D7B /* Build configuration list for PBXNativeTarget "ConfettiTests" */;
 			buildPhases = (
+				64DF1C0CAFEB35EE2697FA18 /* [CP] Check Pods Manifest.lock */,
 				63C759DA1EBE5A2400939D7B /* Sources */,
 				63C759DB1EBE5A2400939D7B /* Frameworks */,
 				63C759DC1EBE5A2400939D7B /* Resources */,
+				991CD223FC83AAFE20D58E7A /* [CP] Embed Pods Frameworks */,
+				13448F9F32BF186F97219062 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -339,9 +388,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63C759F81EBE5A2400939D7B /* Build configuration list for PBXNativeTarget "ConfettiUITests" */;
 			buildPhases = (
+				037C260B73AA56FD4AC4E159 /* [CP] Check Pods Manifest.lock */,
 				63C759E51EBE5A2400939D7B /* Sources */,
 				63C759E61EBE5A2400939D7B /* Frameworks */,
 				63C759E71EBE5A2400939D7B /* Resources */,
+				0DD093CA00210E4CE033F376 /* [CP] Embed Pods Frameworks */,
+				ED6F96E348128AD431E6366B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -457,19 +509,215 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		63EADA001EBE88360041A272 /* ShellScript */ = {
+		037C260B73AA56FD4AC4E159 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
 			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo Carthage not available in Mobile Center\necho /usr/local/bin/carthage copy-frameworks";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0DD093CA00210E4CE033F376 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConfettiUITests/Pods-ConfettiUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		13448F9F32BF186F97219062 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConfettiTests/Pods-ConfettiTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		383E2E24856D8BE590A818BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5F3A0C3C883920982E7AFC33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		64DF1C0CAFEB35EE2697FA18 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		852E6C3203C620B44DB2153D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Confetti/Pods-Confetti-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90F21DE8B9C502BFBF0AD872 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Confetti/Pods-Confetti-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		991CD223FC83AAFE20D58E7A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConfettiTests/Pods-ConfettiTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E905D53E37862D15ACFCB89 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConfettiKitTests/Pods-ConfettiKitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9E28AC7159B2E63DE8EEAAC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConfettiKitTests/Pods-ConfettiKitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFCB2FC6D5F1A1CD9BBB7446 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EB6267965A95DF1DE7CD9CDD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConfettiKit/Pods-ConfettiKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED6F96E348128AD431E6366B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConfettiUITests/Pods-ConfettiUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -479,6 +727,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63EADA061EBE95AE0041A272 /* Events.swift in Sources */,
+				63CE74821EBEA5690018B77D /* Colors.swift in Sources */,
 				63EADA041EBE95670041A272 /* EventViewModel.swift in Sources */,
 				63EADA021EBE95550041A272 /* Person.swift in Sources */,
 				63A899981EBE64B500C5FB04 /* Event.swift in Sources */,
@@ -571,6 +820,7 @@
 /* Begin XCBuildConfiguration section */
 		63A899901EBE64A200C5FB04 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96662998826635DF2D0CF38E /* Pods-ConfettiKit.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -594,6 +844,7 @@
 		};
 		63A899911EBE64A200C5FB04 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABE5FDA3FA1627668F298F13 /* Pods-ConfettiKit.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -617,6 +868,7 @@
 		};
 		63A899921EBE64A200C5FB04 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B63A4F26F01264008D98D10 /* Pods-ConfettiKitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = W9D824R4EW;
@@ -631,6 +883,7 @@
 		};
 		63A899931EBE64A200C5FB04 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E8EA2E53200EC727D5F4B94 /* Pods-ConfettiKitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = W9D824R4EW;
@@ -738,6 +991,7 @@
 		};
 		63C759F31EBE5A2400939D7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A41DBE0420DCA78EF793164 /* Pods-Confetti.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -756,6 +1010,7 @@
 		};
 		63C759F41EBE5A2400939D7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF815076B01D9F841A86F59C /* Pods-Confetti.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -774,6 +1029,7 @@
 		};
 		63C759F61EBE5A2400939D7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CAEB242B4E0AFFBC9D9E2D7 /* Pods-ConfettiTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -789,6 +1045,7 @@
 		};
 		63C759F71EBE5A2400939D7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90EFCA0BDEC54191782418EC /* Pods-ConfettiTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -804,6 +1061,7 @@
 		};
 		63C759F91EBE5A2400939D7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C67EFC6D4D01231451EF038 /* Pods-ConfettiUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = W9D824R4EW;
@@ -818,6 +1076,7 @@
 		};
 		63C759FA1EBE5A2400939D7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 058AB1329A7CACA3A8BE667E /* Pods-ConfettiUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = W9D824R4EW;

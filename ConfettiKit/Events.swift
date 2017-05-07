@@ -9,5 +9,6 @@ public class Events {
         Event(person: Person.hannah, month: 2, day: 4, year: 1991),
         Event(person: Person.vinicius, month: 5, day: 6, year: 2000),
         Event(person: Person.ian, month: 5, day: 7, year: 1988),
+        Event(person: Person.antonio, month: 5, day: 8, year: 1968),
     ].map { EventViewModel($0) }
 }

@@ -41,6 +41,11 @@ public class Person {
     
     public static let ian = Person(
         firstName: "Ian",
-        photoUrl: "https://confettiapp.com/v1/test/faces/ianj.jpg"
+        photoUrl: nil
+    )
+    
+    public static let antonio = Person(
+        firstName: "Antonio",
+        photoUrl: nil
     )
 }

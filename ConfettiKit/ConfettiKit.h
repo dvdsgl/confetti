@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double ConfettiKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char ConfettiKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ConfettiKit/PublicHeader.h>
-
-
