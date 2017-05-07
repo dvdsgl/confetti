@@ -40,15 +40,20 @@ public class EventViewModel {
     }
     
     var nextOccurrence: Date {
-        return Calendar.current.nextDate(after: Date(),
-                                         matching: DateComponents(month: event.month, day: event.day),
-                                         matchingPolicy: .nextTime,
-                                         repeatedTimePolicy: .first,
-                                         direction: .forward)!
+        let calendar = Calendar.current
+        let startOfToday = calendar.startOfDay(for: Date())
+        let startOfYesterday = calendar.date(byAdding: .day, value: -1, to: startOfToday)!
+        return calendar.nextDate(after: startOfYesterday,
+                                 matching: DateComponents(month: event.month, day: event.day),
+                                 matchingPolicy: .nextTime,
+                                 repeatedTimePolicy: .first,
+                                 direction: .forward)!
     }
     
     public var daysAway: Int {
-        return Calendar.current.dateComponents([.day], from: Date(), to: nextOccurrence).day!
+        let calendar = Calendar.current
+        let startOfToday = calendar.startOfDay(for: Date())
+        return Calendar.current.dateComponents([.day], from: startOfToday, to: nextOccurrence).day!
     }
     
     public var weeksAway: Int {
