@@ -894,7 +894,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B63A4F26F01264008D98D10 /* Pods-ConfettiKitTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = W9D824R4EW;
 				INFOPLIST_FILE = ConfettiKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -909,7 +908,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E8EA2E53200EC727D5F4B94 /* Pods-ConfettiKitTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = W9D824R4EW;
 				INFOPLIST_FILE = ConfettiKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1017,7 +1015,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A41DBE0420DCA78EF793164 /* Pods-Confetti.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W9D824R4EW;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1035,7 +1032,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF815076B01D9F841A86F59C /* Pods-Confetti.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W9D824R4EW;
 				FRAMEWORK_SEARCH_PATHS = (
