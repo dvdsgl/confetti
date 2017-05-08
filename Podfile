@@ -9,7 +9,7 @@ target 'Confetti' do
   pod "AvatarImageView", '~> 2.0.3'
   pod "SDWebImage", '~> 4.0.0'
   pod "DynamicColor", '~> 3.3'
-  pod "Lock"
+  pod "Lock", '2.1.0'
 
   target 'ConfettiTests' do
     inherit! :search_paths
