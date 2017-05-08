@@ -14,7 +14,7 @@ PODS:
 DEPENDENCIES:
   - AvatarImageView (~> 2.0.3)
   - DynamicColor (~> 3.3)
-  - Lock (= 2.2.0)
+  - Lock (~> 2)
   - SDWebImage (~> 4.0.0)
 
 SPEC CHECKSUMS:
@@ -24,6 +24,6 @@ SPEC CHECKSUMS:
   Lock: 5888af7ab30772de4d06872e53c8a22a2a36b0a3
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: 71361047bcbab533e771d0b0f71ad8b4d22e9bac
+PODFILE CHECKSUM: d5adbf734e02a385d23900610663f6bfef2d5ad0
 
 COCOAPODS: 1.2.1
