@@ -54,15 +54,15 @@ public class EventViewModel {
     }
     
     public var daysAway: Int {
-        return Calendar.current.dateComponents([.day], from: startOfToday, to: nextOccurrence).day!
+        return calendar.dateComponents([.day], from: startOfToday, to: nextOccurrence).day!
     }
     
     public var weeksAway: Int {
-        return daysAway / 7;
+        return Int(round(Float(daysAway) / 7.0))
     }
     
     public var monthsAway: Int {
-        return Calendar.current.dateComponents([.month], from: startOfToday, to: nextOccurrence).month!
+        return calendar.dateComponents([.month], from: startOfToday, to: nextOccurrence).month!
     }
     
     public var countdown: String {
@@ -73,8 +73,12 @@ public class EventViewModel {
             return "tomorrow"
         case (2...EventViewModel.soonDaysAway, _, _):
             return "\(daysAway) days"
-        case (_, 0..<4, _):
+        case (_, 1, _):
+            return "1 week"
+        case (_, 2..<4, _):
             return "\(weeksAway) weeks"
+        case (_, _, 1):
+            return "1 month"
         case (_, _, let months) where months < 12:
             return "\(months) months"
         default:
