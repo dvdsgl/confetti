@@ -265,17 +265,15 @@
 		63C759CA1EBE5A2400939D7B /* Confetti */ = {
 			isa = PBXGroup;
 			children = (
-				63BDA3541EC15B840001EDBC /* GoogleService-Info.plist */,
+				63C759CB1EBE5A2400939D7B /* AppDelegate.swift */,
 				63A8980A1EC13EA400D16214 /* Resources */,
 				63CE74871EBEB2DD0018B77D /* Views */,
-				63C759CB1EBE5A2400939D7B /* AppDelegate.swift */,
-				63C759CD1EBE5A2400939D7B /* MasterViewController.swift */,
-				63C759CF1EBE5A2400939D7B /* DetailViewController.swift */,
+				63FB40E31EC16EF800BC37A4 /* View Controllers */,
 				63C759D11EBE5A2400939D7B /* Main.storyboard */,
 				63C759D41EBE5A2400939D7B /* Assets.xcassets */,
 				63C759D61EBE5A2400939D7B /* LaunchScreen.storyboard */,
 				63C759D91EBE5A2400939D7B /* Info.plist */,
-				63BDA3521EC1596A0001EDBC /* LoginViewController.swift */,
+				63BDA3541EC15B840001EDBC /* GoogleService-Info.plist */,
 			);
 			path = Confetti;
 			sourceTree = "<group>";
@@ -306,6 +304,16 @@
 				63CE74831EBEAB4F0018B77D /* EventTableViewCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		63FB40E31EC16EF800BC37A4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				63C759CD1EBE5A2400939D7B /* MasterViewController.swift */,
+				63C759CF1EBE5A2400939D7B /* DetailViewController.swift */,
+				63BDA3521EC1596A0001EDBC /* LoginViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		85EA98AE1279C0C2BB986C33 /* Frameworks */ = {

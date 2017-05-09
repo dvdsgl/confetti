@@ -1,6 +1,8 @@
 import UIKit
 import ConfettiKit
 
+import Firebase
+
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
@@ -10,12 +12,23 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
+        
         navigationItem.rightBarButtonItem = addButton
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log out",
+                                                           style: .plain,
+                                                           target: self,
+                                                           action: #selector(logOut(_:)))
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func logOut(_ sender: Any) {
+        try! FIRAuth.auth()!.signOut()
+        exit(0)
     }
 
     func insertNewObject(_ sender: Any) {
