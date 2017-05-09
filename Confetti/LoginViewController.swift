@@ -10,6 +10,8 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
+    @IBAction func unwindToLogin(segue: UIStoryboardSegue) {}
+    
     @IBAction func loginTapped(_ sender: Any) {        
         let loginManager = LoginManager()
         loginManager.logIn([.publicProfile, .email], viewController: self) { loginResult in

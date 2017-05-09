@@ -28,7 +28,7 @@ class MasterViewController: UITableViewController {
     
     func logOut(_ sender: Any) {
         try! FIRAuth.auth()!.signOut()
-        exit(0)
+        self.performSegue(withIdentifier: "unwindToLogin", sender: self)
     }
 
     func insertNewObject(_ sender: Any) {
