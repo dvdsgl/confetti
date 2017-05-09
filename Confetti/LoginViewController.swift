@@ -18,11 +18,11 @@ class LoginViewController: UIViewController {
                 print(error)
             case .cancelled:
                 print("User cancelled login.")
-            case .success(let _, let _, let accessToken):
+            case .success(_, _, let accessToken):
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
                 FIRAuth.auth()?.signIn(with: credential) { (user, error) in
                     // ...
-                    if let error = error {
+                    if let _ = error {
                         // ...
                         return
                     } else {
