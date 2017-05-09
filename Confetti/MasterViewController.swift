@@ -32,10 +32,6 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
-        let birthday = Event(person: Person.david, month: 3, day: 25, year: 1986)
-        objects.insert(EventViewModel(birthday), at: 0)
-        let indexPath = IndexPath(row: 0, section: 0)
-        tableView.insertRows(at: [indexPath], with: .automatic)
     }
 
     // MARK: - Segues

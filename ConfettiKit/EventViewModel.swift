@@ -4,23 +4,20 @@ public class EventViewModel {
     
     static let soonDaysAway = 20
     
-    static let suffixes = [
-        /*0*/"th",
-        /*1*/"st",
-        /*2*/"nd",
-        /*3*/"rd",
-        /*4*/"th",
-        /*5*/"th",
-        /*6*/"th",
-        /*7*/"th",
-        /*8*/"th",
-        /*9*/"th",
-        /*10*/"th"
-    ]
+    public static func fromEvent(_ event: Event) -> EventViewModel {
+        switch event.occasion {
+        case .holiday(let holiday):
+            return HolidayViewModel(event, holiday: holiday)
+        case .birthday(_, _, _):
+            return BirthdayViewModel(event)
+        case .anniversary(_, _, _):
+            return AnniversaryViewModel(event)
+        }
+    }
     
     let event: Event
     
-    public init(_ event: Event) {
+    init(_ event: Event) {
         self.event = event
     }
     
@@ -29,34 +26,34 @@ public class EventViewModel {
     }
     
     public var description: String {
-        // Turning (nextAge) on
-        var base = "\(monthName) \(event.day)\(th)"
-        if let nextAge = nextAge {
-            base = "Turning \(nextAge) on \(base)"
-        } else {
-            base = "Birthday on \(base)"
-        }
-        return base
+        return "no description"
     }
     
     public var person: Person {
         return event.person
     }
     
+    var calendar: Calendar {
+        return Calendar.current
+    }
+    
+    var startOfToday: Date {
+        return calendar.startOfDay(for: Date())
+    }
+    
+    var startOfYesterday: Date {
+        return calendar.date(byAdding: .day, value: -1, to: startOfToday)!
+    }
+    
     var nextOccurrence: Date {
-        let calendar = Calendar.current
-        let startOfToday = calendar.startOfDay(for: Date())
-        let startOfYesterday = calendar.date(byAdding: .day, value: -1, to: startOfToday)!
         return calendar.nextDate(after: startOfYesterday,
-                                 matching: DateComponents(month: event.month, day: event.day),
+                                 matching: DateComponents(month: month, day: day),
                                  matchingPolicy: .nextTime,
                                  repeatedTimePolicy: .first,
                                  direction: .forward)!
     }
     
     public var daysAway: Int {
-        let calendar = Calendar.current
-        let startOfToday = calendar.startOfDay(for: Date())
         return Calendar.current.dateComponents([.day], from: startOfToday, to: nextOccurrence).day!
     }
     
@@ -65,7 +62,7 @@ public class EventViewModel {
     }
     
     public var monthsAway: Int {
-        return Calendar.current.dateComponents([.month], from: Date(), to: nextOccurrence).month!
+        return Calendar.current.dateComponents([.month], from: startOfToday, to: nextOccurrence).month!
     }
     
     public var countdown: String {
@@ -85,28 +82,61 @@ public class EventViewModel {
         }
     }
     
-    var nextAge: Int? {
-        guard let year = event.year else { return nil }
-        
-        let calendar = Calendar.current
-        let components = DateComponents(year: year, month: event.month, day: event.day)
-        let first = calendar.date(from: components)!
-        
-        return calendar.dateComponents([.year], from: first, to: nextOccurrence).year
-    }
-    
     var monthName: String {
         let formatter = DateFormatter()
-        return formatter.monthSymbols[event.month - 1]
+        return formatter.monthSymbols[month - 1]
     }
     
-    var th: String {
-        if event.day < 10 {
-            return EventViewModel.suffixes[event.day]
-        } else if event.day < 20 {
+    var shortMonthName: String {
+        let formatter = DateFormatter()
+        return formatter.shortMonthSymbols[month - 1]
+    }
+    
+    var date: DateComponents {
+        switch event.occasion {
+        case let .birthday(month, day, year),
+             let .anniversary(month, day, year):
+            return DateComponents(year: year, month: month, day: day)
+        case let .holiday(holiday):
+            return holiday.nextOccurrenceIn(region: .usa)
+        }
+    }
+    
+    public var month: Int {
+        return date.month!
+    }
+    
+    public var day: Int {
+        return date.day!
+    }
+    
+    public var year: Int? {
+        return date.year
+    }
+}
+
+extension Int {
+    static let suffixes = [
+        /*0*/"th",
+             /*1*/"st",
+                  /*2*/"nd",
+                       /*3*/"rd",
+                            /*4*/"th",
+                                 /*5*/"th",
+                                      /*6*/"th",
+                                           /*7*/"th",
+                                                /*8*/"th",
+                                                     /*9*/"th",
+                                                          /*10*/"th"
+    ]
+    
+    public var th: String {
+        if self < 10 {
+            return Int.suffixes[self]
+        } else if self < 20 {
             return "th"
         } else {
-            return EventViewModel.suffixes[event.day % 10]
+            return Int.suffixes[self % 10]
         }
     }
 }

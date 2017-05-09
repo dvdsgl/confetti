@@ -1,16 +1,11 @@
 import Foundation
 
 public class Event {
-    
-    public let year: Int?
-    public let month: Int
-    public let day: Int
     public let person: Person
+    public let occasion: Occasion
     
-    public init(person: Person, month: Int, day: Int, year: Int?) {
+    public init(person: Person, occasion: Occasion) {
         self.person = person
-        self.month = month
-        self.day = day
-        self.year = year
+        self.occasion = occasion
     }
 }

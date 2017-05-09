@@ -30,6 +30,11 @@
 		63CE74821EBEA5690018B77D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE74811EBEA5690018B77D /* Colors.swift */; };
 		63CE74841EBEAB4F0018B77D /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE74831EBEAB4F0018B77D /* EventTableViewCell.swift */; };
 		63CE74861EBEB2C10018B77D /* CountdownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE74851EBEB2C10018B77D /* CountdownLabel.swift */; };
+		63D4A8911EC2551D005B7374 /* HolidayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D4A8901EC2551D005B7374 /* HolidayViewModel.swift */; };
+		63D4A8931EC25534005B7374 /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D4A8921EC25534005B7374 /* BirthdayViewModel.swift */; };
+		63D4A8951EC2554A005B7374 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D4A8941EC2554A005B7374 /* Holiday.swift */; };
+		63D4A8971EC2555B005B7374 /* Occasion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D4A8961EC2555B005B7374 /* Occasion.swift */; };
+		63D4A8991EC25EC9005B7374 /* AnniversaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D4A8981EC25EC9005B7374 /* AnniversaryViewModel.swift */; };
 		63EADA021EBE95550041A272 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EADA011EBE95550041A272 /* Person.swift */; };
 		63EADA041EBE95670041A272 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EADA031EBE95670041A272 /* EventViewModel.swift */; };
 		63EADA061EBE95AE0041A272 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EADA051EBE95AE0041A272 /* Events.swift */; };
@@ -126,6 +131,11 @@
 		63CE74811EBEA5690018B77D /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		63CE74831EBEAB4F0018B77D /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		63CE74851EBEB2C10018B77D /* CountdownLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownLabel.swift; sourceTree = "<group>"; };
+		63D4A8901EC2551D005B7374 /* HolidayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolidayViewModel.swift; sourceTree = "<group>"; };
+		63D4A8921EC25534005B7374 /* BirthdayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
+		63D4A8941EC2554A005B7374 /* Holiday.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
+		63D4A8961EC2555B005B7374 /* Occasion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Occasion.swift; sourceTree = "<group>"; };
+		63D4A8981EC25EC9005B7374 /* AnniversaryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnniversaryViewModel.swift; sourceTree = "<group>"; };
 		63EADA011EBE95550041A272 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		63EADA031EBE95670041A272 /* EventViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		63EADA051EBE95AE0041A272 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
@@ -215,13 +225,15 @@
 		63A8997A1EBE64A200C5FB04 /* ConfettiKit */ = {
 			isa = PBXGroup;
 			children = (
-				63A899971EBE64B500C5FB04 /* Event.swift */,
-				63EADA051EBE95AE0041A272 /* Events.swift */,
-				63EADA031EBE95670041A272 /* EventViewModel.swift */,
+				63CE74811EBEA5690018B77D /* Colors.swift */,
 				63EADA011EBE95550041A272 /* Person.swift */,
+				63A899971EBE64B500C5FB04 /* Event.swift */,
+				63D4A8961EC2555B005B7374 /* Occasion.swift */,
+				63D4A8941EC2554A005B7374 /* Holiday.swift */,
+				63EADA051EBE95AE0041A272 /* Events.swift */,
+				63D4A89A1EC25ED6005B7374 /* ViewModels */,
 				63A8997B1EBE64A200C5FB04 /* ConfettiKit.h */,
 				63A8997C1EBE64A200C5FB04 /* Info.plist */,
-				63CE74811EBEA5690018B77D /* Colors.swift */,
 			);
 			path = ConfettiKit;
 			sourceTree = "<group>";
@@ -268,7 +280,7 @@
 				63C759CB1EBE5A2400939D7B /* AppDelegate.swift */,
 				63A8980A1EC13EA400D16214 /* Resources */,
 				63CE74871EBEB2DD0018B77D /* Views */,
-				63FB40E31EC16EF800BC37A4 /* View Controllers */,
+				63FB40E31EC16EF800BC37A4 /* Controllers */,
 				63C759D11EBE5A2400939D7B /* Main.storyboard */,
 				63C759D41EBE5A2400939D7B /* Assets.xcassets */,
 				63C759D61EBE5A2400939D7B /* LaunchScreen.storyboard */,
@@ -314,14 +326,25 @@
 			name = Playgrounds;
 			sourceTree = "<group>";
 		};
-		63FB40E31EC16EF800BC37A4 /* View Controllers */ = {
+		63D4A89A1EC25ED6005B7374 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				63EADA031EBE95670041A272 /* EventViewModel.swift */,
+				63D4A8921EC25534005B7374 /* BirthdayViewModel.swift */,
+				63D4A8981EC25EC9005B7374 /* AnniversaryViewModel.swift */,
+				63D4A8901EC2551D005B7374 /* HolidayViewModel.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		63FB40E31EC16EF800BC37A4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				63C759CD1EBE5A2400939D7B /* MasterViewController.swift */,
 				63C759CF1EBE5A2400939D7B /* DetailViewController.swift */,
 				63BDA3521EC1596A0001EDBC /* LoginViewController.swift */,
 			);
-			name = "View Controllers";
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		85EA98AE1279C0C2BB986C33 /* Frameworks */ = {
@@ -781,8 +804,13 @@
 			files = (
 				63EADA061EBE95AE0041A272 /* Events.swift in Sources */,
 				63CE74821EBEA5690018B77D /* Colors.swift in Sources */,
+				63D4A8951EC2554A005B7374 /* Holiday.swift in Sources */,
 				63EADA041EBE95670041A272 /* EventViewModel.swift in Sources */,
+				63D4A8911EC2551D005B7374 /* HolidayViewModel.swift in Sources */,
+				63D4A8991EC25EC9005B7374 /* AnniversaryViewModel.swift in Sources */,
 				63EADA021EBE95550041A272 /* Person.swift in Sources */,
+				63D4A8931EC25534005B7374 /* BirthdayViewModel.swift in Sources */,
+				63D4A8971EC2555B005B7374 /* Occasion.swift in Sources */,
 				63A899981EBE64B500C5FB04 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
