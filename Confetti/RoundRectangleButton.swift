@@ -26,6 +26,7 @@ class RoundRectangleButton: UIButton {
     func commonInit() {
         layer.borderWidth = 2
         layer.masksToBounds = true
+        clipsToBounds = true
         tintColor = Colors.pink
     }
     
