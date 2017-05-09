@@ -7,9 +7,7 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = Events.samples.sorted(by: { $0.daysAway < $1.daysAway })
-    
-    var didShowLogin = false
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,32 +15,6 @@ class MasterViewController: UITableViewController {
         navigationItem.rightBarButtonItem = addButton
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if (didShowLogin) { return }
-        
-        Lock
-            .classic()
-            .withOptions {
-                $0.closable = false
-            }
-            .withStyle {
-                $0.title = "Confetti"
-                $0.primaryColor = Colors.cyan
-            }
-            .onAuth {
-                print("Obtained credentials \($0)")
-            }
-            .onError {
-                print("Failed with \($0)")
-            }
-            .onCancel {
-                print("User cancelled")
-            }
-            .present(from: self)
-        
-        didShowLogin = true
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
