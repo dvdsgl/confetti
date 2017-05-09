@@ -96,6 +96,7 @@
                             <constraint firstItem="kPP-I7-M0V" firstAttribute="height" secondItem="SLT-6B-ne5" secondAttribute="height" multiplier="0.5" id="tDf-Uw-IBq"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6I4-w8-g3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
