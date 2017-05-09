@@ -1,8 +1,6 @@
 import UIKit
 import ConfettiKit
 
-import Lock
-
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil

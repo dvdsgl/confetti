@@ -10,7 +10,6 @@
 		006F3C241EBFA9FF005D0EFD /* RoundRectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006F3C231EBFA9FF005D0EFD /* RoundRectangleButton.swift */; };
 		2B99A6DD2F36878252083607 /* Pods_ConfettiKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D827EF384F7695BF9B075F7B /* Pods_ConfettiKitTests.framework */; };
 		4CE7AAF76EAB2CB4A8637F11 /* Pods_Confetti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE7682F3E4A76FA241467F4 /* Pods_Confetti.framework */; };
-		634DDB611EBF7DD700789E72 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 634DDB601EBF7DD700789E72 /* Auth0.plist */; };
 		63A8980E1EC13EEB00D16214 /* secret_garden.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63A8980D1EC13EEB00D16214 /* secret_garden.otf */; };
 		63A899821EBE64A200C5FB04 /* ConfettiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A899791EBE64A200C5FB04 /* ConfettiKit.framework */; };
 		63A899891EBE64A200C5FB04 /* ConfettiKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A899881EBE64A200C5FB04 /* ConfettiKitTests.swift */; };
@@ -18,6 +17,8 @@
 		63A8998E1EBE64A200C5FB04 /* ConfettiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A899791EBE64A200C5FB04 /* ConfettiKit.framework */; };
 		63A8998F1EBE64A200C5FB04 /* ConfettiKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63A899791EBE64A200C5FB04 /* ConfettiKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63A899981EBE64B500C5FB04 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A899971EBE64B500C5FB04 /* Event.swift */; };
+		63BDA3531EC1596A0001EDBC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BDA3521EC1596A0001EDBC /* LoginViewController.swift */; };
+		63BDA3551EC15B840001EDBC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63BDA3541EC15B840001EDBC /* GoogleService-Info.plist */; };
 		63C759CC1EBE5A2400939D7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C759CB1EBE5A2400939D7B /* AppDelegate.swift */; };
 		63C759CE1EBE5A2400939D7B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C759CD1EBE5A2400939D7B /* MasterViewController.swift */; };
 		63C759D01EBE5A2400939D7B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C759CF1EBE5A2400939D7B /* DetailViewController.swift */; };
@@ -97,7 +98,6 @@
 		1CAEB242B4E0AFFBC9D9E2D7 /* Pods-ConfettiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfettiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConfettiTests/Pods-ConfettiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2FE7682F3E4A76FA241467F4 /* Pods_Confetti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Confetti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8EA2E53200EC727D5F4B94 /* Pods-ConfettiKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfettiKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConfettiKitTests/Pods-ConfettiKitTests.release.xcconfig"; sourceTree = "<group>"; };
-		634DDB601EBF7DD700789E72 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Auth0.plist; path = Confetti/Auth0.plist; sourceTree = SOURCE_ROOT; };
 		63A8980D1EC13EEB00D16214 /* secret_garden.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = secret_garden.otf; path = Confetti/Resources/secret_garden.otf; sourceTree = "<group>"; };
 		63A899331EBE5DEF00C5FB04 /* Dates.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Dates.playground; sourceTree = "<group>"; };
 		63A899791EBE64A200C5FB04 /* ConfettiKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ConfettiKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +107,8 @@
 		63A899881EBE64A200C5FB04 /* ConfettiKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiKitTests.swift; sourceTree = "<group>"; };
 		63A8998A1EBE64A200C5FB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63A899971EBE64B500C5FB04 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		63BDA3521EC1596A0001EDBC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		63BDA3541EC15B840001EDBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		63C759C81EBE5A2400939D7B /* Confetti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Confetti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C759CB1EBE5A2400939D7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63C759CD1EBE5A2400939D7B /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -263,8 +265,8 @@
 		63C759CA1EBE5A2400939D7B /* Confetti */ = {
 			isa = PBXGroup;
 			children = (
+				63BDA3541EC15B840001EDBC /* GoogleService-Info.plist */,
 				63A8980A1EC13EA400D16214 /* Resources */,
-				634DDB601EBF7DD700789E72 /* Auth0.plist */,
 				63CE74871EBEB2DD0018B77D /* Views */,
 				63C759CB1EBE5A2400939D7B /* AppDelegate.swift */,
 				63C759CD1EBE5A2400939D7B /* MasterViewController.swift */,
@@ -273,6 +275,7 @@
 				63C759D41EBE5A2400939D7B /* Assets.xcassets */,
 				63C759D61EBE5A2400939D7B /* LaunchScreen.storyboard */,
 				63C759D91EBE5A2400939D7B /* Info.plist */,
+				63BDA3521EC1596A0001EDBC /* LoginViewController.swift */,
 			);
 			path = Confetti;
 			sourceTree = "<group>";
@@ -522,7 +525,7 @@
 				63C759D51EBE5A2400939D7B /* Assets.xcassets in Resources */,
 				63C759D31EBE5A2400939D7B /* Main.storyboard in Resources */,
 				63A8980E1EC13EEB00D16214 /* secret_garden.otf in Resources */,
-				634DDB611EBF7DD700789E72 /* Auth0.plist in Resources */,
+				63BDA3551EC15B840001EDBC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,6 +783,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BDA3531EC1596A0001EDBC /* LoginViewController.swift in Sources */,
 				006F3C241EBFA9FF005D0EFD /* RoundRectangleButton.swift in Sources */,
 				63CE74841EBEAB4F0018B77D /* EventTableViewCell.swift in Sources */,
 				63C759D01EBE5A2400939D7B /* DetailViewController.swift in Sources */,

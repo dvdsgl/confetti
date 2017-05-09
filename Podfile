@@ -9,7 +9,13 @@ target 'Confetti' do
   pod "AvatarImageView", '~> 2.0.3'
   pod "SDWebImage", '~> 4.0.0'
   pod "DynamicColor", '~> 3.3'
-  pod "Lock", '2.1.0'
+  
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
+  
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 
   target 'ConfettiTests' do
     inherit! :search_paths
