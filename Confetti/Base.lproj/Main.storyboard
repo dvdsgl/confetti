@@ -21,7 +21,7 @@
         <scene sceneID="pY4-Hu-kfo">
             <objects>
                 <navigationController storyboardIdentifier="masterViewController" title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -45,13 +45,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confetti" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGW-XQ-3is" userLabel="Logotype">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
-                                <color key="backgroundColor" red="0.12156862745098039" green="0.83529411764705885" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="secret_garden" family="secret garden" pointSize="160"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPP-I7-M0V" userLabel="Button Container">
                                 <rect key="frame" x="0.0" y="368" width="414" height="368"/>
                                 <subviews>
@@ -83,16 +76,45 @@
                                     <constraint firstItem="gXM-wy-16E" firstAttribute="centerY" secondItem="kPP-I7-M0V" secondAttribute="centerY" id="vtO-mG-V6d"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1az-L2-6eU" userLabel="Top Container">
+                                <rect key="frame" x="0.0" y="20" width="414" height="368"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAE-gH-Zt7" customClass="ConfettiMachineView" customModule="Confetti" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.83529411760000005" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRunning" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confetti" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozL-ZE-rYb">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
+                                        <fontDescription key="fontDescription" name="secret_garden" family="secret garden" pointSize="170"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ozL-ZE-rYb" firstAttribute="leading" secondItem="1az-L2-6eU" secondAttribute="leading" id="1l7-Ud-pga"/>
+                                    <constraint firstItem="QAE-gH-Zt7" firstAttribute="top" secondItem="1az-L2-6eU" secondAttribute="top" id="2J0-Wp-Gg3"/>
+                                    <constraint firstItem="QAE-gH-Zt7" firstAttribute="leading" secondItem="1az-L2-6eU" secondAttribute="leading" id="HyS-42-AJj"/>
+                                    <constraint firstAttribute="trailing" secondItem="ozL-ZE-rYb" secondAttribute="trailing" id="IAK-b1-qRI"/>
+                                    <constraint firstAttribute="trailing" secondItem="QAE-gH-Zt7" secondAttribute="trailing" id="PyV-ST-70q"/>
+                                    <constraint firstItem="ozL-ZE-rYb" firstAttribute="top" secondItem="1az-L2-6eU" secondAttribute="top" id="RmX-xj-B2U"/>
+                                    <constraint firstAttribute="bottom" secondItem="ozL-ZE-rYb" secondAttribute="bottom" id="Znz-iM-hRU"/>
+                                    <constraint firstAttribute="bottom" secondItem="QAE-gH-Zt7" secondAttribute="bottom" id="wzD-6a-kE5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LGW-XQ-3is" firstAttribute="top" secondItem="SLT-6B-ne5" secondAttribute="top" id="AIM-k2-5dO"/>
-                            <constraint firstAttribute="trailing" secondItem="LGW-XQ-3is" secondAttribute="trailing" id="Ded-IQ-wcW"/>
                             <constraint firstItem="O3G-0Z-9Ap" firstAttribute="top" secondItem="kPP-I7-M0V" secondAttribute="bottom" id="H6c-dU-SjR"/>
                             <constraint firstItem="kPP-I7-M0V" firstAttribute="leading" secondItem="SLT-6B-ne5" secondAttribute="leading" id="IWj-vT-0sx"/>
-                            <constraint firstItem="LGW-XQ-3is" firstAttribute="leading" secondItem="SLT-6B-ne5" secondAttribute="leading" id="LYO-9p-YcN"/>
-                            <constraint firstItem="LGW-XQ-3is" firstAttribute="height" secondItem="SLT-6B-ne5" secondAttribute="height" multiplier="0.5" id="fPz-Mo-Lal"/>
+                            <constraint firstAttribute="trailing" secondItem="1az-L2-6eU" secondAttribute="trailing" id="TBk-ye-cCc"/>
+                            <constraint firstItem="1az-L2-6eU" firstAttribute="leading" secondItem="SLT-6B-ne5" secondAttribute="leading" id="XDK-51-885"/>
+                            <constraint firstItem="1az-L2-6eU" firstAttribute="height" secondItem="SLT-6B-ne5" secondAttribute="height" multiplier="0.5" id="Xbm-p1-YRU"/>
                             <constraint firstAttribute="trailing" secondItem="kPP-I7-M0V" secondAttribute="trailing" id="gcD-WN-TQf"/>
+                            <constraint firstItem="1az-L2-6eU" firstAttribute="top" secondItem="5jo-T2-61j" secondAttribute="bottom" id="qZO-o3-D9V"/>
                             <constraint firstItem="kPP-I7-M0V" firstAttribute="height" secondItem="SLT-6B-ne5" secondAttribute="height" multiplier="0.5" id="tDf-Uw-IBq"/>
                         </constraints>
                     </view>

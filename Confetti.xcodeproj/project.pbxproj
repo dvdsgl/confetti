@@ -10,6 +10,7 @@
 		006F3C241EBFA9FF005D0EFD /* RoundRectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006F3C231EBFA9FF005D0EFD /* RoundRectangleButton.swift */; };
 		2B99A6DD2F36878252083607 /* Pods_ConfettiKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D827EF384F7695BF9B075F7B /* Pods_ConfettiKitTests.framework */; };
 		4CE7AAF76EAB2CB4A8637F11 /* Pods_Confetti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE7682F3E4A76FA241467F4 /* Pods_Confetti.framework */; };
+		63A446201EC50CAA00472ECC /* ConfettiMachineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A4461F1EC50CAA00472ECC /* ConfettiMachineView.swift */; };
 		63A8980E1EC13EEB00D16214 /* secret_garden.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63A8980D1EC13EEB00D16214 /* secret_garden.otf */; };
 		63A899821EBE64A200C5FB04 /* ConfettiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A899791EBE64A200C5FB04 /* ConfettiKit.framework */; };
 		63A899891EBE64A200C5FB04 /* ConfettiKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A899881EBE64A200C5FB04 /* ConfettiKitTests.swift */; };
@@ -103,6 +104,7 @@
 		1CAEB242B4E0AFFBC9D9E2D7 /* Pods-ConfettiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfettiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConfettiTests/Pods-ConfettiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2FE7682F3E4A76FA241467F4 /* Pods_Confetti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Confetti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8EA2E53200EC727D5F4B94 /* Pods-ConfettiKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfettiKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConfettiKitTests/Pods-ConfettiKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		63A4461F1EC50CAA00472ECC /* ConfettiMachineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfettiMachineView.swift; path = Views/ConfettiMachineView.swift; sourceTree = "<group>"; };
 		63A8980D1EC13EEB00D16214 /* secret_garden.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = secret_garden.otf; path = Confetti/Resources/secret_garden.otf; sourceTree = "<group>"; };
 		63A899331EBE5DEF00C5FB04 /* ConfettiMachine.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ConfettiMachine.playground; sourceTree = "<group>"; };
 		63A899791EBE64A200C5FB04 /* ConfettiKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ConfettiKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -313,6 +315,7 @@
 			children = (
 				006F3C231EBFA9FF005D0EFD /* RoundRectangleButton.swift */,
 				63CE74851EBEB2C10018B77D /* CountdownLabel.swift */,
+				63A4461F1EC50CAA00472ECC /* ConfettiMachineView.swift */,
 				63CE74831EBEAB4F0018B77D /* EventTableViewCell.swift */,
 			);
 			name = Views;
@@ -827,6 +830,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63A446201EC50CAA00472ECC /* ConfettiMachineView.swift in Sources */,
 				63BDA3531EC1596A0001EDBC /* LoginViewController.swift in Sources */,
 				006F3C241EBFA9FF005D0EFD /* RoundRectangleButton.swift in Sources */,
 				63CE74841EBEAB4F0018B77D /* EventTableViewCell.swift in Sources */,

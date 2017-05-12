@@ -1,15 +1,34 @@
-import PlaygroundSupport
-
 import UIKit
 import Foundation
+
 import CoreGraphics
 
 import ConfettiKit
 
+@IBDesignable
 class ConfettiMachineView: UIView {
     
     let emitter = CAEmitterLayer()
-    let circleImage = ConfettiMachineView.createCircleImage()
+    
+    let circleImage: CGImage = {
+        let confettiSize = 10
+        let frame = CGRect(x: 0, y: 0, width: confettiSize, height: confettiSize)
+        
+        let circleLayer = CAShapeLayer()
+        circleLayer.frame = frame
+        circleLayer.path = UIBezierPath(ovalIn: frame).cgPath
+        circleLayer.fillColor = UIColor.white.cgColor
+        circleLayer.shouldRasterize = true
+        circleLayer.rasterizationScale = 2 * UIScreen.main.scale
+        circleLayer.contentsScale = UIScreen.main.scale
+        
+        UIGraphicsBeginImageContextWithOptions(frame.size, false, UIScreen.main.scale)
+        circleLayer.render(in: UIGraphicsGetCurrentContext()!)
+        let circleImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return circleImage!.cgImage!
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,12 +40,12 @@ class ConfettiMachineView: UIView {
         commonInit()
     }
     
-    var isRunning: Bool = false {
+    @IBInspectable var isRunning: Bool = false {
         didSet {
             if isRunning {
                 emitter.emitterCells!.forEach { $0.yAcceleration = 10 }
                 emitter.lifetime = 100
-                emitter.birthRate = 3
+                emitter.birthRate = 5
                 emitter.beginTime = CACurrentMediaTime()
             } else {
                 emitter.emitterCells!.forEach { $0.yAcceleration = 3000 }
@@ -48,7 +67,7 @@ class ConfettiMachineView: UIView {
         isRunning = !isRunning
     }
     
-    func commonInit() {
+    func commonInit() {        
         translatesAutoresizingMaskIntoConstraints = false
         isUserInteractionEnabled = false
         
@@ -80,31 +99,4 @@ class ConfettiMachineView: UIView {
         cell.color = color.cgColor
         return cell
     }
-    
-    static let confettiSize = 10
-    static func createCircleImage() -> CGImage {
-        let frame = CGRect(x: 0, y: 0, width: confettiSize, height: confettiSize)
-        
-        let circleLayer = CAShapeLayer()
-        circleLayer.frame = frame
-        circleLayer.path = UIBezierPath(ovalIn: frame).cgPath
-        circleLayer.fillColor = UIColor.white.cgColor
-        circleLayer.shouldRasterize = true
-        circleLayer.rasterizationScale = 2 * UIScreen.main.scale
-        circleLayer.contentsScale = UIScreen.main.scale
-        
-        UIGraphicsBeginImageContextWithOptions(frame.size, false, UIScreen.main.scale)
-        circleLayer.render(in: UIGraphicsGetCurrentContext()!)
-        let circleImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return circleImage!.cgImage!
-    }
 }
-
-
-let confetti = ConfettiMachineView(frame: CGRect(x: 0, y: 0, width: 340, height: 500))
-confetti.backgroundColor = UIColor.white
-confetti.start()
-
-PlaygroundPage.current.liveView = confetti
