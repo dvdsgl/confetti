@@ -16,6 +16,7 @@ target 'Confetti' do
   
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
   target 'ConfettiTests' do
     inherit! :search_paths

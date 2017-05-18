@@ -19,6 +19,19 @@ class MasterViewController: UITableViewController {
                                                            style: .plain,
                                                            target: self,
                                                            action: #selector(logOut(_:)))
+        getData()
+    }
+    
+    func getData() {
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        
+        if let user = Auth.auth().currentUser {
+            let userRecord = ref.child("users").child(user.uid)
+            userRecord.setValue([
+                "email": user.email
+            ])
+        }
     }
     
     override func didReceiveMemoryWarning() {
