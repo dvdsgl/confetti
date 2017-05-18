@@ -27,7 +27,7 @@ class MasterViewController: UITableViewController {
     }
     
     func logOut(_ sender: Any) {
-        try! FIRAuth.auth()!.signOut()
+        try! Auth.auth().signOut()
         self.performSegue(withIdentifier: "unwindToLogin", sender: self)
     }
 
