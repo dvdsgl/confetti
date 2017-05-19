@@ -10,6 +10,8 @@ target 'Confetti' do
   pod "SDWebImage", '~> 4.0.0'
   pod "DynamicColor", '~> 3.3'
   
+  pod "SwiftyJSON"
+  
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'

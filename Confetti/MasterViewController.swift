@@ -2,6 +2,67 @@ import UIKit
 import ConfettiKit
 
 import Firebase
+import SwiftyJSON
+
+public protocol FirebaseData {
+    associatedtype Model
+    
+    var json: JSON { get }
+    static func fromJSON(_ json: JSON) -> Model
+}
+
+extension FirebaseData {
+    public var firebaseDictionary: [String: Any?] {
+        return json.dictionaryObject!
+    }
+}
+
+extension Event: FirebaseData {
+    public var json: JSON {
+        return [
+            "person": person.firstName,
+            "occasion": String(describing: occasion)
+        ]
+    }
+    
+    public static func fromJSON(_ json: JSON) -> Event {
+        let person = Person(firstName: json["person"].string!)
+        let occasion = Occasion.holiday(holiday: .mothersDay)
+        return Event(person: person, occasion: occasion)
+    }
+}
+
+class UserViewModel {
+    
+    public static let currentUser = UserViewModel()
+    
+    let db = Database.database().reference()
+    
+    var userAuth: User {
+        return Auth.auth().currentUser!
+    }
+    
+    var userNode: DatabaseReference {
+        return db.child("users").child(userAuth.uid)
+    }
+    
+    private init() {
+        userNode.updateChildValues([
+            "email": userAuth.email!
+        ])
+    }
+    
+    public func getEvents(_ success: @escaping ([[String: Any?]]) -> ()) {
+        userNode.child("events").observe(.value, with: { (snapshot) in
+            let events = snapshot.value as? [[String : Any?]] ?? []
+            success(events)
+        })
+    }
+    
+    public func addEvent(_ event: Event) {
+        userNode.child("events").childByAutoId().setValue(event.firebaseDictionary)
+    }
+}
 
 class MasterViewController: UITableViewController {
 
@@ -23,15 +84,8 @@ class MasterViewController: UITableViewController {
     }
     
     func getData() {
-        var ref: DatabaseReference!
-        ref = Database.database().reference()
-        
-        if let user = Auth.auth().currentUser {
-            let userRecord = ref.child("users").child(user.uid)
-            userRecord.setValue([
-                "email": user.email
-            ])
-        }
+        let user = UserViewModel.currentUser
+        user.addEvent(objects[0].event)
     }
     
     override func didReceiveMemoryWarning() {
