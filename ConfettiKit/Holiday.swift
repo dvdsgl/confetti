@@ -32,7 +32,7 @@ extension Holiday {
     static let titles: [Holiday: String] = [
         .mothersDay: "Mother's Day",
         .fathersDay: "Father's Day",
-        ]
+    ]
     
     public var title: String {
         return Holiday.titles[self]!
