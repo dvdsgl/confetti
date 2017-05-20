@@ -4,93 +4,96 @@ import ConfettiKit
 import Firebase
 import SwiftyJSON
 
+public typealias FirebaseValue = [String: Any?]
+
 public protocol FirebaseData {
     associatedtype Model
     
-    var json: JSON { get }
-    static func fromJSON(_ json: JSON) -> Model?
+    var firebaseValue: FirebaseValue { get }
+    static func fromFirebaseValue(_ value: FirebaseValue) -> Model?
 }
 
 extension FirebaseData {
-    public var firebaseValue: Any {
-        return json.object
+    // When parsing an object as property of other FirebaseValue
+    static func fromFirebaseValueAny(_ value: Any??) -> Model? {
+        return fromFirebaseValue(value as! FirebaseValue)
     }
 }
 
 extension Event: FirebaseData {
-    public var json: JSON {
+    public var firebaseValue: FirebaseValue {
         return [
-            "person": person.json,
-            "occasion": occasion.json
+            "person": person.firebaseValue,
+            "occasion": occasion.firebaseValue
         ]
     }
     
-    public static func fromJSON(_ json: JSON) -> Event? {
+    public static func fromFirebaseValue(_ value: FirebaseValue) -> Event? {
         return Event(
-            person: Person.fromJSON(json["person"])!,
-            occasion: Occasion.fromJSON(json["occasion"])!
+            person: Person.fromFirebaseValueAny(value["person"])!,
+            occasion: Occasion.fromFirebaseValueAny(value["occasion"])!
         )
     }
 }
 
 extension Person: FirebaseData {
-    public var json: JSON {
+    public var firebaseValue: FirebaseValue {
         return [
             "firstName": firstName,
-            "photoUrl": photoUrl as Any
+            "photoUrl": photoUrl
         ]
     }
     
-    public static func fromJSON(_ json: JSON) -> Person? {
+    public static func fromFirebaseValue(_ value: FirebaseValue) -> Person? {
         return Person(
-            firstName: json["firstName"].string!,
-            photoUrl: json["photoUrl"].string
+            firstName: value["firstName"] as! String,
+            photoUrl: value["photoUrl"] as? String
         )
     }
 }
 
 extension Occasion: FirebaseData {
-    public var json: JSON {
+    public var firebaseValue: FirebaseValue {
         switch self {
         case let .birthday(month, day, year):
             return [
                 "case": "birthday",
                 "day": day,
                 "month": month,
-                "year": year as Any
+                "year": year
             ]
         case let .holiday(holiday):
             return [
                 "case": "holiday",
-                "holiday": holiday.json
+                "holiday": holiday.firebaseValue
             ]
         case let .anniversary(month, day, year):
             return [
                 "case": "anniversary",
                 "day": day,
                 "month": month,
-                "year": year as Any
+                "year": year
             ]
         }
     }
     
-    public static func fromJSON(_ json: JSON) -> Occasion? {
-        switch json["case"].string! {
+    public static func fromFirebaseValue(_ value: FirebaseValue) -> Occasion? {
+        switch value["case"] as! String {
         case "birthday":
             return .birthday(
-                month: json["month"].int!,
-                day: json["day"].int!,
-                year: json["year"].int
+                month: value["month"] as! Int,
+                day: value["day"] as! Int,
+                year: value["year"] as? Int
             )
         case "holiday":
             return .holiday(
-                holiday: Holiday.fromJSON(json["holiday"])!
+                holiday: Holiday.fromFirebaseValueAny(value["holiday"])!
             )
         case "anniversary":
             return .anniversary(
-                month: json["month"].int!,
-                day: json["day"].int!,
-                year: json["year"].int
+                month: value["month"] as! Int,
+                day: value["day"] as! Int,
+                year: value["year"] as? Int
             )
         default:
             return nil
@@ -99,26 +102,22 @@ extension Occasion: FirebaseData {
 }
 
 extension Holiday: FirebaseData {
-    public var json: JSON {
+    public var firebaseValue: FirebaseValue {
         switch self {
         case .mothersDay:
-            return "mothersDay"
+            return ["case": "mothersDay"]
         case .fathersDay:
-            return "fathersDay"
+            return ["case": "fathersDay"]
         }
     }
     
-    public static func fromJSON(_ json: JSON) -> Holiday? {
-        if let stringRep = json.string {
-            switch stringRep {
-            case "mothersDay":
-                return .mothersDay
-            case "fathersDay":
-                return .fathersDay
-            default:
-                return nil
-            }
-        } else {
+    public static func fromFirebaseValue(_ value: FirebaseValue) -> Holiday? {
+        switch value["case"] as! String {
+        case "mothersDay":
+            return .mothersDay
+        case "fathersDay":
+            return .fathersDay
+        default:
             return nil
         }
     }
@@ -148,13 +147,17 @@ class UserViewModel {
         ])
     }
     
-    public func getEvents(_ success: @escaping ([[String: Any?]]) -> ()) {
+    public func getEvents(_ success: @escaping ([Event]) -> ()) {
         eventsNode.observeSingleEvent(of: .value, with: { snapshot in
-            for rest in snapshot.children.allObjects as! [DataSnapshot] {
-                let d = rest.value as? [String: Any?]
-                print(d)
+            var events = [Event]()
+            for eventNode in snapshot.children.allObjects as! [DataSnapshot] {
+                if let eventDict = eventNode.value as? [String: Any?] {
+                    if let event = Event.fromFirebaseValue(eventDict) {
+                        events.append(event)
+                    }
+                }
             }
-            success([])
+            success(events)
         })
     }
     
@@ -184,6 +187,7 @@ class MasterViewController: UITableViewController {
     
     func getData() {
         let user = UserViewModel.currentUser
+
         user.getEvents { (events) in
             print(events)
         }
