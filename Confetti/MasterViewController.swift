@@ -8,27 +8,119 @@ public protocol FirebaseData {
     associatedtype Model
     
     var json: JSON { get }
-    static func fromJSON(_ json: JSON) -> Model
+    static func fromJSON(_ json: JSON) -> Model?
 }
 
 extension FirebaseData {
-    public var firebaseDictionary: [String: Any?] {
-        return json.dictionaryObject!
+    public var firebaseValue: Any {
+        return json.object
     }
 }
 
 extension Event: FirebaseData {
     public var json: JSON {
         return [
-            "person": person.firstName,
-            "occasion": String(describing: occasion)
+            "person": person.json,
+            "occasion": occasion.json
         ]
     }
     
-    public static func fromJSON(_ json: JSON) -> Event {
-        let person = Person(firstName: json["person"].string!)
-        let occasion = Occasion.holiday(holiday: .mothersDay)
-        return Event(person: person, occasion: occasion)
+    public static func fromJSON(_ json: JSON) -> Event? {
+        return Event(
+            person: Person.fromJSON(json["person"])!,
+            occasion: Occasion.fromJSON(json["occasion"])!
+        )
+    }
+}
+
+extension Person: FirebaseData {
+    public var json: JSON {
+        return [
+            "firstName": firstName,
+            "photoUrl": photoUrl as Any
+        ]
+    }
+    
+    public static func fromJSON(_ json: JSON) -> Person? {
+        return Person(
+            firstName: json["firstName"].string!,
+            photoUrl: json["photoUrl"].string
+        )
+    }
+}
+
+extension Occasion: FirebaseData {
+    public var json: JSON {
+        switch self {
+        case let .birthday(month, day, year):
+            return [
+                "case": "birthday",
+                "day": day,
+                "month": month,
+                "year": year as Any
+            ]
+        case let .holiday(holiday):
+            return [
+                "case": "holiday",
+                "holiday": holiday.json
+            ]
+        case let .anniversary(month, day, year):
+            return [
+                "case": "anniversary",
+                "day": day,
+                "month": month,
+                "year": year as Any
+            ]
+        }
+    }
+    
+    public static func fromJSON(_ json: JSON) -> Occasion? {
+        switch json["case"].string! {
+        case "birthday":
+            return .birthday(
+                month: json["month"].int!,
+                day: json["day"].int!,
+                year: json["year"].int
+            )
+        case "holiday":
+            return .holiday(
+                holiday: Holiday.fromJSON(json["holiday"])!
+            )
+        case "anniversary":
+            return .anniversary(
+                month: json["month"].int!,
+                day: json["day"].int!,
+                year: json["year"].int
+            )
+        default:
+            return nil
+        }
+    }
+}
+
+extension Holiday: FirebaseData {
+    public var json: JSON {
+        switch self {
+        case .mothersDay:
+            return "mothersDay"
+        case .fathersDay:
+            return "fathersDay"
+        }
+    }
+    
+    public static func fromJSON(_ json: JSON) -> Holiday? {
+        if let stringRep = json.string {
+            switch stringRep {
+            case "mothersDay":
+                return .mothersDay
+            case "fathersDay":
+                return .fathersDay
+            default:
+                return nil
+            }
+        } else {
+            return nil
+        }
     }
 }
 
@@ -46,6 +138,10 @@ class UserViewModel {
         return db.child("users").child(userAuth.uid)
     }
     
+    var eventsNode: DatabaseReference {
+        return userNode.child("events")
+    }
+    
     private init() {
         userNode.updateChildValues([
             "email": userAuth.email!
@@ -53,14 +149,17 @@ class UserViewModel {
     }
     
     public func getEvents(_ success: @escaping ([[String: Any?]]) -> ()) {
-        userNode.child("events").observe(.value, with: { (snapshot) in
-            let events = snapshot.value as? [[String : Any?]] ?? []
-            success(events)
+        eventsNode.observeSingleEvent(of: .value, with: { snapshot in
+            for rest in snapshot.children.allObjects as! [DataSnapshot] {
+                let d = rest.value as? [String: Any?]
+                print(d)
+            }
+            success([])
         })
     }
     
     public func addEvent(_ event: Event) {
-        userNode.child("events").childByAutoId().setValue(event.firebaseDictionary)
+        eventsNode.childByAutoId().setValue(event.firebaseValue)
     }
 }
 
@@ -85,7 +184,9 @@ class MasterViewController: UITableViewController {
     
     func getData() {
         let user = UserViewModel.currentUser
-        user.addEvent(objects[0].event)
+        user.getEvents { (events) in
+            print(events)
+        }
     }
     
     override func didReceiveMemoryWarning() {
