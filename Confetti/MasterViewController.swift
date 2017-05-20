@@ -24,6 +24,11 @@ class MasterViewController: UITableViewController {
     
     func getData() {
         let user = UserViewModel.current
+        
+        user.addEvent(Event(
+            person: Person(firstName: "David"),
+            occasion: .birthday(month: 3, day: 25, year: 1986)
+        ))
 
         user.getEvents { events in
             let viewModels = events.map { EventViewModel.fromEvent($0) }
