@@ -38,3 +38,25 @@ extension Holiday {
         return Holiday.titles[self]!
     }
 }
+
+extension Holiday: FirebaseData {
+    public var firebaseValue: FirebaseValue {
+        switch self {
+        case .mothersDay:
+            return ["case": "mothersDay"]
+        case .fathersDay:
+            return ["case": "fathersDay"]
+        }
+    }
+    
+    public static func fromFirebaseValue(_ value: FirebaseValue) -> Holiday? {
+        switch value["case"] as! String {
+        case "mothersDay":
+            return .mothersDay
+        case "fathersDay":
+            return .fathersDay
+        default:
+            return nil
+        }
+    }
+}

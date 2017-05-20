@@ -9,3 +9,19 @@ public class Event {
         self.occasion = occasion
     }
 }
+
+extension Event: FirebaseData {
+    public var firebaseValue: FirebaseValue {
+        return [
+            "person": person.firebaseValue,
+            "occasion": occasion.firebaseValue
+        ]
+    }
+    
+    public static func fromFirebaseValue(_ value: FirebaseValue) -> Event? {
+        return Event(
+            person: Person.fromFirebaseValueAny(value["person"])!,
+            occasion: Occasion.fromFirebaseValueAny(value["occasion"])!
+        )
+    }
+}
