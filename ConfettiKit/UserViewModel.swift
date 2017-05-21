@@ -32,7 +32,7 @@ public class UserViewModel {
     }
     
     public func getEvents(_ success: @escaping ([Event]) -> ()) {
-        eventsNode.observeSingleEvent(of: .value, with: { snapshot in
+        eventsNode.observe(.value, with: { snapshot in
             var events = [Event]()
             for eventNode in snapshot.children.allObjects as! [DataSnapshot] {
                 if let eventDict = eventNode.value as? [String: Any?] {
