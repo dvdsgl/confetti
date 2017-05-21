@@ -37,6 +37,7 @@ public class UserViewModel {
             for eventNode in snapshot.children.allObjects as! [DataSnapshot] {
                 if let eventDict = eventNode.value as? [String: Any?] {
                     if let event = Event.fromFirebaseValue(eventDict) {
+                        event.key = eventNode.key
                         events.append(event)
                     }
                 }
@@ -46,6 +47,13 @@ public class UserViewModel {
     }
     
     public func addEvent(_ event: Event) {
-        eventsNode.childByAutoId().setValue(event.firebaseValue)
+        let child = eventsNode.childByAutoId()
+        event.key = child.key
+        child.setValue(event.firebaseValue)
+    }
+    
+    public func deleteEvent(_ event: Event) {
+        guard let key = event.key else { return }
+        eventsNode.child(key).removeValue()
     }
 }

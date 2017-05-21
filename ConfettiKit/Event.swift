@@ -1,6 +1,7 @@
 import Foundation
 
 public class Event {
+    public var key: String? = nil
     public let person: Person
     public let occasion: Occasion
     
