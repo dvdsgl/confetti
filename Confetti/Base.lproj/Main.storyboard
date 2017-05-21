@@ -412,7 +412,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EC1-uE-6AT" customClass="AvatarImageView" customModule="AvatarImageView">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EC1-uE-6AT" customClass="AvatarImageView" customModule="AvatarImageView">
                                 <rect key="frame" x="0.0" y="64" width="414" height="328"/>
                             </imageView>
                         </subviews>
