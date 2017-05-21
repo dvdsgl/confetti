@@ -31,8 +31,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func skipLogin(currentUser _: User) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier :"loggedInViewController")
-        window!.rootViewController = viewController
+        
+        let login = storyboard.instantiateInitialViewController()!
+        window!.rootViewController = login
+        
+        let main = storyboard.instantiateViewController(withIdentifier: "loggedInViewController")
+        main.modalPresentationStyle = .fullScreen
+        
+        DispatchQueue.main.async {
+            login.present(main, animated: false)
+        }
     }
 }
 
