@@ -9,38 +9,44 @@
 import UIKit
 import ConfettiKit
 
+import SDWebImage
+import AvatarImageView
+
+fileprivate struct AvatarConfig: AvatarImageViewConfiguration {
+    var shape: Shape = .square
+}
+
+fileprivate struct AvatarData: AvatarImageViewDataSource {
+    var name: String
+    
+    var bgColor: UIColor? {
+        return Colors.accentFor(avatarId)
+    }
+    
+    init(name: String) {
+        self.name = name
+    }
+}
+
 class DetailViewController: UIViewController {
-
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail = detailItem {
-            if let label = detailDescriptionLabel {
-                label.text = detail.description
+    @IBOutlet weak var imageView: AvatarImageView!
+    
+    var detailItem: EventViewModel?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        imageView.configuration = AvatarConfig()
+        update()
+    }
+    
+    func update() {
+        if let event = detailItem?.event {
+            imageView.dataSource = AvatarData(name: event.person.firstName)
+            
+            if let url = detailItem?.person.photoUrl {
+                imageView.sd_setImage(with: URL(string: url))
             }
         }
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        configureView()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    var detailItem: EventViewModel? {
-        didSet {
-            // Update the view.
-            configureView()
-        }
-    }
-
-
 }
 

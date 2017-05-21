@@ -200,7 +200,7 @@
                                     <outlet property="descriptionLabel" destination="ETe-7L-0a6" id="lpS-pY-e0Y"/>
                                     <outlet property="nameLabel" destination="Jud-hQ-N8I" id="vkb-5w-271"/>
                                     <outlet property="photoView" destination="nwU-YD-ntk" id="SKp-Qu-zGX"/>
-                                    <segue destination="V2r-Qg-27t" kind="show" id="jjZ-WC-XEg"/>
+                                    <segue destination="V2r-Qg-27t" kind="show" identifier="showDetail" id="jjZ-WC-XEg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -363,10 +363,10 @@
             </objects>
             <point key="canvasLocation" x="707" y="85"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="9oV-9S-hYP">
             <objects>
-                <viewController id="V2r-Qg-27t" sceneMemberID="viewController">
+                <viewController id="V2r-Qg-27t" customClass="DetailViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4BA-Rj-0Da"/>
                         <viewControllerLayoutGuide type="bottom" id="Cf5-qV-wVW"/>
@@ -376,7 +376,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXa-bs-BnH" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                <rect key="frame" x="77" y="435" width="260" height="50"/>
+                                <rect key="frame" x="77" y="432" width="260" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="KW3-3X-6t7"/>
                                     <constraint firstAttribute="height" constant="50" id="L6F-yK-zzb"/>
@@ -391,7 +391,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWv-6r-emS" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                <rect key="frame" x="77" y="505" width="260" height="50"/>
+                                <rect key="frame" x="77" y="502" width="260" height="50"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <color key="tintColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Message"/>
@@ -402,7 +402,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M21-oy-RQu" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                <rect key="frame" x="77" y="575" width="260" height="50"/>
+                                <rect key="frame" x="77" y="572" width="260" height="50"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <color key="tintColor" red="0.74901960784313726" green="0.37254901960784315" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="FaceTime"/>
@@ -412,26 +412,36 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EC1-uE-6AT" customClass="AvatarImageView" customModule="AvatarImageView">
+                                <rect key="frame" x="0.0" y="64" width="414" height="328"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="EC1-uE-6AT" firstAttribute="top" secondItem="4BA-Rj-0Da" secondAttribute="bottom" id="442-3j-kwH"/>
                             <constraint firstItem="M21-oy-RQu" firstAttribute="height" secondItem="DXa-bs-BnH" secondAttribute="height" id="7vF-pc-New"/>
-                            <constraint firstItem="DXa-bs-BnH" firstAttribute="centerY" secondItem="S1K-aE-es2" secondAttribute="centerY" multiplier="1.25" id="EpM-bg-48Y"/>
+                            <constraint firstItem="DXa-bs-BnH" firstAttribute="top" secondItem="EC1-uE-6AT" secondAttribute="bottom" constant="40" id="Bgq-uX-64X"/>
                             <constraint firstItem="M21-oy-RQu" firstAttribute="top" secondItem="NWv-6r-emS" secondAttribute="bottom" constant="20" id="KjZ-fv-GJN"/>
+                            <constraint firstItem="EC1-uE-6AT" firstAttribute="height" secondItem="S1K-aE-es2" secondAttribute="height" multiplier="0.5" constant="-40" id="N0e-Z2-2WO"/>
                             <constraint firstItem="NWv-6r-emS" firstAttribute="height" secondItem="DXa-bs-BnH" secondAttribute="height" id="OaE-Sr-0zc"/>
                             <constraint firstItem="M21-oy-RQu" firstAttribute="centerX" secondItem="DXa-bs-BnH" secondAttribute="centerX" id="TrG-6x-lsi"/>
                             <constraint firstItem="NWv-6r-emS" firstAttribute="top" secondItem="DXa-bs-BnH" secondAttribute="bottom" constant="20" id="UJn-Mn-CDG"/>
                             <constraint firstItem="NWv-6r-emS" firstAttribute="centerX" secondItem="DXa-bs-BnH" secondAttribute="centerX" id="Xa2-1d-VdM"/>
+                            <constraint firstItem="EC1-uE-6AT" firstAttribute="leading" secondItem="S1K-aE-es2" secondAttribute="leading" id="aTN-8V-xMI"/>
                             <constraint firstItem="DXa-bs-BnH" firstAttribute="centerX" secondItem="S1K-aE-es2" secondAttribute="centerX" id="b3B-VT-RF0"/>
                             <constraint firstItem="NWv-6r-emS" firstAttribute="width" secondItem="DXa-bs-BnH" secondAttribute="width" id="fOM-eo-zhe"/>
                             <constraint firstItem="M21-oy-RQu" firstAttribute="width" secondItem="DXa-bs-BnH" secondAttribute="width" id="gKA-tS-vvc"/>
+                            <constraint firstAttribute="trailing" secondItem="EC1-uE-6AT" secondAttribute="trailing" id="mrX-IM-jjP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pQA-3C-oMQ"/>
+                    <connections>
+                        <outlet property="imageView" destination="EC1-uE-6AT" id="INZ-aZ-QNe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hlb-jo-bKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1437.5999999999999" y="-630.13493253373315"/>
+            <point key="canvasLocation" x="1436.2318840579712" y="-630.16304347826087"/>
         </scene>
     </scenes>
 </document>
