@@ -292,7 +292,13 @@
                             <constraint firstItem="r1Z-OJ-nfv" firstAttribute="centerX" secondItem="HSj-DG-h18" secondAttribute="centerX" id="tuF-ba-N8d"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bLX-eY-eRl"/>
+                    <navigationItem key="navigationItem" id="bLX-eY-eRl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ba7-g6-JGl">
+                            <connections>
+                                <action selector="addPhoto:" destination="4uJ-ko-y92" id="TdR-sC-Cts"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dayField" destination="nbi-Yr-ieo" id="UZt-3s-4d1"/>
                         <outlet property="firstNameField" destination="1bZ-G3-xJP" id="7dz-uH-Bcg"/>
