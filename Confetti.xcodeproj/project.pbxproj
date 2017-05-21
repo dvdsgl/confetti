@@ -10,6 +10,7 @@
 		006F3C241EBFA9FF005D0EFD /* RoundRectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006F3C231EBFA9FF005D0EFD /* RoundRectangleButton.swift */; };
 		4CE7AAF76EAB2CB4A8637F11 /* Pods_Confetti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE7682F3E4A76FA241467F4 /* Pods_Confetti.framework */; };
 		6320BFFE1ED0E9C300F27446 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637523601ED0E2F100DF8F5A /* UserViewModel.swift */; };
+		6320C0001ED1212B00F27446 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6320BFFF1ED1212B00F27446 /* CreateEventViewController.swift */; };
 		63A446201EC50CAA00472ECC /* ConfettiMachineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A4461F1EC50CAA00472ECC /* ConfettiMachineView.swift */; };
 		63A8980E1EC13EEB00D16214 /* secret_garden.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63A8980D1EC13EEB00D16214 /* secret_garden.otf */; };
 		63A899821EBE64A200C5FB04 /* ConfettiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A899791EBE64A200C5FB04 /* ConfettiKit.framework */; };
@@ -98,6 +99,7 @@
 		006F3C231EBFA9FF005D0EFD /* RoundRectangleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundRectangleButton.swift; sourceTree = "<group>"; };
 		0A41DBE0420DCA78EF793164 /* Pods-Confetti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Confetti.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Confetti/Pods-Confetti.debug.xcconfig"; sourceTree = "<group>"; };
 		2FE7682F3E4A76FA241467F4 /* Pods_Confetti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Confetti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6320BFFF1ED1212B00F27446 /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		6375235E1ED0E26000DF8F5A /* FirebaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseData.swift; sourceTree = "<group>"; };
 		637523601ED0E2F100DF8F5A /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = ConfettiKit/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
 		63A4461F1EC50CAA00472ECC /* ConfettiMachineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfettiMachineView.swift; path = Views/ConfettiMachineView.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				63C759CD1EBE5A2400939D7B /* MasterViewController.swift */,
 				63C759CF1EBE5A2400939D7B /* DetailViewController.swift */,
 				63BDA3521EC1596A0001EDBC /* LoginViewController.swift */,
+				6320BFFF1ED1212B00F27446 /* CreateEventViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				63C759D01EBE5A2400939D7B /* DetailViewController.swift in Sources */,
 				63C759CE1EBE5A2400939D7B /* MasterViewController.swift in Sources */,
 				63C759CC1EBE5A2400939D7B /* AppDelegate.swift in Sources */,
+				6320C0001ED1212B00F27446 /* CreateEventViewController.swift in Sources */,
 				6320BFFE1ED0E9C300F27446 /* UserViewModel.swift in Sources */,
 				63CE74861EBEB2C10018B77D /* CountdownLabel.swift in Sources */,
 			);

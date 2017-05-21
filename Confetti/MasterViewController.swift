@@ -10,10 +10,12 @@ class MasterViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         
-        navigationItem.rightBarButtonItem = addButton
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(insertNewObject(_:))
+        )
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log out",
                                                            style: .plain,
@@ -22,14 +24,10 @@ class MasterViewController: UITableViewController {
         getData()
     }
     
+    @IBAction func unwindToMain(segue: UIStoryboardSegue) {}
+    
     func getData() {
         let user = UserViewModel.current
-        
-        user.addEvent(Event(
-            person: Person(firstName: "David"),
-            occasion: .birthday(month: 3, day: 25, year: 1986)
-        ))
-
         user.getEvents { events in
             let viewModels = events.map { EventViewModel.fromEvent($0) }
             self.objects = viewModels.sorted(by: { $0.daysAway < $1.daysAway })
@@ -49,12 +47,16 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
+        performSegue(withIdentifier: "newEvent", sender: self)
     }
 
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
+        guard let identifier = segue.identifier else { return }
+        
+        switch identifier {
+        case "showDetail":
             if let indexPath = tableView.indexPathForSelectedRow {
                 let object = objects[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
@@ -62,6 +64,10 @@ class MasterViewController: UITableViewController {
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
+        case "newEvent":
+            return
+        default:
+            return
         }
     }
 

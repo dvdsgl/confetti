@@ -21,7 +21,7 @@
         <scene sceneID="pY4-Hu-kfo">
             <objects>
                 <navigationController storyboardIdentifier="masterViewController" title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -36,7 +36,7 @@
         <!--Login-->
         <scene sceneID="UXf-d2-KY3">
             <objects>
-                <viewController title="Login" id="cYo-MV-K1n" customClass="LoginViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login" automaticallyAdjustsScrollViewInsets="NO" id="cYo-MV-K1n" customClass="LoginViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5jo-T2-61j"/>
                         <viewControllerLayoutGuide type="bottom" id="O3G-0Z-9Ap"/>
@@ -212,12 +212,112 @@
                     <navigationItem key="navigationItem" title="Confetti" id="Zdf-7t-Un8"/>
                     <connections>
                         <segue destination="7Uy-fK-Dt4" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToLoginWithSegue:" id="ODS-ol-8NA"/>
+                        <segue destination="iJ2-Sx-IXH" kind="presentation" identifier="newEvent" id="1zp-5I-xhP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
                 <exit id="7Uy-fK-Dt4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="708" y="-630.13493253373315"/>
+        </scene>
+        <!--Add Birthday-->
+        <scene sceneID="zOx-Np-7Om">
+            <objects>
+                <viewController title="Add Birthday" id="4uJ-ko-y92" customClass="CreateEventViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bho-Wc-RNk"/>
+                        <viewControllerLayoutGuide type="bottom" id="p1r-sd-IuA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HSj-DG-h18">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="firstName" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1bZ-G3-xJP">
+                                <rect key="frame" x="20" y="84" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="month" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lL6-QE-3W3">
+                                <rect key="frame" x="20" y="134" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nbi-Yr-ieo">
+                                <rect key="frame" x="20" y="184" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="year (optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lnU-IX-qaI">
+                                <rect key="frame" x="20" y="234" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hMv-MO-Gkj">
+                                <rect key="frame" x="102" y="304" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1Z-OJ-nfv" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                <rect key="frame" x="20" y="304" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="wuM-Vw-Wmg"/>
+                                </constraints>
+                                <state key="normal" title="Create Event"/>
+                                <connections>
+                                    <action selector="createEvent:" destination="4uJ-ko-y92" eventType="touchUpInside" id="zgj-KZ-bnX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="nbi-Yr-ieo" secondAttribute="trailing" id="6CL-dd-kdp"/>
+                            <constraint firstItem="lL6-QE-3W3" firstAttribute="top" secondItem="1bZ-G3-xJP" secondAttribute="bottom" constant="20" id="79C-rl-B8p"/>
+                            <constraint firstItem="lnU-IX-qaI" firstAttribute="leading" secondItem="HSj-DG-h18" secondAttribute="leadingMargin" id="O4k-IB-PEG"/>
+                            <constraint firstItem="r1Z-OJ-nfv" firstAttribute="leading" secondItem="HSj-DG-h18" secondAttribute="leadingMargin" id="SB8-Tw-zbN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="r1Z-OJ-nfv" secondAttribute="trailing" id="UHJ-HV-w1p"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1bZ-G3-xJP" secondAttribute="trailing" id="VCD-Qd-QAr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lL6-QE-3W3" secondAttribute="trailing" id="VsQ-2Q-C3y"/>
+                            <constraint firstItem="1bZ-G3-xJP" firstAttribute="leading" secondItem="HSj-DG-h18" secondAttribute="leadingMargin" id="W8i-g5-LQS"/>
+                            <constraint firstItem="1bZ-G3-xJP" firstAttribute="top" secondItem="Bho-Wc-RNk" secondAttribute="bottom" constant="20" id="aXr-gM-bHg"/>
+                            <constraint firstItem="lnU-IX-qaI" firstAttribute="top" secondItem="nbi-Yr-ieo" secondAttribute="bottom" constant="20" id="j65-8Y-fG9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lnU-IX-qaI" secondAttribute="trailing" id="lBW-0c-jEu"/>
+                            <constraint firstItem="r1Z-OJ-nfv" firstAttribute="top" secondItem="lnU-IX-qaI" secondAttribute="bottom" constant="40" id="oLf-3o-JuN"/>
+                            <constraint firstItem="nbi-Yr-ieo" firstAttribute="top" secondItem="lL6-QE-3W3" secondAttribute="bottom" constant="20" id="sOE-7g-Wjy"/>
+                            <constraint firstItem="lL6-QE-3W3" firstAttribute="leading" secondItem="HSj-DG-h18" secondAttribute="leadingMargin" id="sov-bC-prO"/>
+                            <constraint firstItem="nbi-Yr-ieo" firstAttribute="leading" secondItem="HSj-DG-h18" secondAttribute="leadingMargin" id="tex-z1-poK"/>
+                            <constraint firstItem="r1Z-OJ-nfv" firstAttribute="centerX" secondItem="HSj-DG-h18" secondAttribute="centerX" id="tuF-ba-N8d"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bLX-eY-eRl"/>
+                    <connections>
+                        <outlet property="dayField" destination="nbi-Yr-ieo" id="UZt-3s-4d1"/>
+                        <outlet property="firstNameField" destination="1bZ-G3-xJP" id="7dz-uH-Bcg"/>
+                        <outlet property="monthField" destination="lL6-QE-3W3" id="K0q-8w-JfY"/>
+                        <outlet property="yearField" destination="lnU-IX-qaI" id="0Zo-PP-VRg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8gO-oZ-6kF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1410.144927536232" y="84.782608695652186"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GtO-yN-T2E">
+            <objects>
+                <navigationController id="iJ2-Sx-IXH" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="I7c-Xa-sbJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4uJ-ko-y92" kind="relationship" relationship="rootViewController" id="GYU-ir-n23"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wgu-bK-Sde" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="707" y="85"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="9oV-9S-hYP">
