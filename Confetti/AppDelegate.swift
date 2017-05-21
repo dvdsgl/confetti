@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func skipLogin(currentUser _: User) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier :"masterViewController")
+        let viewController = storyboard.instantiateViewController(withIdentifier :"loggedInViewController")
         window!.rootViewController = viewController
     }
 }
