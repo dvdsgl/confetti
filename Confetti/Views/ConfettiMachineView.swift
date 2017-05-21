@@ -45,7 +45,7 @@ class ConfettiMachineView: UIView {
             if isRunning {
                 emitter.emitterCells!.forEach { $0.yAcceleration = 10 }
                 emitter.lifetime = 100
-                emitter.birthRate = 5
+                emitter.birthRate = 2
                 emitter.beginTime = CACurrentMediaTime()
             } else {
                 emitter.emitterCells!.forEach { $0.yAcceleration = 3000 }
