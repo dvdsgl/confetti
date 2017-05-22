@@ -327,7 +327,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VKJ-Xz-huh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o1d-QN-1ON" customClass="AddButton" customModule="Confetti" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.99607843137254903" green="0.0039215686274509803" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="36"/>
