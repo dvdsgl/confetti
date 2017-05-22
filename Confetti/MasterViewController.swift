@@ -11,12 +11,6 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .add,
-            target: self,
-            action: #selector(insertNewObject(_:))
-        )
-        
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log out",
                                                            style: .plain,
                                                            target: self,
@@ -44,10 +38,6 @@ class MasterViewController: UITableViewController {
     func logOut(_ sender: Any) {
         try! Auth.auth().signOut()
         self.performSegue(withIdentifier: "unwindToLogin", sender: self)
-    }
-
-    func insertNewObject(_ sender: Any) {
-        performSegue(withIdentifier: "newEvent", sender: self)
     }
 
     // MARK: - Segues

@@ -141,7 +141,7 @@
                                 <rect key="frame" x="0.0" y="22" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="79.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stuart Bray" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jud-hQ-N8I">
@@ -213,7 +213,6 @@
                     <navigationItem key="navigationItem" title="Confetti" id="Zdf-7t-Un8"/>
                     <connections>
                         <segue destination="7Uy-fK-Dt4" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToLoginWithSegue:" id="ODS-ol-8NA"/>
-                        <segue destination="iJ2-Sx-IXH" kind="presentation" identifier="newEvent" id="1zp-5I-xhP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -308,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gO-oZ-6kF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1410.144927536232" y="84.782608695652186"/>
+            <point key="canvasLocation" x="-246" y="1039"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="kt8-yC-BI7">
@@ -320,11 +319,23 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <outlet property="addEventButton" destination="o1d-QN-1ON" id="IA4-3p-4ez"/>
                         <segue destination="RMx-3f-FxP" kind="relationship" relationship="viewControllers" id="Pjk-wS-AW8"/>
                         <segue destination="3EY-3T-EnG" kind="relationship" relationship="viewControllers" id="R22-ee-Qcb"/>
+                        <segue destination="iJ2-Sx-IXH" kind="presentation" identifier="newEvent" id="YiM-zk-U8R"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VKJ-Xz-huh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o1d-QN-1ON" customClass="AddButton" customModule="Confetti" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.99607843137254903" green="0.0039215686274509803" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="36"/>
+                    <state key="normal" title="+"/>
+                    <connections>
+                        <action selector="addEvent:" destination="eE6-yN-dK4" eventType="touchUpInside" id="cWD-OR-o4T"/>
+                    </connections>
+                </button>
             </objects>
             <point key="canvasLocation" x="-1042" y="-58"/>
         </scene>
@@ -345,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVp-r4-Ns5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-65" y="771"/>
+            <point key="canvasLocation" x="-39" y="47"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GtO-yN-T2E">
@@ -361,7 +372,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgu-bK-Sde" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="707" y="85"/>
+            <point key="canvasLocation" x="-1042" y="1040"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="9oV-9S-hYP">

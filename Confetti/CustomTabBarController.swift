@@ -12,20 +12,24 @@ import UIKit
 import ConfettiKit
 
 class CustomTabBarController: UITabBarController {
+    
+    let size = CGFloat(60)
+    
+    @IBOutlet var addEventButton: UIButton!
+    
+    @IBAction func addEvent(_ sender: Any) {
+        performSegue(withIdentifier: "newEvent", sender: self)
+    }
+    
     override func viewDidLoad() {
-        let butt = UIView(frame: CGRect(x: 0, y: -20, width: 50, height: 50))
+        addEventButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(addEventButton)
         
-        butt.backgroundColor = Colors.pink
-        butt.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(butt)
-
         view.addConstraints([
-            NSLayoutConstraint(item: butt, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: butt, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: -10),
-            NSLayoutConstraint(item: butt, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 50),
-            NSLayoutConstraint(item: butt, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 50),
+            NSLayoutConstraint(item: addEventButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: addEventButton, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: -6),
+            NSLayoutConstraint(item: addEventButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: size),
+            NSLayoutConstraint(item: addEventButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: size),
         ])
-        
-        view.bringSubview(toFront: butt)
     }
 }
