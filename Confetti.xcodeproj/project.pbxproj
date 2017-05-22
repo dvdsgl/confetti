@@ -28,6 +28,7 @@
 		63C759D81EBE5A2400939D7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C759D61EBE5A2400939D7B /* LaunchScreen.storyboard */; };
 		63C759E31EBE5A2400939D7B /* ConfettiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C759E21EBE5A2400939D7B /* ConfettiTests.swift */; };
 		63C759EE1EBE5A2400939D7B /* ConfettiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C759ED1EBE5A2400939D7B /* ConfettiUITests.swift */; };
+		63CE455B1ED36358000B4979 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE455A1ED36358000B4979 /* CustomTabBarController.swift */; };
 		63CE74841EBEAB4F0018B77D /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE74831EBEAB4F0018B77D /* EventTableViewCell.swift */; };
 		63CE74861EBEB2C10018B77D /* CountdownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE74851EBEB2C10018B77D /* CountdownLabel.swift */; };
 		63FEA7691ED0E8ED00F994B7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE74811EBEA5690018B77D /* Colors.swift */; };
@@ -128,6 +129,7 @@
 		63C759E91EBE5A2400939D7B /* ConfettiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConfettiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C759ED1EBE5A2400939D7B /* ConfettiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiUITests.swift; sourceTree = "<group>"; };
 		63C759EF1EBE5A2400939D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63CE455A1ED36358000B4979 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		63CE74811EBEA5690018B77D /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		63CE74831EBEAB4F0018B77D /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		63CE74851EBEB2C10018B77D /* CountdownLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownLabel.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 		63FB40E31EC16EF800BC37A4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				63CE455A1ED36358000B4979 /* CustomTabBarController.swift */,
 				63C759CD1EBE5A2400939D7B /* MasterViewController.swift */,
 				63C759CF1EBE5A2400939D7B /* DetailViewController.swift */,
 				63BDA3521EC1596A0001EDBC /* LoginViewController.swift */,
@@ -679,6 +682,7 @@
 				006F3C241EBFA9FF005D0EFD /* RoundRectangleButton.swift in Sources */,
 				63CE74841EBEAB4F0018B77D /* EventTableViewCell.swift in Sources */,
 				63C759D01EBE5A2400939D7B /* DetailViewController.swift in Sources */,
+				63CE455B1ED36358000B4979 /* CustomTabBarController.swift in Sources */,
 				63C759CE1EBE5A2400939D7B /* MasterViewController.swift in Sources */,
 				63C759CC1EBE5A2400939D7B /* AppDelegate.swift in Sources */,
 				6320C0001ED1212B00F27446 /* CreateEventViewController.swift in Sources */,
