@@ -494,10 +494,13 @@
         </scene>
     </scenes>
     <resources>
+<<<<<<< HEAD
         <image name="smile_icon" width="27" height="27"/>
         <image name="stu" width="2048" height="1367"/>
 
         <image name="AddButton" width="54" height="54"/>
+=======
+>>>>>>> f7203b2b27a07af3f26d75fbd68189837eccd3db
         <image name="AddButton" width="54" height="54"/>
     </resources>
 </document>
