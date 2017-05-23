@@ -10,6 +10,7 @@ class MasterViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
+        navigationController?.isNavigationBarHidden = true
     }
         
     override func viewDidLoad() {
