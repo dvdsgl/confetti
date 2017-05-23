@@ -7,6 +7,10 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [EventViewModel]()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
