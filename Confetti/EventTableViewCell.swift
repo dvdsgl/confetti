@@ -12,7 +12,7 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var countdown: CountdownLabel!
     @IBOutlet weak var descriptionLabel: UILabel!
 
-    public static let defaultHeight: CGFloat = 80;
+    public static let defaultHeight: CGFloat = 70;
 
     struct AvatarConfig: AvatarImageViewConfiguration {
         var shape: Shape = .circle
