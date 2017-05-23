@@ -353,27 +353,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="kHR-Sk-qcl">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="305"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="352"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stu" highlightedImage="stu" translatesAutoresizingMaskIntoConstraints="NO" id="b2d-36-1lA" customClass="FRStretchImageView" customModule="FRStretchImageView">
-                                    <rect key="frame" x="0.0" y="20" width="414" height="231"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stu" highlightedImage="stu" translatesAutoresizingMaskIntoConstraints="NO" id="b2d-36-1lA" customClass="FRStretchImageView" customModule="FRStretchImageView">
+                                    <rect key="frame" x="0.0" y="20" width="414" height="312"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="231" id="w3C-Dk-2bO"/>
+                                        <constraint firstAttribute="height" constant="312" id="MYB-DY-nZI"/>
                                     </constraints>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="b2d-36-1lA" firstAttribute="top" secondItem="kHR-Sk-qcl" secondAttribute="top" constant="20" id="Naj-PS-VrJ"/>
+                                <constraint firstItem="b2d-36-1lA" firstAttribute="top" secondItem="kHR-Sk-qcl" secondAttribute="top" constant="20" symbolic="YES" id="Naj-PS-VrJ"/>
                                 <constraint firstItem="b2d-36-1lA" firstAttribute="leading" secondItem="kHR-Sk-qcl" secondAttribute="leading" id="aTd-Mg-fh1"/>
                                 <constraint firstAttribute="trailing" secondItem="b2d-36-1lA" secondAttribute="trailing" id="jsC-pl-WCW"/>
-                                <constraint firstAttribute="bottom" secondItem="b2d-36-1lA" secondAttribute="bottom" constant="54" id="u3d-tN-elq"/>
+                                <constraint firstAttribute="bottom" secondItem="b2d-36-1lA" secondAttribute="bottom" constant="20" symbolic="YES" id="u3d-tN-elq"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" id="UiG-pk-Lew">
-                                <rect key="frame" x="0.0" y="333" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="380" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UiG-pk-Lew" id="zv6-aY-fhf">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -494,10 +494,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AddButton" width="54" height="54"/>
         <image name="smile_icon" width="27" height="27"/>
         <image name="stu" width="2048" height="1367"/>
-
-        <image name="AddButton" width="54" height="54"/>
-        <image name="AddButton" width="54" height="54"/>
     </resources>
 </document>
