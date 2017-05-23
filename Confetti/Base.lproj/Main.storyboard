@@ -291,7 +291,12 @@
                             <constraint firstItem="r1Z-OJ-nfv" firstAttribute="centerX" secondItem="HSj-DG-h18" secondAttribute="centerX" id="tuF-ba-N8d"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bLX-eY-eRl">
+                    <navigationItem key="navigationItem" title="Add Event" id="bLX-eY-eRl">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="j2U-ns-wmI">
+                            <connections>
+                                <segue destination="e8L-uB-gkM" kind="unwind" unwindAction="unwindToMainWithSegue:" id="Nj3-RI-eqQ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ba7-g6-JGl">
                             <connections>
                                 <action selector="addPhoto:" destination="4uJ-ko-y92" id="TdR-sC-Cts"/>
@@ -307,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gO-oZ-6kF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-246" y="1039"/>
+            <point key="canvasLocation" x="-39" y="821"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="kt8-yC-BI7">
@@ -326,12 +331,12 @@
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VKJ-Xz-huh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o1d-QN-1ON" customClass="AddButton" customModule="Confetti" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                <exit id="e8L-uB-gkM" userLabel="Exit" sceneMemberID="exit"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o1d-QN-1ON">
+                    <rect key="frame" x="0.0" y="0.0" width="54" height="54"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.99607843137254903" green="0.0039215686274509803" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="36"/>
-                    <state key="normal" title="+"/>
+                    <state key="normal" image="AddButton"/>
                     <connections>
                         <action selector="addEvent:" destination="eE6-yN-dK4" eventType="touchUpInside" id="cWD-OR-o4T"/>
                     </connections>
@@ -372,7 +377,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgu-bK-Sde" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1042" y="1040"/>
+            <point key="canvasLocation" x="-1042" y="821"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="9oV-9S-hYP">
@@ -455,4 +460,7 @@
             <point key="canvasLocation" x="1436.2318840579712" y="-630.16304347826087"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AddButton" width="54" height="54"/>
+    </resources>
 </document>
