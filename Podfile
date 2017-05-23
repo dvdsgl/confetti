@@ -20,6 +20,8 @@ target 'Confetti' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  
+  pod "FRStretchImageView"
 end
 
 target 'ConfettiKit' do
