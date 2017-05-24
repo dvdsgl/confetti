@@ -233,12 +233,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Confetti" id="Zdf-7t-Un8"/>
-                    <connections>
-                        <segue destination="7Uy-fK-Dt4" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToLoginWithSegue:" id="ODS-ol-8NA"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
-                <exit id="7Uy-fK-Dt4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="708" y="-630.13493253373315"/>
         </scene>
@@ -384,6 +380,16 @@
                                         <constraint firstAttribute="height" constant="312" id="MYB-DY-nZI"/>
                                     </constraints>
                                 </imageView>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nlc-u6-nRk">
+                                    <rect key="frame" x="18" y="37" width="93" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Log out">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <segue destination="tfX-tQ-fMw" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToLoginWithSegue:" id="15W-Ly-ov1"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -415,6 +421,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkh-0C-HgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tfX-tQ-fMw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-39.130434782608695" y="149.18478260869566"/>
         </scene>
