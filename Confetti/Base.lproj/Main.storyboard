@@ -58,7 +58,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <color key="tintColor" red="0.01176470588" green="0.60392156860000001" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Login">
+                                        <state key="normal" title="Login with Facebook">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -70,10 +70,28 @@
                                             <action selector="loginTapped:" destination="cYo-MV-K1n" eventType="touchUpInside" id="GRK-9r-fwK"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fM6-Iw-4D0" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                        <rect key="frame" x="77" y="229" width="260" height="50"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <color key="tintColor" red="0.01176470588" green="0.60392156860000001" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Login Anonymously"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginAnonymously:" destination="cYo-MV-K1n" eventType="touchUpInside" id="PIt-R6-5lY"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="fM6-Iw-4D0" firstAttribute="top" secondItem="gXM-wy-16E" secondAttribute="bottom" constant="20" id="7jU-7M-2nv"/>
+                                    <constraint firstItem="fM6-Iw-4D0" firstAttribute="width" secondItem="gXM-wy-16E" secondAttribute="width" id="GWJ-EV-QNK"/>
                                     <constraint firstItem="gXM-wy-16E" firstAttribute="centerX" secondItem="kPP-I7-M0V" secondAttribute="centerX" id="QFY-kX-Ipy"/>
+                                    <constraint firstItem="fM6-Iw-4D0" firstAttribute="height" secondItem="gXM-wy-16E" secondAttribute="height" id="hQI-Nj-6Oa"/>
+                                    <constraint firstItem="fM6-Iw-4D0" firstAttribute="centerX" secondItem="gXM-wy-16E" secondAttribute="centerX" id="j00-57-LDk"/>
                                     <constraint firstItem="gXM-wy-16E" firstAttribute="centerY" secondItem="kPP-I7-M0V" secondAttribute="centerY" id="vtO-mG-V6d"/>
                                 </constraints>
                             </view>

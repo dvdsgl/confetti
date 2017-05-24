@@ -28,9 +28,11 @@ public class UserViewModel {
     private init() {
         db = Database.database().reference()
         
-        userNode.updateChildValues([
-            "email": userAuth.email!
-        ])
+        var user = [AnyHashable: Any]()
+        if let email = userAuth.email {
+            user["email"] = email
+        }
+        userNode.updateChildValues(user)
     }
     
     public func getEvents(_ success: @escaping ([Event]) -> ()) {
