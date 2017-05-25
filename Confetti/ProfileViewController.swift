@@ -13,9 +13,6 @@ import FRStretchImageView
 import FirebaseAuth
 import Firebase
 
-
-import Firebase
-
 class ProfileViewController : UITableViewController {
     
     @IBOutlet var profileTableView: UITableView!
@@ -48,7 +45,7 @@ class ProfileViewController : UITableViewController {
                 let photoUrl = URL(string: "https://graph.facebook.com/" + facebookUserId + "/picture?height=500")
                 self.profileImage.sd_setImage(with: photoUrl)
             } else {
-                return
+                self.profileImage.image = #imageLiteral(resourceName: "stu")
             }
         }
         // [END auth_listener]
