@@ -98,7 +98,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1az-L2-6eU" userLabel="Top Container">
                                 <rect key="frame" x="0.0" y="20" width="414" height="368"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAE-gH-Zt7" customClass="ConfettiMachineView" customModule="Confetti" customModuleProvider="target">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAE-gH-Zt7" customClass="ConfettiMachineView" customModule="Confetti" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
                                         <color key="backgroundColor" red="0.1215686275" green="0.83529411760000005" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <userDefinedRuntimeAttributes>
