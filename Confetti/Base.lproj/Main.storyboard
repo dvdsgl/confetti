@@ -50,7 +50,7 @@
                                 <rect key="frame" x="0.0" y="368" width="414" height="368"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXM-wy-16E" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="77" y="159" width="260" height="50"/>
+                                        <rect key="frame" x="77" y="89" width="260" height="50"/>
                                         <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="260" id="Abt-eH-IuX"/>
@@ -71,17 +71,31 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fM6-Iw-4D0" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="77" y="229" width="260" height="50"/>
+                                        <rect key="frame" x="77" y="159" width="260" height="50"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <color key="tintColor" red="0.01176470588" green="0.60392156860000001" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Login Anonymously"/>
+                                        <state key="normal" title="I'd rather not"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.96621346473693848" green="0.28211515196803294" blue="0.23315623484236064" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="loginAnonymously:" destination="cYo-MV-K1n" eventType="touchUpInside" id="PIt-R6-5lY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFA-6E-6nD" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                        <rect key="frame" x="77" y="229" width="260" height="50"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <color key="tintColor" red="0.01176470588" green="0.60392156860000001" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Maybe later"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                <color key="value" red="0.62522793932170162" green="0.37474363635089714" blue="0.96621346473693848" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginAnonymously:" destination="cYo-MV-K1n" eventType="touchUpInside" id="9ru-bz-tAM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -89,14 +103,18 @@
                                 <constraints>
                                     <constraint firstItem="fM6-Iw-4D0" firstAttribute="top" secondItem="gXM-wy-16E" secondAttribute="bottom" constant="20" id="7jU-7M-2nv"/>
                                     <constraint firstItem="fM6-Iw-4D0" firstAttribute="width" secondItem="gXM-wy-16E" secondAttribute="width" id="GWJ-EV-QNK"/>
+                                    <constraint firstItem="sFA-6E-6nD" firstAttribute="width" secondItem="gXM-wy-16E" secondAttribute="width" id="Mib-Ac-hzG"/>
+                                    <constraint firstItem="sFA-6E-6nD" firstAttribute="top" secondItem="fM6-Iw-4D0" secondAttribute="bottom" constant="20" id="NpV-Hw-HMR"/>
+                                    <constraint firstItem="sFA-6E-6nD" firstAttribute="height" secondItem="gXM-wy-16E" secondAttribute="height" id="OHq-v9-e1t"/>
                                     <constraint firstItem="gXM-wy-16E" firstAttribute="centerX" secondItem="kPP-I7-M0V" secondAttribute="centerX" id="QFY-kX-Ipy"/>
+                                    <constraint firstItem="sFA-6E-6nD" firstAttribute="centerX" secondItem="gXM-wy-16E" secondAttribute="centerX" id="TqE-m8-ZSw"/>
+                                    <constraint firstItem="fM6-Iw-4D0" firstAttribute="centerY" secondItem="kPP-I7-M0V" secondAttribute="centerY" id="eam-Fg-MY1"/>
                                     <constraint firstItem="fM6-Iw-4D0" firstAttribute="height" secondItem="gXM-wy-16E" secondAttribute="height" id="hQI-Nj-6Oa"/>
                                     <constraint firstItem="fM6-Iw-4D0" firstAttribute="centerX" secondItem="gXM-wy-16E" secondAttribute="centerX" id="j00-57-LDk"/>
-                                    <constraint firstItem="gXM-wy-16E" firstAttribute="centerY" secondItem="kPP-I7-M0V" secondAttribute="centerY" id="vtO-mG-V6d"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1az-L2-6eU" userLabel="Top Container">
-                                <rect key="frame" x="0.0" y="20" width="414" height="368"/>
+                                <rect key="frame" x="0.0" y="-2" width="414" height="368"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAE-gH-Zt7" customClass="ConfettiMachineView" customModule="Confetti" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
@@ -129,11 +147,11 @@
                         <constraints>
                             <constraint firstItem="O3G-0Z-9Ap" firstAttribute="top" secondItem="kPP-I7-M0V" secondAttribute="bottom" id="H6c-dU-SjR"/>
                             <constraint firstItem="kPP-I7-M0V" firstAttribute="leading" secondItem="SLT-6B-ne5" secondAttribute="leading" id="IWj-vT-0sx"/>
+                            <constraint firstItem="1az-L2-6eU" firstAttribute="top" secondItem="5jo-T2-61j" secondAttribute="bottom" constant="-22" id="S73-eF-Xhn"/>
                             <constraint firstAttribute="trailing" secondItem="1az-L2-6eU" secondAttribute="trailing" id="TBk-ye-cCc"/>
                             <constraint firstItem="1az-L2-6eU" firstAttribute="leading" secondItem="SLT-6B-ne5" secondAttribute="leading" id="XDK-51-885"/>
                             <constraint firstItem="1az-L2-6eU" firstAttribute="height" secondItem="SLT-6B-ne5" secondAttribute="height" multiplier="0.5" id="Xbm-p1-YRU"/>
                             <constraint firstAttribute="trailing" secondItem="kPP-I7-M0V" secondAttribute="trailing" id="gcD-WN-TQf"/>
-                            <constraint firstItem="1az-L2-6eU" firstAttribute="top" secondItem="5jo-T2-61j" secondAttribute="bottom" id="qZO-o3-D9V"/>
                             <constraint firstItem="kPP-I7-M0V" firstAttribute="height" secondItem="SLT-6B-ne5" secondAttribute="height" multiplier="0.5" id="tDf-Uw-IBq"/>
                         </constraints>
                     </view>
