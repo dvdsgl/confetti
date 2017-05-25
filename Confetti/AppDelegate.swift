@@ -5,8 +5,9 @@ import FacebookCore
 import Firebase
 
 import MobileCenter
-import MobileCenterAnalytics
 import MobileCenterCrashes
+import MobileCenterAnalytics
+import MobileCenterDistribute
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         MSMobileCenter.start("9c903184-9f6f-44d8-b1b4-01750b951ece", withServices:[
             MSAnalytics.self,
-            MSCrashes.self
+            MSCrashes.self,
+            MSDistribute.self
         ])
         
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
