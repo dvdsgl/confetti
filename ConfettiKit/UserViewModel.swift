@@ -1,7 +1,9 @@
 import Foundation
 
 import ConfettiKit
+
 import Firebase
+import FirebasePerformance
 
 // TODO Figure out how to get this into ConfettiKit
 // I couldn't figure out how to link Firebase twice
@@ -26,13 +28,19 @@ public class UserViewModel {
     private init() {
         db = Database.database().reference()
         
-        userNode.updateChildValues([
-            "email": userAuth.email!
-        ])
+        var user = [AnyHashable: Any]()
+        if let email = userAuth.email {
+            user["email"] = email
+        }
+        userNode.updateChildValues(user)
     }
     
     public func getEvents(_ success: @escaping ([Event]) -> ()) {
+        let trace = Performance.startTrace(name: "UserViewModel.getEvents")
+        
         eventsNode.observe(.value, with: { snapshot in
+            trace?.stop()
+            
             var events = [Event]()
             for eventNode in snapshot.children.allObjects as! [DataSnapshot] {
                 if let eventDict = eventNode.value as? [String: Any?] {

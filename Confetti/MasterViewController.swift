@@ -7,14 +7,14 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [EventViewModel]()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+        navigationController?.isNavigationBarHidden = true
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log out",
-                                                           style: .plain,
-                                                           target: self,
-                                                           action: #selector(logOut(_:)))
         getData()
     }
     
@@ -33,11 +33,6 @@ class MasterViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func logOut(_ sender: Any) {
-        try! Auth.auth().signOut()
-        self.performSegue(withIdentifier: "unwindToLogin", sender: self)
     }
 
     // MARK: - Segues

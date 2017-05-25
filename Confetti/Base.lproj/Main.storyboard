@@ -20,7 +20,7 @@
         <!--Navigation-->
         <scene sceneID="pY4-Hu-kfo">
             <objects>
-                <navigationController storyboardIdentifier="masterViewController" title="Navigation" id="RMx-3f-FxP" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="masterViewController" title="Navigation" navigationBarHidden="YES" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="featured" id="LHy-zw-DkV"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -58,7 +58,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <color key="tintColor" red="0.01176470588" green="0.60392156860000001" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Login">
+                                        <state key="normal" title="Login with Facebook">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -70,10 +70,28 @@
                                             <action selector="loginTapped:" destination="cYo-MV-K1n" eventType="touchUpInside" id="GRK-9r-fwK"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fM6-Iw-4D0" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                        <rect key="frame" x="77" y="229" width="260" height="50"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <color key="tintColor" red="0.01176470588" green="0.60392156860000001" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Login Anonymously"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginAnonymously:" destination="cYo-MV-K1n" eventType="touchUpInside" id="PIt-R6-5lY"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="fM6-Iw-4D0" firstAttribute="top" secondItem="gXM-wy-16E" secondAttribute="bottom" constant="20" id="7jU-7M-2nv"/>
+                                    <constraint firstItem="fM6-Iw-4D0" firstAttribute="width" secondItem="gXM-wy-16E" secondAttribute="width" id="GWJ-EV-QNK"/>
                                     <constraint firstItem="gXM-wy-16E" firstAttribute="centerX" secondItem="kPP-I7-M0V" secondAttribute="centerX" id="QFY-kX-Ipy"/>
+                                    <constraint firstItem="fM6-Iw-4D0" firstAttribute="height" secondItem="gXM-wy-16E" secondAttribute="height" id="hQI-Nj-6Oa"/>
+                                    <constraint firstItem="fM6-Iw-4D0" firstAttribute="centerX" secondItem="gXM-wy-16E" secondAttribute="centerX" id="j00-57-LDk"/>
                                     <constraint firstItem="gXM-wy-16E" firstAttribute="centerY" secondItem="kPP-I7-M0V" secondAttribute="centerY" id="vtO-mG-V6d"/>
                                 </constraints>
                             </view>
@@ -131,14 +149,18 @@
         <!--Events-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Events" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Events" automaticallyAdjustsScrollViewInsets="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stu" id="dee-3I-Hhe" customClass="FRStretchImageView" customModule="FRStretchImageView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="80" id="WCw-Qf-5nD" customClass="EventTableViewCell" customModule="Confetti" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="22" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="302" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="79.666666666666671"/>
@@ -211,12 +233,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Confetti" id="Zdf-7t-Un8"/>
-                    <connections>
-                        <segue destination="7Uy-fK-Dt4" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToLoginWithSegue:" id="ODS-ol-8NA"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
-                <exit id="7Uy-fK-Dt4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="708" y="-630.13493253373315"/>
         </scene>
@@ -362,6 +380,16 @@
                                         <constraint firstAttribute="height" constant="312" id="MYB-DY-nZI"/>
                                     </constraints>
                                 </imageView>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nlc-u6-nRk">
+                                    <rect key="frame" x="18" y="37" width="93" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Log out">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <segue destination="tfX-tQ-fMw" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToLoginWithSegue:" id="15W-Ly-ov1"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -393,6 +421,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkh-0C-HgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tfX-tQ-fMw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-39.130434782608695" y="149.18478260869566"/>
         </scene>
@@ -425,7 +454,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXa-bs-BnH" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                <rect key="frame" x="77" y="432" width="260" height="50"/>
+                                <rect key="frame" x="77" y="388" width="260" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="KW3-3X-6t7"/>
                                     <constraint firstAttribute="height" constant="50" id="L6F-yK-zzb"/>
@@ -440,7 +469,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWv-6r-emS" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                <rect key="frame" x="77" y="502" width="260" height="50"/>
+                                <rect key="frame" x="77" y="458" width="260" height="50"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <color key="tintColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Message"/>
@@ -451,7 +480,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M21-oy-RQu" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                <rect key="frame" x="77" y="572" width="260" height="50"/>
+                                <rect key="frame" x="77" y="528" width="260" height="50"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <color key="tintColor" red="0.74901960784313726" green="0.37254901960784315" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="FaceTime"/>
@@ -462,7 +491,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EC1-uE-6AT" customClass="AvatarImageView" customModule="AvatarImageView">
-                                <rect key="frame" x="0.0" y="64" width="414" height="328"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="328"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

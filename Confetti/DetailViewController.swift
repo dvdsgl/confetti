@@ -39,6 +39,10 @@ class DetailViewController: UIViewController {
         update()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     func update() {
         if let event = detailItem?.event {
             imageView.dataSource = AvatarData(name: event.person.firstName)

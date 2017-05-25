@@ -11,8 +11,18 @@ import FirebaseAuth
 class LoginViewController: UIViewController {
     
     @IBAction func unwindToLogin(segue: UIStoryboardSegue) {}
+
+    @IBAction func loginAnonymously(_ sender: Any) {
+        Auth.auth().signInAnonymously() { (user, error) in
+            if let e = error {
+                return
+            } else {
+                self.performSegue(withIdentifier: "login", sender: self)
+            }
+        }
+    }
     
-    @IBAction func loginTapped(_ sender: Any) {        
+    @IBAction func loginTapped(_ sender: Any) {
         let loginManager = LoginManager()
         loginManager.logIn([.publicProfile, .email], viewController: self) { loginResult in
             switch loginResult {

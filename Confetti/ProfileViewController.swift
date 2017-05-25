@@ -14,6 +14,8 @@ import FirebaseAuth
 import Firebase
 
 
+import Firebase
+
 class ProfileViewController : UITableViewController {
     
     @IBOutlet var profileTableView: UITableView!
@@ -22,9 +24,10 @@ class ProfileViewController : UITableViewController {
     
     var handle: AuthStateDidChangeListenerHandle?
     
-    fileprivate var source : [String] = [
+    fileprivate var source = [
         "Name",
-        "Birthday"
+        "Birthday",
+        "Logout"
     ]
     
     override func viewDidLoad() {
@@ -62,6 +65,21 @@ class ProfileViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return source.count
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch source[indexPath.row] {
+        case "Logout":
+            logOut()
+            return
+        default:
+            return
+        }
+    }
+    
+    func logOut() {
+        try! Auth.auth().signOut()
+        performSegue(withIdentifier: "unwindToLogin", sender: self)
     }
     
 }
