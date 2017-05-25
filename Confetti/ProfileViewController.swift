@@ -41,7 +41,7 @@ class ProfileViewController : UITableViewController {
         // [START auth_listener]
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in            
             // Set user's facebook photo as the hero image
-            if let facebookUserId = Auth.auth().currentUser?.providerData[0].uid {
+            if let facebookUserId = Auth.auth().currentUser?.providerData.first?.uid {
                 let photoUrl = URL(string: "https://graph.facebook.com/" + facebookUserId + "/picture?height=500")
                 self.profileImage.sd_setImage(with: photoUrl)
             } else {
