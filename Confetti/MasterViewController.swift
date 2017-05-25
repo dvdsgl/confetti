@@ -3,8 +3,12 @@ import ConfettiKit
 
 import Firebase
 
+import FRStretchImageView
+
 class MasterViewController: UITableViewController {
 
+    @IBOutlet weak var heroImage: FRStretchImageView!
+    
     var detailViewController: DetailViewController? = nil
     var objects = [EventViewModel]()
     
@@ -16,6 +20,9 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
+        
+        // Setting FRStretchImageView
+        heroImage.stretchHeightWhenPulledBy(scrollView: tableView)
     }
     
     @IBAction func unwindToMain(segue: UIStoryboardSegue) {}
