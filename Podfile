@@ -11,6 +11,7 @@ target 'Confetti' do
 
   pod "AvatarImageView", '~> 2.0.3'
   pod "SDWebImage", '~> 4.0.0'
+  pod "FRStretchImageView"
 
   pod 'FacebookCore'
   pod 'FacebookLogin'
@@ -21,8 +22,10 @@ target 'Confetti' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Firebase/Performance'
-  
-  pod "FRStretchImageView"
+
+  pod 'MobileCenter'
+  pod 'MobileCenter/MobileCenterDistribute'
+
 end
 
 target 'ConfettiKit' do
