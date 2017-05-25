@@ -40,12 +40,16 @@ class ProfileViewController : UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         // [START auth_listener]
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in            
             // Set user's facebook photo as the hero image
-            let facebookUserId = Auth.auth().currentUser?.providerData[0].uid
-            let photoUrl = URL(string: "https://graph.facebook.com/" + facebookUserId! + "/picture?height=500")
-            self.profileImage.sd_setImage(with: photoUrl)
+            if let facebookUserId = Auth.auth().currentUser?.providerData[0].uid {
+                let photoUrl = URL(string: "https://graph.facebook.com/" + facebookUserId + "/picture?height=500")
+                self.profileImage.sd_setImage(with: photoUrl)
+            } else {
+                return
+            }
         }
         // [END auth_listener]
     }
