@@ -10,12 +10,17 @@ import Foundation
 import UIKit
 import ConfettiKit
 import FRStretchImageView
+import FirebaseAuth
+import Firebase
+
 
 class ProfileViewController : UITableViewController {
     
     @IBOutlet var profileTableView: UITableView!
 
     @IBOutlet weak var profileImage: FRStretchImageView!
+    
+    var handle: AuthStateDidChangeListenerHandle?
     
     fileprivate var source : [String] = [
         "Name",
@@ -28,6 +33,25 @@ class ProfileViewController : UITableViewController {
         
         // Setting FRStretchImageView
         profileImage.stretchHeightWhenPulledBy(scrollView: tableView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // [START auth_listener]
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in            
+            // Set user's facebook photo as the hero image
+            let facebookUserId = Auth.auth().currentUser?.providerData[0].uid
+            let photoUrl = URL(string: "https://graph.facebook.com/" + facebookUserId! + "/picture?height=500")
+            self.profileImage.sd_setImage(with: photoUrl)
+        }
+        // [END auth_listener]
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // [START remove_auth_listener]
+        Auth.auth().removeStateDidChangeListener(handle!)
+        // [END remove_auth_listener]
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
