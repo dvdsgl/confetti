@@ -493,7 +493,7 @@
 					};
 					63C759C71EBE5A2400939D7B = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = S4U8KSEA5Y;
+						DevelopmentTeam = W9D824R4EW;
 						ProvisioningStyle = Automatic;
 					};
 					63C759DD1EBE5A2400939D7B = {
@@ -940,7 +940,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S4U8KSEA5Y;
+				DEVELOPMENT_TEAM = W9D824R4EW;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Confetti/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -956,7 +956,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = S4U8KSEA5Y;
+				DEVELOPMENT_TEAM = W9D824R4EW;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Confetti/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
