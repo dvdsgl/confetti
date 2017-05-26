@@ -22,3 +22,5 @@ class ChooseContactViewController : UITableViewController {
         return objects.count
     }
 }
+
+

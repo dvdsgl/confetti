@@ -338,6 +338,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="4uJ-ko-y92" kind="show" id="jdi-BS-Kvy"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -370,7 +373,7 @@
         <!--Add Birthday-->
         <scene sceneID="zOx-Np-7Om">
             <objects>
-                <viewController title="Add Birthday" id="4uJ-ko-y92" customClass="CreateEventViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateEventViewController" title="Add Birthday" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4uJ-ko-y92" customClass="CreateEventViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bho-Wc-RNk"/>
                         <viewControllerLayoutGuide type="bottom" id="p1r-sd-IuA"/>
