@@ -17,9 +17,9 @@ class CustomTabBarController: UITabBarController {
     
     @IBOutlet var addEventButton: UIButton!
     
-    @IBAction func addEvent(_ sender: Any) {
-        performSegue(withIdentifier: "newEvent", sender: self)
-    }
+//    @IBAction func addEvent(_ sender: Any) {
+//        performSegue(withIdentifier: "newEvent", sender: self)
+//    }
     
     override func viewDidLoad() {
         addEventButton.translatesAutoresizingMaskIntoConstraints = false
