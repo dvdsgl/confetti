@@ -286,9 +286,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WDh-8T-5ok">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDh-8T-5ok">
                                 <rect key="frame" x="0.0" y="429" width="375" height="238"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJD-aQ-kCI">
                                         <rect key="frame" x="164" y="51" width="46" height="30"/>
@@ -309,13 +308,23 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q6x-HW-Ill">
+                            <view opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6x-HW-Ill">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="421"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WDh-8T-5ok" secondAttribute="trailing" id="8Qj-dr-kRS"/>
+                            <constraint firstItem="WDh-8T-5ok" firstAttribute="bottom" secondItem="egW-IT-DeN" secondAttribute="top" id="DL9-aD-jL2"/>
+                            <constraint firstItem="WDh-8T-5ok" firstAttribute="trailing" secondItem="Q6x-HW-Ill" secondAttribute="trailing" id="I6A-Kk-bxZ"/>
+                            <constraint firstItem="WDh-8T-5ok" firstAttribute="top" secondItem="Q6x-HW-Ill" secondAttribute="bottom" constant="8" id="MBa-hG-vQU"/>
+                            <constraint firstItem="WDh-8T-5ok" firstAttribute="top" secondItem="QkD-xh-tfj" secondAttribute="top" constant="429" id="MnV-8g-pFS"/>
+                            <constraint firstItem="WDh-8T-5ok" firstAttribute="top" secondItem="Q6x-HW-Ill" secondAttribute="bottom" constant="8" symbolic="YES" id="OLo-I0-Isj"/>
+                            <constraint firstItem="Q6x-HW-Ill" firstAttribute="top" secondItem="QkD-xh-tfj" secondAttribute="top" id="aeH-Wz-5YU"/>
+                            <constraint firstItem="WDh-8T-5ok" firstAttribute="leading" secondItem="QkD-xh-tfj" secondAttribute="leading" id="hRZ-vk-AWU"/>
+                            <constraint firstItem="WDh-8T-5ok" firstAttribute="leading" secondItem="Q6x-HW-Ill" secondAttribute="leading" id="zHS-s2-jPY"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pie-27-Y0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -330,9 +339,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="WyU-NA-0CN">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="qFJ-74-Fi2">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qFJ-74-Fi2" id="z5C-QD-h3q">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
