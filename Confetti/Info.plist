@@ -75,6 +75,8 @@
 			<false/>
 		</dict>
 	</dict>
+	<key>NSContactsUsageDescription</key>
+	<string>Used to add friends</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
