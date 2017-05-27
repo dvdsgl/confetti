@@ -331,38 +331,20 @@
             </objects>
             <point key="canvasLocation" x="-1042" y="809"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Choose Contact to Add-->
         <scene sceneID="lsw-dv-DEr">
             <objects>
-                <tableViewController id="XT7-mE-IrC" customClass="ChooseContactViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="XT7-mE-IrC" userLabel="Choose Contact to Add" customClass="ChooseContactViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nw8-LH-pTq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="WyU-NA-0CN">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="qFJ-74-Fi2">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qFJ-74-Fi2" id="z5C-QD-h3q">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="4uJ-ko-y92" kind="show" id="jdi-BS-Kvy"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="XT7-mE-IrC" id="Jti-Nq-NLb"/>
                             <outlet property="delegate" destination="XT7-mE-IrC" id="3Re-Eo-Eey"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="EWW-7H-bEe"/>
+                    <navigationItem key="navigationItem" title="Choose Contacts" id="EWW-7H-bEe"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZtD-3d-VHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
