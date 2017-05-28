@@ -15,22 +15,19 @@ class BaseTableViewController: UITableViewController {
     // MARK: - Types
     
     static let nibName = "TableCell"
-    static let tableViewCellIdentifier = "cellID"
+    static let tableViewCellIdentifier = "contactCell"
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nib = UINib(nibName: BaseTableViewController.nibName, bundle: nil)
-        
-        // Required if our subclasses are to use `dequeueReusableCellWithIdentifier(_:forIndexPath:)`.
-        tableView.register(nib, forCellReuseIdentifier: BaseTableViewController.tableViewCellIdentifier)
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: BaseTableViewController.tableViewCellIdentifier)
     }
     
     // MARK: - Configuration
     
     func configureCell(_ cell: UITableViewCell, forContact contact: CNContact) {
-        cell.textLabel?.text = contact.givenName
+        cell.textLabel?.text = contact.namePrefix + " " + contact.givenName + " " + contact.familyName + " " + contact.nameSuffix
     }
 }

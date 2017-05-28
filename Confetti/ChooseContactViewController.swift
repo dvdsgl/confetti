@@ -14,9 +14,24 @@ import ContactsUI
 class ChooseContactViewController : BaseTableViewController, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating {
 
     var contacts = [CNContact]()
+    var filteredContacts = [CNContact]()
     let contactStore = CNContactStore()
     
+    let keys = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
+                CNContactNamePrefixKey as CNKeyDescriptor,
+                CNContactNameSuffixKey as CNKeyDescriptor,
+                CNContactGivenNameKey as CNKeyDescriptor,
+                CNContactFamilyNameKey as CNKeyDescriptor,
+                CNContactOrganizationNameKey as CNKeyDescriptor,
+                CNContactBirthdayKey as CNKeyDescriptor,
+                CNContactImageDataKey as CNKeyDescriptor,
+                CNContactThumbnailImageDataKey as CNKeyDescriptor,
+                CNContactImageDataAvailableKey as CNKeyDescriptor,
+                CNContactPhoneNumbersKey as CNKeyDescriptor,
+                CNContactEmailAddressesKey as CNKeyDescriptor]
+    
     /********* Set Up Search Bar *********/
+    
     /// State restoration values.
     enum RestorationKeys : String {
         case viewControllerTitle
@@ -66,18 +81,13 @@ class ChooseContactViewController : BaseTableViewController, UISearchBarDelegate
         searchController.dimsBackgroundDuringPresentation = false // default is YES
         searchController.searchBar.delegate = self    // so we can monitor text changes + others
         
-        /*
-         Search is now just presenting a view controller. As such, normal view controller
-         presentation semantics apply. Namely that presentation will walk up the view controller
-         hierarchy until it finds the root view controller or one that defines a presentation context.
-         */
         definesPresentationContext = true
 
         /********* End Set Up Search Bar *********/
     }
     
     func getContacts() {
-        let keys = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName)]
+        
         let request = CNContactFetchRequest(keysToFetch: keys)
         
         do {
@@ -91,27 +101,6 @@ class ChooseContactViewController : BaseTableViewController, UISearchBarDelegate
             print("unable to fetch contacts")
         }
     }
-    
-    /*********** Original Code *********
-     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath as IndexPath)
-        
-        let contact = self.contacts[indexPath.row]
-        let formatter = CNContactFormatter()
-        
-        cell.textLabel?.text = formatter.string(from: contact)
-        cell.detailTextLabel?.text = contact.emailAddresses.first?.value as String?
-        
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
-    }
-     
-    *********** End Original Code *********/
-    
     
     /********* Set Up Search Bar *********/
     override func viewDidAppear(_ animated: Bool) {
@@ -157,79 +146,27 @@ class ChooseContactViewController : BaseTableViewController, UISearchBarDelegate
         //debugPrint("UISearchControllerDelegate invoked method: \(__FUNCTION__).")
     }
     
-    // MARK: - UISearchResultsUpdating
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        // Update the filtered array based on the search text.
-        let searchResults = contacts
-        
-        // Strip out all the leading and trailing spaces.
-        let whitespaceCharacterSet = CharacterSet.whitespaces
-        let strippedString = searchController.searchBar.text!.trimmingCharacters(in: whitespaceCharacterSet)
-        let searchItems = strippedString.components(separatedBy: " ") as [String]
-        
-        // Build all the "AND" expressions for each value in the searchString.
-        let andMatchPredicates: [NSPredicate] = searchItems.map { searchString in
-            // Each searchString creates an OR predicate for: name, yearIntroduced, introPrice.
-            //
-            // Example if searchItems contains "iphone 599 2007":
-            //      name CONTAINS[c] "iphone"
-            //      name CONTAINS[c] "599", yearIntroduced ==[c] 599, introPrice ==[c] 599
-            //      name CONTAINS[c] "2007", yearIntroduced ==[c] 2007, introPrice ==[c] 2007
-            //
-            var searchItemsPredicate = [NSPredicate]()
+    open func updateSearchResults(for searchController: UISearchController)
+    {
+        if let searchText = searchController.searchBar.text , searchController.isActive {
             
-            // Below we use NSExpression represent expressions in our predicates.
-            // NSPredicate is made up of smaller, atomic parts: two NSExpressions (a left-hand value and a right-hand value).
-            
-            // Name field matching.
-            let titleExpression = NSExpression(forKeyPath: "title")
-            let searchStringExpression = NSExpression(forConstantValue: searchString)
-            
-            let titleSearchComparisonPredicate = NSComparisonPredicate(leftExpression: titleExpression, rightExpression: searchStringExpression, modifier: .direct, type: .contains, options: .caseInsensitive)
-            
-            searchItemsPredicate.append(titleSearchComparisonPredicate)
-            
-            let numberFormatter = NumberFormatter()
-            numberFormatter.numberStyle = .none
-            numberFormatter.formatterBehavior = .default
-            
-            let targetNumber = numberFormatter.number(from: searchString)
-            
-            // `searchString` may fail to convert to a number.
-            if targetNumber != nil {
-                // Use `targetNumberExpression` in both the following predicates.
-                let targetNumberExpression = NSExpression(forConstantValue: targetNumber!)
-                
-                // `yearIntroduced` field matching.
-                let yearIntroducedExpression = NSExpression(forKeyPath: "yearIntroduced")
-                let yearIntroducedPredicate = NSComparisonPredicate(leftExpression: yearIntroducedExpression, rightExpression: targetNumberExpression, modifier: .direct, type: .equalTo, options: .caseInsensitive)
-                
-                searchItemsPredicate.append(yearIntroducedPredicate)
-                
-                // `price` field matching.
-                let lhs = NSExpression(forKeyPath: "introPrice")
-                
-                let finalPredicate = NSComparisonPredicate(leftExpression: lhs, rightExpression: targetNumberExpression, modifier: .direct, type: .equalTo, options: .caseInsensitive)
-                
-                searchItemsPredicate.append(finalPredicate)
+            let predicate: NSPredicate
+            if searchText.characters.count > 0 {
+                predicate = CNContact.predicateForContacts(matchingName: searchText)
+            } else {
+                predicate = CNContact.predicateForContactsInContainer(withIdentifier: contactStore.defaultContainerIdentifier())
             }
             
-            // Add this OR predicate to our master AND predicate.
-            let orMatchPredicate = NSCompoundPredicate(orPredicateWithSubpredicates:searchItemsPredicate)
-            
-            return orMatchPredicate
+            let store = CNContactStore()
+            do {
+                filteredContacts = try store.unifiedContacts(matching: predicate, keysToFetch: keys)
+                resultsTableController.filteredContacts = filteredContacts
+                resultsTableController.tableView.reloadData()
+            }
+            catch {
+                print("Error!")
+            }
         }
-        
-        // Match up the fields of the Product object.
-        let finalCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: andMatchPredicates)
-        
-        let filteredResults = searchResults.filter { finalCompoundPredicate.evaluate(with: $0) }
-        
-        // Hand over the filtered results to our search results table.
-        let resultsController = searchController.searchResultsController as! ResultsTableController
-        resultsController.filteredContacts = filteredResults
-        resultsController.tableView.reloadData()
     }
     
     // MARK: - UITableViewDataSource
@@ -239,8 +176,7 @@ class ChooseContactViewController : BaseTableViewController, UISearchBarDelegate
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewController.tableViewCellIdentifier, for: indexPath)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableViewController.tableViewCellIdentifier, for: indexPath)
         
         let contact = contacts[indexPath.row]
         configureCell(cell, forContact: contact)
