@@ -56,7 +56,7 @@ class ChooseContactViewController : BaseTableViewController, UISearchBarDelegate
     /// Search controller to help us with filtering.
     var searchController: UISearchController!
     
-    /// Secondary search results table view.
+    /// Secondary search results table view. 
     var resultsTableController: ResultsTableController!
     
     /// Restoration state for UISearchController

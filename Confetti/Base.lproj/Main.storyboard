@@ -287,11 +287,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDh-8T-5ok">
-                                <rect key="frame" x="0.0" y="312" width="375" height="355"/>
+                                <rect key="frame" x="0.0" y="357" width="375" height="310"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="If0-NL-f3t" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="169" y="311" width="36" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="If0-NL-f3t" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                        <rect key="frame" x="169" y="254" width="36" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="aPY-KT-ymP"/>
+                                            <constraint firstAttribute="width" constant="36" id="one-Ht-sIE"/>
+                                        </constraints>
                                         <state key="normal" title="X">
                                             <color key="titleColor" red="0.99607843139999996" green="0.0039215686269999999" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
@@ -299,9 +302,11 @@
                                             <action selector="cancelAddEvent:" destination="yLv-5V-7Zp" eventType="touchUpInside" id="fSU-Jn-kse"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJD-aQ-kCI" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="57" y="65" width="260" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJD-aQ-kCI" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="8" width="260" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="wHl-oP-Z6P"/>
+                                        </constraints>
                                         <state key="normal" title="Birthday"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
@@ -312,9 +317,11 @@
                                             <segue destination="xJo-4U-N6R" kind="show" id="qLb-h1-YTV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44U-iR-vtI" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="57" y="123" width="260" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44U-iR-vtI" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="66" width="260" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="5IG-WP-9Bk"/>
+                                        </constraints>
                                         <state key="normal" title="Anniversary"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
@@ -322,9 +329,11 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQ7-DQ-grF" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="57" y="181" width="260" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQ7-DQ-grF" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="124" width="260" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="UHI-D5-0uS"/>
+                                        </constraints>
                                         <state key="normal" title="Mother's Day"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
@@ -332,9 +341,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0E-zY-PYQ" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="57" y="239" width="260" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0E-zY-PYQ" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="182" width="260" height="50"/>
                                         <state key="normal" title="Father's Day"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
@@ -344,22 +352,42 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="If0-NL-f3t" firstAttribute="top" secondItem="J0E-zY-PYQ" secondAttribute="bottom" constant="22" id="26h-88-wJO"/>
+                                    <constraint firstItem="aJD-aQ-kCI" firstAttribute="top" secondItem="WDh-8T-5ok" secondAttribute="topMargin" id="5Md-1s-o96"/>
+                                    <constraint firstItem="uQ7-DQ-grF" firstAttribute="height" secondItem="J0E-zY-PYQ" secondAttribute="height" id="6Yj-mc-ycc"/>
+                                    <constraint firstItem="aJD-aQ-kCI" firstAttribute="trailing" secondItem="44U-iR-vtI" secondAttribute="trailing" id="Aj3-2f-bUn"/>
+                                    <constraint firstItem="aJD-aQ-kCI" firstAttribute="height" secondItem="44U-iR-vtI" secondAttribute="height" id="BC0-yv-oOy"/>
+                                    <constraint firstItem="44U-iR-vtI" firstAttribute="top" secondItem="aJD-aQ-kCI" secondAttribute="bottom" constant="8" symbolic="YES" id="D6T-4P-p9p"/>
+                                    <constraint firstAttribute="bottom" secondItem="If0-NL-f3t" secondAttribute="bottom" constant="20" id="NEU-7R-EY8"/>
+                                    <constraint firstItem="aJD-aQ-kCI" firstAttribute="leading" secondItem="44U-iR-vtI" secondAttribute="leading" id="SJE-Xu-gaJ"/>
+                                    <constraint firstItem="uQ7-DQ-grF" firstAttribute="top" secondItem="44U-iR-vtI" secondAttribute="bottom" constant="8" symbolic="YES" id="aCG-Hm-bxc"/>
+                                    <constraint firstItem="uQ7-DQ-grF" firstAttribute="leading" secondItem="J0E-zY-PYQ" secondAttribute="leading" id="arw-bR-kPL"/>
+                                    <constraint firstItem="44U-iR-vtI" firstAttribute="height" secondItem="uQ7-DQ-grF" secondAttribute="height" id="c96-ds-r15"/>
+                                    <constraint firstItem="aJD-aQ-kCI" firstAttribute="leading" secondItem="WDh-8T-5ok" secondAttribute="leading" constant="57" id="iYc-KF-hWY"/>
+                                    <constraint firstItem="aJD-aQ-kCI" firstAttribute="centerX" secondItem="WDh-8T-5ok" secondAttribute="centerX" id="jpZ-7w-l7B"/>
+                                    <constraint firstItem="44U-iR-vtI" firstAttribute="trailing" secondItem="uQ7-DQ-grF" secondAttribute="trailing" id="kFM-7U-9uJ"/>
+                                    <constraint firstItem="J0E-zY-PYQ" firstAttribute="centerX" secondItem="If0-NL-f3t" secondAttribute="centerX" id="n8M-KE-sSV"/>
+                                    <constraint firstItem="44U-iR-vtI" firstAttribute="leading" secondItem="uQ7-DQ-grF" secondAttribute="leading" id="w8m-oH-Vrr"/>
+                                    <constraint firstItem="uQ7-DQ-grF" firstAttribute="trailing" secondItem="J0E-zY-PYQ" secondAttribute="trailing" id="xhU-QC-1hK"/>
+                                    <constraint firstItem="J0E-zY-PYQ" firstAttribute="top" secondItem="uQ7-DQ-grF" secondAttribute="bottom" constant="8" symbolic="YES" id="xtu-hp-FPN"/>
+                                </constraints>
                             </view>
                             <view opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6x-HW-Ill">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="304"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="349"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WDh-8T-5ok" firstAttribute="leading" secondItem="QkD-xh-tfj" secondAttribute="leading" id="2Zh-Cz-XEQ"/>
-                            <constraint firstItem="WDh-8T-5ok" firstAttribute="trailing" secondItem="Q6x-HW-Ill" secondAttribute="trailing" id="JRT-sd-EzL"/>
-                            <constraint firstItem="WDh-8T-5ok" firstAttribute="top" secondItem="QkD-xh-tfj" secondAttribute="top" constant="312" id="UQ2-hG-6gG"/>
-                            <constraint firstItem="Q6x-HW-Ill" firstAttribute="top" secondItem="QkD-xh-tfj" secondAttribute="top" id="aeH-Wz-5YU"/>
-                            <constraint firstAttribute="trailing" secondItem="WDh-8T-5ok" secondAttribute="trailing" id="inZ-km-7TM"/>
-                            <constraint firstItem="WDh-8T-5ok" firstAttribute="bottom" secondItem="egW-IT-DeN" secondAttribute="top" id="kDb-fV-9fg"/>
-                            <constraint firstItem="WDh-8T-5ok" firstAttribute="leading" secondItem="Q6x-HW-Ill" secondAttribute="leading" id="ozc-UK-pbL"/>
-                            <constraint firstItem="WDh-8T-5ok" firstAttribute="top" secondItem="Q6x-HW-Ill" secondAttribute="bottom" constant="8" symbolic="YES" id="uHH-aT-Gkg"/>
+                            <constraint firstAttribute="trailing" secondItem="WDh-8T-5ok" secondAttribute="trailing" id="6pI-7C-4Th"/>
+                            <constraint firstItem="WDh-8T-5ok" firstAttribute="top" secondItem="QkD-xh-tfj" secondAttribute="top" constant="357" id="80G-bN-pCk"/>
+                            <constraint firstItem="Q6x-HW-Ill" firstAttribute="top" secondItem="QkD-xh-tfj" secondAttribute="top" id="Ajk-db-SDx"/>
+                            <constraint firstItem="Q6x-HW-Ill" firstAttribute="leading" secondItem="WDh-8T-5ok" secondAttribute="leading" id="TMt-xL-K8L"/>
+                            <constraint firstItem="WDh-8T-5ok" firstAttribute="leading" secondItem="QkD-xh-tfj" secondAttribute="leading" id="b29-bp-ngB"/>
+                            <constraint firstItem="WDh-8T-5ok" firstAttribute="top" secondItem="Q6x-HW-Ill" secondAttribute="bottom" constant="8" symbolic="YES" id="bgR-Vv-kBe"/>
+                            <constraint firstItem="WDh-8T-5ok" firstAttribute="bottom" secondItem="egW-IT-DeN" secondAttribute="top" id="l8C-cG-DbY"/>
+                            <constraint firstItem="Q6x-HW-Ill" firstAttribute="trailing" secondItem="WDh-8T-5ok" secondAttribute="trailing" id="lXC-bN-lMD"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -401,7 +429,7 @@
             <objects>
                 <navigationController navigationBarHidden="YES" id="xJo-4U-N6R" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Bkd-dh-feh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Bkd-dh-feh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
