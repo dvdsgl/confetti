@@ -77,7 +77,7 @@
                                         <state key="normal" title="I'd rather not"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                                <color key="value" red="0.031295476634104813" green="1" blue="0.25918379315959517" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -287,49 +287,85 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDh-8T-5ok">
-                                <rect key="frame" x="0.0" y="429" width="375" height="238"/>
+                                <rect key="frame" x="0.0" y="312" width="375" height="355"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJD-aQ-kCI">
-                                        <rect key="frame" x="164" y="51" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="If0-NL-f3t" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                        <rect key="frame" x="169" y="311" width="36" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Add"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleColor" red="0.99607843139999996" green="0.0039215686269999999" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelAddEvent:" destination="yLv-5V-7Zp" eventType="touchUpInside" id="fSU-Jn-kse"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJD-aQ-kCI" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="65" width="260" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Birthday"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                <color key="value" red="0.011764705882352941" green="0.60392156862745094" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="xJo-4U-N6R" kind="show" id="qLb-h1-YTV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="If0-NL-f3t">
-                                        <rect key="frame" x="141" y="129" width="93" height="29"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44U-iR-vtI" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="123" width="260" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Cancel"/>
-                                        <connections>
-                                            <action selector="cancelAddEvent:" destination="yLv-5V-7Zp" eventType="touchUpInside" id="fSU-Jn-kse"/>
-                                        </connections>
+                                        <state key="normal" title="Anniversary"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                <color key="value" red="0.99607843137254903" green="0.0039215686274509803" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQ7-DQ-grF" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="181" width="260" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Mother's Day"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                <color key="value" red="0.74901960784313726" green="0.37254901960784315" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0E-zY-PYQ" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                        <rect key="frame" x="57" y="239" width="260" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Father's Day"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                <color key="value" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6x-HW-Ill">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="421"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="304"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="WDh-8T-5ok" secondAttribute="trailing" id="8Qj-dr-kRS"/>
-                            <constraint firstItem="WDh-8T-5ok" firstAttribute="bottom" secondItem="egW-IT-DeN" secondAttribute="top" id="DL9-aD-jL2"/>
-                            <constraint firstItem="WDh-8T-5ok" firstAttribute="trailing" secondItem="Q6x-HW-Ill" secondAttribute="trailing" id="I6A-Kk-bxZ"/>
-                            <constraint firstItem="WDh-8T-5ok" firstAttribute="top" secondItem="Q6x-HW-Ill" secondAttribute="bottom" constant="8" id="MBa-hG-vQU"/>
-                            <constraint firstItem="WDh-8T-5ok" firstAttribute="top" secondItem="QkD-xh-tfj" secondAttribute="top" constant="429" id="MnV-8g-pFS"/>
-                            <constraint firstItem="WDh-8T-5ok" firstAttribute="top" secondItem="Q6x-HW-Ill" secondAttribute="bottom" constant="8" symbolic="YES" id="OLo-I0-Isj"/>
+                            <constraint firstItem="WDh-8T-5ok" firstAttribute="leading" secondItem="QkD-xh-tfj" secondAttribute="leading" id="2Zh-Cz-XEQ"/>
+                            <constraint firstItem="WDh-8T-5ok" firstAttribute="trailing" secondItem="Q6x-HW-Ill" secondAttribute="trailing" id="JRT-sd-EzL"/>
+                            <constraint firstItem="WDh-8T-5ok" firstAttribute="top" secondItem="QkD-xh-tfj" secondAttribute="top" constant="312" id="UQ2-hG-6gG"/>
                             <constraint firstItem="Q6x-HW-Ill" firstAttribute="top" secondItem="QkD-xh-tfj" secondAttribute="top" id="aeH-Wz-5YU"/>
-                            <constraint firstItem="WDh-8T-5ok" firstAttribute="leading" secondItem="QkD-xh-tfj" secondAttribute="leading" id="hRZ-vk-AWU"/>
-                            <constraint firstItem="WDh-8T-5ok" firstAttribute="leading" secondItem="Q6x-HW-Ill" secondAttribute="leading" id="zHS-s2-jPY"/>
+                            <constraint firstAttribute="trailing" secondItem="WDh-8T-5ok" secondAttribute="trailing" id="inZ-km-7TM"/>
+                            <constraint firstItem="WDh-8T-5ok" firstAttribute="bottom" secondItem="egW-IT-DeN" secondAttribute="top" id="kDb-fV-9fg"/>
+                            <constraint firstItem="WDh-8T-5ok" firstAttribute="leading" secondItem="Q6x-HW-Ill" secondAttribute="leading" id="ozc-UK-pbL"/>
+                            <constraint firstItem="WDh-8T-5ok" firstAttribute="top" secondItem="Q6x-HW-Ill" secondAttribute="bottom" constant="8" symbolic="YES" id="uHH-aT-Gkg"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pie-27-Y0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1042" y="809"/>
+            <point key="canvasLocation" x="-1042.4000000000001" y="808.24587706146929"/>
         </scene>
         <!--Choose Contact to Add-->
         <scene sceneID="lsw-dv-DEr">
