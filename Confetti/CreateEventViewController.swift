@@ -16,7 +16,14 @@ class CreateEventViewController: UIViewController,
     @IBOutlet weak var dayField: UITextField!
     @IBOutlet weak var yearField: UITextField!
     
+    var contact: CNContact?
     var photoUrl: URL?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let contact = contact {
+            firstNameField.text = contact.givenName
+        }
+    }
     
     @IBAction func createEvent(_ sender: Any) {
         guard let firstName = firstNameField.text else { return }
@@ -39,22 +46,6 @@ class CreateEventViewController: UIViewController,
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true)
-    }
-    
-    // Constants for Storyboard/ViewControllers.
-    static let storyboardName = "Main"
-    static let viewControllerIdentifier = "CreateEventViewController"
-    
-    var contact = CNContact()
-    
-    class func createEventViewController(_ contact: CNContact) -> CreateEventViewController {
-        let storyboard = UIStoryboard(name: CreateEventViewController.storyboardName, bundle: nil)
-        
-        let viewController = storyboard.instantiateViewController(withIdentifier: CreateEventViewController.viewControllerIdentifier) as! CreateEventViewController
-        
-        viewController.contact = contact
-        
-        return viewController
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

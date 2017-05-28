@@ -11,9 +11,6 @@
 		3C1250D11ED873D100F6E345 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1250D01ED873D100F6E345 /* AddEventViewController.swift */; };
 		3C1250D31ED8756000F6E345 /* ChooseContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1250D21ED8756000F6E345 /* ChooseContactViewController.swift */; };
 		3C1ED1211ED27287004A0053 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1ED1201ED27287004A0053 /* AddButton.swift */; };
-		3C2DD65C1ED9C4E600C442F5 /* ResultsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD65B1ED9C4E600C442F5 /* ResultsTableController.swift */; };
-		3C2DD65E1ED9D57E00C442F5 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2DD65D1ED9D57E00C442F5 /* BaseTableViewController.swift */; };
-		3C2DD6611ED9DFC300C442F5 /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C2DD6601ED9DFC300C442F5 /* TableCell.xib */; };
 		3C6B9C3F1ED46D6A0092BD0F /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B9C3E1ED46D6A0092BD0F /* CustomTabBarController.swift */; };
 		3CA852811ED3E35F002E1A05 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA852801ED3E35F002E1A05 /* ProfileViewController.swift */; };
 		4CE7AAF76EAB2CB4A8637F11 /* Pods_Confetti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE7682F3E4A76FA241467F4 /* Pods_Confetti.framework */; };
@@ -110,9 +107,6 @@
 		3C1250D01ED873D100F6E345 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		3C1250D21ED8756000F6E345 /* ChooseContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseContactViewController.swift; sourceTree = "<group>"; };
 		3C1ED1201ED27287004A0053 /* AddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
-		3C2DD65B1ED9C4E600C442F5 /* ResultsTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableController.swift; sourceTree = "<group>"; };
-		3C2DD65D1ED9D57E00C442F5 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
-		3C2DD6601ED9DFC300C442F5 /* TableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableCell.xib; sourceTree = "<group>"; };
 		3C6B9C3E1ED46D6A0092BD0F /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		3CA852801ED3E35F002E1A05 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6320BFFF1ED1212B00F27446 /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
@@ -211,7 +205,6 @@
 			children = (
 				63C759D11EBE5A2400939D7B /* Main.storyboard */,
 				63C759D61EBE5A2400939D7B /* LaunchScreen.storyboard */,
-				3C2DD6601ED9DFC300C442F5 /* TableCell.xib */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -295,6 +288,7 @@
 				637523601ED0E2F100DF8F5A /* UserViewModel.swift */,
 				63A8980A1EC13EA400D16214 /* Resources */,
 				63CE74871EBEB2DD0018B77D /* Views */,
+				3C2DD65F1ED9DF9A00C442F5 /* Storyboards */,
 				63FB40E31EC16EF800BC37A4 /* Controllers */,
 				63C759D41EBE5A2400939D7B /* Assets.xcassets */,
 				63C759D91EBE5A2400939D7B /* Info.plist */,
@@ -363,9 +357,6 @@
 				3C6B9C3E1ED46D6A0092BD0F /* CustomTabBarController.swift */,
 				3C1250D01ED873D100F6E345 /* AddEventViewController.swift */,
 				3C1250D21ED8756000F6E345 /* ChooseContactViewController.swift */,
-				3C2DD65B1ED9C4E600C442F5 /* ResultsTableController.swift */,
-				3C2DD65D1ED9D57E00C442F5 /* BaseTableViewController.swift */,
-				3C2DD65F1ED9DF9A00C442F5 /* Storyboards */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -578,7 +569,6 @@
 				63C759D51EBE5A2400939D7B /* Assets.xcassets in Resources */,
 				63C759D31EBE5A2400939D7B /* Main.storyboard in Resources */,
 				63A8980E1EC13EEB00D16214 /* secret_garden.otf in Resources */,
-				3C2DD6611ED9DFC300C442F5 /* TableCell.xib in Resources */,
 				63BDA3551EC15B840001EDBC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -711,9 +701,7 @@
 				63BDA3531EC1596A0001EDBC /* LoginViewController.swift in Sources */,
 				006F3C241EBFA9FF005D0EFD /* RoundRectangleButton.swift in Sources */,
 				3C1ED1211ED27287004A0053 /* AddButton.swift in Sources */,
-				3C2DD65E1ED9D57E00C442F5 /* BaseTableViewController.swift in Sources */,
 				63CE74841EBEAB4F0018B77D /* EventTableViewCell.swift in Sources */,
-				3C2DD65C1ED9C4E600C442F5 /* ResultsTableController.swift in Sources */,
 				63C759D01EBE5A2400939D7B /* DetailViewController.swift in Sources */,
 				63C759CE1EBE5A2400939D7B /* MasterViewController.swift in Sources */,
 				63C759CC1EBE5A2400939D7B /* AppDelegate.swift in Sources */,
