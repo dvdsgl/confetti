@@ -196,7 +196,7 @@ class ChooseContactViewController : BaseTableViewController, UISearchBarDelegate
         }
         
         // Set up the detail view controller to show.
-        let detailViewController = AddEventViewController()
+        let detailViewController = CreateEventViewController.createEventViewController(selectedContact)
         
         print(selectedContact)
         

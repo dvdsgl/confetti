@@ -5,6 +5,8 @@ import ConfettiKit
 
 import Firebase
 
+import Contacts
+
 class CreateEventViewController: UIViewController,
     UIImagePickerControllerDelegate,
     UINavigationControllerDelegate {
@@ -37,6 +39,22 @@ class CreateEventViewController: UIViewController,
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true)
+    }
+    
+    // Constants for Storyboard/ViewControllers.
+    static let storyboardName = "Main"
+    static let viewControllerIdentifier = "CreateEventViewController"
+    
+    var contact = CNContact()
+    
+    class func createEventViewController(_ contact: CNContact) -> CreateEventViewController {
+        let storyboard = UIStoryboard(name: CreateEventViewController.storyboardName, bundle: nil)
+        
+        let viewController = storyboard.instantiateViewController(withIdentifier: CreateEventViewController.viewControllerIdentifier) as! CreateEventViewController
+        
+        viewController.contact = contact
+        
+        return viewController
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
