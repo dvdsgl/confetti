@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Contacts
 import ContactsUI
+import ConfettiKit
 
 class ChooseContactViewController : BaseTableViewController, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating {
 
@@ -75,6 +76,8 @@ class ChooseContactViewController : BaseTableViewController, UISearchBarDelegate
         searchController = UISearchController(searchResultsController: resultsTableController)
         searchController.searchResultsUpdater = self
         searchController.searchBar.sizeToFit()
+        searchController.searchBar.barTintColor = Colors.mediumAquamarine
+        searchController.searchBar.tintColor = UIColor.white
         tableView.tableHeaderView = searchController.searchBar
         
         searchController.delegate = self

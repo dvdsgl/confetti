@@ -399,8 +399,9 @@
         <!--Navigation Controller-->
         <scene sceneID="cIz-qV-Op1">
             <objects>
-                <navigationController id="xJo-4U-N6R" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Bkd-dh-feh">
+                <navigationController navigationBarHidden="YES" id="xJo-4U-N6R" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Bkd-dh-feh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
