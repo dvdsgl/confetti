@@ -7,29 +7,55 @@ import Firebase
 
 import Contacts
 
+import SDWebImage
+import AvatarImageView
+
+
 class CreateEventViewController: UIViewController,
     UIImagePickerControllerDelegate,
     UINavigationControllerDelegate {
     
-    @IBOutlet weak var firstNameField: UITextField!
-    @IBOutlet weak var monthField: UITextField!
-    @IBOutlet weak var dayField: UITextField!
-    @IBOutlet weak var yearField: UITextField!
+    @IBOutlet var photoView: AvatarImageView!
+    
+    @IBOutlet var navBarItem: UINavigationItem!
+    
+    @IBOutlet var datePicker: UIDatePicker!
     
     var contact: CNContact?
     var photoUrl: URL?
     
-    override func viewWillAppear(_ animated: Bool) {
-        if let contact = contact {
-            firstNameField.text = contact.givenName
+    struct AvatarConfig: AvatarImageViewConfiguration {
+        var shape: Shape = .circle
+    }
+    
+    struct AvatarData: AvatarImageViewDataSource {
+        var name: String
+        
+        var bgColor: UIColor? {
+            return Colors.accentFor(avatarId)
+        }
+        
+        init(name: String) {
+            self.name = name
         }
     }
     
-    @IBAction func createEvent(_ sender: Any) {
-        guard let firstName = firstNameField.text else { return }
-        guard let month = Int(monthField.text ?? "") else { return }
-        guard let day = Int(dayField.text ?? "") else { return }
-        let year = Int(yearField.text ?? "")
+    override func viewWillAppear(_ animated: Bool) {
+        if let contact = contact {
+            navBarItem.title = contact.givenName + "'s Birthday"
+            
+            photoView.configuration = AvatarConfig()
+            photoView.dataSource = AvatarData(name: contact.givenName)
+        }
+    }
+    
+    @IBAction func saveButton(_ sender: Any) {
+        guard let firstName = contact?.givenName else { return }
+        
+        let birthday = datePicker.date
+        let month = datePicker.calendar.component(.month, from: birthday)
+        let day = datePicker.calendar.component(.day, from: birthday)
+        let year = datePicker.calendar.component(.year, from: birthday)
         
         let person = Person(firstName, photoUrl: photoUrl?.absoluteString)
         let occasion = Occasion.birthday(month: month, day: day, year: year)
@@ -40,7 +66,7 @@ class CreateEventViewController: UIViewController,
         dismiss(animated: true)
     }
     
-    @IBAction func addPhoto(_ sender: Any) {
+    @IBAction func choosePhoto(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary

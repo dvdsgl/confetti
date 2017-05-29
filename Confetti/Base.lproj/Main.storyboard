@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +23,7 @@
             <objects>
                 <navigationController storyboardIdentifier="masterViewController" title="Navigation" navigationBarHidden="YES" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Events" image="cake_icon" selectedImage="cake_icon" id="LHy-zw-DkV"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -50,7 +51,7 @@
                                 <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXM-wy-16E" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="57.5" y="72" width="260" height="50"/>
+                                        <rect key="frame" x="57.5" y="72.5" width="260" height="50"/>
                                         <color key="backgroundColor" red="0.23137254901960785" green="0.34901960784313724" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="260" id="Abt-eH-IuX"/>
@@ -71,7 +72,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fM6-Iw-4D0" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="57.5" y="142" width="260" height="50"/>
+                                        <rect key="frame" x="57.5" y="142.5" width="260" height="50"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <color key="tintColor" red="0.01176470588" green="0.60392156860000001" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="I'd rather not"/>
@@ -85,7 +86,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFA-6E-6nD" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="57.5" y="212" width="260" height="50"/>
+                                        <rect key="frame" x="57.5" y="212.5" width="260" height="50"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <color key="tintColor" red="0.01176470588" green="0.60392156860000001" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Maybe later"/>
@@ -400,9 +401,10 @@
             <objects>
                 <navigationController id="xJo-4U-N6R" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Bkd-dh-feh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Bkd-dh-feh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.1215686275" green="0.83529411760000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -482,6 +484,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Whose Birthday?" id="aXi-fE-tRh">
+                        <barButtonItem key="backBarButtonItem" title=" " id="e3r-aW-ykA">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="VdZ-IR-H03">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -501,6 +506,7 @@
         <!--Add Birthday-->
         <scene sceneID="zOx-Np-7Om">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8gO-oZ-6kF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="CreateEventViewController" title="Add Birthday" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4uJ-ko-y92" customClass="CreateEventViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bho-Wc-RNk"/>
@@ -510,75 +516,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="firstName" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1bZ-G3-xJP">
-                                <rect key="frame" x="16" y="40" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="month" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lL6-QE-3W3">
-                                <rect key="frame" x="16" y="90" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nbi-Yr-ieo">
-                                <rect key="frame" x="16" y="140" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="year (optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lnU-IX-qaI">
-                                <rect key="frame" x="16" y="190" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
-                            </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hMv-MO-Gkj">
-                                <rect key="frame" x="102" y="304" width="88" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1Z-OJ-nfv" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                <rect key="frame" x="16" y="260" width="343" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAq-xH-Vv9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="370"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jdi-EY-XVg" customClass="AvatarImageView" customModule="AvatarImageView">
+                                        <rect key="frame" x="83" y="44" width="209" height="209"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="jdi-EY-XVg" secondAttribute="height" multiplier="1:1" id="igW-oM-cI1"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAU-3G-5ao">
+                                        <rect key="frame" x="132" y="298" width="111" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="da1-YC-lug"/>
+                                            <constraint firstAttribute="width" constant="111" id="rEG-UJ-HCQ"/>
+                                        </constraints>
+                                        <state key="normal" title="Choose Photo">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="choosePhoto:" destination="4uJ-ko-y92" eventType="touchUpInside" id="APe-3a-SM2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1215686275" green="0.83529411760000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="wuM-Vw-Wmg"/>
+                                    <constraint firstItem="zAU-3G-5ao" firstAttribute="top" secondItem="jdi-EY-XVg" secondAttribute="bottom" constant="45" id="IrO-ZA-f3h"/>
+                                    <constraint firstItem="jdi-EY-XVg" firstAttribute="top" secondItem="hAq-xH-Vv9" secondAttribute="top" constant="44" id="KAK-Pz-1KY"/>
+                                    <constraint firstAttribute="bottom" secondItem="zAU-3G-5ao" secondAttribute="bottom" constant="34" id="RtX-X1-gvn"/>
+                                    <constraint firstItem="jdi-EY-XVg" firstAttribute="centerX" secondItem="zAU-3G-5ao" secondAttribute="centerX" id="Sjx-7q-DmK"/>
+                                    <constraint firstItem="jdi-EY-XVg" firstAttribute="leading" secondItem="hAq-xH-Vv9" secondAttribute="leading" constant="83" id="vNc-rs-xiI"/>
+                                    <constraint firstItem="jdi-EY-XVg" firstAttribute="centerX" secondItem="hAq-xH-Vv9" secondAttribute="centerX" id="xR5-6c-lup"/>
                                 </constraints>
-                                <state key="normal" title="Create Event"/>
-                                <connections>
-                                    <action selector="createEvent:" destination="4uJ-ko-y92" eventType="touchUpInside" id="zgj-KZ-bnX"/>
-                                </connections>
-                            </button>
+                            </view>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="aiJ-dM-Xfz">
+                                <rect key="frame" x="0.0" y="378" width="375" height="289"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="289" id="keC-Am-6sK"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="517786575.59127897">
+                                    <!--2017-05-29 21:36:15 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="nbi-Yr-ieo" secondAttribute="trailing" id="6CL-dd-kdp"/>
-                            <constraint firstItem="lL6-QE-3W3" firstAttribute="top" secondItem="1bZ-G3-xJP" secondAttribute="bottom" constant="20" id="79C-rl-B8p"/>
-                            <constraint firstItem="lnU-IX-qaI" firstAttribute="leading" secondItem="HSj-DG-h18" secondAttribute="leadingMargin" id="O4k-IB-PEG"/>
-                            <constraint firstItem="r1Z-OJ-nfv" firstAttribute="leading" secondItem="HSj-DG-h18" secondAttribute="leadingMargin" id="SB8-Tw-zbN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="r1Z-OJ-nfv" secondAttribute="trailing" id="UHJ-HV-w1p"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1bZ-G3-xJP" secondAttribute="trailing" id="VCD-Qd-QAr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lL6-QE-3W3" secondAttribute="trailing" id="VsQ-2Q-C3y"/>
-                            <constraint firstItem="1bZ-G3-xJP" firstAttribute="leading" secondItem="HSj-DG-h18" secondAttribute="leadingMargin" id="W8i-g5-LQS"/>
-                            <constraint firstItem="1bZ-G3-xJP" firstAttribute="top" secondItem="Bho-Wc-RNk" secondAttribute="bottom" constant="20" id="aXr-gM-bHg"/>
-                            <constraint firstItem="lnU-IX-qaI" firstAttribute="top" secondItem="nbi-Yr-ieo" secondAttribute="bottom" constant="20" id="j65-8Y-fG9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lnU-IX-qaI" secondAttribute="trailing" id="lBW-0c-jEu"/>
-                            <constraint firstItem="r1Z-OJ-nfv" firstAttribute="top" secondItem="lnU-IX-qaI" secondAttribute="bottom" constant="40" id="oLf-3o-JuN"/>
-                            <constraint firstItem="nbi-Yr-ieo" firstAttribute="top" secondItem="lL6-QE-3W3" secondAttribute="bottom" constant="20" id="sOE-7g-Wjy"/>
-                            <constraint firstItem="lL6-QE-3W3" firstAttribute="leading" secondItem="HSj-DG-h18" secondAttribute="leadingMargin" id="sov-bC-prO"/>
-                            <constraint firstItem="nbi-Yr-ieo" firstAttribute="leading" secondItem="HSj-DG-h18" secondAttribute="leadingMargin" id="tex-z1-poK"/>
-                            <constraint firstItem="r1Z-OJ-nfv" firstAttribute="centerX" secondItem="HSj-DG-h18" secondAttribute="centerX" id="tuF-ba-N8d"/>
+                            <constraint firstItem="aiJ-dM-Xfz" firstAttribute="top" secondItem="hAq-xH-Vv9" secondAttribute="bottom" constant="8" symbolic="YES" id="IrC-Bb-xNy"/>
+                            <constraint firstItem="hAq-xH-Vv9" firstAttribute="trailing" secondItem="aiJ-dM-Xfz" secondAttribute="trailing" id="Nsw-g8-zRN"/>
+                            <constraint firstItem="hAq-xH-Vv9" firstAttribute="leading" secondItem="HSj-DG-h18" secondAttribute="leading" id="Whg-sp-dpJ"/>
+                            <constraint firstAttribute="trailing" secondItem="hAq-xH-Vv9" secondAttribute="trailing" id="Xz6-3d-itg"/>
+                            <constraint firstItem="hAq-xH-Vv9" firstAttribute="top" secondItem="HSj-DG-h18" secondAttribute="top" id="gmv-Rn-0Kc"/>
+                            <constraint firstItem="hAq-xH-Vv9" firstAttribute="leading" secondItem="aiJ-dM-Xfz" secondAttribute="leading" id="gwa-CC-3kU"/>
+                            <constraint firstItem="aiJ-dM-Xfz" firstAttribute="bottom" secondItem="p1r-sd-IuA" secondAttribute="top" id="n1T-WV-B06"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Birthday" id="Bcf-FP-Pn5">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="sOi-ir-NHI">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="saveButton:" destination="4uJ-ko-y92" id="plz-yd-hum"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="dayField" destination="nbi-Yr-ieo" id="UZt-3s-4d1"/>
-                        <outlet property="firstNameField" destination="1bZ-G3-xJP" id="7dz-uH-Bcg"/>
-                        <outlet property="monthField" destination="lL6-QE-3W3" id="K0q-8w-JfY"/>
-                        <outlet property="yearField" destination="lnU-IX-qaI" id="0Zo-PP-VRg"/>
+                        <outlet property="datePicker" destination="aiJ-dM-Xfz" id="Qd6-Nc-bQo"/>
+                        <outlet property="navBarItem" destination="Bcf-FP-Pn5" id="bk7-As-ILh"/>
+                        <outlet property="photoView" destination="jdi-EY-XVg" id="Puy-Cc-JUj"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8gO-oZ-6kF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1617" y="832"/>
+            <point key="canvasLocation" x="1616.8" y="831.63418290854577"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="kt8-yC-BI7">
