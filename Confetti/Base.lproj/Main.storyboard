@@ -458,7 +458,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="4uJ-ko-y92" kind="showDetail" id="aIY-nV-TC1"/>
+                                            <segue destination="4uJ-ko-y92" kind="show" identifier="showDetail" id="Nmf-0D-05l"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -556,18 +556,6 @@
                             <constraint firstItem="r1Z-OJ-nfv" firstAttribute="centerX" secondItem="HSj-DG-h18" secondAttribute="centerX" id="tuF-ba-N8d"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Event" id="bLX-eY-eRl">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="j2U-ns-wmI">
-                            <connections>
-                                <segue destination="e8L-uB-gkM" kind="unwind" unwindAction="unwindToMainWithSegue:" id="Nj3-RI-eqQ"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ba7-g6-JGl">
-                            <connections>
-                                <action selector="addPhoto:" destination="4uJ-ko-y92" id="TdR-sC-Cts"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="dayField" destination="nbi-Yr-ieo" id="UZt-3s-4d1"/>
                         <outlet property="firstNameField" destination="1bZ-G3-xJP" id="7dz-uH-Bcg"/>
@@ -595,7 +583,6 @@
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VKJ-Xz-huh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="e8L-uB-gkM" userLabel="Exit" sceneMemberID="exit"/>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o1d-QN-1ON">
                     <rect key="frame" x="0.0" y="0.0" width="54" height="54"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
