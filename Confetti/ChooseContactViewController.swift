@@ -7,9 +7,10 @@ import Contacts
 import ContactsUI
 
 
-class ChooseContactViewController : UITableViewController, UISearchBarDelegate {
+class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var tableView: UITableView!
     
     var contacts = [CNContact]()
     let contactStore = CNContactStore()
@@ -67,11 +68,11 @@ class ChooseContactViewController : UITableViewController, UISearchBarDelegate {
 
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contacts.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contact", for: indexPath)
         
         let contact = contacts[indexPath.row]
