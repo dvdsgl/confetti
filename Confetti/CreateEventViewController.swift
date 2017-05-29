@@ -63,7 +63,8 @@ class CreateEventViewController: UIViewController,
         
         UserViewModel.current.addEvent(event)
         
-        dismiss(animated: true)
+        performSegue(withIdentifier: "unwindToMain", sender: self)
+//        dismiss(animated: true)
     }
     
     @IBAction func choosePhoto(_ sender: Any) {

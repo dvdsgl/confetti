@@ -21,6 +21,8 @@ class CustomTabBarController: UITabBarController {
 //        performSegue(withIdentifier: "newEvent", sender: self)
 //    }
     
+    @IBAction func unwindToMain(segue:UIStoryboardSegue) { }
+    
     override func viewDidLoad() {
         addEventButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(addEventButton)

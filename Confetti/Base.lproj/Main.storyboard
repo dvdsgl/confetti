@@ -23,7 +23,7 @@
             <objects>
                 <navigationController storyboardIdentifier="masterViewController" title="Navigation" navigationBarHidden="YES" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Events" image="cake_icon" selectedImage="cake_icon" id="LHy-zw-DkV"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -401,7 +401,7 @@
             <objects>
                 <navigationController id="xJo-4U-N6R" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Bkd-dh-feh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Bkd-dh-feh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -506,6 +506,7 @@
         <!--Add Birthday-->
         <scene sceneID="zOx-Np-7Om">
             <objects>
+                <exit id="lqh-3e-8eZ" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gO-oZ-6kF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="CreateEventViewController" title="Add Birthday" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4uJ-ko-y92" customClass="CreateEventViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
@@ -582,6 +583,7 @@
                         <outlet property="datePicker" destination="aiJ-dM-Xfz" id="Qd6-Nc-bQo"/>
                         <outlet property="navBarItem" destination="Bcf-FP-Pn5" id="bk7-As-ILh"/>
                         <outlet property="photoView" destination="jdi-EY-XVg" id="Puy-Cc-JUj"/>
+                        <segue destination="lqh-3e-8eZ" kind="unwind" identifier="unwindToMain" unwindAction="unwindToMainWithSegue:" id="cVk-nH-b6X"/>
                     </connections>
                 </viewController>
             </objects>
@@ -678,7 +680,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkh-0C-HgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="tfX-tQ-fMw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-39.130434782608695" y="149.18478260869566"/>
+            <point key="canvasLocation" x="706" y="24"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="9oV-9S-hYP">
@@ -768,6 +770,6 @@
         <image name="stu" width="2048" height="1367"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CSP-Gl-VIx"/>
+        <segue reference="XR7-cA-frQ"/>
     </inferredMetricsTieBreakers>
 </document>
