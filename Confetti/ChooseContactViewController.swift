@@ -45,7 +45,7 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchContacts(query: searchText)
-    }    
+    }
     
     func searchContacts(query: String?) {
         let searchText = query ?? ""
@@ -65,7 +65,6 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
         catch {
             print("Error!")
         }
-
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
