@@ -77,6 +77,10 @@ class ChooseContactViewController : UITableViewController, UISearchBarDelegate {
         let contact = contacts[indexPath.row]
         cell.textLabel?.text = CNContactFormatter.string(from: contact, style: .fullName)
         
+        if let imageData = contact.imageData {
+            cell.imageView?.image = UIImage(data: imageData)
+        }
+        
         return cell
     }
     
