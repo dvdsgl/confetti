@@ -75,7 +75,7 @@ class ChooseContactViewController : UITableViewController, UISearchBarDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contact", for: indexPath)
         
         let contact = contacts[indexPath.row]
-        cell.textLabel?.text = contact.namePrefix + " " + contact.givenName + " " + contact.familyName + " " + contact.nameSuffix
+        cell.textLabel?.text = CNContactFormatter.string(from: contact, style: .fullName)
         
         return cell
     }
