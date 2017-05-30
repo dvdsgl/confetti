@@ -1,11 +1,3 @@
-//
-//  CustomTabBarController.swift
-//  Confetti
-//
-//  Created by Ian Leatherbury on 5/23/17.
-//  Copyright © 2017 confetti. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
@@ -16,10 +8,6 @@ class CustomTabBarController: UITabBarController {
     let size = CGFloat(54)
     
     @IBOutlet var addEventButton: UIButton!
-    
-//    @IBAction func addEvent(_ sender: Any) {
-//        performSegue(withIdentifier: "newEvent", sender: self)
-//    }
     
     @IBAction func unwindToMain(segue:UIStoryboardSegue) { }
     
