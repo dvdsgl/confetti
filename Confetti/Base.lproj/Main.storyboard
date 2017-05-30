@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cYo-MV-K1n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cYo-MV-K1n">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,7 +23,7 @@
             <objects>
                 <navigationController storyboardIdentifier="masterViewController" title="Navigation" navigationBarHidden="YES" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Events" image="cake_icon" selectedImage="cake_icon" id="LHy-zw-DkV"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -315,7 +315,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="xJo-4U-N6R" kind="show" id="qLb-h1-YTV"/>
+                                            <segue destination="xJo-4U-N6R" kind="show" identifier="addBirthday" id="MLE-4h-ErY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44U-iR-vtI" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
@@ -329,6 +329,9 @@
                                                 <color key="value" red="0.99607843137254903" green="0.0039215686274509803" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="xJo-4U-N6R" kind="show" identifier="addAnniversary" id="rue-3W-XWj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQ7-DQ-grF" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
                                         <rect key="frame" x="57" y="124" width="260" height="50"/>
@@ -341,6 +344,9 @@
                                                 <color key="value" red="0.74901960784313726" green="0.37254901960784315" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="xJo-4U-N6R" kind="show" identifier="addMothersDay" id="SIx-NQ-p8i"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0E-zY-PYQ" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
                                         <rect key="frame" x="57" y="182" width="260" height="50"/>
@@ -350,6 +356,9 @@
                                                 <color key="value" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="xJo-4U-N6R" kind="show" identifier="addFathersDay" id="ePG-Ze-xDD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -401,7 +410,7 @@
             <objects>
                 <navigationController id="xJo-4U-N6R" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Bkd-dh-feh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Bkd-dh-feh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -427,11 +436,11 @@
                         <viewControllerLayoutGuide type="bottom" id="2be-R7-vxS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Nzo-Ty-XUN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O8b-DR-nNn">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="559"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -506,8 +515,6 @@
         <!--Add Birthday-->
         <scene sceneID="zOx-Np-7Om">
             <objects>
-                <exit id="lqh-3e-8eZ" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8gO-oZ-6kF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="CreateEventViewController" title="Add Birthday" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4uJ-ko-y92" customClass="CreateEventViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bho-Wc-RNk"/>
@@ -586,6 +593,8 @@
                         <segue destination="lqh-3e-8eZ" kind="unwind" identifier="unwindToMain" unwindAction="unwindToMainWithSegue:" id="cVk-nH-b6X"/>
                     </connections>
                 </viewController>
+                <exit id="lqh-3e-8eZ" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8gO-oZ-6kF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1616.8" y="831.63418290854577"/>
         </scene>
@@ -770,6 +779,7 @@
         <image name="stu" width="2048" height="1367"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XR7-cA-frQ"/>
+        <segue reference="CSP-Gl-VIx"/>
+        <segue reference="MLE-4h-ErY"/>
     </inferredMetricsTieBreakers>
 </document>

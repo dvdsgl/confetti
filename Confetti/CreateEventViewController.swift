@@ -10,7 +10,6 @@ import Contacts
 import SDWebImage
 import AvatarImageView
 
-
 class CreateEventViewController: UIViewController,
     UIImagePickerControllerDelegate,
     UINavigationControllerDelegate {
@@ -20,6 +19,8 @@ class CreateEventViewController: UIViewController,
     @IBOutlet var navBarItem: UINavigationItem!
     
     @IBOutlet var datePicker: UIDatePicker!
+    
+    var createEventSpec: CreateEventSpec!
     
     var contact: CNContact?
     var photoUrl: URL?
@@ -58,13 +59,11 @@ class CreateEventViewController: UIViewController,
         let year = datePicker.calendar.component(.year, from: birthday)
         
         let person = Person(firstName, photoUrl: photoUrl?.absoluteString)
-        let occasion = Occasion.birthday(month: month, day: day, year: year)
-        let event = Event(person: person, occasion: occasion)
+        let event = createEventSpec.createEvent(person: person, month: month, day: day, year: year)
         
         UserViewModel.current.addEvent(event)
         
         performSegue(withIdentifier: "unwindToMain", sender: self)
-//        dismiss(animated: true)
     }
     
     @IBAction func choosePhoto(_ sender: Any) {

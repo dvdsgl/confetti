@@ -12,6 +12,8 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     
+    var createEventSpec: CreateEventSpec!
+    
     var contacts = [CNContact]()
     let contactStore = CNContactStore()
     
@@ -93,6 +95,7 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
                 let contact = contacts[indexPath.row]
                 let controller = segue.destination as! CreateEventViewController
                 controller.contact = contact
+                controller.createEventSpec = createEventSpec
             }
         default:
             return
