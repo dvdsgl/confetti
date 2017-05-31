@@ -1,0 +1,19 @@
+#!/bin/bash
+
+BUILD_DIR=build
+
+xcrun xcodebuild build-for-testing \
+  -configuration Debug \
+  -workspace Confetti.xcworkspace \
+  -sdk iphoneos \
+  -scheme Confetti \
+  -derivedDataPath $BUILD_DIR
+
+mobile-center test run xcuitest \
+  --app "confetti/confetti-swift" \
+  --devices 5b3b73f3 \
+  --test-series "master" \
+  --locale "en_US" \
+  --build-dir $BUILD_DIR/Build/Products/Debug-iphoneos
+
+rm -rf $BUILD_DIR

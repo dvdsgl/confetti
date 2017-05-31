@@ -5,30 +5,36 @@ def shared_pods
   pod "DynamicColor", '~> 3.3'
 end
 
-target 'Confetti' do
-  use_frameworks!
-  shared_pods
+["Confetti", "ConfettiTests"].each do |t|
+    target t do
+      use_frameworks!
+      shared_pods
 
-  pod "AvatarImageView", '~> 2.0.3'
-  pod "SDWebImage", '~> 4.0.0'
-  pod "FRStretchImageView"
+      pod "AvatarImageView", '~> 2.0.3'
+      pod "SDWebImage", '~> 4.0.0'
+      pod "FRStretchImageView"
 
-  pod 'FacebookCore'
-  pod 'FacebookLogin'
-  pod 'FacebookShare'
+      pod 'FacebookCore'
+      pod 'FacebookLogin'
+      pod 'FacebookShare'
 
-  pod 'Firebase/Core'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Database'
-  pod 'Firebase/Storage'
-  pod 'Firebase/Performance'
+      pod 'Firebase/Core'
+      pod 'Firebase/Auth'
+      pod 'Firebase/Database'
+      pod 'Firebase/Storage'
+      pod 'Firebase/Performance'
 
-  pod 'MobileCenter'
-  pod 'MobileCenter/MobileCenterDistribute'
-
+      pod 'MobileCenter'
+      pod 'MobileCenter/MobileCenterDistribute'
+    end
 end
 
 target 'ConfettiKit' do
   use_frameworks!
   shared_pods
+end
+
+target 'ConfettiUITests' do
+  use_frameworks!
+  pod 'VSMobileCenterExtensions'
 end
