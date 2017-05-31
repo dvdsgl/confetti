@@ -30,14 +30,20 @@ class CreateEventViewController: UIViewController,
     }
     
     struct AvatarData: AvatarImageViewDataSource {
-        var name: String
+        let name: String
+        let avatar: UIImage?
         
         var bgColor: UIColor? {
             return Colors.accentFor(avatarId)
         }
         
-        init(name: String) {
-            self.name = name
+        init(contact: CNContact) {
+            if let data = contact.imageData {
+                avatar = UIImage(data: data)
+            } else {
+                avatar = nil
+            }
+            name = CNContactFormatter.string(from: contact, style: .fullName)!
         }
     }
     
@@ -58,7 +64,7 @@ class CreateEventViewController: UIViewController,
             navBarItem.title = contact.givenName + "'s Birthday"
             
             photoView.configuration = AvatarConfig()
-            photoView.dataSource = AvatarData(name: contact.givenName)
+            photoView.dataSource = AvatarData(contact: contact)
         }
     }
     
