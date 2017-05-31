@@ -41,6 +41,18 @@ class CreateEventViewController: UIViewController,
         }
     }
     
+    @IBAction func updateDatePicker(_ sender: Any) {
+        let birthday = datePicker.date
+        let age = Calendar.current.dateComponents([.year], from: birthday, to: Date()).year!
+        let nextAge = NSNumber(integerLiteral: age + 1)
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .ordinal
+        let nextAgeFormatted = formatter.string(from: nextAge)
+        
+        navBarItem.title = (contact?.givenName)! + "'s " + nextAgeFormatted! + " birthday"
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         if let contact = contact {
             navBarItem.title = contact.givenName + "'s Birthday"
