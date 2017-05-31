@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cYo-MV-K1n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cYo-MV-K1n">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,7 +22,7 @@
             <objects>
                 <navigationController storyboardIdentifier="masterViewController" title="Navigation" navigationBarHidden="YES" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Events" image="cake_icon" selectedImage="cake_icon" id="LHy-zw-DkV"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -410,7 +409,7 @@
             <objects>
                 <navigationController id="xJo-4U-N6R" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Bkd-dh-feh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Bkd-dh-feh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -527,18 +526,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAq-xH-Vv9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="370"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jdi-EY-XVg" customClass="AvatarImageView" customModule="AvatarImageView">
-                                        <rect key="frame" x="83" y="44" width="209" height="209"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="jdi-EY-XVg" secondAttribute="height" multiplier="1:1" id="igW-oM-cI1"/>
-                                        </constraints>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAU-3G-5ao">
-                                        <rect key="frame" x="132" y="298" width="111" height="38"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="38" id="da1-YC-lug"/>
-                                            <constraint firstAttribute="width" constant="111" id="rEG-UJ-HCQ"/>
-                                        </constraints>
+                                        <rect key="frame" x="139" y="283" width="97" height="30"/>
                                         <state key="normal" title="Choose Photo">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -546,15 +535,20 @@
                                             <action selector="choosePhoto:" destination="4uJ-ko-y92" eventType="touchUpInside" id="APe-3a-SM2"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jdi-EY-XVg" customClass="AvatarImageView" customModule="AvatarImageView">
+                                        <rect key="frame" x="77.5" y="55" width="220" height="220"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="ODo-5C-h9X"/>
+                                            <constraint firstAttribute="height" constant="220" id="hMj-o8-nIx"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.1215686275" green="0.83529411760000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="zAU-3G-5ao" firstAttribute="top" secondItem="jdi-EY-XVg" secondAttribute="bottom" constant="45" id="IrO-ZA-f3h"/>
-                                    <constraint firstItem="jdi-EY-XVg" firstAttribute="top" secondItem="hAq-xH-Vv9" secondAttribute="top" constant="44" id="KAK-Pz-1KY"/>
-                                    <constraint firstAttribute="bottom" secondItem="zAU-3G-5ao" secondAttribute="bottom" constant="34" id="RtX-X1-gvn"/>
-                                    <constraint firstItem="jdi-EY-XVg" firstAttribute="centerX" secondItem="zAU-3G-5ao" secondAttribute="centerX" id="Sjx-7q-DmK"/>
-                                    <constraint firstItem="jdi-EY-XVg" firstAttribute="leading" secondItem="hAq-xH-Vv9" secondAttribute="leading" constant="83" id="vNc-rs-xiI"/>
-                                    <constraint firstItem="jdi-EY-XVg" firstAttribute="centerX" secondItem="hAq-xH-Vv9" secondAttribute="centerX" id="xR5-6c-lup"/>
+                                    <constraint firstItem="jdi-EY-XVg" firstAttribute="centerX" secondItem="hAq-xH-Vv9" secondAttribute="centerX" id="IK5-bv-ScB"/>
+                                    <constraint firstItem="jdi-EY-XVg" firstAttribute="centerY" secondItem="hAq-xH-Vv9" secondAttribute="centerY" constant="-20" id="Zha-rz-926"/>
+                                    <constraint firstItem="zAU-3G-5ao" firstAttribute="top" secondItem="jdi-EY-XVg" secondAttribute="bottom" constant="8" id="l1A-QE-r42"/>
+                                    <constraint firstItem="zAU-3G-5ao" firstAttribute="centerX" secondItem="hAq-xH-Vv9" secondAttribute="centerX" id="nZX-Hi-cUg"/>
                                 </constraints>
                             </view>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="aiJ-dM-Xfz">
