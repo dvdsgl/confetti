@@ -383,7 +383,7 @@
                                 </constraints>
                             </view>
                             <view opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6x-HW-Ill">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="349"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -391,14 +391,18 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="WDh-8T-5ok" secondAttribute="trailing" id="6pI-7C-4Th"/>
                             <constraint firstItem="WDh-8T-5ok" firstAttribute="top" secondItem="QkD-xh-tfj" secondAttribute="top" constant="357" id="80G-bN-pCk"/>
-                            <constraint firstItem="Q6x-HW-Ill" firstAttribute="top" secondItem="QkD-xh-tfj" secondAttribute="top" id="Ajk-db-SDx"/>
-                            <constraint firstItem="Q6x-HW-Ill" firstAttribute="leading" secondItem="WDh-8T-5ok" secondAttribute="leading" id="TMt-xL-K8L"/>
+                            <constraint firstItem="Q6x-HW-Ill" firstAttribute="leading" secondItem="WDh-8T-5ok" secondAttribute="leading" id="C2C-Nd-tWK"/>
+                            <constraint firstItem="Q6x-HW-Ill" firstAttribute="trailing" secondItem="WDh-8T-5ok" secondAttribute="trailing" id="KyB-36-rTN"/>
+                            <constraint firstItem="Q6x-HW-Ill" firstAttribute="top" secondItem="QkD-xh-tfj" secondAttribute="top" id="SW5-Lw-1BX"/>
                             <constraint firstItem="WDh-8T-5ok" firstAttribute="leading" secondItem="QkD-xh-tfj" secondAttribute="leading" id="b29-bp-ngB"/>
-                            <constraint firstItem="WDh-8T-5ok" firstAttribute="top" secondItem="Q6x-HW-Ill" secondAttribute="bottom" constant="8" symbolic="YES" id="bgR-Vv-kBe"/>
                             <constraint firstItem="WDh-8T-5ok" firstAttribute="bottom" secondItem="egW-IT-DeN" secondAttribute="top" id="l8C-cG-DbY"/>
-                            <constraint firstItem="Q6x-HW-Ill" firstAttribute="trailing" secondItem="WDh-8T-5ok" secondAttribute="trailing" id="lXC-bN-lMD"/>
+                            <constraint firstItem="Q6x-HW-Ill" firstAttribute="bottom" secondItem="egW-IT-DeN" secondAttribute="top" id="zDp-Rc-JX8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonsDrawer" destination="WDh-8T-5ok" id="xLD-4B-jUm"/>
+                        <outlet property="translucentOverlay" destination="Q6x-HW-Ill" id="5Zg-V6-n1i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pie-27-Y0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -619,7 +623,7 @@
                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="36"/>
                     <state key="normal" image="AddButton"/>
                     <connections>
-                        <segue destination="yLv-5V-7Zp" kind="presentation" modalPresentationStyle="overCurrentContext" id="mUe-ow-vgH"/>
+                        <segue destination="yLv-5V-7Zp" kind="presentation" identifier="" animates="NO" modalPresentationStyle="overCurrentContext" id="mUe-ow-vgH"/>
                     </connections>
                 </button>
             </objects>
@@ -777,6 +781,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="CSP-Gl-VIx"/>
-        <segue reference="MLE-4h-ErY"/>
+        <segue reference="SIx-NQ-p8i"/>
     </inferredMetricsTieBreakers>
 </document>
