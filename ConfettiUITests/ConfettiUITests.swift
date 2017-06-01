@@ -1,12 +1,5 @@
-//
-//  ConfettiUITests.swift
-//  ConfettiUITests
-//
-//  Created by David Siegel on 5/6/17.
-//  Copyright © 2017 confetti. All rights reserved.
-//
-
 import XCTest
+import VSMobileCenterExtensions
 
 class ConfettiUITests: XCTestCase {
         
@@ -28,9 +21,13 @@ class ConfettiUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCreateABirthday() {
+        let app = XCUIApplication()
+        app.buttons["I'd rather not"].tap()
+        app.buttons["AddButton"].tap()
+        app.buttons["Birthday"].tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery.cells.containing(.staticText, identifier:"John Appleseed").staticTexts["Detail"].tap()
     }
-    
 }
