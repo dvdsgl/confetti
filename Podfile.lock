@@ -80,15 +80,15 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.9)
-  - MobileCenter (0.8.1):
-    - MobileCenter/MobileCenterAnalytics (= 0.8.1)
-    - MobileCenter/MobileCenterCrashes (= 0.8.1)
-  - MobileCenter/MobileCenter (0.8.1)
-  - MobileCenter/MobileCenterAnalytics (0.8.1):
+  - MobileCenter (0.9.0):
+    - MobileCenter/MobileCenterAnalytics (= 0.9.0)
+    - MobileCenter/MobileCenterCrashes (= 0.9.0)
+  - MobileCenter/MobileCenter (0.9.0)
+  - MobileCenter/MobileCenterAnalytics (0.9.0):
     - MobileCenter/MobileCenter
-  - MobileCenter/MobileCenterCrashes (0.8.1):
+  - MobileCenter/MobileCenterCrashes (0.9.0):
     - MobileCenter/MobileCenter
-  - MobileCenter/MobileCenterDistribute (0.8.1):
+  - MobileCenter/MobileCenterDistribute (0.9.0):
     - MobileCenter/MobileCenter
   - Protobuf (3.3.0)
   - SDWebImage (4.0.0):
@@ -134,7 +134,7 @@ SPEC CHECKSUMS:
   FRStretchImageView: 897ded8990bf01966f1bc6de44f7ae5c4708a77a
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
-  MobileCenter: daf8bc399905f027fefb0e8eb2f18e7681b9e422
+  MobileCenter: dd301af71dbe0c4e3fe1d7e3368d0c38d7ea9e4e
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   VSMobileCenterExtensions: e6e0cd4cc96020c9af943b5b5f4a5e8bfba86770
