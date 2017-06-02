@@ -14,7 +14,8 @@ class AddEventViewController : UIViewController {
         view.bringSubview(toFront: buttonsDrawer)
         
         UIView.animate(withDuration: 1.0,
-                       animations: { self.translucentOverlay.backgroundColor = UIColor.white },
+                       animations: {
+                        self.translucentOverlay.backgroundColor = UIColor.white },
                        completion: nil)
         
         UIView.animate(withDuration: 1.0,
@@ -22,9 +23,11 @@ class AddEventViewController : UIViewController {
                        usingSpringWithDamping: 0.5,
                        initialSpringVelocity: 15,
                        options: [],
-                       animations: { self.buttonsDrawer?.center = CGPoint(
-                        x: (self.buttonsDrawer?.center.x)!,
-                        y: self.buttonsDrawer.frame.height) }, completion:nil)
+                       animations: {
+                        self.buttonsDrawer?.center = CGPoint(
+                            x: (self.buttonsDrawer?.center.x)!,
+                            y: self.buttonsDrawer.frame.height) },
+                       completion:nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
