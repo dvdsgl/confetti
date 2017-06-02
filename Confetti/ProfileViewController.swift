@@ -13,6 +13,8 @@ import FRStretchImageView
 import FirebaseAuth
 import Firebase
 
+import MobileCenterCrashes
+
 class ProfileViewController : UITableViewController {
     
     @IBOutlet var profileTableView: UITableView!
@@ -23,7 +25,7 @@ class ProfileViewController : UITableViewController {
     
     fileprivate var source = [
         "Name",
-        "Birthday",
+        "Crash the app!",
         "Logout"
     ]
     
@@ -73,6 +75,8 @@ class ProfileViewController : UITableViewController {
         case "Logout":
             logOut()
             return
+        case "Crash the app!":
+            MSCrashes.generateTestCrash()
         default:
             return
         }
