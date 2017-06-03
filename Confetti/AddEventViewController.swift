@@ -39,16 +39,16 @@ class AddEventViewController : UIViewController {
         switch identifier {
         case "addBirthday":
             destination.createEventSpec = CreateBirthdaySpec()
-            destination.title = "Whose birthday?"
+            destination.createEventSpec.title = "Whose Birthday?"
         case "addAnniversary":
             destination.createEventSpec = CreateAnniversarySpec()
-            destination.title = "Whose anniversary?"
+            destination.createEventSpec.title = "Whose Anniversary?"
         case "addMothersDay":
             destination.createEventSpec = CreateMothersDaySpec()
-            destination.title = "Who's Mom?"
+            destination.createEventSpec.title = "Who's Mom?"
         case "addFathersDay":
             destination.createEventSpec = CreateFathersDaySpec()
-            destination.title = "Who's Dad?"
+            destination.createEventSpec.title = "Who's Dad?"
         default:
             return
         }

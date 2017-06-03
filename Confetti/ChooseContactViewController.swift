@@ -32,6 +32,7 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
     
     override func viewDidLoad() {
         searchContacts(query: nil)
+        self.title = createEventSpec.title
     }
     
     override func viewDidAppear(_ animated: Bool) {
