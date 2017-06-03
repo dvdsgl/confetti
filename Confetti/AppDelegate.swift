@@ -9,8 +9,11 @@ import MobileCenterCrashes
 import MobileCenterAnalytics
 import MobileCenterDistribute
 
+import NotificationCenter
+import UserNotifications
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -32,7 +35,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // User Not logged in
         }
         
+        // Set up local notifications
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+        
         return true
+    }
+    
+    // Handle foreground notifications
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent: UNNotification, withCompletionHandler: @escaping (UNNotificationPresentationOptions) -> Void){
+        withCompletionHandler(UNNotificationPresentationOptions.sound)
+        print("Called in foreground")
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {

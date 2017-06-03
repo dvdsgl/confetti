@@ -15,6 +15,8 @@ import Firebase
 
 import MobileCenterCrashes
 
+import UserNotifications
+
 class ProfileViewController : UITableViewController {
     
     @IBOutlet var profileTableView: UITableView!
@@ -26,7 +28,8 @@ class ProfileViewController : UITableViewController {
     fileprivate var source = [
         "Name",
         "Crash the app!",
-        "Logout"
+        "Logout",
+        "Test Notification"
     ]
     
     override func viewDidLoad() {
@@ -77,6 +80,10 @@ class ProfileViewController : UITableViewController {
             return
         case "Crash the app!":
             MSCrashes.generateTestCrash()
+            return
+        case "Test Notification":
+            testNotification()
+            return
         default:
             return
         }
@@ -87,4 +94,22 @@ class ProfileViewController : UITableViewController {
         performSegue(withIdentifier: "unwindToLogin", sender: self)
     }
     
+    // Sends test notification 5 seconds after tapping
+    func testNotification() {
+        // Set up content
+        let content = UNMutableNotificationContent()
+        content.title = NSString.localizedUserNotificationString(forKey: "Hello!", arguments: nil)
+        content.body = NSString.localizedUserNotificationString(forKey: "Hello_message_body", arguments: nil)
+        content.sound = UNNotificationSound.default()
+        
+        // Deliver the notification in five seconds.
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(identifier: "FiveSecond", content: content, trigger: trigger) // Schedule the notification.
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { (error : Error?) in
+            if error != nil {
+                // Handle any errors
+            }
+        }
+    }    
 }
