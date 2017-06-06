@@ -30,23 +30,20 @@ class AddEventViewController : UIViewController {
                        completion:nil)
     }
     
+    
+    let createEventSpecForSegue: [String: () -> CreateEventSpec] = [
+        "addBirthday": { CreateBirthdaySpec() },
+        "addAnniversary": { CreateAnniversarySpec() },
+        "addMothersDay": { CreateMothersDaySpec() },
+        "addFathersDay": { CreateFathersDaySpec() }
+    ]
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
         
         let nav = segue.destination as? UINavigationController
         guard let destination = nav?.topViewController as? ChooseContactViewController else { return }
         
-        switch identifier {
-        case "addBirthday":
-            destination.createEventSpec = CreateBirthdaySpec()
-        case "addAnniversary":
-            destination.createEventSpec = CreateAnniversarySpec()
-        case "addMothersDay":
-            destination.createEventSpec = CreateMothersDaySpec()
-        case "addFathersDay":
-            destination.createEventSpec = CreateFathersDaySpec()
-        default:
-            return
-        }
+        destination.createEventSpec = createEventSpecForSegue[identifier]?()
     }
 }
