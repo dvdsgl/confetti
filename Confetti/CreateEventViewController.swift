@@ -10,6 +10,8 @@ import Contacts
 import SDWebImage
 import AvatarImageView
 
+import UserNotifications
+
 class CreateEventViewController: UIViewController,
     UIImagePickerControllerDelegate,
     UINavigationControllerDelegate {
@@ -81,6 +83,8 @@ class CreateEventViewController: UIViewController,
         
         UserViewModel.current.addEvent(event)
         
+        scheduleNotifications(event: event)
+        
         performSegue(withIdentifier: "unwindToMain", sender: self)
     }
     
@@ -114,5 +118,41 @@ class CreateEventViewController: UIViewController,
         }
         
         dismiss(animated: true)
+    }
+    
+    func scheduleNotifications(event: Event) {
+        let eventViewModel = EventViewModel.fromEvent(event)
+        
+        //TODO: Handle mother's/father's day
+        // Set up content for push notification
+        let occasion = createEventSpec.description
+        let firstName = eventViewModel.person.firstName
+        let message = "It's \(firstName)'s \(occasion!). Get in touch!"
+        
+        let content = UNMutableNotificationContent()
+        content.title = NSString.localizedUserNotificationString(forKey: "Hi!", arguments: nil)
+        content.body = NSString.localizedUserNotificationString(forKey: message, arguments: nil)
+        content.sound = UNNotificationSound.default()
+        
+        // Configure the trigger on the day of the event at 9 AM
+        var dateInfo = DateComponents()
+        dateInfo.minute = 0
+        dateInfo.hour = 9
+        dateInfo.day = eventViewModel.day
+        dateInfo.month = eventViewModel.month
+        
+        // 5 second delay test trigger
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        //Actual date trigger
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
+        let request = UNNotificationRequest(identifier: "EventToday", content: content, trigger: trigger)
+        
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { (error : Error?) in
+            if error != nil {
+                // Handle any errors
+            }
+        }
     }
 }

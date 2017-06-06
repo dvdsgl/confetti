@@ -48,7 +48,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     // Handle foreground notifications
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent: UNNotification, withCompletionHandler: @escaping (UNNotificationPresentationOptions) -> Void){
         withCompletionHandler(UNNotificationPresentationOptions.sound)
-        print("Called in foreground")
+    }
+    
+    // TODO: Handle what happens when user swipes on notification
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        if response.actionIdentifier == UNNotificationDismissActionIdentifier {
+            // The user dismissed the notification without taking action
+        }
+        else if response.actionIdentifier == UNNotificationDefaultActionIdentifier {
+            // The user launched the app
+        }
+        
+        // Else handle any custom actions. . .
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {

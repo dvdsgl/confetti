@@ -3,13 +3,15 @@ import Foundation
 public protocol CreateEventSpec {
     func createEvent(person: Person, month: Int, day: Int, year: Int?) -> Event
     
-    var title : String? { get set }
+    var title : String? { get set }    
+    var description : String? {get set}
 }
 
 public struct CreateBirthdaySpec: CreateEventSpec {
     public init() {}
     
-    public var title: String?    
+    public var title: String?
+    public var description: String?
     
     public func createEvent(person: Person, month: Int, day: Int, year: Int?) -> Event {
         return Event(person: person,
@@ -22,6 +24,7 @@ public struct CreateAnniversarySpec: CreateEventSpec {
     public init() {}
     
     public var title: String?
+    public var description: String?
     
     public func createEvent(person: Person, month: Int, day: Int, year: Int?) -> Event {
         return Event(person: person,
@@ -34,6 +37,7 @@ public struct CreateMothersDaySpec: CreateEventSpec {
     public init() {}
 
     public var title: String?
+    public var description: String?
     
     public func createEvent(person: Person, month: Int, day: Int, year: Int?) -> Event {
         return Event(person: person,
@@ -46,6 +50,7 @@ public struct CreateFathersDaySpec: CreateEventSpec {
     public init() {}
     
     public var title: String?
+    public var description: String?
     
     public func createEvent(person: Person, month: Int, day: Int, year: Int?) -> Event {
         return Event(person: person,
