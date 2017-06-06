@@ -55,7 +55,7 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
         
         let predicate: NSPredicate
         if searchText.isEmpty {
-            predicate = CNContact.predicateForContactsInContainer(withIdentifier: contactStore.defaultContainerIdentifier())
+            predicate = CNContact.predicateForContactsInContainer(withIdentifier: contactStore.defaultContainerIdentifier()!)
         } else {
             predicate = CNContact.predicateForContacts(matchingName: searchText)
         }
