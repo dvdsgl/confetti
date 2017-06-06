@@ -10,8 +10,6 @@ import Contacts
 import SDWebImage
 import AvatarImageView
 
-import UserNotifications
-
 class CreateEventViewController: UIViewController,
     UIImagePickerControllerDelegate,
     UINavigationControllerDelegate {
@@ -83,8 +81,6 @@ class CreateEventViewController: UIViewController,
         
         UserViewModel.current.addEvent(event)
         
-        scheduleNotifications(event: event)
-        
         performSegue(withIdentifier: "unwindToMain", sender: self)
     }
     
@@ -118,37 +114,5 @@ class CreateEventViewController: UIViewController,
         }
         
         dismiss(animated: true)
-    }
-    
-    func notificationFor(event: Event) -> UNNotificationRequest {
-        let viewModel = EventViewModel.fromEvent(event)
-        
-        let content = UNMutableNotificationContent()
-        content.title = viewModel.person.firstName
-        content.body = viewModel.description
-        content.sound = UNNotificationSound.default()
-        
-        let trigger = UNCalendarNotificationTrigger(
-            dateMatching: DateComponents(month: viewModel.month, day: viewModel.day, hour: 9),
-            repeats: false
-        )
-        
-        let request = UNNotificationRequest(
-            identifier: viewModel.event.key ?? "",
-            content: content,
-            trigger: trigger
-        )
-        
-        return request
-    }
-    
-    func scheduleNotifications(event: Event) {
-        let notification = notificationFor(event: event)
-        let center = UNUserNotificationCenter.current()
-        center.add(notification) { error in
-            if error != nil {
-                // Handle any errors
-            }
-        }
     }
 }
