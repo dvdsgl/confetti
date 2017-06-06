@@ -120,36 +120,32 @@ class CreateEventViewController: UIViewController,
         dismiss(animated: true)
     }
     
-    func scheduleNotifications(event: Event) {
-        let eventViewModel = EventViewModel.fromEvent(event)
-        
-        // TODO: Handle mother's/father's day
-        // Set up content for push notification
-        let occasion = createEventSpec.description
-        let firstName = eventViewModel.person.firstName
-        let message = "It's \(firstName)'s \(occasion). Get in touch!"
+    func notificationFor(event: Event) -> UNNotificationRequest {
+        let viewModel = EventViewModel.fromEvent(event)
         
         let content = UNMutableNotificationContent()
-        content.title = NSString.localizedUserNotificationString(forKey: "Hi!", arguments: nil)
-        content.body = NSString.localizedUserNotificationString(forKey: message, arguments: nil)
+        content.title = viewModel.person.firstName
+        content.body = viewModel.description
         content.sound = UNNotificationSound.default()
         
-        // Configure the trigger on the day of the event at 9 AM
-        var dateInfo = DateComponents()
-        dateInfo.minute = 0
-        dateInfo.hour = 9
-        dateInfo.day = eventViewModel.day
-        dateInfo.month = eventViewModel.month
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching: DateComponents(month: viewModel.month, day: viewModel.day, hour: 9),
+            repeats: false
+        )
         
-        // 5 second delay test trigger
-//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(
+            identifier: viewModel.event.key ?? "",
+            content: content,
+            trigger: trigger
+        )
         
-        //Actual date trigger
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
-        let request = UNNotificationRequest(identifier: "EventToday", content: content, trigger: trigger)
-        
+        return request
+    }
+    
+    func scheduleNotifications(event: Event) {
+        let notification = notificationFor(event: event)
         let center = UNUserNotificationCenter.current()
-        center.add(request) { (error : Error?) in
+        center.add(notification) { error in
             if error != nil {
                 // Handle any errors
             }
