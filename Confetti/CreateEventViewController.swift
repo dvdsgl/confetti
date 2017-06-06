@@ -123,11 +123,11 @@ class CreateEventViewController: UIViewController,
     func scheduleNotifications(event: Event) {
         let eventViewModel = EventViewModel.fromEvent(event)
         
-        //TODO: Handle mother's/father's day
+        // TODO: Handle mother's/father's day
         // Set up content for push notification
         let occasion = createEventSpec.description
         let firstName = eventViewModel.person.firstName
-        let message = "It's \(firstName)'s \(occasion!). Get in touch!"
+        let message = "It's \(firstName)'s \(occasion). Get in touch!"
         
         let content = UNMutableNotificationContent()
         content.title = NSString.localizedUserNotificationString(forKey: "Hi!", arguments: nil)
