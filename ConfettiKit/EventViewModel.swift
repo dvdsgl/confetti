@@ -1,7 +1,7 @@
 import Foundation
 
 public struct NotificationSpec {
-    public let title, message: String
+    public let id, title, message: String
     public let daysBefore: Int
 }
 
@@ -41,6 +41,7 @@ public class EventViewModel {
     public var notifications: [NotificationSpec] {
         return [
             NotificationSpec(
+                id: "default",
                 title: title,
                 message: description,
                 daysBefore: 0

@@ -104,8 +104,9 @@ public class UserViewModel {
                 repeats: false
             )
             
+            let identifier = (viewModel.event.key ?? "") + spec.id
             let request = UNNotificationRequest(
-                identifier: viewModel.event.key ?? "",
+                identifier: identifier,
                 content: content,
                 trigger: trigger
             )

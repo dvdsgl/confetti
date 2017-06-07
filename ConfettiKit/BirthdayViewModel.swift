@@ -19,11 +19,13 @@ public class BirthdayViewModel: EventViewModel {
     public override var notifications: [NotificationSpec] {
         return [
             NotificationSpec(
+                id: "day of",
                 title: "Today is \(title)!",
                 message: description,
                 daysBefore: 0
             ),
             NotificationSpec(
+                id: "coming up",
                 title: "\(title) is coming up",
                 message: description,
                 daysBefore: EventViewModel.soonDaysAway
