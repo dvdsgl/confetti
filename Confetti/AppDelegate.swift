@@ -43,6 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         Notifications.EventsChanged.subscribe { events in
             let soon = events.map { EventViewModel.fromEvent($0) }.filter { $0.isSoon }
             UIApplication.shared.applicationIconBadgeNumber = soon.count
+            
+            self.scheduleNotifications(for: events)
         }
 
         if let user = Auth.auth().currentUser {
@@ -96,5 +98,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             login.present(main, animated: false)
         }
     }
+    
+    private func notificationsFor(event: Event) -> [UNNotificationRequest] {
+        let viewModel = EventViewModel.fromEvent(event)
+        let baseDate = viewModel.nextOccurrence
+        
+        let calendar = Calendar.current
+        
+        return viewModel.notifications.map { spec in
+            let content = UNMutableNotificationContent()
+            content.title = spec.title
+            content.body = spec.message
+            content.sound = UNNotificationSound.default()
+            
+            let date = calendar.date(byAdding: .day, value: -spec.daysBefore, to: baseDate)!
+            let trigger = UNCalendarNotificationTrigger(
+                dateMatching: DateComponents(
+                    month: calendar.component(.month, from: date),
+                    day: calendar.component(.day, from: date),
+                    hour: 9
+                ),
+                repeats: false
+            )
+            
+            let identifier = (viewModel.event.key ?? "") + spec.id
+            let request = UNNotificationRequest(
+                identifier: identifier,
+                content: content,
+                trigger: trigger
+            )
+            
+            return request
+        }
+    }
+    
+    private func scheduleNotifications(for events: [Event]) {
+        let center = UNUserNotificationCenter.current()
+        
+        let notifications = events.flatMap { notificationsFor(event: $0) }
+        for notification in notifications {
+            center.add(notification) { error in
+                if error != nil {
+                    // Handle any errors
+                }
+            }
+        }
+    }
+
 }
 

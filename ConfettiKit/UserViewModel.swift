@@ -39,7 +39,6 @@ public class UserViewModel {
         
         onEventsUpdated { events in
             self.events = events
-            self.scheduleNotifications()
             Notifications.EventsChanged.post(sender: self, events: events)
         }
     }
@@ -80,53 +79,5 @@ public class UserViewModel {
     public func deleteEvent(_ event: Event) {
         guard let key = event.key else { return }
         eventsNode.child(key).removeValue()
-    }
-    
-    private func notificationsFor(event: Event) -> [UNNotificationRequest] {
-        let viewModel = EventViewModel.fromEvent(event)
-        let baseDate = viewModel.nextOccurrence
-        
-        let calendar = Calendar.current
-        
-        return viewModel.notifications.map { spec in
-            let content = UNMutableNotificationContent()
-            content.title = spec.title
-            content.body = spec.message
-            content.sound = UNNotificationSound.default()
-            
-            let date = calendar.date(byAdding: .day, value: -spec.daysBefore, to: baseDate)!
-            let trigger = UNCalendarNotificationTrigger(
-                dateMatching: DateComponents(
-                    month: calendar.component(.month, from: date),
-                    day: calendar.component(.day, from: date),
-                    hour: 9
-                ),
-                repeats: false
-            )
-            
-            let identifier = (viewModel.event.key ?? "") + spec.id
-            let request = UNNotificationRequest(
-                identifier: identifier,
-                content: content,
-                trigger: trigger
-            )
-            
-            return request
-        }
-    }
-    
-    private func scheduleNotifications() {
-        guard let events = events else { return }
-        
-        let center = UNUserNotificationCenter.current()
-        
-        let notifications = events.flatMap { notificationsFor(event: $0) }
-        for notification in notifications {
-            center.add(notification) { error in
-                if error != nil {
-                    // Handle any errors
-                }
-            }
-        }
     }
 }
