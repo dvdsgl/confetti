@@ -248,13 +248,13 @@
 		63A8997A1EBE64A200C5FB04 /* ConfettiKit */ = {
 			isa = PBXGroup;
 			children = (
+				63D4A89A1EC25ED6005B7374 /* ViewModels */,
 				638BA7951EDCF3E000C86919 /* CreateEventSpec.swift */,
 				63CE74811EBEA5690018B77D /* Colors.swift */,
 				63EADA011EBE95550041A272 /* Person.swift */,
 				63A899971EBE64B500C5FB04 /* Event.swift */,
 				63D4A8961EC2555B005B7374 /* Occasion.swift */,
 				63D4A8941EC2554A005B7374 /* Holiday.swift */,
-				63D4A89A1EC25ED6005B7374 /* ViewModels */,
 				63A8997B1EBE64A200C5FB04 /* ConfettiKit.h */,
 				63A8997C1EBE64A200C5FB04 /* Info.plist */,
 				6375235E1ED0E26000DF8F5A /* FirebaseData.swift */,
@@ -276,9 +276,9 @@
 			children = (
 				63D4A88F1EC23377005B7374 /* Playgrounds */,
 				63C759CA1EBE5A2400939D7B /* Confetti */,
+				63A8997A1EBE64A200C5FB04 /* ConfettiKit */,
 				63C759E11EBE5A2400939D7B /* ConfettiTests */,
 				63C759EC1EBE5A2400939D7B /* ConfettiUITests */,
-				63A8997A1EBE64A200C5FB04 /* ConfettiKit */,
 				63A899871EBE64A200C5FB04 /* ConfettiKitTests */,
 				63C759C91EBE5A2400939D7B /* Products */,
 				4CAEB769E639670617C41436 /* Pods */,
