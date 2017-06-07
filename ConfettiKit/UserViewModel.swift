@@ -39,6 +39,7 @@ public class UserViewModel {
         
         onEventsUpdated { events in
             self.events = events
+            self.scheduleNotifications()
             Notifications.EventsChanged.post(sender: self, events: events)
         }
     }
@@ -67,10 +68,6 @@ public class UserViewModel {
                 }
             }
             success(events)
-            
-            // We piggyback on event updates to schedule notifications
-            // We may want to listen on our own instead
-            self.scheduleNotificationsFor(events: events)
         })
     }
     
@@ -85,32 +82,44 @@ public class UserViewModel {
         eventsNode.child(key).removeValue()
     }
     
-    fileprivate func notificationFor(event: Event) -> UNNotificationRequest {
+    private func notificationsFor(event: Event) -> [UNNotificationRequest] {
         let viewModel = EventViewModel.fromEvent(event)
+        let baseDate = viewModel.nextOccurrence
         
-        let content = UNMutableNotificationContent()
-        content.title = viewModel.person.firstName
-        content.body = viewModel.description
-        content.sound = UNNotificationSound.default()
+        let calendar = Calendar.current
         
-        let trigger = UNCalendarNotificationTrigger(
-            dateMatching: DateComponents(month: viewModel.month, day: viewModel.day, hour: 9),
-            repeats: false
-        )
-        
-        let request = UNNotificationRequest(
-            identifier: viewModel.event.key ?? "",
-            content: content,
-            trigger: trigger
-        )
-        
-        return request
+        return viewModel.notifications.map { spec in
+            let content = UNMutableNotificationContent()
+            content.title = spec.title
+            content.body = spec.message
+            content.sound = UNNotificationSound.default()
+            
+            let date = calendar.date(byAdding: .day, value: -spec.daysBefore, to: baseDate)!
+            let trigger = UNCalendarNotificationTrigger(
+                dateMatching: DateComponents(
+                    month: calendar.component(.month, from: date),
+                    day: calendar.component(.day, from: date),
+                    hour: 9
+                ),
+                repeats: false
+            )
+            
+            let request = UNNotificationRequest(
+                identifier: viewModel.event.key ?? "",
+                content: content,
+                trigger: trigger
+            )
+            
+            return request
+        }
     }
     
-    fileprivate func scheduleNotificationsFor(events: [Event]) {
+    private func scheduleNotifications() {
+        guard let events = events else { return }
+        
         let center = UNUserNotificationCenter.current()
         
-        let notifications = events.map { notificationFor(event: $0) }
+        let notifications = events.flatMap { notificationsFor(event: $0) }
         for notification in notifications {
             center.add(notification) { error in
                 if error != nil {

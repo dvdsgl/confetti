@@ -1,5 +1,10 @@
 import Foundation
 
+public struct NotificationSpec {
+    public let title, message: String
+    public let daysBefore: Int
+}
+
 public class EventViewModel {
     
     static let soonDaysAway = 20
@@ -25,8 +30,22 @@ public class EventViewModel {
         return daysAway <= EventViewModel.soonDaysAway
     }
     
+    public var title: String {
+        return "\(event.person.firstName)'s Event"
+    }
+    
     public var description: String {
-        return "no description"
+        return "\(daysAway) days away"
+    }
+    
+    public var notifications: [NotificationSpec] {
+        return [
+            NotificationSpec(
+                title: title,
+                message: description,
+                daysBefore: 0
+            )
+        ]
     }
     
     public var person: Person {
@@ -45,7 +64,7 @@ public class EventViewModel {
         return calendar.date(byAdding: .day, value: -1, to: startOfToday)!
     }
     
-    var nextOccurrence: Date {
+    public var nextOccurrence: Date {
         return calendar.nextDate(after: startOfYesterday,
                                  matching: DateComponents(month: month, day: day),
                                  matchingPolicy: .nextTime,

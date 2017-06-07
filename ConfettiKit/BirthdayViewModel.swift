@@ -2,6 +2,10 @@
 import Foundation
 
 public class BirthdayViewModel: EventViewModel {
+    public override var title: String {
+        return "\(event.person.firstName)'s Birthday"
+    }
+    
     public override var description: String {
         var base = "\(shortMonthName) \(day)"
         if let nextAge = nextAge {
@@ -10,6 +14,21 @@ public class BirthdayViewModel: EventViewModel {
             base = "Birthday on \(base)"
         }
         return base
+    }
+    
+    public override var notifications: [NotificationSpec] {
+        return [
+            NotificationSpec(
+                title: "Today is \(title)!",
+                message: description,
+                daysBefore: 0
+            ),
+            NotificationSpec(
+                title: "\(title) is coming up",
+                message: description,
+                daysBefore: EventViewModel.soonDaysAway
+            )
+        ]
     }
     
     var nextAge: Int? {
