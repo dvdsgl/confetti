@@ -17,6 +17,7 @@
 		6320BFFE1ED0E9C300F27446 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637523601ED0E2F100DF8F5A /* UserViewModel.swift */; };
 		6320C0001ED1212B00F27446 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6320BFFF1ED1212B00F27446 /* CreateEventViewController.swift */; };
 		638BA7961EDCF3E000C86919 /* CreateEventSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638BA7951EDCF3E000C86919 /* CreateEventSpec.swift */; };
+		639E7F411EE79446002758B4 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E7F401EE79446002758B4 /* Notifications.swift */; };
 		63A446201EC50CAA00472ECC /* ConfettiMachineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A4461F1EC50CAA00472ECC /* ConfettiMachineView.swift */; };
 		63A8980E1EC13EEB00D16214 /* secret_garden.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63A8980D1EC13EEB00D16214 /* secret_garden.otf */; };
 		63A899821EBE64A200C5FB04 /* ConfettiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A899791EBE64A200C5FB04 /* ConfettiKit.framework */; };
@@ -117,6 +118,7 @@
 		6375235E1ED0E26000DF8F5A /* FirebaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseData.swift; sourceTree = "<group>"; };
 		637523601ED0E2F100DF8F5A /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = ConfettiKit/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
 		638BA7951EDCF3E000C86919 /* CreateEventSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventSpec.swift; sourceTree = "<group>"; };
+		639E7F401EE79446002758B4 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = ConfettiKit/Notifications.swift; sourceTree = SOURCE_ROOT; };
 		63A4461F1EC50CAA00472ECC /* ConfettiMachineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfettiMachineView.swift; path = Views/ConfettiMachineView.swift; sourceTree = "<group>"; };
 		63A8980D1EC13EEB00D16214 /* secret_garden.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = secret_garden.otf; path = Confetti/Resources/secret_garden.otf; sourceTree = "<group>"; };
 		63A899331EBE5DEF00C5FB04 /* ConfettiMachine.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ConfettiMachine.playground; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 			children = (
 				63C759CB1EBE5A2400939D7B /* AppDelegate.swift */,
 				637523601ED0E2F100DF8F5A /* UserViewModel.swift */,
+				639E7F401EE79446002758B4 /* Notifications.swift */,
 				63A8980A1EC13EA400D16214 /* Resources */,
 				63CE74871EBEB2DD0018B77D /* Views */,
 				3C2DD65F1ED9DF9A00C442F5 /* Storyboards */,
@@ -783,6 +786,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639E7F411EE79446002758B4 /* Notifications.swift in Sources */,
 				63FEA76C1ED0E8ED00F994B7 /* Occasion.swift in Sources */,
 				63FEA7711ED0E8ED00F994B7 /* AnniversaryViewModel.swift in Sources */,
 				63FEA76D1ED0E8ED00F994B7 /* Holiday.swift in Sources */,

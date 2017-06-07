@@ -19,23 +19,18 @@ class MasterViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
+        
+        UserViewModel.current.onEventsChanged { events in
+            let viewModels = events.map { EventViewModel.fromEvent($0) }
+            self.objects = viewModels.sorted(by: { $0.daysAway < $1.daysAway })
+            self.tableView.reloadData()
+        }
         
         // Setting FRStretchImageView
         heroImage.stretchHeightWhenPulledBy(scrollView: tableView)
     }
     
     @IBAction func unwindToMain(segue: UIStoryboardSegue) {}
-    
-    func getData() {
-        let user = UserViewModel.current
-        user.getEvents { events in
-            let viewModels = events.map { EventViewModel.fromEvent($0) }
-            self.objects = viewModels.sorted(by: { $0.daysAway < $1.daysAway })
-            
-            self.tableView.reloadData()
-        }
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

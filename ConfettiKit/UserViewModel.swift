@@ -26,6 +26,8 @@ public class UserViewModel {
         return userNode.child("events")
     }
     
+    var events: [Event]?
+    
     private init() {
         db = Database.database().reference()
         
@@ -34,9 +36,22 @@ public class UserViewModel {
             user["email"] = email
         }
         userNode.updateChildValues(user)
+        
+        onEventsUpdated { events in
+            self.events = events
+            Notifications.EventsChanged.post(sender: self, events: events)
+        }
     }
     
-    public func getEvents(_ success: @escaping ([Event]) -> ()) {
+    func onEventsChanged(_ onEventsUpdated: @escaping ([Event]) -> ()) -> NotificationRegistration {
+        if let events = events {
+            onEventsUpdated(events)
+        }
+        return Notifications.EventsChanged.subscribe(onEventsUpdated)
+    }
+
+
+    private func onEventsUpdated(_ success: @escaping ([Event]) -> ()) {
         let trace = Performance.startTrace(name: "UserViewModel.getEvents")
         
         eventsNode.observe(.value, with: { snapshot in
