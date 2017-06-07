@@ -99,7 +99,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
-    private func notificationsFor(event: Event) -> [UNNotificationRequest] {
+    func applicationWillResignActive(_ application: UIApplication) {
+        // Let send a sample notification
+        let notes = UserViewModel.current.events!.flatMap { notifications(for: $0) }
+        let randi = Int(arc4random_uniform(UInt32(notes.count)))
+
+        let request = notes[randi]
+        let when = Calendar.current.dateComponents([.hour, .minute, .second], from: Date(timeIntervalSinceNow: 1))
+        let newRequest = UNNotificationRequest(
+            identifier: "rando",
+            content: request.content,
+            trigger: UNCalendarNotificationTrigger(
+                dateMatching: when,
+                repeats: false
+            )
+        )
+        UNUserNotificationCenter.current().add(newRequest)
+    }
+    
+    private func notifications(for event: Event) -> [UNNotificationRequest] {
         let viewModel = EventViewModel.fromEvent(event)
         let baseDate = viewModel.nextOccurrence
         
@@ -135,7 +153,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     private func scheduleNotifications(for events: [Event]) {
         let center = UNUserNotificationCenter.current()
         
-        let notifications = events.flatMap { notificationsFor(event: $0) }
+        let notifications = events.flatMap { self.notifications(for: $0) }
         for notification in notifications {
             center.add(notification) { error in
                 if error != nil {

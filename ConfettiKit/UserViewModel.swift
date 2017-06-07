@@ -26,7 +26,7 @@ public class UserViewModel {
         return userNode.child("events")
     }
     
-    var events: [Event]?
+    public private(set) var events: [Event]?
     
     private init() {
         db = Database.database().reference()
