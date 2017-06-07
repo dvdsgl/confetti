@@ -8,7 +8,7 @@ public class BirthdayViewModel: EventViewModel {
     
     public override var description: String {
         var base = "\(shortMonthName) \(day)"
-        if let nextAge = nextAge {
+        if let nextAge = nextAge, nextAge > 0 {
             base = "Turns \(nextAge) on \(base)"
         } else {
             base = "Birthday on \(base)"
