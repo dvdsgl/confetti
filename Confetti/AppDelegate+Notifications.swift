@@ -59,7 +59,7 @@ extension AppDelegate {
         let request = notes[randi]
         let when = Calendar.current.dateComponents([.hour, .minute, .second], from: Date(timeIntervalSinceNow: 1))
         let newRequest = UNNotificationRequest(
-            identifier: "rando",
+            identifier: "sample",
             content: request.content,
             trigger: UNCalendarNotificationTrigger(
                 dateMatching: when,
