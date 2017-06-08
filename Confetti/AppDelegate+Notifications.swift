@@ -52,7 +52,9 @@ extension AppDelegate {
     }
     
     func scheduleSampleNotification() {
-        let requests = UserViewModel.current.events!.flatMap { notifications(for: $0) }
+        guard let events = UserViewModel.current.events else { return }
+        
+        let requests = events.flatMap { notifications(for: $0) }
         let request = requests[Int(arc4random_uniform(UInt32(requests.count)))]
         
         let calendar = Calendar.current
