@@ -63,7 +63,11 @@ extension AppDelegate {
             trigger: UNTimeIntervalNotificationTrigger(timeInterval: 0.2 + withDelay, repeats: false)
         )
         
-        UNUserNotificationCenter.current().add(newRequest)
+        UNUserNotificationCenter.current().add(newRequest, withCompletionHandler: { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        })
     }
     
     // Handle foreground notifications
