@@ -5,6 +5,19 @@ import ConfettiKit
 
 extension AppDelegate {
     
+    func setupNotifications() {
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            // Enable or disable features based on authorization.
+            print(granted)
+        }
+        
+        // Clear old notifications from previous versions
+        center.removeAllPendingNotificationRequests()
+    }
+    
     func notifications(for event: Event) -> [UNNotificationRequest] {
         let viewModel = EventViewModel.fromEvent(event)
         let baseDate = viewModel.nextOccurrence
