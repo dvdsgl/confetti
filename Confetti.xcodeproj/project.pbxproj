@@ -16,6 +16,7 @@
 		4CE7AAF76EAB2CB4A8637F11 /* Pods_Confetti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE7682F3E4A76FA241467F4 /* Pods_Confetti.framework */; };
 		6320BFFE1ED0E9C300F27446 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637523601ED0E2F100DF8F5A /* UserViewModel.swift */; };
 		6320C0001ED1212B00F27446 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6320BFFF1ED1212B00F27446 /* CreateEventViewController.swift */; };
+		6384DA481EE8D3F800223EC8 /* AppDelegate+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6384DA471EE8D3F800223EC8 /* AppDelegate+Notifications.swift */; };
 		638BA7961EDCF3E000C86919 /* CreateEventSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638BA7951EDCF3E000C86919 /* CreateEventSpec.swift */; };
 		639E7F411EE79446002758B4 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E7F401EE79446002758B4 /* Notifications.swift */; };
 		63A446201EC50CAA00472ECC /* ConfettiMachineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A4461F1EC50CAA00472ECC /* ConfettiMachineView.swift */; };
@@ -117,6 +118,7 @@
 		6320BFFF1ED1212B00F27446 /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		6375235E1ED0E26000DF8F5A /* FirebaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseData.swift; sourceTree = "<group>"; };
 		637523601ED0E2F100DF8F5A /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = ConfettiKit/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
+		6384DA471EE8D3F800223EC8 /* AppDelegate+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Notifications.swift"; sourceTree = "<group>"; };
 		638BA7951EDCF3E000C86919 /* CreateEventSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventSpec.swift; sourceTree = "<group>"; };
 		639E7F401EE79446002758B4 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = ConfettiKit/Notifications.swift; sourceTree = SOURCE_ROOT; };
 		63A4461F1EC50CAA00472ECC /* ConfettiMachineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfettiMachineView.swift; path = Views/ConfettiMachineView.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				63C759CB1EBE5A2400939D7B /* AppDelegate.swift */,
+				6384DA471EE8D3F800223EC8 /* AppDelegate+Notifications.swift */,
 				637523601ED0E2F100DF8F5A /* UserViewModel.swift */,
 				639E7F401EE79446002758B4 /* Notifications.swift */,
 				63A8980A1EC13EA400D16214 /* Resources */,
@@ -824,6 +827,7 @@
 				6320C0001ED1212B00F27446 /* CreateEventViewController.swift in Sources */,
 				3CA852811ED3E35F002E1A05 /* ProfileViewController.swift in Sources */,
 				3C6B9C3F1ED46D6A0092BD0F /* CustomTabBarController.swift in Sources */,
+				6384DA481EE8D3F800223EC8 /* AppDelegate+Notifications.swift in Sources */,
 				3C1250D31ED8756000F6E345 /* ChooseContactViewController.swift in Sources */,
 				3C1250D11ED873D100F6E345 /* AddEventViewController.swift in Sources */,
 				6320BFFE1ED0E9C300F27446 /* UserViewModel.swift in Sources */,
