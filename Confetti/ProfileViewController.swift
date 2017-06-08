@@ -28,8 +28,6 @@ class ProfileViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Your Profile"
-        
         // Setting FRStretchImageView
         profileImage.stretchHeightWhenPulledBy(scrollView: tableView)
     }
