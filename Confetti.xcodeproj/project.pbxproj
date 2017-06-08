@@ -14,6 +14,7 @@
 		3C1ED1211ED27287004A0053 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1ED1201ED27287004A0053 /* AddButton.swift */; };
 		3C6B9C3F1ED46D6A0092BD0F /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B9C3E1ED46D6A0092BD0F /* CustomTabBarController.swift */; };
 		3CA852811ED3E35F002E1A05 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA852801ED3E35F002E1A05 /* ProfileViewController.swift */; };
+		3CD97A4C1EE98D58007333E1 /* StackedCountdownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD97A4B1EE98D58007333E1 /* StackedCountdownLabel.swift */; };
 		4CE7AAF76EAB2CB4A8637F11 /* Pods_Confetti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE7682F3E4A76FA241467F4 /* Pods_Confetti.framework */; };
 		6320BFFE1ED0E9C300F27446 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637523601ED0E2F100DF8F5A /* UserViewModel.swift */; };
 		6320C0001ED1212B00F27446 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6320BFFF1ED1212B00F27446 /* CreateEventViewController.swift */; };
@@ -117,6 +118,7 @@
 		3C1ED1201ED27287004A0053 /* AddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		3C6B9C3E1ED46D6A0092BD0F /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		3CA852801ED3E35F002E1A05 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3CD97A4B1EE98D58007333E1 /* StackedCountdownLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackedCountdownLabel.swift; sourceTree = "<group>"; };
 		6320BFFF1ED1212B00F27446 /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		6375235E1ED0E26000DF8F5A /* FirebaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseData.swift; sourceTree = "<group>"; };
 		637523601ED0E2F100DF8F5A /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = ConfettiKit/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -355,6 +357,7 @@
 				63CE74831EBEAB4F0018B77D /* EventTableViewCell.swift */,
 				3C1ED1201ED27287004A0053 /* AddButton.swift */,
 				3C0109DA1EE8DDE200BF206A /* CountdownPillView.swift */,
+				3CD97A4B1EE98D58007333E1 /* StackedCountdownLabel.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -829,6 +832,7 @@
 			files = (
 				63A446201EC50CAA00472ECC /* ConfettiMachineView.swift in Sources */,
 				63BDA3531EC1596A0001EDBC /* LoginViewController.swift in Sources */,
+				3CD97A4C1EE98D58007333E1 /* StackedCountdownLabel.swift in Sources */,
 				006F3C241EBFA9FF005D0EFD /* RoundRectangleButton.swift in Sources */,
 				3C1ED1211ED27287004A0053 /* AddButton.swift in Sources */,
 				63CE74841EBEAB4F0018B77D /* EventTableViewCell.swift in Sources */,
