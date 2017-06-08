@@ -12,7 +12,7 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var objects = [EventViewModel]()
     
-    var onEventsChangedRegistration: NotificationRegistration?
+    var registrations = [NotificationRegistration]()
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
@@ -22,18 +22,19 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        onEventsChangedRegistration = UserViewModel.current.onEventsChanged { events in
+        let onEventsChanged = UserViewModel.current.onEventsChanged { events in
             let viewModels = events.map { EventViewModel.fromEvent($0) }
             self.objects = viewModels.sorted(by: { $0.daysAway < $1.daysAway })
             self.tableView.reloadData()
         }
+        registrations.append(onEventsChanged)
         
         // Setting FRStretchImageView
         heroImage.stretchHeightWhenPulledBy(scrollView: tableView)
     }
     
     deinit {
-        onEventsChangedRegistration?.removeObserver()
+        registrations.forEach { $0.removeObserver() }
     }
     
     @IBAction func unwindToMain(segue: UIStoryboardSegue) {}
