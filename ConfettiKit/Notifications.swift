@@ -1,7 +1,7 @@
 import Foundation
 
 public struct NotificationRegistration {
-    let removeObserver: () -> ()
+    public let removeObserver: () -> ()
 }
 
 public struct Notifications {
