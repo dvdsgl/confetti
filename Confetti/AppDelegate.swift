@@ -74,9 +74,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             login.present(main, animated: false)
         }
     }
-    
-    func applicationWillResignActive(_ application: UIApplication) {
-        scheduleSampleNotification(withDelay: 1)
-    }
 }
 
