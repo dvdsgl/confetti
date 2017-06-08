@@ -22,10 +22,8 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let onEventsChanged = UserViewModel.current.onEventsChanged { events in
-            let viewModels = events.map { EventViewModel.fromEvent($0) }
-            self.objects = viewModels.sorted(by: { $0.daysAway < $1.daysAway })
-            self.tableView.reloadData()
+        let onEventsChanged = UserViewModel.current.onEventsChanged {
+            self.updateWith(events: $0)
         }
         registrations.append(onEventsChanged)
         
@@ -35,6 +33,19 @@ class MasterViewController: UITableViewController {
     
     deinit {
         registrations.forEach { $0.removeObserver() }
+    }
+    
+    func updateWith(events: [Event]) {
+        let viewModels = events.map { EventViewModel.fromEvent($0) }
+        objects = viewModels.sorted(by: { $0.daysAway < $1.daysAway })
+        
+        if let hero = objects.first {
+            if let photoUrl = hero.person.photoUrl {
+                heroImage.sd_setImage(with: URL(string: photoUrl))
+            }
+        }
+        
+        tableView.reloadData()
     }
     
     @IBAction func unwindToMain(segue: UIStoryboardSegue) {}
