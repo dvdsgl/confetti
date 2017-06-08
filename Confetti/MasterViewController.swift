@@ -11,7 +11,7 @@ class MasterViewController: UITableViewController {
     
     var detailViewController: DetailViewController? = nil
     
-    var events = [EventViewModel]()
+    var viewModels = [EventViewModel]()
     var registrations = [NotificationRegistration]()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,10 +36,11 @@ class MasterViewController: UITableViewController {
     }
     
     func updateWith(events: [Event]) {
-        let viewModels = events.map { EventViewModel.fromEvent($0) }
-        self.events = viewModels.sorted(by: { $0.daysAway < $1.daysAway })
+        viewModels = events
+                        .map { EventViewModel.fromEvent($0) }
+                        .sorted(by: { $0.daysAway < $1.daysAway })
         
-        if let hero = events.first {
+        if let hero = viewModels.first {
             if let photoUrl = hero.person.photoUrl {
                 heroImage.sd_setImage(with: URL(string: photoUrl))
             }
@@ -63,7 +64,7 @@ class MasterViewController: UITableViewController {
         switch identifier {
         case "showDetail":
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = events[indexPath.row]
+                let object = viewModels[indexPath.row]
                 let controller = segue.destination as! DetailViewController
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
@@ -83,12 +84,12 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
+        return viewModels.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EventTableViewCell
-        let event = events[indexPath.row]
+        let event = viewModels[indexPath.row]
         cell.setEvent(event)
         return cell
     }
@@ -105,7 +106,7 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            let viewModel = events[indexPath.row]
+            let viewModel = viewModels[indexPath.row]
             UserViewModel.current.deleteEvent(viewModel.event)
         default:
             return
