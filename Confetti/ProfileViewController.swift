@@ -12,7 +12,6 @@ import MobileCenterCrashes
 class ProfileViewController : UITableViewController {
     
     @IBOutlet var profileTableView: UITableView!
-
     @IBOutlet weak var profileImage: FRStretchImageView!
     
     var handle: AuthStateDidChangeListenerHandle?
@@ -28,31 +27,26 @@ class ProfileViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Setting FRStretchImageView
         profileImage.stretchHeightWhenPulledBy(scrollView: tableView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // [START auth_listener]
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in            
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             // Set user's facebook photo as the hero image
             if let facebookUserId = Auth.auth().currentUser?.providerData.first?.uid {
-                let photoUrl = URL(string: "https://graph.facebook.com/" + facebookUserId + "/picture?height=500")
+                let photoUrl = URL(string: "https://graph.facebook.com/\(facebookUserId)/picture?height=500")
                 self.profileImage.sd_setImage(with: photoUrl)
             } else {
                 self.profileImage.image = #imageLiteral(resourceName: "stu")
             }
         }
-        // [END auth_listener]
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        // [START remove_auth_listener]
         Auth.auth().removeStateDidChangeListener(handle!)
-        // [END remove_auth_listener]
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
