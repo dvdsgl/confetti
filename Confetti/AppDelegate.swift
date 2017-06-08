@@ -17,6 +17,10 @@ import ConfettiKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
+    static var shared: AppDelegate {
+        return UIApplication.shared.delegate! as! AppDelegate
+    }
+    
     var window: UIWindow?
 
     fileprivate func setupNotifications() {
