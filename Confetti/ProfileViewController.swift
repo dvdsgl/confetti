@@ -1,14 +1,8 @@
-//
-//  ProfileViewController.swift
-//  Confetti
-//
-//  Created by Ian Leatherbury on 5/22/17.
-//  Copyright © 2017 confetti. All rights reserved.
-//
-
 import Foundation
 import UIKit
+
 import ConfettiKit
+
 import FRStretchImageView
 import FirebaseAuth
 import Firebase
