@@ -17,12 +17,14 @@ class ProfileViewController : UITableViewController {
     
     var handle: AuthStateDidChangeListenerHandle?
     
-    fileprivate var source = [
-        "Name",
-        "Crash the app!",
-        "Logout",
-        "Test Notification"
-    ]
+    enum Action: String {
+        case name = "Name"
+        case logout = "Logout"
+        case crash = "Crash the app!"
+        case testNotification = "Send test notification"
+    }
+    
+    let source: [Action] = [.name, .logout, .crash, .testNotification]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +59,7 @@ class ProfileViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) 
-        cell.textLabel?.text = source[indexPath.item]
+        cell.textLabel?.text = source[indexPath.item].rawValue
         return cell
     }
     
@@ -67,13 +69,13 @@ class ProfileViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch source[indexPath.row] {
-        case "Logout":
+        case .logout:
             logOut()
             return
-        case "Crash the app!":
+        case .crash:
             MSCrashes.generateTestCrash()
             return
-        case "Test Notification":
+        case .testNotification:
             AppDelegate.shared.scheduleSampleNotification()
             return
         default:
