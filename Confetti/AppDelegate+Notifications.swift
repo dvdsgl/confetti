@@ -51,18 +51,19 @@ extension AppDelegate {
         }
     }
     
-    func scheduleSampleNotification() {
+    func scheduleSampleNotification(withDelay: TimeInterval = 0) {
         guard let events = UserViewModel.current.events else { return }
         
         let requests = events.flatMap { notifications(for: $0) }
         let request = requests[Int(arc4random_uniform(UInt32(requests.count)))]
         
         let calendar = Calendar.current
-        let when = calendar.dateComponents([.hour, .minute, .second], from: Date(timeIntervalSinceNow: 1))
+        let date = Date(timeIntervalSinceNow: 0.2 + withDelay)
+        let dateMatch = calendar.dateComponents([.hour, .minute, .second], from: date)
         let newRequest = UNNotificationRequest(
             identifier: "sample",
             content: request.content,
-            trigger: UNCalendarNotificationTrigger(dateMatching: when, repeats: false)
+            trigger: UNCalendarNotificationTrigger(dateMatching: dateMatch, repeats: false)
         )
         
         UNUserNotificationCenter.current().add(newRequest)

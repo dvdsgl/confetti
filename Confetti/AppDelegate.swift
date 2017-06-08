@@ -85,7 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
-        scheduleSampleNotification()
+        scheduleSampleNotification(withDelay: 1)
     }
 }
 
