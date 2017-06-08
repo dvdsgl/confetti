@@ -60,6 +60,8 @@ class ProfileViewController : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         switch source[indexPath.row] {
         case .logout:
             logOut()
