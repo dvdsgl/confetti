@@ -1,5 +1,6 @@
 import UIKit
 import Foundation
+import SafariServices
 
 import ConfettiKit
 
@@ -10,8 +11,19 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var facebookButton: RoundRectangleButton!
     @IBAction func unwindToLogin(segue: UIStoryboardSegue) {}
-
+    
+    override func viewDidLoad() {
+        facebookButton.setTitleColor(.white, for: .normal)
+    }
+    
+    @IBAction func showPrivacyPolicy(_ sender: Any) {
+        let url = URL(string: "http://confettiapp.com/privacy/")!
+        let viewController = SFSafariViewController(url: url)
+        present(viewController, animated: true, completion: nil)
+    }
+    
     @IBAction func loginAnonymously(_ sender: Any) {
         Auth.auth().signInAnonymously() { (user, error) in
             if let e = error {
