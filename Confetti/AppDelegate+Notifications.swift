@@ -70,8 +70,10 @@ extension AppDelegate {
     }
     
     // Handle foreground notifications
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent: UNNotification, withCompletionHandler: @escaping (UNNotificationPresentationOptions) -> Void){
-        withCompletionHandler(UNNotificationPresentationOptions.sound)
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent: UNNotification,
+                                withCompletionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        withCompletionHandler(.alert)
     }
     
     // TODO: Handle what happens when user swipes on notification
