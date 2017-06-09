@@ -1,6 +1,11 @@
 import XCTest
 import VSMobileCenterExtensions
 
+func step(_ label: String, run: (()-> ())? = nil) {
+    run?()
+    MCLabel.labelStep(label)
+}
+
 class ConfettiUITests: XCTestCase {
         
     override func setUp() {
@@ -20,25 +25,34 @@ class ConfettiUITests: XCTestCase {
     func testCreateABirthday() {
         let app = XCUIApplication()
         
-        MCLabel.labelStep("Login")
+        step("Login") {
+            app.buttons["I'd rather not"].tapIfExists()
+        }
         
-        app.buttons["I'd rather not"].tapIfExists()
-        app.buttons["AddButton"].tap()
+        step("View profile") {
+            app.buttons["Me"].tap()
+        }
         
-        MCLabel.labelStep("Add")
+        app.buttons["Events"].tap()
         
-        app.buttons["Birthday"].tap()
+        step("Add event") {
+            app.buttons["AddButton"].tap()
+        }
+
+        step("Choose Birthday") {
+            app.buttons["Birthday"].tap()
+        }
+
+        step("Choose contact") {
+            let tablesQuery = app.tables
+            tablesQuery.cells.containing(.staticText, identifier:"John Appleseed").staticTexts["Detail"].tap()
+        }
         
-        MCLabel.labelStep("Contacts")
+        step("Save") {
+            app.buttons["Save"].tap()
+        }
         
-        let tablesQuery = app.tables
-        tablesQuery.cells.containing(.staticText, identifier:"John Appleseed").staticTexts["Detail"].tap()
-        
-        MCLabel.labelStep("Detail")
-        
-        app.buttons["Save"].tap()
-        
-        MCLabel.labelStep("Final")
+        step("Final")
     }
 }
 
