@@ -41,6 +41,10 @@ public class UserViewModel {
             self.events = events
             Notifications.EventsChanged.post(sender: self, events: events)
         }
+        
+        if AppDelegate.shared.runMode == .testRun {
+            userNode.onDisconnectRemoveValue()
+        }
     }
     
     func onEventsChanged(_ onEventsUpdated: @escaping ([Event]) -> ()) -> NotificationRegistration {
