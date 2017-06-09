@@ -47,6 +47,10 @@ class ConfettiUITests: XCTestCase {
         
         step("Main view")
         
+        step("Event details") {
+            app.cells.element(boundBy: 0).tap()
+        }
+        
         step("View profile") {
             app.buttons["Me"].tap()
         }
