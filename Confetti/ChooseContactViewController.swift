@@ -21,9 +21,7 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
     @IBOutlet var tableView: UITableView!
     
     var createEventSpec: CreateEventSpec!
-    
     var contacts = [Contact]()
-    var contactStore: CNContactStore!
     
     let keys = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
                 CNContactNamePrefixKey as CNKeyDescriptor,
@@ -39,13 +37,12 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
                 CNContactEmailAddressesKey as CNKeyDescriptor]
     
     override func viewDidLoad() {
-        self.title = createEventSpec.title
+        title = createEventSpec.title
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        contactStore = CNContactStore()
         searchContacts(query: nil)
         searchBar.becomeFirstResponder()
     }
@@ -69,13 +66,14 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
             return
         }
         
+        let store = CNContactStore()
         let predicate: NSPredicate
+        
         if searchText.isEmpty {
-            predicate = CNContact.predicateForContactsInContainer(withIdentifier: contactStore.defaultContainerIdentifier())
+            predicate = CNContact.predicateForContactsInContainer(withIdentifier: store.defaultContainerIdentifier())
         } else {
             predicate = CNContact.predicateForContacts(matchingName: searchText)
         }
-        let store = CNContactStore()
         do {
             contacts = try store.unifiedContacts(matching: predicate, keysToFetch: keys)
             tableView.reloadData()
