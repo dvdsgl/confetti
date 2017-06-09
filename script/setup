@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if ! hash pod 2>/dev/null; then
+  sudo gem install cocoapods
+fi
+
+if ! hash mobile-center 2>/dev/null; then
+  sudo npm install -g mobile-center-cli
+fi
+
+pod install --repo-update
