@@ -29,12 +29,6 @@ class ConfettiUITests: XCTestCase {
             app.buttons["I'd rather not"].tapIfExists()
         }
         
-        step("View profile") {
-            app.buttons["Me"].tap()
-        }
-        
-        app.buttons["Events"].tap()
-        
         step("Add event") {
             app.buttons["AddButton"].tap()
         }
@@ -52,7 +46,13 @@ class ConfettiUITests: XCTestCase {
             app.buttons["Save"].tap()
         }
         
-        step("Final")
+        step("Main view")
+        
+        step("View profile") {
+            app.buttons["Me"].tap()
+        }
+        
+        app.staticTexts["Logout"].tap()
     }
 }
 
