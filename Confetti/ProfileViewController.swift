@@ -17,14 +17,13 @@ class ProfileViewController : UITableViewController {
     var handle: AuthStateDidChangeListenerHandle?
     
     enum Action: String {
-        case name = "Name"
         case logout = "Logout"
         case crash = "Crash the app!"
         case testNotification = "Send test notification"
         case showVersion = "showVersion"
     }
     
-    let source: [Action] = [.name, .logout, .crash, .testNotification, .showVersion]
+    let source: [Action] = [.logout, .crash, .testNotification, .showVersion]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,15 +72,17 @@ class ProfileViewController : UITableViewController {
         switch source[indexPath.row] {
         case .logout:
             logOut()
-            return
         case .crash:
             MSCrashes.generateTestCrash()
-            return
         case .testNotification:
             AppDelegate.shared.scheduleSampleNotification()
-            return
+        case .showVersion:
+            UIApplication.shared.open(
+                URL(string: "https://install.mobile.azure.com/orgs/confetti/apps/confetti-swift")!,
+                options: [:]
+            )
         default:
-            return
+            break
         }
     }
     
