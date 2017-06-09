@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cYo-MV-K1n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cYo-MV-K1n">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,7 +22,7 @@
             <objects>
                 <navigationController storyboardIdentifier="masterViewController" title="Navigation" navigationBarHidden="YES" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Events" image="cake_icon" selectedImage="cake_icon" id="LHy-zw-DkV"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -226,63 +225,12 @@
                                         <constraint firstAttribute="height" constant="280" id="tdk-RI-Qsu"/>
                                     </constraints>
                                 </imageView>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpM-f7-1N9" customClass="CountdownPillView" customModule="Confetti" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="219" width="227" height="49"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stu's 19th Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPl-B0-g6c">
-                                            <rect key="frame" x="52" y="0.0" width="175" height="32"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jan 16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOj-3A-AWl">
-                                            <rect key="frame" x="52" y="24" width="172" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="172" id="2OU-ee-1cu"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Qyi-wN-Inp" customClass="StackedCountdownLabel" customModule="Confetti" customModuleProvider="target">
-                                            <rect key="frame" x="2" y="3" width="43" height="43"/>
-                                            <color key="backgroundColor" red="0.99607843139999996" green="0.0039215686269999999" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="43" id="6I9-Yp-HHD"/>
-                                                <constraint firstAttribute="width" secondItem="Qyi-wN-Inp" secondAttribute="height" multiplier="1:1" id="fWj-lg-9Mj"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.1215686275" green="0.83529411760000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstItem="Qyi-wN-Inp" firstAttribute="leading" secondItem="tpM-f7-1N9" secondAttribute="leading" constant="2" id="0Cy-Cx-lma"/>
-                                        <constraint firstItem="TOj-3A-AWl" firstAttribute="top" secondItem="tpM-f7-1N9" secondAttribute="top" constant="24" id="21E-fp-m8h"/>
-                                        <constraint firstItem="PPl-B0-g6c" firstAttribute="leading" secondItem="TOj-3A-AWl" secondAttribute="leading" id="6iD-VW-1qg"/>
-                                        <constraint firstAttribute="bottom" secondItem="Qyi-wN-Inp" secondAttribute="bottom" constant="3" id="7HU-mA-Y80"/>
-                                        <constraint firstAttribute="bottom" secondItem="PPl-B0-g6c" secondAttribute="bottom" constant="17" id="7Mv-fp-KgN"/>
-                                        <constraint firstItem="PPl-B0-g6c" firstAttribute="top" secondItem="tpM-f7-1N9" secondAttribute="top" id="BGL-zo-Vge"/>
-                                        <constraint firstItem="PPl-B0-g6c" firstAttribute="leading" secondItem="Qyi-wN-Inp" secondAttribute="trailing" constant="7" id="Cww-x7-YQH"/>
-                                        <constraint firstItem="Qyi-wN-Inp" firstAttribute="top" secondItem="tpM-f7-1N9" secondAttribute="top" constant="3" id="N9I-b2-s4j"/>
-                                        <constraint firstAttribute="bottom" secondItem="TOj-3A-AWl" secondAttribute="bottom" id="Qmd-nE-rgy"/>
-                                        <constraint firstAttribute="trailing" secondItem="TOj-3A-AWl" secondAttribute="trailing" constant="3" id="lz6-A2-tVc"/>
-                                        <constraint firstAttribute="trailing" secondItem="PPl-B0-g6c" secondAttribute="trailing" id="pTI-nd-5yr"/>
-                                        <constraint firstItem="Qyi-wN-Inp" firstAttribute="centerY" secondItem="tpM-f7-1N9" secondAttribute="centerY" id="va8-xB-Mwv"/>
-                                    </constraints>
-                                    <connections>
-                                        <outlet property="pillShortDateLabel" destination="TOj-3A-AWl" id="h3Z-Ch-gj5"/>
-                                        <outlet property="pillTitleLabel" destination="PPl-B0-g6c" id="85N-Ip-YXz"/>
-                                    </connections>
-                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="ykq-cZ-0qg" secondAttribute="trailing" id="0t1-jI-dTw"/>
                                 <constraint firstItem="ykq-cZ-0qg" firstAttribute="leading" secondItem="Ftm-Gw-bJN" secondAttribute="leading" id="3i9-CM-sL8"/>
-                                <constraint firstItem="ykq-cZ-0qg" firstAttribute="leading" secondItem="PPl-B0-g6c" secondAttribute="trailing" constant="-243" id="AVr-Cb-Req"/>
                                 <constraint firstItem="ykq-cZ-0qg" firstAttribute="top" secondItem="Ftm-Gw-bJN" secondAttribute="top" id="DOe-f7-5uX"/>
-                                <constraint firstItem="tpM-f7-1N9" firstAttribute="top" secondItem="Ftm-Gw-bJN" secondAttribute="top" constant="219" id="MhF-FW-YyL"/>
-                                <constraint firstItem="tpM-f7-1N9" firstAttribute="leading" secondItem="Ftm-Gw-bJN" secondAttribute="leading" constant="16" id="X4x-ep-YUx"/>
-                                <constraint firstAttribute="bottom" secondItem="tpM-f7-1N9" secondAttribute="bottom" constant="12" id="efd-Zd-sUO"/>
                                 <constraint firstAttribute="bottom" secondItem="ykq-cZ-0qg" secondAttribute="bottom" id="klz-Oh-ixz"/>
                             </constraints>
                         </view>
@@ -509,7 +457,7 @@
             <objects>
                 <navigationController id="xJo-4U-N6R" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Bkd-dh-feh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Bkd-dh-feh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

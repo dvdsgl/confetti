@@ -6,15 +6,25 @@ import ConfettiKit
 @IBDesignable
 class CountdownPillView : UIView {
     
-    @IBOutlet weak var pillTitleLabel: UILabel!
-    @IBOutlet weak var pillShortDateLabel: UILabel!
+    @IBOutlet var contentView: CountdownPillView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    func commonInit() {
+        Bundle.main.loadNibNamed("CountdownPillView", owner: self, options: nil)
+    }
+
     
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = self.bounds.height / 2
-    }
-    
-    public func setEvent(_ event: EventViewModel) {
-        pillTitleLabel.text = event.title
     }
 }

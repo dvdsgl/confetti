@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		006F3C241EBFA9FF005D0EFD /* RoundRectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006F3C231EBFA9FF005D0EFD /* RoundRectangleButton.swift */; };
+		00D1604B1EEB54A5005047BF /* CountdownPillView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D1604A1EEB54A5005047BF /* CountdownPillView.xib */; };
 		3C0109DB1EE8DDE200BF206A /* CountdownPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0109DA1EE8DDE200BF206A /* CountdownPillView.swift */; };
 		3C1250D11ED873D100F6E345 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1250D01ED873D100F6E345 /* AddEventViewController.swift */; };
 		3C1250D31ED8756000F6E345 /* ChooseContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1250D21ED8756000F6E345 /* ChooseContactViewController.swift */; };
@@ -85,6 +86,7 @@
 
 /* Begin PBXFileReference section */
 		006F3C231EBFA9FF005D0EFD /* RoundRectangleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundRectangleButton.swift; sourceTree = "<group>"; };
+		00D1604A1EEB54A5005047BF /* CountdownPillView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountdownPillView.xib; sourceTree = "<group>"; };
 		0A41DBE0420DCA78EF793164 /* Pods-Confetti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Confetti.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Confetti/Pods-Confetti.debug.xcconfig"; sourceTree = "<group>"; };
 		2FE7682F3E4A76FA241467F4 /* Pods_Confetti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Confetti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		370C42D4518DFC6F3462E898 /* Pods-ConfettiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfettiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConfettiTests/Pods-ConfettiTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				63C759D11EBE5A2400939D7B /* Main.storyboard */,
 				63C759D61EBE5A2400939D7B /* LaunchScreen.storyboard */,
+				00D1604A1EEB54A5005047BF /* CountdownPillView.xib */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				63C759D81EBE5A2400939D7B /* LaunchScreen.storyboard in Resources */,
 				63C759D51EBE5A2400939D7B /* Assets.xcassets in Resources */,
 				63C759D31EBE5A2400939D7B /* Main.storyboard in Resources */,
+				00D1604B1EEB54A5005047BF /* CountdownPillView.xib in Resources */,
 				63A8980E1EC13EEB00D16214 /* secret_garden.otf in Resources */,
 				63BDA3551EC15B840001EDBC /* GoogleService-Info.plist in Resources */,
 			);
