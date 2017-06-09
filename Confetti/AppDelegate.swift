@@ -16,9 +16,25 @@ import ConfettiKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-
+    
     static var shared: AppDelegate {
         return UIApplication.shared.delegate! as! AppDelegate
+    }
+    
+    enum RunMode {
+        case normal, testRun
+    }
+    
+    private(set) var runMode: RunMode  = .normal {
+        didSet {
+            switch runMode {
+            case .testRun:
+                UIView.setAnimationsEnabled(false)
+                break
+            default:
+                break
+            }
+        }
     }
     
     var versionNumber: String {
@@ -32,6 +48,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        if ProcessInfo.processInfo.arguments.contains("test") {
+            runMode = .testRun
+        }
+        
         FirebaseApp.configure()
         Database.database().isPersistenceEnabled = true
         
@@ -56,7 +77,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             // User Not logged in
         }
         
-        setupNotifications()
+        if runMode != .testRun {
+            setupNotifications()
+        }
         
         return true
     }
