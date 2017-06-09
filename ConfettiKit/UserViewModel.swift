@@ -31,6 +31,7 @@ public class UserViewModel {
     func logout() {
         if AppDelegate.shared.runMode == .testRun {
             userNode.removeValue()
+            userAuth.delete()
         }
         try! Auth.auth().signOut()
     }
