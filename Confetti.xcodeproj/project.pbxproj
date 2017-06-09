@@ -24,8 +24,6 @@
 		639E7F411EE79446002758B4 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639E7F401EE79446002758B4 /* Notifications.swift */; };
 		63A446201EC50CAA00472ECC /* ConfettiMachineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A4461F1EC50CAA00472ECC /* ConfettiMachineView.swift */; };
 		63A8980E1EC13EEB00D16214 /* secret_garden.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63A8980D1EC13EEB00D16214 /* secret_garden.otf */; };
-		63A899821EBE64A200C5FB04 /* ConfettiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A899791EBE64A200C5FB04 /* ConfettiKit.framework */; };
-		63A899891EBE64A200C5FB04 /* ConfettiKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A899881EBE64A200C5FB04 /* ConfettiKitTests.swift */; };
 		63A8998B1EBE64A200C5FB04 /* ConfettiKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 63A8997B1EBE64A200C5FB04 /* ConfettiKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63A8998E1EBE64A200C5FB04 /* ConfettiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A899791EBE64A200C5FB04 /* ConfettiKit.framework */; };
 		63A8998F1EBE64A200C5FB04 /* ConfettiKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63A899791EBE64A200C5FB04 /* ConfettiKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -37,7 +35,6 @@
 		63C759D31EBE5A2400939D7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C759D11EBE5A2400939D7B /* Main.storyboard */; };
 		63C759D51EBE5A2400939D7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C759D41EBE5A2400939D7B /* Assets.xcassets */; };
 		63C759D81EBE5A2400939D7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C759D61EBE5A2400939D7B /* LaunchScreen.storyboard */; };
-		63C759E31EBE5A2400939D7B /* ConfettiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C759E21EBE5A2400939D7B /* ConfettiTests.swift */; };
 		63C759EE1EBE5A2400939D7B /* ConfettiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C759ED1EBE5A2400939D7B /* ConfettiUITests.swift */; };
 		63CE74841EBEAB4F0018B77D /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE74831EBEAB4F0018B77D /* EventTableViewCell.swift */; };
 		63CE74861EBEB2C10018B77D /* CountdownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE74851EBEB2C10018B77D /* CountdownLabel.swift */; };
@@ -51,39 +48,17 @@
 		63FEA7711ED0E8ED00F994B7 /* AnniversaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D4A8981EC25EC9005B7374 /* AnniversaryViewModel.swift */; };
 		63FEA7721ED0E8ED00F994B7 /* HolidayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D4A8901EC2551D005B7374 /* HolidayViewModel.swift */; };
 		63FEA7731ED0E8ED00F994B7 /* FirebaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6375235E1ED0E26000DF8F5A /* FirebaseData.swift */; };
-		6441F7BF810CC491DD469BF1 /* Pods_ConfettiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE72D581AAF59BBD7A051E2A /* Pods_ConfettiTests.framework */; };
 		6DF381C9AE0AE6611E5051D4 /* Pods_ConfettiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C517376947BDE7D6A72F6B3 /* Pods_ConfettiUITests.framework */; };
 		F0E66AE237A5A1F297CE0011 /* Pods_ConfettiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5466EB41C41CF483B197F8B /* Pods_ConfettiKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		63A899831EBE64A200C5FB04 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 63C759C01EBE5A2400939D7B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 63A899781EBE64A200C5FB04;
-			remoteInfo = ConfettiKit;
-		};
-		63A899851EBE64A200C5FB04 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 63C759C01EBE5A2400939D7B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 63C759C71EBE5A2400939D7B;
-			remoteInfo = Confetti;
-		};
 		63A8998C1EBE64A200C5FB04 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 63C759C01EBE5A2400939D7B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 63A899781EBE64A200C5FB04;
 			remoteInfo = ConfettiKit;
-		};
-		63C759DF1EBE5A2400939D7B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 63C759C01EBE5A2400939D7B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 63C759C71EBE5A2400939D7B;
-			remoteInfo = Confetti;
 		};
 		63C759EA1EBE5A2400939D7B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -133,9 +108,6 @@
 		63A899791EBE64A200C5FB04 /* ConfettiKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ConfettiKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A8997B1EBE64A200C5FB04 /* ConfettiKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfettiKit.h; sourceTree = "<group>"; };
 		63A8997C1EBE64A200C5FB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63A899811EBE64A200C5FB04 /* ConfettiKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConfettiKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		63A899881EBE64A200C5FB04 /* ConfettiKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiKitTests.swift; sourceTree = "<group>"; };
-		63A8998A1EBE64A200C5FB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63A899971EBE64B500C5FB04 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		63BDA3521EC1596A0001EDBC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		63BDA3541EC15B840001EDBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -147,9 +119,6 @@
 		63C759D41EBE5A2400939D7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63C759D71EBE5A2400939D7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63C759D91EBE5A2400939D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63C759DE1EBE5A2400939D7B /* ConfettiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConfettiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		63C759E21EBE5A2400939D7B /* ConfettiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiTests.swift; sourceTree = "<group>"; };
-		63C759E41EBE5A2400939D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63C759E91EBE5A2400939D7B /* ConfettiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConfettiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C759ED1EBE5A2400939D7B /* ConfettiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiUITests.swift; sourceTree = "<group>"; };
 		63C759EF1EBE5A2400939D7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -184,28 +153,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		63A8997E1EBE64A200C5FB04 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				63A899821EBE64A200C5FB04 /* ConfettiKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		63C759C51EBE5A2400939D7B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				63A8998E1EBE64A200C5FB04 /* ConfettiKit.framework in Frameworks */,
 				4CE7AAF76EAB2CB4A8637F11 /* Pods_Confetti.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		63C759DB1EBE5A2400939D7B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6441F7BF810CC491DD469BF1 /* Pods_ConfettiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +200,7 @@
 		6384DA491EE8D54A00223EC8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				636BD6AA1EEB37610001A983 /* Contact.swift */,
 				63EADA011EBE95550041A272 /* Person.swift */,
 				63A899971EBE64B500C5FB04 /* Event.swift */,
 				63D4A8961EC2555B005B7374 /* Occasion.swift */,
@@ -279,24 +233,13 @@
 			path = ConfettiKit;
 			sourceTree = "<group>";
 		};
-		63A899871EBE64A200C5FB04 /* ConfettiKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				63A899881EBE64A200C5FB04 /* ConfettiKitTests.swift */,
-				63A8998A1EBE64A200C5FB04 /* Info.plist */,
-			);
-			path = ConfettiKitTests;
-			sourceTree = "<group>";
-		};
 		63C759BF1EBE5A2400939D7B = {
 			isa = PBXGroup;
 			children = (
 				63D4A88F1EC23377005B7374 /* Playgrounds */,
 				63C759CA1EBE5A2400939D7B /* Confetti */,
 				63A8997A1EBE64A200C5FB04 /* ConfettiKit */,
-				63C759E11EBE5A2400939D7B /* ConfettiTests */,
 				63C759EC1EBE5A2400939D7B /* ConfettiUITests */,
-				63A899871EBE64A200C5FB04 /* ConfettiKitTests */,
 				63C759C91EBE5A2400939D7B /* Products */,
 				4CAEB769E639670617C41436 /* Pods */,
 				85EA98AE1279C0C2BB986C33 /* Frameworks */,
@@ -307,10 +250,8 @@
 			isa = PBXGroup;
 			children = (
 				63C759C81EBE5A2400939D7B /* Confetti.app */,
-				63C759DE1EBE5A2400939D7B /* ConfettiTests.xctest */,
 				63C759E91EBE5A2400939D7B /* ConfettiUITests.xctest */,
 				63A899791EBE64A200C5FB04 /* ConfettiKit.framework */,
-				63A899811EBE64A200C5FB04 /* ConfettiKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -330,15 +271,6 @@
 				63BDA3541EC15B840001EDBC /* GoogleService-Info.plist */,
 			);
 			path = Confetti;
-			sourceTree = "<group>";
-		};
-		63C759E11EBE5A2400939D7B /* ConfettiTests */ = {
-			isa = PBXGroup;
-			children = (
-				63C759E21EBE5A2400939D7B /* ConfettiTests.swift */,
-				63C759E41EBE5A2400939D7B /* Info.plist */,
-			);
-			path = ConfettiTests;
 			sourceTree = "<group>";
 		};
 		63C759EC1EBE5A2400939D7B /* ConfettiUITests */ = {
@@ -444,25 +376,6 @@
 			productReference = 63A899791EBE64A200C5FB04 /* ConfettiKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		63A899801EBE64A200C5FB04 /* ConfettiKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 63A899961EBE64A200C5FB04 /* Build configuration list for PBXNativeTarget "ConfettiKitTests" */;
-			buildPhases = (
-				63A8997D1EBE64A200C5FB04 /* Sources */,
-				63A8997E1EBE64A200C5FB04 /* Frameworks */,
-				63A8997F1EBE64A200C5FB04 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				63A899841EBE64A200C5FB04 /* PBXTargetDependency */,
-				63A899861EBE64A200C5FB04 /* PBXTargetDependency */,
-			);
-			name = ConfettiKitTests;
-			productName = ConfettiKitTests;
-			productReference = 63A899811EBE64A200C5FB04 /* ConfettiKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		63C759C71EBE5A2400939D7B /* Confetti */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63C759F21EBE5A2400939D7B /* Build configuration list for PBXNativeTarget "Confetti" */;
@@ -484,27 +397,6 @@
 			productName = Confetti;
 			productReference = 63C759C81EBE5A2400939D7B /* Confetti.app */;
 			productType = "com.apple.product-type.application";
-		};
-		63C759DD1EBE5A2400939D7B /* ConfettiTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 63C759F51EBE5A2400939D7B /* Build configuration list for PBXNativeTarget "ConfettiTests" */;
-			buildPhases = (
-				DDAE3B98A9FBAD3DFC35B039 /* [CP] Check Pods Manifest.lock */,
-				63C759DA1EBE5A2400939D7B /* Sources */,
-				63C759DB1EBE5A2400939D7B /* Frameworks */,
-				63C759DC1EBE5A2400939D7B /* Resources */,
-				E55C88E2215545BE2B5AD07E /* [CP] Embed Pods Frameworks */,
-				AD01A42C555BD88B82F903B5 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				63C759E01EBE5A2400939D7B /* PBXTargetDependency */,
-			);
-			name = ConfettiTests;
-			productName = ConfettiTests;
-			productReference = 63C759DE1EBE5A2400939D7B /* ConfettiTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		63C759E81EBE5A2400939D7B /* ConfettiUITests */ = {
 			isa = PBXNativeTarget;
@@ -542,22 +434,10 @@
 						DevelopmentTeam = W9D824R4EW;
 						ProvisioningStyle = Automatic;
 					};
-					63A899801EBE64A200C5FB04 = {
-						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = W9D824R4EW;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 63C759C71EBE5A2400939D7B;
-					};
 					63C759C71EBE5A2400939D7B = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = W9D824R4EW;
 						ProvisioningStyle = Automatic;
-					};
-					63C759DD1EBE5A2400939D7B = {
-						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = W9D824R4EW;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 63C759C71EBE5A2400939D7B;
 					};
 					63C759E81EBE5A2400939D7B = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -581,23 +461,14 @@
 			projectRoot = "";
 			targets = (
 				63C759C71EBE5A2400939D7B /* Confetti */,
-				63C759DD1EBE5A2400939D7B /* ConfettiTests */,
 				63C759E81EBE5A2400939D7B /* ConfettiUITests */,
 				63A899781EBE64A200C5FB04 /* ConfettiKit */,
-				63A899801EBE64A200C5FB04 /* ConfettiKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		63A899771EBE64A200C5FB04 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		63A8997F1EBE64A200C5FB04 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -613,13 +484,6 @@
 				63C759D31EBE5A2400939D7B /* Main.storyboard in Resources */,
 				63A8980E1EC13EEB00D16214 /* secret_garden.otf in Resources */,
 				63BDA3551EC15B840001EDBC /* GoogleService-Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		63C759DC1EBE5A2400939D7B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,21 +572,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConfettiUITests/Pods-ConfettiUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AD01A42C555BD88B82F903B5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConfettiTests/Pods-ConfettiTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C5DCB7B85ED2E0F9050276EA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -736,36 +585,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConfettiUITests/Pods-ConfettiUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DDAE3B98A9FBAD3DFC35B039 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E55C88E2215545BE2B5AD07E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConfettiTests/Pods-ConfettiTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EB6267965A95DF1DE7CD9CDD /* [CP] Copy Pods Resources */ = {
@@ -805,6 +624,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				636BD6AB1EEB37610001A983 /* Contact.swift in Sources */,
 				639E7F411EE79446002758B4 /* Notifications.swift in Sources */,
 				63FEA76C1ED0E8ED00F994B7 /* Occasion.swift in Sources */,
 				63FEA7711ED0E8ED00F994B7 /* AnniversaryViewModel.swift in Sources */,
@@ -817,14 +637,6 @@
 				63FEA76F1ED0E8ED00F994B7 /* EventViewModel.swift in Sources */,
 				63FEA7691ED0E8ED00F994B7 /* Colors.swift in Sources */,
 				63FEA7731ED0E8ED00F994B7 /* FirebaseData.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		63A8997D1EBE64A200C5FB04 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				63A899891EBE64A200C5FB04 /* ConfettiKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -853,14 +665,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		63C759DA1EBE5A2400939D7B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				63C759E31EBE5A2400939D7B /* ConfettiTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		63C759E51EBE5A2400939D7B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -872,25 +676,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		63A899841EBE64A200C5FB04 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 63A899781EBE64A200C5FB04 /* ConfettiKit */;
-			targetProxy = 63A899831EBE64A200C5FB04 /* PBXContainerItemProxy */;
-		};
-		63A899861EBE64A200C5FB04 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 63C759C71EBE5A2400939D7B /* Confetti */;
-			targetProxy = 63A899851EBE64A200C5FB04 /* PBXContainerItemProxy */;
-		};
 		63A8998D1EBE64A200C5FB04 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 63A899781EBE64A200C5FB04 /* ConfettiKit */;
 			targetProxy = 63A8998C1EBE64A200C5FB04 /* PBXContainerItemProxy */;
-		};
-		63C759E01EBE5A2400939D7B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 63C759C71EBE5A2400939D7B /* Confetti */;
-			targetProxy = 63C759DF1EBE5A2400939D7B /* PBXContainerItemProxy */;
 		};
 		63C759EB1EBE5A2400939D7B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -964,34 +753,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		63A899921EBE64A200C5FB04 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = W9D824R4EW;
-				INFOPLIST_FILE = ConfettiKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.confetti.ConfettiKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Confetti.app/Confetti";
-			};
-			name = Debug;
-		};
-		63A899931EBE64A200C5FB04 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = W9D824R4EW;
-				INFOPLIST_FILE = ConfettiKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.confetti.ConfettiKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Confetti.app/Confetti";
 			};
 			name = Release;
 		};
@@ -1120,38 +881,6 @@
 			};
 			name = Release;
 		};
-		63C759F61EBE5A2400939D7B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F30C815E241CA5318A74A5C /* Pods-ConfettiTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = W9D824R4EW;
-				INFOPLIST_FILE = ConfettiTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.confetti.ConfettiTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Confetti.app/Confetti";
-			};
-			name = Debug;
-		};
-		63C759F71EBE5A2400939D7B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 370C42D4518DFC6F3462E898 /* Pods-ConfettiTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = W9D824R4EW;
-				INFOPLIST_FILE = ConfettiTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.confetti.ConfettiTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Confetti.app/Confetti";
-			};
-			name = Release;
-		};
 		63C759F91EBE5A2400939D7B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8EDBD1E4C75D095135A18954 /* Pods-ConfettiUITests.debug.xcconfig */;
@@ -1194,15 +923,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63A899961EBE64A200C5FB04 /* Build configuration list for PBXNativeTarget "ConfettiKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				63A899921EBE64A200C5FB04 /* Debug */,
-				63A899931EBE64A200C5FB04 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		63C759C31EBE5A2400939D7B /* Build configuration list for PBXProject "Confetti" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1217,15 +937,6 @@
 			buildConfigurations = (
 				63C759F31EBE5A2400939D7B /* Debug */,
 				63C759F41EBE5A2400939D7B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		63C759F51EBE5A2400939D7B /* Build configuration list for PBXNativeTarget "ConfettiTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				63C759F61EBE5A2400939D7B /* Debug */,
-				63C759F71EBE5A2400939D7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
