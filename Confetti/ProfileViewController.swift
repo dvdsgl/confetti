@@ -86,7 +86,7 @@ class ProfileViewController : UITableViewController {
     }
     
     func logOut() {
-        try! Auth.auth().signOut()
+        UserViewModel.current.logout()
         performSegue(withIdentifier: "unwindToLogin", sender: self)
     }
 }

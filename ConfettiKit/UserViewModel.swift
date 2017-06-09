@@ -28,6 +28,13 @@ public class UserViewModel {
     
     public private(set) var events: [Event]?
     
+    func logout() {
+        if AppDelegate.shared.runMode == .testRun {
+            userNode.removeValue()
+        }
+        try! Auth.auth().signOut()
+    }
+    
     private init() {
         db = Database.database().reference()
         
@@ -40,10 +47,6 @@ public class UserViewModel {
         onEventsUpdated { events in
             self.events = events
             Notifications.EventsChanged.post(sender: self, events: events)
-        }
-        
-        if AppDelegate.shared.runMode == .testRun {
-            userNode.onDisconnectRemoveValue()
         }
     }
     
