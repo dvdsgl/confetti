@@ -6,6 +6,14 @@ import ConfettiKit
 import Contacts
 import ContactsUI
 
+extension CNContact: Contact {
+    public var firstName: String { return givenName }
+    public var lastName: String { return familyName }
+    
+    public var fullName: String {
+        return CNContactFormatter.string(from: self, style: .fullName)!
+    }
+}
 
 class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
     
@@ -14,8 +22,8 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
     
     var createEventSpec: CreateEventSpec!
     
-    var contacts = [CNContact]()
-    let contactStore = CNContactStore()
+    var contacts = [Contact]()
+    var contactStore: CNContactStore!
     
     let keys = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
                 CNContactNamePrefixKey as CNKeyDescriptor,
@@ -31,12 +39,14 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
                 CNContactEmailAddressesKey as CNKeyDescriptor]
     
     override func viewDidLoad() {
-        searchContacts(query: nil)
         self.title = createEventSpec.title
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        contactStore = CNContactStore()
+        searchContacts(query: nil)
         searchBar.becomeFirstResponder()
     }
     
@@ -53,13 +63,18 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
     func searchContacts(query: String?) {
         let searchText = query ?? ""
         
+        if AppDelegate.shared.runMode == .testRun {
+            contacts = [ManualContact(firstName: "John", lastName: "Appleseed")]
+            tableView.reloadData()
+            return
+        }
+        
         let predicate: NSPredicate
         if searchText.isEmpty {
             predicate = CNContact.predicateForContactsInContainer(withIdentifier: contactStore.defaultContainerIdentifier())
         } else {
             predicate = CNContact.predicateForContacts(matchingName: searchText)
         }
-        
         let store = CNContactStore()
         do {
             contacts = try store.unifiedContacts(matching: predicate, keysToFetch: keys)
@@ -78,7 +93,7 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "contact", for: indexPath)
         
         let contact = contacts[indexPath.row]
-        cell.textLabel?.text = CNContactFormatter.string(from: contact, style: .fullName)
+        cell.textLabel?.text = contact.fullName
         
         if let imageData = contact.imageData {
             cell.imageView?.image = UIImage(data: imageData)

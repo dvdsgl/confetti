@@ -22,7 +22,7 @@ class CreateEventViewController: UIViewController,
     
     var createEventSpec: CreateEventSpec!
     
-    var contact: CNContact?
+    var contact: Contact!
     var photoUrl: URL?
     
     struct AvatarConfig: AvatarImageViewConfiguration {
@@ -37,13 +37,13 @@ class CreateEventViewController: UIViewController,
             return Colors.accentFor(avatarId)
         }
         
-        init(contact: CNContact) {
+        init(contact: Contact) {
             if let data = contact.imageData {
                 avatar = UIImage(data: data)
             } else {
                 avatar = nil
             }
-            name = CNContactFormatter.string(from: contact, style: .fullName)!
+            name = contact.fullName
         }
     }
     
@@ -56,27 +56,25 @@ class CreateEventViewController: UIViewController,
         formatter.numberStyle = .ordinal
         let nextAgeFormatted = formatter.string(from: nextAge)
         
-        navBarItem.title = (contact?.givenName)! + "'s " + nextAgeFormatted! + " birthday"
+        navBarItem.title = contact.firstName + "'s " + nextAgeFormatted! + " birthday"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if let contact = contact {
-            navBarItem.title = contact.givenName + "'s Birthday"
+            navBarItem.title = contact.firstName + "'s Birthday"
             
             photoView.configuration = AvatarConfig()
             photoView.dataSource = AvatarData(contact: contact)
         }
     }
     
-    @IBAction func saveButton(_ sender: Any) {
-        guard let firstName = contact?.givenName else { return }
-        
+    @IBAction func saveButton(_ sender: Any) {        
         let birthday = datePicker.date
         let month = datePicker.calendar.component(.month, from: birthday)
         let day = datePicker.calendar.component(.day, from: birthday)
         let year = datePicker.calendar.component(.year, from: birthday)
         
-        let person = Person(firstName, photoUrl: photoUrl?.absoluteString)
+        let person = Person(contact.firstName, photoUrl: photoUrl?.absoluteString)
         let event = createEventSpec.createEvent(person: person, month: month, day: day, year: year)
         
         UserViewModel.current.addEvent(event)
