@@ -38,8 +38,7 @@ class ConfettiUITests: XCTestCase {
         }
 
         step("Choose contact") {
-            let tablesQuery = app.tables
-            tablesQuery.cells.containing(.staticText, identifier:"John Appleseed").staticTexts["Detail"].tap()
+            app.staticTexts["John Appleseed"].tap()
         }
         
         step("Save") {
