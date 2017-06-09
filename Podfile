@@ -5,7 +5,7 @@ def shared_pods
   pod "DynamicColor", '~> 3.3'
 end
 
-["Confetti", "ConfettiTests"].each do |t|
+["Confetti"].each do |t|
     target t do
       use_frameworks!
       shared_pods
