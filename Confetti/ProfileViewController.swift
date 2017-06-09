@@ -21,9 +21,10 @@ class ProfileViewController : UITableViewController {
         case logout = "Logout"
         case crash = "Crash the app!"
         case testNotification = "Send test notification"
+        case showVersion = "showVersion"
     }
     
-    let source: [Action] = [.name, .logout, .crash, .testNotification]
+    let source: [Action] = [.name, .logout, .crash, .testNotification, .showVersion]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +51,15 @@ class ProfileViewController : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) 
-        cell.textLabel?.text = source[indexPath.item].rawValue
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath)
+        
+        switch source[indexPath.item] {
+        case .showVersion:
+            let app = AppDelegate.shared
+            cell.textLabel?.text = "Version \(app.versionNumber) (\(app.buildNumber))"
+        case let action:
+            cell.textLabel?.text = action.rawValue
+        }
         return cell
     }
     

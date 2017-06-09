@@ -21,6 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return UIApplication.shared.delegate! as! AppDelegate
     }
     
+    var versionNumber: String {
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+    }
+    
+    var buildNumber: String {
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
+    }
+    
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
