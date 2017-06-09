@@ -5,29 +5,50 @@ class ConfettiUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        
+        let app = XCUIApplication()
+        app.launchArguments = ["test"]
+        app.launch()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        // Called after the invocation of each test method
         super.tearDown()
     }
     
     func testCreateABirthday() {
         let app = XCUIApplication()
-        app.buttons["I'd rather not"].tap()
+        
+        MCLabel.labelStep("Login")
+        
+        app.buttons["I'd rather not"].tapIfExists()
         app.buttons["AddButton"].tap()
+        
+        MCLabel.labelStep("Add")
+        
         app.buttons["Birthday"].tap()
+        
+        MCLabel.labelStep("Contacts")
         
         let tablesQuery = app.tables
         tablesQuery.cells.containing(.staticText, identifier:"John Appleseed").staticTexts["Detail"].tap()
+        
+        MCLabel.labelStep("Detail")
+        
+        app.buttons["Save"].tap()
+        
+        MCLabel.labelStep("Final")
+    }
+}
+
+extension XCUIElement {
+    func tapIfExists() -> Bool {
+        if exists {
+            tap()
+            return true
+        } else {
+            return false
+        }
     }
 }
