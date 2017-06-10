@@ -29,7 +29,7 @@ public class UserViewModel {
     public private(set) var events: [Event]?
     
     func logout() {
-        if AppDelegate.shared.runMode == .testRun {
+        if AppDelegate.shared.runMode == .testRun && userAuth.isAnonymous {
             userNode.removeValue()
             userAuth.delete()
         }

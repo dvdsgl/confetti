@@ -8,6 +8,10 @@ public class HolidayViewModel: EventViewModel {
         super.init(event)
     }
     
+    public override var title: String {
+        return "\(holiday.title) for \(event.person.firstName)"
+    }
+    
     public override var description: String {
         return "\(holiday.title) on \(shortMonthName) \(day)"
     }
