@@ -7,6 +7,7 @@ import ConfettiKit
 class CountdownPillView : UIView {
     
     @IBOutlet var contentView: CountdownPillView!
+    @IBOutlet var stackedCountdownView: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,9 +21,10 @@ class CountdownPillView : UIView {
     
     func commonInit() {
         Bundle.main.loadNibNamed("CountdownPillView", owner: self, options: nil)
+        
+        stackedCountdownView.layer.cornerRadius = self.bounds.height / 2
     }
 
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = self.bounds.height / 2
