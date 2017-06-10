@@ -93,27 +93,29 @@ class CreateEventViewController: UIViewController,
         present(imagePicker, animated: true)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            
-            let data = UIImageJPEGRepresentation(pickedImage, 0.5)!
-            
-            let storage = Storage.storage()
-            let imagesNode = storage.reference().child("images")
-            
-            let uuid = UUID.init()
-            let imageRef = imagesNode.child("\(uuid.uuidString).jpg")
-            
-            // Upload the file to the path "images/rivers.jpg"
-            let metadata = StorageMetadata()
-            metadata.contentType = "image/jpeg"
-            
-            let uploadTask = imageRef.putData(data, metadata: metadata) { (metadata, error) in
-                guard let metadata = metadata else { return }
-                self.photoUrl = metadata.downloadURL()
-            }
-        }
+    func upload(image: UIImage, completion: ((StorageMetadata?, Error?) -> Void)? = nil) {
+        let data = UIImageJPEGRepresentation(image, 0.5)!
         
+        let storage = Storage.storage()
+        let imagesNode = storage.reference().child("images")
+        
+        let uuid = UUID.init()
+        let imageRef = imagesNode.child("\(uuid.uuidString).jpg")
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        let _ = imageRef.putData(data, metadata: metadata, completion: completion)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         dismiss(animated: true)
+        
+        guard let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
+            
+        upload(image: pickedImage) { (metadata, error) in
+            guard let metadata = metadata else { return }
+            self.photoUrl = metadata.downloadURL()
+        }
     }
 }
