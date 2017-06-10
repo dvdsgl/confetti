@@ -3,7 +3,11 @@ import Foundation
 
 public class BirthdayViewModel: EventViewModel {
     public override var title: String {
-        return "\(event.person.firstName)'s Birthday"
+        if let nextAge = nextAge, nextAge > 0 {
+            return "\(event.person.firstName)'s \(nextAge)\(nextAge.th) Birthday"
+        } else {
+            return "\(event.person.firstName)'s Birthday"
+        }
     }
     
     public override var description: String {

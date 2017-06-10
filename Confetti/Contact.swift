@@ -13,14 +13,15 @@ public protocol Contact {
 public struct ManualContact: Contact {
     public var firstName, lastName: String
     
-    public let imageData: Data? = nil
+    public let imageData: Data?
     
     public var fullName: String {
         return "\(firstName) \(lastName)"
     }
     
-    public init(firstName: String, lastName: String) {
+    public init(firstName: String, lastName: String, imageData: Data? = nil) {
         self.firstName = firstName
         self.lastName = lastName
+        self.imageData = imageData
     }
 }
