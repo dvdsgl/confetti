@@ -245,11 +245,7 @@
                                 <rect key="frame" x="0.0" y="302" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-<<<<<<< HEAD
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
-=======
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
->>>>>>> 70497fbba6b716958997005853beaec01c49ce64
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stuart Bray" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jud-hQ-N8I">
@@ -505,22 +501,6 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Joh-1b-rBR" id="4lB-NN-fGW">
-<<<<<<< HEAD
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eg4-EJ-b7K">
-                                                    <rect key="frame" x="57" y="8" width="33.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fWI-0K-q8y">
-                                                    <rect key="frame" x="57" y="28.5" width="33" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-=======
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -533,7 +513,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stuart Bray" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHz-SW-ETh">
                                                     <rect key="frame" x="70" y="19.5" width="287" height="21"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
->>>>>>> 70497fbba6b716958997005853beaec01c49ce64
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -858,9 +837,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="CSP-Gl-VIx"/>
         <segue reference="rue-3W-XWj"/>
-<<<<<<< HEAD
-=======
         <segue reference="CSP-Gl-VIx"/>
->>>>>>> 70497fbba6b716958997005853beaec01c49ce64
     </inferredMetricsTieBreakers>
 </document>
