@@ -15,6 +15,23 @@ extension CNContact: Contact {
     }
 }
 
+extension UIImage {
+    class func image(with color: UIColor) -> UIImage {
+        let rect = CGRect(origin: CGPoint(x: 0, y:0), size: CGSize(width: 1, height: 1))
+        
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()!
+        
+        context.setFillColor(color.cgColor)
+        context.fill(rect)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image!
+    }
+}
+
 class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var searchBar: UISearchBar!
@@ -38,6 +55,14 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
     
     override func viewDidLoad() {
         title = createEventSpec.title
+        
+        // Get rid of nav bar shadow for a nice, continuous look
+        if let bar = navigationController?.navigationBar {
+            bar.shadowImage = UIImage()
+            bar.setBackgroundImage(UIImage(), for: .default)
+            
+            searchBar.setBackgroundImage(UIImage.image(with: Colors.cyan), for: .any, barMetrics: .default)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

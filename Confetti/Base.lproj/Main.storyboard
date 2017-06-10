@@ -533,9 +533,10 @@
                                     <outlet property="delegate" destination="5g9-Q7-RV8" id="0rY-ti-FBC"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="top" fixedFrame="YES" placeholder="Search Contacts" translatesAutoresizingMaskIntoConstraints="NO" id="Lky-LC-br6">
+                            <searchBar contentMode="top" fixedFrame="YES" placeholder="Search Contacts" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lky-LC-br6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.1215686275" green="0.83529411760000005" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="5g9-Q7-RV8" id="47k-zx-phE"/>
