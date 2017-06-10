@@ -22,11 +22,12 @@ class CountdownPillView : UIView {
     func commonInit() {
         Bundle.main.loadNibNamed("CountdownPillView", owner: self, options: nil)
         
-        stackedCountdownView.layer.cornerRadius = self.bounds.height / 2
+        self.addSubview(contentView)
+        contentView.layer.cornerRadius = self.bounds.height / 2
     }
-
+    
     override func layoutSubviews() {
-        super.layoutSubviews()
-        layer.cornerRadius = self.bounds.height / 2
+        super.layoutSubviews()        
+        stackedCountdownView.layer.cornerRadius = self.bounds.height / 2
     }
 }
