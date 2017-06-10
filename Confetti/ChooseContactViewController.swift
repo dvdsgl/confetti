@@ -88,15 +88,8 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contact", for: indexPath)
-        
-        let contact = contacts[indexPath.row]
-        cell.textLabel?.text = contact.fullName
-        
-        if let imageData = contact.imageData {
-            cell.imageView?.image = UIImage(data: imageData)
-        }
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contact", for: indexPath) as! ContactTableViewCell
+        cell.contact = contacts[indexPath.row]
         return cell
     }
     
