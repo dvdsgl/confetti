@@ -15,14 +15,13 @@ class CreateEventViewController: UIViewController,
     UINavigationControllerDelegate {
     
     @IBOutlet var photoView: AvatarImageView!
-    
     @IBOutlet var navBarItem: UINavigationItem!
-    
     @IBOutlet var datePicker: UIDatePicker!
     
     var createEventSpec: CreateEventSpec!
     
     var contact: Contact!
+    
     var photoUrl: URL?
     
     struct AvatarConfig: AvatarImageViewConfiguration {
@@ -45,6 +44,10 @@ class CreateEventViewController: UIViewController,
             }
             name = contact.fullName
         }
+    }
+    
+    override func viewDidLoad() {
+        photoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action:#selector(choosePhoto(_:))))
     }
     
     @IBAction func updateDatePicker(_ sender: Any) {
