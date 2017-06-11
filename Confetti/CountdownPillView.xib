@@ -13,7 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountdownPillView" customModule="Confetti" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Sut-Ie-umb"/>
-                <outlet property="countdownLabel" destination="pPC-3J-PyW" id="5Nj-5D-BlN"/>
+                <outlet property="countdownMagnitudeLabel" destination="pPC-3J-PyW" id="9ZL-WQ-JYc"/>
+                <outlet property="countdownUnitLabel" destination="JRT-7N-ULo" id="5HG-J6-tCC"/>
                 <outlet property="eventLabel" destination="8Bw-U9-fYb" id="A4b-5A-X3W"/>
                 <outlet property="shortDateLabel" destination="udE-u4-qKa" id="wto-AE-9Cv"/>
                 <outlet property="stackedCountdownView" destination="5OA-5p-mqY" id="6M8-nR-MOm"/>
@@ -39,17 +40,25 @@
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5OA-5p-mqY" customClass="StackedCountdownLabel" customModule="Confetti" customModuleProvider="target">
                     <rect key="frame" x="3" y="3" width="54" height="54"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPC-3J-PyW">
-                            <rect key="frame" x="6" y="16" width="42" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPC-3J-PyW">
+                            <rect key="frame" x="15.5" y="5" width="23" height="24"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="months" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRT-7N-ULo">
+                            <rect key="frame" x="3" y="29" width="48.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="0.99607843139999996" green="0.0039215686269999999" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="pPC-3J-PyW" firstAttribute="centerX" secondItem="5OA-5p-mqY" secondAttribute="centerX" id="6Tb-iT-T7G"/>
-                        <constraint firstItem="pPC-3J-PyW" firstAttribute="centerY" secondItem="5OA-5p-mqY" secondAttribute="centerY" id="Upf-Pl-H9P"/>
+                        <constraint firstItem="JRT-7N-ULo" firstAttribute="top" secondItem="pPC-3J-PyW" secondAttribute="bottom" id="8wR-F0-HFQ"/>
+                        <constraint firstItem="pPC-3J-PyW" firstAttribute="centerX" secondItem="5OA-5p-mqY" secondAttribute="centerX" id="WVF-Oo-bQd"/>
+                        <constraint firstItem="pPC-3J-PyW" firstAttribute="top" secondItem="5OA-5p-mqY" secondAttribute="top" constant="5" id="eeR-bN-9RQ"/>
+                        <constraint firstItem="JRT-7N-ULo" firstAttribute="centerX" secondItem="5OA-5p-mqY" secondAttribute="centerX" id="ooI-iN-H4c"/>
                         <constraint firstAttribute="width" secondItem="5OA-5p-mqY" secondAttribute="height" multiplier="1:1" id="xbm-5f-H4u"/>
                     </constraints>
                 </view>

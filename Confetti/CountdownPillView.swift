@@ -8,7 +8,9 @@ class CountdownPillView : UIView {
     
     @IBOutlet var contentView: CountdownPillView!
     @IBOutlet var stackedCountdownView: StackedCountdownLabel!
-    @IBOutlet var countdownLabel: UILabel!
+    @IBOutlet var countdownMagnitudeLabel: UILabel!
+    @IBOutlet var countdownUnitLabel: UILabel!
+
     
     @IBOutlet var eventLabel: UILabel!
     @IBOutlet var shortDateLabel: UILabel!
@@ -32,7 +34,8 @@ class CountdownPillView : UIView {
     
     public func setEvent(_ event: EventViewModel) {
         eventLabel.text = event.title
-        countdownLabel.text = event.countdown
+        countdownMagnitudeLabel.text = String(event.countdownMagnitudeAndUnit.magnitude)
+        countdownUnitLabel.text = event.countdownMagnitudeAndUnit.unit
         shortDateLabel.text = event.shortMonthName + " " + String(event.day)
     }
 }

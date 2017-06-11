@@ -106,6 +106,27 @@ public class EventViewModel {
         }
     }
     
+    public var countdownMagnitudeAndUnit: (magnitude: Int, unit: String) {
+        switch (daysAway, weeksAway, monthsAway) {
+        case (0, _, _):
+            return (0, "today")
+        case (1, _, _):
+            return (1, "day")
+        case (2...EventViewModel.soonDaysAway, _, _):
+            return (daysAway, "days")
+        case (_, 1, _):
+            return (1, "week")
+        case (_, 2..<4, _):
+            return (weeksAway, "weeks")
+        case (_, _, 1):
+            return (1, "month")
+        case (_, _, let months) where months < 12:
+            return (months, "months")
+        default:
+            return (1, "year")
+        }
+    }
+    
     var monthName: String {
         let formatter = DateFormatter()
         return formatter.monthSymbols[month - 1]
