@@ -7,11 +7,13 @@ import ConfettiKit
 class CountdownPillView : UIView {
     
     @IBOutlet var contentView: CountdownPillView!
+    
+    // Countdown View
     @IBOutlet var stackedCountdownView: StackedCountdownLabel!
     @IBOutlet var countdownMagnitudeLabel: UILabel!
     @IBOutlet var countdownUnitLabel: UILabel!
-
     
+    // Labels
     @IBOutlet var eventLabel: UILabel!
     @IBOutlet var shortDateLabel: UILabel!
     

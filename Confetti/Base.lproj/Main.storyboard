@@ -228,7 +228,6 @@
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ic-q1-jQI" customClass="CountdownPillView" customModule="Confetti" customModuleProvider="target">
                                     <rect key="frame" x="8" y="209" width="251" height="61"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </subviews>
@@ -237,6 +236,8 @@
                                 <constraint firstAttribute="trailing" secondItem="ykq-cZ-0qg" secondAttribute="trailing" id="0t1-jI-dTw"/>
                                 <constraint firstItem="ykq-cZ-0qg" firstAttribute="leading" secondItem="Ftm-Gw-bJN" secondAttribute="leading" id="3i9-CM-sL8"/>
                                 <constraint firstItem="ykq-cZ-0qg" firstAttribute="top" secondItem="Ftm-Gw-bJN" secondAttribute="top" id="DOe-f7-5uX"/>
+                                <constraint firstItem="7ic-q1-jQI" firstAttribute="bottom" secondItem="ykq-cZ-0qg" secondAttribute="bottom" constant="-10" id="Zzb-6J-MtX"/>
+                                <constraint firstItem="7ic-q1-jQI" firstAttribute="leading" secondItem="ykq-cZ-0qg" secondAttribute="leading" constant="10" id="dKp-El-seg"/>
                                 <constraint firstAttribute="bottom" secondItem="ykq-cZ-0qg" secondAttribute="bottom" id="klz-Oh-ixz"/>
                             </constraints>
                         </view>

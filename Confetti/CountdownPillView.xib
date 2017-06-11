@@ -22,7 +22,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="250" height="60"/>
+            <rect key="frame" x="0.0" y="0.0" width="276" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="June 19th " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udE-u4-qKa">
@@ -32,7 +32,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Stu's 19th Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bw-U9-fYb">
-                    <rect key="frame" x="65" y="9" width="185" height="22"/>
+                    <rect key="frame" x="65" y="9" width="195" height="22"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -72,12 +72,12 @@
                 <constraint firstItem="udE-u4-qKa" firstAttribute="top" secondItem="8Bw-U9-fYb" secondAttribute="bottom" constant="3" id="Vpk-0I-CY3"/>
                 <constraint firstItem="5OA-5p-mqY" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dgU-8b-cUI"/>
                 <constraint firstItem="8Bw-U9-fYb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="9" id="epG-Jo-wdS"/>
-                <constraint firstItem="8Bw-U9-fYb" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="xZa-hM-meR"/>
+                <constraint firstAttribute="trailing" secondItem="8Bw-U9-fYb" secondAttribute="trailing" constant="16" id="xZa-hM-meR"/>
                 <constraint firstItem="udE-u4-qKa" firstAttribute="leading" secondItem="5OA-5p-mqY" secondAttribute="trailing" constant="8" id="zuz-Zn-fMn"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="2" y="-246"/>
+            <point key="canvasLocation" x="24" y="-245"/>
         </view>
     </objects>
 </document>
