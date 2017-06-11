@@ -33,7 +33,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5OA-5p-mqY">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5OA-5p-mqY" customClass="StackedCountdownLabel" customModule="Confetti" customModuleProvider="target">
                     <rect key="frame" x="3" y="3" width="54" height="54"/>
                     <color key="backgroundColor" red="0.99607843139999996" green="0.0039215686269999999" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -43,7 +43,7 @@
             </subviews>
             <color key="backgroundColor" red="0.1215686275" green="0.83529411760000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="5OA-5p-mqY" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" constant="-6" id="Ghq-aJ-IA6"/>
+                <constraint firstAttribute="height" secondItem="5OA-5p-mqY" secondAttribute="height" constant="6" id="Ghq-aJ-IA6"/>
                 <constraint firstItem="8Bw-U9-fYb" firstAttribute="leading" secondItem="5OA-5p-mqY" secondAttribute="trailing" constant="8" id="HVd-yY-cq3"/>
                 <constraint firstItem="5OA-5p-mqY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="3" id="Heb-Kb-XAR"/>
                 <constraint firstAttribute="bottom" secondItem="udE-u4-qKa" secondAttribute="bottom" constant="5" id="LOh-Cv-hVp"/>

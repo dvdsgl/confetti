@@ -28,6 +28,10 @@ class CountdownPillView : UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()        
-        stackedCountdownView.layer.cornerRadius = self.bounds.height / 2
+        stackedCountdownView.layer.cornerRadius = min(bounds.width, bounds.height) / 2
+    }
+    
+    override func didAddSubview(_ subview: UIView) {
+        stackedCountdownView.layer.cornerRadius = min(bounds.width, bounds.height) / 2
     }
 }
