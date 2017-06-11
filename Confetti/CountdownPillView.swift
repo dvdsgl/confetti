@@ -33,6 +33,6 @@ class CountdownPillView : UIView {
     public func setEvent(_ event: EventViewModel) {
         eventLabel.text = event.title
         countdownLabel.text = event.countdown
-        shortDateLabel.text = String(describing: event.nextOccurrence)
+        shortDateLabel.text = event.shortMonthName + " " + String(event.day)
     }
 }
