@@ -13,7 +13,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountdownPillView" customModule="Confetti" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Sut-Ie-umb"/>
-                <outlet property="stackedCountdownView" destination="5OA-5p-mqY" id="R05-M5-YrD"/>
+                <outlet property="countdownLabel" destination="pPC-3J-PyW" id="5Nj-5D-BlN"/>
+                <outlet property="eventLabel" destination="8Bw-U9-fYb" id="A4b-5A-X3W"/>
+                <outlet property="shortDateLabel" destination="udE-u4-qKa" id="wto-AE-9Cv"/>
+                <outlet property="stackedCountdownView" destination="5OA-5p-mqY" id="6M8-nR-MOm"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -35,8 +38,18 @@
                 </label>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5OA-5p-mqY" customClass="StackedCountdownLabel" customModule="Confetti" customModuleProvider="target">
                     <rect key="frame" x="3" y="3" width="54" height="54"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPC-3J-PyW">
+                            <rect key="frame" x="6" y="16" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" red="0.99607843139999996" green="0.0039215686269999999" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="pPC-3J-PyW" firstAttribute="centerX" secondItem="5OA-5p-mqY" secondAttribute="centerX" id="6Tb-iT-T7G"/>
+                        <constraint firstItem="pPC-3J-PyW" firstAttribute="centerY" secondItem="5OA-5p-mqY" secondAttribute="centerY" id="Upf-Pl-H9P"/>
                         <constraint firstAttribute="width" secondItem="5OA-5p-mqY" secondAttribute="height" multiplier="1:1" id="xbm-5f-H4u"/>
                     </constraints>
                 </view>

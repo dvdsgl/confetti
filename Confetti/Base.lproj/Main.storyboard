@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cYo-MV-K1n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cYo-MV-K1n">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -23,7 +23,7 @@
             <objects>
                 <navigationController storyboardIdentifier="masterViewController" title="Navigation" navigationBarHidden="YES" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Events" image="cake_icon" selectedImage="cake_icon" id="LHy-zw-DkV"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -227,7 +227,7 @@
                                     </constraints>
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ic-q1-jQI" customClass="CountdownPillView" customModule="Confetti" customModuleProvider="target">
-                                    <rect key="frame" x="8" y="211" width="251" height="61"/>
+                                    <rect key="frame" x="8" y="209" width="251" height="61"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -317,6 +317,7 @@
                     <navigationItem key="navigationItem" title="Confetti" id="Zdf-7t-Un8"/>
                     <connections>
                         <outlet property="heroImage" destination="ykq-cZ-0qg" id="0sF-qa-7Nw"/>
+                        <outlet property="pillView" destination="7ic-q1-jQI" id="1t2-mg-KCW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -463,7 +464,7 @@
             <objects>
                 <navigationController id="xJo-4U-N6R" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Bkd-dh-feh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Bkd-dh-feh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -835,7 +836,6 @@
         <image name="stu" width="2048" height="1367"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CSP-Gl-VIx"/>
         <segue reference="rue-3W-XWj"/>
         <segue reference="CSP-Gl-VIx"/>
     </inferredMetricsTieBreakers>

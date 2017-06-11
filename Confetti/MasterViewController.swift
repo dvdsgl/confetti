@@ -7,10 +7,10 @@ import FRStretchImageView
 
 class MasterViewController: UITableViewController {
 
-    @IBOutlet weak var heroImage: FRStretchImageView!
+    @IBOutlet weak var heroImage: FRStretchImageView!    
+    @IBOutlet var pillView: CountdownPillView!
     
     var detailViewController: DetailViewController? = nil
-    
     var viewModels = [EventViewModel]()
     var registrations = [NotificationRegistration]()
     
@@ -39,6 +39,14 @@ class MasterViewController: UITableViewController {
         viewModels = events
                         .map { EventViewModel.fromEvent($0) }
                         .sorted(by: { $0.daysAway < $1.daysAway })
+        
+        if let hero = viewModels.first {
+            if let photoUrl = hero.person.photoUrl {
+                heroImage.sd_setImage(with: URL(string: photoUrl))
+            }
+            
+            pillView.setEvent(hero)
+        }
         
         if let hero = viewModels.first {
             if let photoUrl = hero.person.photoUrl {

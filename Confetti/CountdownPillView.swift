@@ -7,7 +7,11 @@ import ConfettiKit
 class CountdownPillView : UIView {
     
     @IBOutlet var contentView: CountdownPillView!
-    @IBOutlet var stackedCountdownView: UIView!
+    @IBOutlet var stackedCountdownView: StackedCountdownLabel!
+    @IBOutlet var countdownLabel: UILabel!
+    
+    @IBOutlet var eventLabel: UILabel!
+    @IBOutlet var shortDateLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,5 +28,11 @@ class CountdownPillView : UIView {
         
         self.addSubview(contentView)
         contentView.layer.cornerRadius = self.bounds.height / 2
+    }
+    
+    public func setEvent(_ event: EventViewModel) {
+        eventLabel.text = event.title
+        countdownLabel.text = event.countdown
+        shortDateLabel.text = String(describing: event.nextOccurrence)
     }
 }
