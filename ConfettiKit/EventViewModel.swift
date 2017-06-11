@@ -111,6 +111,7 @@ public class EventViewModel {
         return formatter.monthSymbols[month - 1]
     }
     
+   public var shortMonthName: String {
         let formatter = DateFormatter()
         return formatter.shortMonthSymbols[month - 1]
     }
