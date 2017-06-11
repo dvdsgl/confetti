@@ -1,44 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jWJ-kP-lAe">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="3Fj-hR-6yq">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController id="jWJ-kP-lAe" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                        <viewControllerLayoutGuide type="top" id="FX8-Cv-zCH"/>
+                        <viewControllerLayoutGuide type="bottom" id="ydu-GL-raw"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleToFill" id="mSp-4f-aZs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4a-cP-ATO" userLabel="Top Container">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
-                                <color key="backgroundColor" red="0.88291369818652854" green="0.88291369818652854" blue="0.88291369818652854" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </view>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gw5-ih-BM5">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="Events" image="cake_icon" id="CY3-KC-am9"/>
+                                    <tabBarItem title="Me" image="smile_icon" id="kWO-sX-PYC"/>
+                                </items>
+                            </tabBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddButton" translatesAutoresizingMaskIntoConstraints="NO" id="OJO-Ta-lFM">
+                                <rect key="frame" x="160" y="609" width="54" height="54"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ful-Qu-pgi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
+                                <color key="backgroundColor" red="0.77402444948186533" green="0.77402444948186533" blue="0.77402444948186533" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="t4a-cP-ATO" secondAttribute="trailing" id="1hR-CK-mfV"/>
-                            <constraint firstItem="t4a-cP-ATO" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="5p1-Qi-wPS"/>
-                            <constraint firstItem="t4a-cP-ATO" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="H2f-CO-VfR"/>
-                            <constraint firstItem="t4a-cP-ATO" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.5" id="Rw6-uY-vWT"/>
+                            <constraint firstItem="OJO-Ta-lFM" firstAttribute="centerX" secondItem="mSp-4f-aZs" secondAttribute="centerX" id="C7a-YG-5ky"/>
+                            <constraint firstItem="ful-Qu-pgi" firstAttribute="height" secondItem="mSp-4f-aZs" secondAttribute="height" multiplier="0.5" id="E8C-QH-IBt"/>
+                            <constraint firstItem="ful-Qu-pgi" firstAttribute="width" secondItem="mSp-4f-aZs" secondAttribute="width" id="Ef9-fh-e9X"/>
+                            <constraint firstItem="gw5-ih-BM5" firstAttribute="leading" secondItem="mSp-4f-aZs" secondAttribute="leading" id="LQy-sr-K7n"/>
+                            <constraint firstItem="ful-Qu-pgi" firstAttribute="top" secondItem="mSp-4f-aZs" secondAttribute="top" id="Uah-jr-wmo"/>
+                            <constraint firstAttribute="trailing" secondItem="gw5-ih-BM5" secondAttribute="trailing" id="W8W-II-uaG"/>
+                            <constraint firstItem="ydu-GL-raw" firstAttribute="top" secondItem="gw5-ih-BM5" secondAttribute="bottom" id="gim-vb-eRH"/>
+                            <constraint firstItem="ydu-GL-raw" firstAttribute="top" secondItem="OJO-Ta-lFM" secondAttribute="bottom" constant="4" id="nEw-5d-d1I"/>
                         </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RTI-4s-fCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="1661.5999999999999" y="867.61619190404804"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AddButton" width="54" height="54"/>
+        <image name="cake_icon" width="27" height="27"/>
+        <image name="logo" width="199" height="97"/>
+        <image name="smile_icon" width="27" height="27"/>
+    </resources>
 </document>
