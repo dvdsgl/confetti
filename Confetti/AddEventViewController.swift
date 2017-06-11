@@ -9,6 +9,16 @@ class AddEventViewController : UIViewController {
     
     @IBOutlet var buttonsDrawer: UIView!
     
+    override func viewDidLoad() {
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddEventViewController.handleTap(gestureRecognizer:)))
+        gestureRecognizer.delegate = self as? UIGestureRecognizerDelegate
+        translucentOverlay.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    func handleTap(gestureRecognizer: UIGestureRecognizer) {        
+        performSegue(withIdentifier: "unwindToMain", sender: self)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         
         view.bringSubview(toFront: buttonsDrawer)
@@ -29,7 +39,6 @@ class AddEventViewController : UIViewController {
                             y: self.buttonsDrawer.frame.height) },
                        completion:nil)
     }
-    
     
     let createEventSpecForSegue: [String: () -> CreateEventSpec] = [
         "addBirthday": { CreateBirthdaySpec() },
