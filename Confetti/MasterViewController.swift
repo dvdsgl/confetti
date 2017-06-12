@@ -48,12 +48,6 @@ class MasterViewController: UITableViewController {
             pillView.setEvent(hero)
         }
         
-        if let hero = viewModels.first {
-            if let photoUrl = hero.person.photoUrl {
-                heroImage.sd_setImage(with: URL(string: photoUrl))
-            }
-        }
-        
         tableView.reloadData()
     }
     
