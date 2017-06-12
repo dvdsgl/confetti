@@ -9,7 +9,7 @@ class CountdownPillView : UIView {
     @IBOutlet var contentView: CountdownPillView!
     
     // Countdown View
-    @IBOutlet var stackedCountdownView: StackedCountdownLabel!
+    @IBOutlet var stackedCountdownView: RoundedRectangleMask!
     @IBOutlet var countdownMagnitudeLabel: UILabel!
     @IBOutlet var countdownUnitLabel: UILabel!
     
