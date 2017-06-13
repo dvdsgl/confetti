@@ -32,14 +32,11 @@ extension UIImage {
     }
 }
 
-class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
-    
-    @IBOutlet var searchBar: UISearchBar!
-    @IBOutlet var tableView: UITableView!
-    
-    var createEventSpec: CreateEventSpec!
-    var contacts = [Contact]()
-    
+protocol ContactStore {
+    func search(query: String) -> [Contact]
+}
+
+struct NativeContactStore: ContactStore {
     let keys = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
                 CNContactNamePrefixKey as CNKeyDescriptor,
                 CNContactNameSuffixKey as CNKeyDescriptor,
@@ -52,6 +49,69 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
                 CNContactImageDataAvailableKey as CNKeyDescriptor,
                 CNContactPhoneNumbersKey as CNKeyDescriptor,
                 CNContactEmailAddressesKey as CNKeyDescriptor]
+    
+    func search(query: String) -> [Contact] {
+        let store = CNContactStore()
+        let predicate: NSPredicate
+        
+        var contacts = [Contact]()
+        
+        if query.isEmpty {
+            predicate = CNContact.predicateForContactsInContainer(withIdentifier: store.defaultContainerIdentifier())
+        } else {
+            predicate = CNContact.predicateForContacts(matchingName: query)
+        }
+        do {
+            contacts = try store.unifiedContacts(matching: predicate, keysToFetch: keys)
+        }
+        catch {
+            print("Error!")
+        }
+        
+        return contacts
+    }
+}
+
+struct TestContactStore: ContactStore {
+
+    let contacts = [
+        ManualContact(firstName: "David", lastName: "Appleseed"),
+        ManualContact(firstName: "Stu", lastName: "Appleseed"),
+        ManualContact(firstName: "Ellen", lastName: "Appleseed"),
+        ManualContact(firstName: "Carrie", lastName: "Appleseed"),
+        ManualContact(firstName: "Hannah", lastName: "Appleseed"),
+        ManualContact(firstName: "Steve", lastName: "Appleseed")
+    ]
+    
+    func search(query: String) -> [Contact] {
+        var filtered = contacts
+        
+        if !query.isEmpty {
+            filtered = filtered.filter { contact in
+                return contact.fullName.lowercased().contains(query.lowercased())
+            }
+        }
+        
+        return filtered
+    }
+}
+
+class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var tableView: UITableView!
+    
+    var createEventSpec: CreateEventSpec!
+    var contacts = [Contact]()
+    
+    let contactStore: ContactStore = {
+        switch AppDelegate.shared.runMode {
+        case .testRun:
+            return TestContactStore()
+        default:
+            return NativeContactStore()
+        }
+    }()
     
     override func viewDidLoad() {
         title = createEventSpec.title
@@ -84,28 +144,8 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
     
     func searchContacts(query: String?) {
         let searchText = query ?? ""
-        
-        if AppDelegate.shared.runMode == .testRun {
-            contacts = [ManualContact(firstName: "John", lastName: "Appleseed")]
-            tableView.reloadData()
-            return
-        }
-        
-        let store = CNContactStore()
-        let predicate: NSPredicate
-        
-        if searchText.isEmpty {
-            predicate = CNContact.predicateForContactsInContainer(withIdentifier: store.defaultContainerIdentifier())
-        } else {
-            predicate = CNContact.predicateForContacts(matchingName: searchText)
-        }
-        do {
-            contacts = try store.unifiedContacts(matching: predicate, keysToFetch: keys)
-            tableView.reloadData()
-        }
-        catch {
-            print("Error!")
-        }
+        contacts = contactStore.search(query: searchText)
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
