@@ -33,13 +33,31 @@ class DetailViewController: UIViewController,
     UINavigationControllerDelegate {
     
     @IBOutlet weak var imageView: AvatarImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var detailItem: EventViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Get rid of nav bar shadow for a nice, continuous look
+        if let bar = navigationController?.navigationBar {
+            bar.shadowImage = UIImage()
+            bar.setBackgroundImage(UIImage(), for: .default)
+            bar.isTranslucent = true
+            
+            scrollView.contentOffset = CGPoint(x: 0, y: -heroHeight)
+        }
+        
         imageView.configuration = AvatarConfig()
         update()
+    }
+    
+    var heroHeight: CGFloat {
+        let barHeight = navigationController?.navigationBar.frame.height ?? 0
+        let halfScreenHeight = UIScreen.main.bounds.height / 2
+        let statusBarHeight = UIApplication.shared.statusBarFrame.maxY
+        return halfScreenHeight - statusBarHeight - barHeight
     }
     
     override func viewWillAppear(_ animated: Bool) {
