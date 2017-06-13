@@ -46,10 +46,7 @@ class DetailViewController: UIViewController {
     func update() {
         if let event = detailItem?.event {
             imageView.dataSource = AvatarData(name: event.person.firstName)
-            
-            if let url = detailItem?.person.photoUrl {
-                imageView.sd_setImage(with: URL(string: url))
-            }
+            detailItem?.displayImage(in: imageView)
         }
     }
 }

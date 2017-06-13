@@ -66,6 +66,9 @@ PODS:
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
     - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseUI/Storage (4.0.0):
+    - Firebase/Storage
+    - SDWebImage (~> 4.0)
   - FRStretchImageView (1.2.3)
   - GoogleToolboxForMac/DebugUtils (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
@@ -107,6 +110,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Performance
   - Firebase/Storage
+  - FirebaseUI/Storage
   - FRStretchImageView
   - MobileCenter
   - MobileCenter/MobileCenterDistribute
@@ -131,6 +135,7 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   FirebasePerformance: 77cff325f2adfb20fc03fec32b9811870c1d5130
   FirebaseStorage: 8110a1ed2034c8fbfd83890d2acc9cdbbd99afec
+  FirebaseUI: b9de05bfb4768db05f64ea90fc2f6a07b819118f
   FRStretchImageView: 897ded8990bf01966f1bc6de44f7ae5c4708a77a
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
@@ -139,6 +144,6 @@ SPEC CHECKSUMS:
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   VSMobileCenterExtensions: e6e0cd4cc96020c9af943b5b5f4a5e8bfba86770
 
-PODFILE CHECKSUM: 6204f056545b0559e706fdbaaa6492f1e2f521d2
+PODFILE CHECKSUM: 9a2ae0bd4b2cf6002228e20aa30056765fa5d75b
 
 COCOAPODS: 1.2.1

@@ -79,25 +79,24 @@ class CreateEventViewController: UIViewController,
         updateDisplay()
     }
     
-    func finishCreatingEvent(url: URL? = nil) {
+    @IBAction func saveButton(_ sender: Any) {
         let date = Calendar.current.dateComponents([.year, .month, .day], from: datePicker.date)
-        let person = Person(contact.firstName, photoUrl: url?.absoluteString)
-        let event = createEventSpec.createEvent(person: person, month: date.month!, day: date.day!, year: date.year)
+        let person = Person(contact.firstName)
+        let event = createEventSpec.createEvent(
+            person: person,
+            month: date.month!,
+            day: date.day!,
+            year: date.year
+        )
         
         UserViewModel.current.addEvent(event)
-        performSegue(withIdentifier: "unwindToMain", sender: self)
-    }
-    
-    @IBAction func saveButton(_ sender: Any) {
-        // TODO How do we make this succeed instantly, and do the image uploading async?
-        if let image = photoView.image {
-            upload(image: image) { (metadata, error) in
-                let url = metadata?.downloadURL()
-                self.finishCreatingEvent(url: url)
-            }
-        } else {
-            self.finishCreatingEvent()
+        
+        let viewModel = EventViewModel.fromEvent(event)
+        if let imageData = contact.imageData {
+            viewModel.saveImage(data: imageData)
         }
+        
+        performSegue(withIdentifier: "unwindToMain", sender: self)
     }
     
     @IBAction func choosePhoto(_ sender: Any) {
@@ -106,21 +105,6 @@ class CreateEventViewController: UIViewController,
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true)
-    }
-    
-    func upload(image: UIImage, completion: ((StorageMetadata?, Error?) -> Void)? = nil) {
-        let data = UIImageJPEGRepresentation(image, 0.5)!
-        
-        let storage = Storage.storage()
-        let imagesNode = storage.reference().child("images")
-        
-        let uuid = UUID.init()
-        let imageRef = imagesNode.child("\(uuid.uuidString).jpg")
-        
-        let metadata = StorageMetadata()
-        metadata.contentType = "image/jpeg"
-        
-        let _ = imageRef.putData(data, metadata: metadata, completion: completion)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

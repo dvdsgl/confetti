@@ -41,10 +41,8 @@ class EventTableViewCell: UITableViewCell {
         photoView.configuration = AvatarConfig()
         photoView.dataSource = AvatarData(name: event.person.firstName)
 
-        if let photoUrl = event.person.photoUrl {
-            photoView.sd_setImage(with: URL(string: photoUrl))
-        }
-
+        event.displayImage(in: photoView)
+        
         countdown.event = event
     }
 }

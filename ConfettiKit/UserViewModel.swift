@@ -88,4 +88,9 @@ public class UserViewModel {
         guard let key = event.key else { return }
         eventsNode.child(key).removeValue()
     }
+    
+    func updateEvent(_ event: Event) {
+        guard let key = event.key else { return }
+        eventsNode.child(key).setValue(event.firebaseValue)
+    }
 }

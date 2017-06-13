@@ -23,6 +23,7 @@ end
       pod 'Firebase/Database'
       pod 'Firebase/Storage'
       pod 'Firebase/Performance'
+      pod 'FirebaseUI/Storage'
 
       pod 'MobileCenter'
       pod 'MobileCenter/MobileCenterDistribute'

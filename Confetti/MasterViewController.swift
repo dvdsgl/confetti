@@ -40,11 +40,8 @@ class MasterViewController: UITableViewController {
                         .map { EventViewModel.fromEvent($0) }
                         .sorted(by: { $0.daysAway < $1.daysAway })
         
-        if let hero = viewModels.first {
-            if let photoUrl = hero.person.photoUrl {
-                heroImage.sd_setImage(with: URL(string: photoUrl))
-            }
-            
+        if let hero = viewModels.first {            
+            hero.displayImage(in: heroImage)
             pillView.setEvent(hero)
         }
         
