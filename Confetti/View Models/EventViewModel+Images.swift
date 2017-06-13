@@ -41,7 +41,7 @@ extension EventViewModel {
     }
     
     func saveImage(data: Data) {
-        let uuid = UUID()
+        let uuid = UUID() // we always allocate a new image, rather than replacing
         let imageRef = imagesNode.child(uuid.uuidString)
         
         let metadata = StorageMetadata()
