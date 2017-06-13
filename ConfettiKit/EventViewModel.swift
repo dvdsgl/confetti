@@ -20,7 +20,7 @@ public class EventViewModel {
         }
     }
     
-    public let event: Event
+    public var event: Event
     
     init(_ event: Event) {
         self.event = event

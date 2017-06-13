@@ -28,7 +28,10 @@ fileprivate struct AvatarData: AvatarImageViewDataSource {
     }
 }
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController,
+    UIImagePickerControllerDelegate,
+    UINavigationControllerDelegate {
+    
     @IBOutlet weak var imageView: AvatarImageView!
     
     var detailItem: EventViewModel?
@@ -41,6 +44,22 @@ class DetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
+    }
+    
+    @IBAction func pickPhoto(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        dismiss(animated: true)
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            detailItem?.saveImage(image)
+            update()
+        }
     }
     
     func update() {

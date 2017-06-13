@@ -48,10 +48,10 @@ extension EventViewModel {
         metadata.contentType = "image/jpeg"
         
         let modifiedPerson = event.person.with(photoUUID: uuid)
-        let modifiedEvent = event.with(person: modifiedPerson)
+        event = event.with(person: modifiedPerson)
         
         EventViewModel.imageCache[uuid] = UIImage(data: data)!
-        UserViewModel.current.updateEvent(modifiedEvent)
+        UserViewModel.current.updateEvent(event)
         
         let _ = imageRef.putData(data, metadata: metadata) { (metadata, error) in
             if let _ = error {
