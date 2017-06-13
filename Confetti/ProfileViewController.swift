@@ -86,6 +86,6 @@ class ProfileViewController : UITableViewController {
     
     func logOut() {
         UserViewModel.current.logout()
-        performSegue(withIdentifier: "unwindToLogin", sender: self)
+        AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
     }
 }
