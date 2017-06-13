@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginAnonymously(_ sender: Any) {
         Auth.auth().signInAnonymously() { (user, error) in
-            if let e = error {
+            if let _ = error {
                 return
             } else {
                 self.performSegue(withIdentifier: "login", sender: self)

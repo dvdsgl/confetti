@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        Notifications.EventsChanged.subscribe { events in
+        let _ = Notifications.EventsChanged.subscribe { events in
             let soon = events.map { EventViewModel.fromEvent($0) }.filter { $0.isSoon }
             UIApplication.shared.applicationIconBadgeNumber = soon.count
             

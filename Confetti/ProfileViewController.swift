@@ -81,8 +81,6 @@ class ProfileViewController : UITableViewController {
                 URL(string: "https://install.mobile.azure.com/orgs/confetti/apps/confetti-swift")!,
                 options: [:]
             )
-        default:
-            break
         }
     }
     
