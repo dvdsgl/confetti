@@ -1,9 +1,24 @@
 import XCTest
 import VSMobileCenterExtensions
 
+var screenshotsEnabledIfZero = 0
+
+func suspendScreenshots() { screenshotsEnabledIfZero += 1 }
+func resumeScreenshots() { screenshotsEnabledIfZero -= 1 }
+var screenshotsEnabled: Bool { return screenshotsEnabledIfZero == 0 }
+
+func withoutScreenshots(run: ()->()) {
+    suspendScreenshots()
+    run()
+    resumeScreenshots()
+}
+
 func step(_ label: String, run: (()-> ())? = nil) {
     run?()
-    MCLabel.labelStep(label)
+    
+    if screenshotsEnabled {
+        MCLabel.labelStep(label)
+    }
 }
 
 class ConfettiUITests: XCTestCase {
@@ -22,27 +37,42 @@ class ConfettiUITests: XCTestCase {
         super.tearDown()
     }
     
+    func addEvent(person: String) {
+        let app = XCUIApplication()
+        
+        step("Add event") {
+            app.buttons["AddButton"].tap()
+        }
+        
+        step("Choose Birthday") {
+            app.buttons["Birthday"].tap()
+        }
+        
+        step("Choose '\(person)'") {
+            let search = app.searchFields["Search Contacts"]
+            search.tap()
+            search.typeText(person)
+            app.staticTexts[person].tap()
+        }
+        
+        step("Save") {
+            app.buttons["Save"].tap()
+        }
+    }
+    
     func testCreateABirthday() {
         let app = XCUIApplication()
         
         step("Login") {
             app.buttons["I'd rather not"].tapIfExists()
         }
-        
-        step("Add event") {
-            app.buttons["AddButton"].tap()
-        }
 
-        step("Choose Birthday") {
-            app.buttons["Birthday"].tap()
-        }
-
-        step("Choose contact") {
-            app.staticTexts["John Appleseed"].tap()
-        }
+        addEvent(person: "Ellen Appleseed")
         
-        step("Save") {
-            app.buttons["Save"].tap()
+        withoutScreenshots {
+            for name in ["Stu Appleseed", "Hannah Appleseed", "David Appleseed"] {
+                addEvent(person: name)
+            }
         }
         
         step("Main view")
