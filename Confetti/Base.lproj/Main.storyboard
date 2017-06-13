@@ -23,7 +23,7 @@
             <objects>
                 <navigationController storyboardIdentifier="masterViewController" title="Navigation" navigationBarHidden="YES" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Events" image="cake_icon" selectedImage="cake_icon" id="LHy-zw-DkV"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -468,7 +468,7 @@
             <objects>
                 <navigationController id="xJo-4U-N6R" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Bkd-dh-feh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Bkd-dh-feh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -814,8 +814,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdV-4D-A8r" customClass="AvatarImageView" customModule="AvatarImageView">
-                                        <rect key="frame" x="1" y="0.0" width="375" height="333.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stu" translatesAutoresizingMaskIntoConstraints="NO" id="pdV-4D-A8r" customClass="AvatarImageView" customModule="AvatarImageView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -824,6 +824,7 @@
                                     <constraint firstAttribute="trailing" secondItem="pdV-4D-A8r" secondAttribute="trailing" id="GxU-tE-gLC"/>
                                     <constraint firstItem="8GB-qv-lVG" firstAttribute="width" secondItem="U0o-1Y-0mW" secondAttribute="width" id="Q4G-fa-nWE"/>
                                     <constraint firstItem="8GB-qv-lVG" firstAttribute="top" secondItem="U0o-1Y-0mW" secondAttribute="bottom" constant="20" id="QjO-Qw-jwK"/>
+                                    <constraint firstItem="pdV-4D-A8r" firstAttribute="width" secondItem="dw0-d3-nwA" secondAttribute="width" id="SYJ-M4-38E"/>
                                     <constraint firstItem="Ixv-fR-Mbg" firstAttribute="width" secondItem="U0o-1Y-0mW" secondAttribute="width" id="ZgN-x9-0Py"/>
                                     <constraint firstItem="Ixv-fR-Mbg" firstAttribute="top" secondItem="8GB-qv-lVG" secondAttribute="bottom" constant="20" id="asJ-ZC-TiW"/>
                                     <constraint firstItem="pdV-4D-A8r" firstAttribute="top" secondItem="dw0-d3-nwA" secondAttribute="top" id="bCn-5Z-kUw"/>
