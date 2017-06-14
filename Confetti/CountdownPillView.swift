@@ -27,12 +27,10 @@ class CountdownPillView : UIView {
         commonInit()
     }
     
-    func commonInit() {
-        
-        Bundle(for: CountdownPillView.self).loadNibNamed("CountdownPillView", owner: self, options: nil)
+    func commonInit() {        
+        Bundle(for: CountdownPillView.self).loadNibNamed("CountdownPillView", owner: self, options: nil)                
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.layer.cornerRadius = self.bounds.height / 2
         
         self.addSubview(contentView)
         
@@ -47,5 +45,10 @@ class CountdownPillView : UIView {
         countdownMagnitudeLabel.text = String(event.countdownMagnitudeAndUnit.magnitude)
         countdownUnitLabel.text = event.countdownMagnitudeAndUnit.unit
         shortDateLabel.text = event.shortMonthName + " " + String(event.day)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = self.bounds.height / 2
     }
 }
