@@ -304,15 +304,15 @@
 		63CE74871EBEB2DD0018B77D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				006F3C231EBFA9FF005D0EFD /* RoundRectangleButton.swift */,
-				3CD97A4B1EE98D58007333E1 /* RoundedRectangleMask.swift */,
-				63CE74851EBEB2C10018B77D /* CountdownLabel.swift */,
-				3C0109DA1EE8DDE200BF206A /* CountdownPillView.swift */,
-				63A4461F1EC50CAA00472ECC /* ConfettiMachineView.swift */,
-				63CE74831EBEAB4F0018B77D /* EventTableViewCell.swift */,
 				3C1ED1201ED27287004A0053 /* AddButton.swift */,
 				633C96371EEC913700D4554D /* ContactTableViewCell.swift */,
+				63CE74831EBEAB4F0018B77D /* EventTableViewCell.swift */,
+				006F3C231EBFA9FF005D0EFD /* RoundRectangleButton.swift */,
+				3CD97A4B1EE98D58007333E1 /* RoundedRectangleMask.swift */,
+				63A4461F1EC50CAA00472ECC /* ConfettiMachineView.swift */,
+				63CE74851EBEB2C10018B77D /* CountdownLabel.swift */,
 				00D1604A1EEB54A5005047BF /* CountdownPillView.xib */,
+				3C0109DA1EE8DDE200BF206A /* CountdownPillView.swift */,
 				3C72E5481EF0DD5900051695 /* HeroView.xib */,
 				3C72E54A1EF0E00F00051695 /* HeroView.swift */,
 			);
