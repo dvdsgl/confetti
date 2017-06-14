@@ -28,10 +28,18 @@ class CountdownPillView : UIView {
     }
     
     func commonInit() {
-        Bundle.main.loadNibNamed("CountdownPillView", owner: self, options: nil)
+        
+        Bundle(for: CountdownPillView.self).loadNibNamed("CountdownPillView", owner: self, options: nil)
+        
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.layer.cornerRadius = self.bounds.height / 2
         
         self.addSubview(contentView)
-        contentView.layer.cornerRadius = self.bounds.height / 2
+        
+        contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
     public func setEvent(_ event: EventViewModel) {

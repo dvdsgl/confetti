@@ -229,7 +229,7 @@
                                     </constraints>
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ic-q1-jQI" customClass="CountdownPillView" customModule="Confetti" customModuleProvider="target">
-                                    <rect key="frame" x="8" y="209" width="251" height="61"/>
+                                    <rect key="frame" x="10" y="209.5" width="251" height="60.5"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </subviews>
