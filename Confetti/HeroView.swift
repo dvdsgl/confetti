@@ -4,6 +4,10 @@ import ConfettiKit
 
 @IBDesignable
 class HeroView: UIView {
+    
+    @IBOutlet var heroImage: UIImageView!
+    @IBOutlet var pillView: CountdownPillView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()

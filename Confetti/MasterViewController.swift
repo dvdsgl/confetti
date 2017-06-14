@@ -7,12 +7,15 @@ import FRStretchImageView
 
 class MasterViewController: UITableViewController {
 
-    @IBOutlet weak var heroImage: FRStretchImageView!    
-    @IBOutlet var pillView: CountdownPillView!
+    @IBOutlet weak var heroImage: FRStretchImageView!
+    @IBOutlet var heroView: UIView!
     
     var detailViewController: DetailViewController? = nil
     var viewModels = [EventViewModel]()
     var registrations = [NotificationRegistration]()
+    
+    // Set up height for stretchy header
+    private let tableHeaderHeight: CGFloat = 300.0
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
@@ -22,13 +25,32 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //set up stretchy header
+        heroView = tableView.tableHeaderView
+        tableView.tableHeaderView = nil
+        tableView.addSubview(heroView)
+        tableView.contentInset = UIEdgeInsets(top: tableHeaderHeight, left: 0, bottom: 0, right: 0)
+        tableView.contentOffset = CGPoint(x: 0, y: -tableHeaderHeight)
+        updateHeaderView()
+        
         let onEventsChanged = UserViewModel.current.onEventsChanged {
             self.updateWith(events: $0)
         }
         registrations.append(onEventsChanged)
+    }
+    
+    func updateHeaderView () {
+     var headerRect = CGRect(x: 0, y: -tableHeaderHeight, width: tableView.bounds.width, height: tableHeaderHeight)
+        if tableView.contentOffset.y < -tableHeaderHeight {
+            headerRect.origin.y = tableView.contentOffset.y
+            headerRect.size.height = -tableView.contentOffset.y
+        }
         
-        // Setting FRStretchImageView
-        heroImage.stretchHeightWhenPulledBy(scrollView: tableView)
+        heroView.frame = headerRect
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        updateHeaderView()
     }
     
     deinit {
@@ -42,7 +64,6 @@ class MasterViewController: UITableViewController {
         
         if let hero = viewModels.first {            
             hero.displayImage(in: heroImage)
-            pillView.setEvent(hero)
         }
         
         tableView.reloadData()
