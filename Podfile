@@ -27,6 +27,7 @@ end
 
       pod 'MobileCenter'
       pod 'MobileCenter/MobileCenterDistribute'
+      pod 'MobileCenter/MobileCenterPush'
     end
 end
 

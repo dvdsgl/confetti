@@ -119,6 +119,7 @@
 		63A8997B1EBE64A200C5FB04 /* ConfettiKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfettiKit.h; sourceTree = "<group>"; };
 		63A8997C1EBE64A200C5FB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63A899971EBE64B500C5FB04 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		63B5B0CE1EF1E7A90062027A /* Confetti.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Confetti.entitlements; sourceTree = "<group>"; };
 		63BDA3521EC1596A0001EDBC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		63BDA3541EC15B840001EDBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		63C759C81EBE5A2400939D7B /* Confetti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Confetti.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,6 +279,7 @@
 		63C759CA1EBE5A2400939D7B /* Confetti */ = {
 			isa = PBXGroup;
 			children = (
+				63B5B0CE1EF1E7A90062027A /* Confetti.entitlements */,
 				63A8980A1EC13EA400D16214 /* Resources */,
 				63C759CB1EBE5A2400939D7B /* AppDelegate.swift */,
 				6384DA471EE8D3F800223EC8 /* AppDelegate+Notifications.swift */,
@@ -461,6 +463,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = W9D824R4EW;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					63C759E81EBE5A2400939D7B = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -883,6 +890,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Confetti/Confetti.entitlements;
 				DEVELOPMENT_TEAM = W9D824R4EW;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Confetti/Info.plist;
@@ -899,6 +907,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Confetti/Confetti.entitlements;
 				DEVELOPMENT_TEAM = W9D824R4EW;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Confetti/Info.plist;

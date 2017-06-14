@@ -8,6 +8,7 @@ import MobileCenter
 import MobileCenterCrashes
 import MobileCenterAnalytics
 import MobileCenterDistribute
+import MobileCenterPush
 
 import NotificationCenter
 import UserNotifications
@@ -59,7 +60,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         MSMobileCenter.start("9c903184-9f6f-44d8-b1b4-01750b951ece", withServices:[
             MSAnalytics.self,
             MSCrashes.self,
-            MSDistribute.self
+            MSDistribute.self,
+            MSPush.self
         ])
         
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)

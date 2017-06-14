@@ -3,6 +3,8 @@ import UserNotifications
 
 import ConfettiKit
 
+import MobileCenterPush
+
 extension AppDelegate {
     
     func setupNotifications() {
@@ -16,7 +18,23 @@ extension AppDelegate {
         
         // Clear old notifications from previous versions
         center.removeAllPendingNotificationRequests()
+        
+        UIApplication.shared.registerForRemoteNotifications()
     }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        MSPush.didRegisterForRemoteNotifications(withDeviceToken: deviceToken)
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        MSPush.didFailToRegisterForRemoteNotificationsWithError(error)
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        MSPush.didReceiveRemoteNotification(userInfo)
+        completionHandler(.noData)
+    }
+
     
     func notifications(for event: Event) -> [UNNotificationRequest] {
         let viewModel = EventViewModel.fromEvent(event)
@@ -87,6 +105,7 @@ extension AppDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent: UNNotification,
                                 withCompletionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // TODO differentiate push notifications
         withCompletionHandler(.alert)
     }
     
