@@ -3,12 +3,10 @@ import ConfettiKit
 
 import Firebase
 
-import FRStretchImageView
-
 class MasterViewController: UITableViewController {
-
-    @IBOutlet weak var heroImage: FRStretchImageView!
-    @IBOutlet var heroView: UIView!
+    
+    @IBOutlet var heroViewContainer: UIView!
+    @IBOutlet var heroView: HeroView!
     
     var detailViewController: DetailViewController? = nil
     var viewModels = [EventViewModel]()
@@ -26,9 +24,9 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         
         //set up stretchy header
-        heroView = tableView.tableHeaderView
+        heroViewContainer = tableView.tableHeaderView
         tableView.tableHeaderView = nil
-        tableView.addSubview(heroView)
+        tableView.addSubview(heroViewContainer)
         tableView.contentInset = UIEdgeInsets(top: tableHeaderHeight, left: 0, bottom: 0, right: 0)
         tableView.contentOffset = CGPoint(x: 0, y: -tableHeaderHeight)
         updateHeaderView()
@@ -46,7 +44,7 @@ class MasterViewController: UITableViewController {
             headerRect.size.height = -tableView.contentOffset.y
         }
         
-        heroView.frame = headerRect
+        heroViewContainer.frame = headerRect
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -63,7 +61,7 @@ class MasterViewController: UITableViewController {
                         .sorted(by: { $0.daysAway < $1.daysAway })
         
         if let hero = viewModels.first {            
-            hero.displayImage(in: heroImage)
+//            hero.displayImage(in: heroImage)
         }
         
         tableView.reloadData()

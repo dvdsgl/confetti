@@ -222,19 +222,17 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stu" translatesAutoresizingMaskIntoConstraints="NO" id="ykq-cZ-0qg" customClass="FRStretchImageView" customModule="FRStretchImageView">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zc-rc-aac" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="280" id="tdk-RI-Qsu"/>
-                                    </constraints>
-                                </imageView>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="ykq-cZ-0qg" secondAttribute="trailing" id="0t1-jI-dTw"/>
-                                <constraint firstItem="ykq-cZ-0qg" firstAttribute="leading" secondItem="Ftm-Gw-bJN" secondAttribute="leading" id="3i9-CM-sL8"/>
-                                <constraint firstItem="ykq-cZ-0qg" firstAttribute="top" secondItem="Ftm-Gw-bJN" secondAttribute="top" id="DOe-f7-5uX"/>
-                                <constraint firstAttribute="bottom" secondItem="ykq-cZ-0qg" secondAttribute="bottom" id="klz-Oh-ixz"/>
+                                <constraint firstItem="8zc-rc-aac" firstAttribute="leading" secondItem="Ftm-Gw-bJN" secondAttribute="leading" id="Ds9-QX-tTj"/>
+                                <constraint firstItem="8zc-rc-aac" firstAttribute="trailing" secondItem="Ftm-Gw-bJN" secondAttribute="trailing" id="PlV-gN-fx8"/>
+                                <constraint firstItem="8zc-rc-aac" firstAttribute="top" secondItem="Ftm-Gw-bJN" secondAttribute="top" id="gsg-mL-ZQZ"/>
+                                <constraint firstItem="8zc-rc-aac" firstAttribute="bottom" secondItem="Ftm-Gw-bJN" secondAttribute="bottom" id="q8o-M7-xOK"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -314,13 +312,13 @@
                     <navigationItem key="navigationItem" title="Confetti" id="Zdf-7t-Un8"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="heroImage" destination="ykq-cZ-0qg" id="0sF-qa-7Nw"/>
-                        <outlet property="heroView" destination="Ftm-Gw-bJN" id="nb5-OG-Kg3"/>
+                        <outlet property="heroView" destination="8zc-rc-aac" id="1wo-nY-OQd"/>
+                        <outlet property="heroViewContainer" destination="Ftm-Gw-bJN" id="eYZ-OO-Oo9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="705" y="-631"/>
+            <point key="canvasLocation" x="705" y="-631.69014084507046"/>
         </scene>
         <!--Add Event View Controller-->
         <scene sceneID="3fc-fv-6UI">

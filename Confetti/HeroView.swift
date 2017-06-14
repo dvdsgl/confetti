@@ -7,6 +7,7 @@ class HeroView: UIView {
     
     @IBOutlet var heroImage: UIImageView!
     @IBOutlet var pillView: CountdownPillView!
+    @IBOutlet var contentView: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,6 +20,15 @@ class HeroView: UIView {
     }
     
     func commonInit() {
+        Bundle(for: HeroView.self).loadNibNamed("HeroView", owner: self, options: nil)
         
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addSubview(contentView)
+        
+        contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
 }

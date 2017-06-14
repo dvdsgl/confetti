@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
             <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="eul-MN-0XY"/>
                 <outlet property="heroImage" destination="YCY-QR-ZRp" id="b9l-lf-oqo"/>
                 <outlet property="pillView" destination="Pxj-of-nsf" id="Eny-NX-gq6"/>
             </connections>
