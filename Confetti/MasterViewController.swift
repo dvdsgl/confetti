@@ -13,7 +13,7 @@ class MasterViewController: UITableViewController {
     var registrations = [NotificationRegistration]()
     
     // Set up height for stretchy header
-    private let tableHeaderHeight: CGFloat = 300.0
+    private let tableHeaderHeight: CGFloat = 300
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
@@ -61,7 +61,7 @@ class MasterViewController: UITableViewController {
                         .sorted(by: { $0.daysAway < $1.daysAway })
         
         if let hero = viewModels.first {            
-//            hero.displayImage(in: heroImage)
+            heroView.setEvent(hero)
         }
         
         tableView.reloadData()

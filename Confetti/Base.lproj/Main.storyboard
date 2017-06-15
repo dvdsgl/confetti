@@ -219,11 +219,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Ftm-Gw-bJN">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zc-rc-aac" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
+                                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zc-rc-aac" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                             </subviews>
@@ -231,13 +231,16 @@
                             <constraints>
                                 <constraint firstItem="8zc-rc-aac" firstAttribute="leading" secondItem="Ftm-Gw-bJN" secondAttribute="leading" id="Ds9-QX-tTj"/>
                                 <constraint firstItem="8zc-rc-aac" firstAttribute="trailing" secondItem="Ftm-Gw-bJN" secondAttribute="trailing" id="PlV-gN-fx8"/>
+                                <constraint firstItem="8zc-rc-aac" firstAttribute="centerX" secondItem="Ftm-Gw-bJN" secondAttribute="centerX" id="Tcx-U4-9g3"/>
                                 <constraint firstItem="8zc-rc-aac" firstAttribute="top" secondItem="Ftm-Gw-bJN" secondAttribute="top" id="gsg-mL-ZQZ"/>
                                 <constraint firstItem="8zc-rc-aac" firstAttribute="bottom" secondItem="Ftm-Gw-bJN" secondAttribute="bottom" id="q8o-M7-xOK"/>
+                                <constraint firstItem="8zc-rc-aac" firstAttribute="height" secondItem="Ftm-Gw-bJN" secondAttribute="height" id="x5y-r1-rh5"/>
+                                <constraint firstItem="8zc-rc-aac" firstAttribute="width" secondItem="Ftm-Gw-bJN" secondAttribute="width" id="xOP-8K-TlS"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="80" id="WCw-Qf-5nD" customClass="EventTableViewCell" customModule="Confetti" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="302" width="320" height="80"/>
+                                <rect key="frame" x="0.0" y="294" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>

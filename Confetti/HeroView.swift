@@ -31,4 +31,8 @@ class HeroView: UIView {
         contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
+    
+    public func setEvent(_ event: EventViewModel) {
+        heroImage.image = event.cachedImage
+    }
 }
