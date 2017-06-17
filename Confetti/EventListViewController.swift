@@ -14,17 +14,13 @@ extension UIViewController {
     }
 }
 
-class EventListViewController: UITableViewController {
+class EventListViewController: UITableViewController, HeroStretchable {
     
-    @IBOutlet var heroViewContainer: UIView!
     @IBOutlet var heroView: HeroView!
     
     var detailViewController: DetailViewController? = nil
     var viewModels = [EventViewModel]()
     var registrations = [NotificationRegistration]()
-    
-    // Set up height for stretchy header
-    private let tableHeaderHeight: CGFloat = 300
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
@@ -34,14 +30,7 @@ class EventListViewController: UITableViewController {
         super.viewDidLoad()
         
         styleTransparentNavigationBar()
-
-        //set up stretchy header
-        heroViewContainer = tableView.tableHeaderView
-        tableView.tableHeaderView = nil
-        tableView.addSubview(heroViewContainer)
-        tableView.contentInset = UIEdgeInsets(top: tableHeaderHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentOffset = CGPoint(x: 0, y: -tableHeaderHeight)
-        updateHeaderView()
+        setupStretchyHero()
         
         let onEventsChanged = UserViewModel.current.onEventsChanged {
             self.updateWith(events: $0)
@@ -49,18 +38,8 @@ class EventListViewController: UITableViewController {
         registrations.append(onEventsChanged)        
     }
     
-    func updateHeaderView () {
-        var headerRect = CGRect(x: 0, y: -tableHeaderHeight, width: tableView.bounds.width, height: tableHeaderHeight)
-        if tableView.contentOffset.y < -tableHeaderHeight {
-            headerRect.origin.y = tableView.contentOffset.y
-            headerRect.size.height = -tableView.contentOffset.y
-        }
-        
-        heroViewContainer.frame = headerRect
-    }
-    
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        updateHeaderView()
+        updateStretchyHero()
     }
     
     deinit {

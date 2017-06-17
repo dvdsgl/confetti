@@ -216,30 +216,15 @@
         <!--Events-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Events" id="7bK-jq-Zjz" customClass="EventListViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Events" automaticallyAdjustsScrollViewInsets="NO" id="7bK-jq-Zjz" customClass="EventListViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="Ftm-Gw-bJN">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Ftm-Gw-bJN" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="8zc-rc-aac" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
-                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="8zc-rc-aac" firstAttribute="leading" secondItem="Ftm-Gw-bJN" secondAttribute="leading" id="Ds9-QX-tTj"/>
-                                <constraint firstItem="8zc-rc-aac" firstAttribute="trailing" secondItem="Ftm-Gw-bJN" secondAttribute="trailing" id="PlV-gN-fx8"/>
-                                <constraint firstItem="8zc-rc-aac" firstAttribute="centerX" secondItem="Ftm-Gw-bJN" secondAttribute="centerX" id="Tcx-U4-9g3"/>
-                                <constraint firstItem="8zc-rc-aac" firstAttribute="top" secondItem="Ftm-Gw-bJN" secondAttribute="top" id="gsg-mL-ZQZ"/>
-                                <constraint firstItem="8zc-rc-aac" firstAttribute="bottom" secondItem="Ftm-Gw-bJN" secondAttribute="bottom" id="q8o-M7-xOK"/>
-                                <constraint firstItem="8zc-rc-aac" firstAttribute="height" secondItem="Ftm-Gw-bJN" secondAttribute="height" id="x5y-r1-rh5"/>
-                                <constraint firstItem="8zc-rc-aac" firstAttribute="width" secondItem="Ftm-Gw-bJN" secondAttribute="width" id="xOP-8K-TlS"/>
-                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="80" id="WCw-Qf-5nD" customClass="EventTableViewCell" customModule="Confetti" customModuleProvider="target">
@@ -318,8 +303,7 @@
                     <navigationItem key="navigationItem" title="Confetti" id="Zdf-7t-Un8"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="heroView" destination="8zc-rc-aac" id="1wo-nY-OQd"/>
-                        <outlet property="heroViewContainer" destination="Ftm-Gw-bJN" id="eYZ-OO-Oo9"/>
+                        <outlet property="heroView" destination="Ftm-Gw-bJN" id="EJ1-x1-VhV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -690,7 +674,7 @@
         <!--Me-->
         <scene sceneID="ZbA-He-lsq">
             <objects>
-                <tableViewController title="Me" id="oW0-P8-u3k" customClass="ProfileViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Me" automaticallyAdjustsScrollViewInsets="NO" id="oW0-P8-u3k" customClass="ProfileViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="mUQ-aT-Kyd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
