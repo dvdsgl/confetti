@@ -55,6 +55,7 @@ class ProfileViewController : UITableViewController, HeroStretchable {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStretchyHero()
+        styleTransparentNavigationBar()
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

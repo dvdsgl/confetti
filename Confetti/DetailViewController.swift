@@ -39,16 +39,6 @@ class DetailViewController: UIViewController,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Get rid of nav bar shadow for a nice, continuous look
-        if let bar = navigationController?.navigationBar {
-            bar.shadowImage = UIImage()
-            bar.setBackgroundImage(UIImage(), for: .default)
-            bar.isTranslucent = true
-            
-            scrollView.contentOffset = CGPoint(x: 0, y: -heroHeight)
-        }
-        
         imageView.configuration = AvatarConfig()
         update()
     }
@@ -58,10 +48,6 @@ class DetailViewController: UIViewController,
         let halfScreenHeight = UIScreen.main.bounds.height / 2
         let statusBarHeight = UIApplication.shared.statusBarFrame.maxY
         return halfScreenHeight - statusBarHeight - barHeight
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = false
     }
     
     @IBAction func pickPhoto(_ sender: Any) {

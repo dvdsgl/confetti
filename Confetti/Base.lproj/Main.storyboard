@@ -18,24 +18,27 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Navigation-->
-        <scene sceneID="pY4-Hu-kfo">
+        <!--Events-->
+        <scene sceneID="ihg-YM-a8f">
             <objects>
-                <navigationController storyboardIdentifier="masterViewController" title="Navigation" navigationBarHidden="YES" id="RMx-3f-FxP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Events" image="cake_icon" selectedImage="cake_icon" id="LHy-zw-DkV"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                <navigationController id="4no-Gw-Lz8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Events" image="cake_icon" id="lpT-so-718"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vaG-ph-8eu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.99489795920000001" green="0.98979591840000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="7bK-jq-Zjz" kind="relationship" relationship="rootViewController" id="tsl-Nk-0bq"/>
+                        <segue destination="7bK-jq-Zjz" kind="relationship" relationship="rootViewController" id="Apc-MF-ZSZ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8fS-aE-onr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IW8-hg-1I3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-38" y="-630"/>
+            <point key="canvasLocation" x="-928" y="-1129"/>
         </scene>
         <!--Login-->
         <scene sceneID="UXf-d2-KY3">
@@ -53,7 +56,7 @@
                                 <rect key="frame" x="0.0" y="284" width="320" height="284"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXM-wy-16E" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="20.5" y="33.5" width="280" height="50"/>
+                                        <rect key="frame" x="20" y="33" width="280" height="50"/>
                                         <color key="backgroundColor" red="0.29443696141242981" green="0.55751186609268188" blue="0.88633131980895996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="280" id="Abt-eH-IuX"/>
@@ -74,7 +77,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fM6-Iw-4D0" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="20.5" y="97.5" width="280" height="50"/>
+                                        <rect key="frame" x="20" y="97" width="280" height="50"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="tintColor" red="0.01176470588" green="0.60392156860000001" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="I'd rather not"/>
@@ -88,7 +91,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFA-6E-6nD" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="20.5" y="161.5" width="280" height="50"/>
+                                        <rect key="frame" x="20" y="161" width="280" height="50"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="tintColor" red="0.01176470588" green="0.60392156860000001" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Maybe later"/>
@@ -208,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6I4-w8-g3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1836" y="-59.820089955022496"/>
+            <point key="canvasLocation" x="-2779" y="-412"/>
         </scene>
         <!--Events-->
         <scene sceneID="smW-Zh-WAh">
@@ -321,7 +324,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="705" y="-631.69014084507046"/>
+            <point key="canvasLocation" x="-180" y="-1129"/>
         </scene>
         <!--Add Event View Controller-->
         <scene sceneID="3fc-fv-6UI">
@@ -343,7 +346,7 @@
                                 <rect key="frame" x="0.0" y="357" width="320" height="211"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="If0-NL-f3t" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="141.5" y="254" width="36" height="36"/>
+                                        <rect key="frame" x="142" y="254" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="aPY-KT-ymP"/>
                                             <constraint firstAttribute="width" constant="36" id="one-Ht-sIE"/>
@@ -456,7 +459,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pie-27-Y0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="XbW-y7-sHO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1042.4000000000001" y="808.24587706146929"/>
+            <point key="canvasLocation" x="-2031" y="330"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cIz-qV-Op1">
@@ -478,7 +481,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvz-pw-pQa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-180" y="832"/>
+            <point key="canvasLocation" x="-928" y="330"/>
         </scene>
         <!--Whose Birthday?-->
         <scene sceneID="7c3-bU-YGA">
@@ -568,7 +571,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKC-yk-Cmi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="725.60000000000002" y="831.63418290854577"/>
+            <point key="canvasLocation" x="-180" y="330"/>
         </scene>
         <!--Add Birthday-->
         <scene sceneID="zOx-Np-7Om">
@@ -652,7 +655,7 @@
                 <exit id="lqh-3e-8eZ" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gO-oZ-6kF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1616.8" y="831.63418290854577"/>
+            <point key="canvasLocation" x="604" y="330"/>
         </scene>
         <!--Custom Tab Bar Controller-->
         <scene sceneID="kt8-yC-BI7">
@@ -667,8 +670,8 @@
                     </tabBar>
                     <connections>
                         <outlet property="addEventButton" destination="o1d-QN-1ON" id="IA4-3p-4ez"/>
-                        <segue destination="RMx-3f-FxP" kind="relationship" relationship="viewControllers" id="Pjk-wS-AW8"/>
-                        <segue destination="oW0-P8-u3k" kind="relationship" relationship="viewControllers" id="XIK-rD-AvZ"/>
+                        <segue destination="4no-Gw-Lz8" kind="relationship" relationship="viewControllers" id="VPU-CW-q3t"/>
+                        <segue destination="k6I-zU-rcf" kind="relationship" relationship="viewControllers" id="iE0-b9-5Wl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VKJ-Xz-huh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -682,7 +685,7 @@
                     </connections>
                 </button>
             </objects>
-            <point key="canvasLocation" x="-1042" y="-58"/>
+            <point key="canvasLocation" x="-2027" y="-413"/>
         </scene>
         <!--Me-->
         <scene sceneID="ZbA-He-lsq">
@@ -702,18 +705,18 @@
                                 <rect key="frame" x="0.0" y="308" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UiG-pk-Lew" id="zv6-aY-fhf">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zSz-28-BoX">
-                                            <rect key="frame" x="57" y="18" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="57" y="17" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vvu-7G-nYG">
-                                            <rect key="frame" x="57" y="38.5" width="33" height="14.5"/>
+                                            <rect key="frame" x="57" y="38" width="33" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -733,6 +736,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Me" image="smile_icon" selectedImage="smile_icon" id="TkU-Vl-yjE"/>
+                    <navigationItem key="navigationItem" id="0DD-qN-eAd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="heroView" destination="kHR-Sk-qcl" id="Xe5-WE-CAK"/>
@@ -741,7 +745,24 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkh-0C-HgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="704.79999999999995" y="23.838080959520241"/>
+            <point key="canvasLocation" x="-180" y="-413"/>
+        </scene>
+        <!--Me-->
+        <scene sceneID="tIy-7t-zlc">
+            <objects>
+                <navigationController id="k6I-zU-rcf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Me" image="smile_icon" id="sQS-fK-cJU"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Df-QQ-0rA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oW0-P8-u3k" kind="relationship" relationship="rootViewController" id="jEc-1u-r5L"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4KV-Ul-u1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-928" y="-413"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="9oV-9S-hYP">
@@ -759,7 +780,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="554"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0o-1Y-0mW" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="30.5" y="324" width="260" height="50"/>
+                                        <rect key="frame" x="30" y="324" width="260" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="260" id="cqt-Cj-AMz"/>
                                             <constraint firstAttribute="height" constant="50" id="jeE-hE-tmC"/>
@@ -774,7 +795,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8GB-qv-lVG" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="30.5" y="394" width="260" height="50"/>
+                                        <rect key="frame" x="30" y="394" width="260" height="50"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <color key="tintColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Message"/>
@@ -785,7 +806,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixv-fR-Mbg" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="30.5" y="464" width="260" height="50"/>
+                                        <rect key="frame" x="30" y="464" width="260" height="50"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <color key="tintColor" red="0.74901960779999999" green="0.37254901959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="FaceTime"/>
@@ -842,7 +863,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hlb-jo-bKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1436.2318840579712" y="-630.16304347826087"/>
+            <point key="canvasLocation" x="604" y="-1129"/>
         </scene>
     </scenes>
     <resources>
@@ -852,7 +873,7 @@
         <image name="stu" width="2048" height="1367"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MLE-4h-ErY"/>
         <segue reference="CSP-Gl-VIx"/>
+        <segue reference="rue-3W-XWj"/>
     </inferredMetricsTieBreakers>
 </document>

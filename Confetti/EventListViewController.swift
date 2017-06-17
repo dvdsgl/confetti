@@ -3,6 +3,17 @@ import ConfettiKit
 
 import Firebase
 
+extension UIViewController {
+    func styleTransparentNavigationBar() {
+        // Get rid of nav bar shadow for a nice, continuous look
+        guard let bar = navigationController?.navigationBar else { return }
+        
+        bar.shadowImage = UIImage()
+        bar.setBackgroundImage(UIImage(), for: .default)
+        bar.isTranslucent = true
+    }
+}
+
 class EventListViewController: UITableViewController {
     
     @IBOutlet var heroViewContainer: UIView!
@@ -17,12 +28,13 @@ class EventListViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
-        navigationController?.isNavigationBarHidden = true
     }
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        styleTransparentNavigationBar()
+
         //set up stretchy header
         heroViewContainer = tableView.tableHeaderView
         tableView.tableHeaderView = nil
@@ -34,7 +46,7 @@ class EventListViewController: UITableViewController {
         let onEventsChanged = UserViewModel.current.onEventsChanged {
             self.updateWith(events: $0)
         }
-        registrations.append(onEventsChanged)
+        registrations.append(onEventsChanged)        
     }
     
     func updateHeaderView () {
