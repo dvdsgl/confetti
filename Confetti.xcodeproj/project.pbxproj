@@ -35,7 +35,7 @@
 		63BDA3531EC1596A0001EDBC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BDA3521EC1596A0001EDBC /* LoginViewController.swift */; };
 		63BDA3551EC15B840001EDBC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63BDA3541EC15B840001EDBC /* GoogleService-Info.plist */; };
 		63C759CC1EBE5A2400939D7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C759CB1EBE5A2400939D7B /* AppDelegate.swift */; };
-		63C759CE1EBE5A2400939D7B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C759CD1EBE5A2400939D7B /* MasterViewController.swift */; };
+		63C759CE1EBE5A2400939D7B /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C759CD1EBE5A2400939D7B /* EventListViewController.swift */; };
 		63C759D01EBE5A2400939D7B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C759CF1EBE5A2400939D7B /* DetailViewController.swift */; };
 		63C759D31EBE5A2400939D7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C759D11EBE5A2400939D7B /* Main.storyboard */; };
 		63C759D51EBE5A2400939D7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C759D41EBE5A2400939D7B /* Assets.xcassets */; };
@@ -124,7 +124,7 @@
 		63BDA3541EC15B840001EDBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		63C759C81EBE5A2400939D7B /* Confetti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Confetti.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C759CB1EBE5A2400939D7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63C759CD1EBE5A2400939D7B /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		63C759CD1EBE5A2400939D7B /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		63C759CF1EBE5A2400939D7B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		63C759D21EBE5A2400939D7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63C759D41EBE5A2400939D7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -345,7 +345,7 @@
 			children = (
 				63BDA3521EC1596A0001EDBC /* LoginViewController.swift */,
 				3C6B9C3E1ED46D6A0092BD0F /* CustomTabBarController.swift */,
-				63C759CD1EBE5A2400939D7B /* MasterViewController.swift */,
+				63C759CD1EBE5A2400939D7B /* EventListViewController.swift */,
 				3CA852801ED3E35F002E1A05 /* ProfileViewController.swift */,
 				63C759CF1EBE5A2400939D7B /* DetailViewController.swift */,
 				3C1250D01ED873D100F6E345 /* AddEventViewController.swift */,
@@ -686,7 +686,7 @@
 				633C96381EEC913700D4554D /* ContactTableViewCell.swift in Sources */,
 				63CE74841EBEAB4F0018B77D /* EventTableViewCell.swift in Sources */,
 				63C759D01EBE5A2400939D7B /* DetailViewController.swift in Sources */,
-				63C759CE1EBE5A2400939D7B /* MasterViewController.swift in Sources */,
+				63C759CE1EBE5A2400939D7B /* EventListViewController.swift in Sources */,
 				63C759CC1EBE5A2400939D7B /* AppDelegate.swift in Sources */,
 				6320C0001ED1212B00F27446 /* CreateEventViewController.swift in Sources */,
 				3CA852811ED3E35F002E1A05 /* ProfileViewController.swift in Sources */,

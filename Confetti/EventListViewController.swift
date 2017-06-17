@@ -3,7 +3,7 @@ import ConfettiKit
 
 import Firebase
 
-class MasterViewController: UITableViewController {
+class EventListViewController: UITableViewController {
     
     @IBOutlet var heroViewContainer: UIView!
     @IBOutlet var heroView: HeroView!
