@@ -692,24 +692,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="kHR-Sk-qcl">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="kHR-Sk-qcl" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="stu" translatesAutoresizingMaskIntoConstraints="NO" id="b2d-36-1lA" customClass="FRStretchImageView" customModule="FRStretchImageView">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="280" id="MYB-DY-nZI"/>
-                                    </constraints>
-                                </imageView>
-                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="b2d-36-1lA" firstAttribute="top" secondItem="kHR-Sk-qcl" secondAttribute="top" constant="20" symbolic="YES" id="Naj-PS-VrJ"/>
-                                <constraint firstItem="b2d-36-1lA" firstAttribute="leading" secondItem="kHR-Sk-qcl" secondAttribute="leading" id="aTd-Mg-fh1"/>
-                                <constraint firstAttribute="trailing" secondItem="b2d-36-1lA" secondAttribute="trailing" id="jsC-pl-WCW"/>
-                                <constraint firstAttribute="bottom" secondItem="b2d-36-1lA" secondAttribute="bottom" constant="20" symbolic="YES" id="u3d-tN-elq"/>
-                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" textLabel="zSz-28-BoX" detailTextLabel="Vvu-7G-nYG" imageView="dnN-3f-vgE" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="UiG-pk-Lew">
@@ -749,7 +735,7 @@
                     <tabBarItem key="tabBarItem" title="Me" image="smile_icon" selectedImage="smile_icon" id="TkU-Vl-yjE"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="profileImage" destination="b2d-36-1lA" id="zSw-t7-X6h"/>
+                        <outlet property="heroView" destination="kHR-Sk-qcl" id="Xe5-WE-CAK"/>
                         <outlet property="tableView" destination="mUQ-aT-Kyd" id="hB1-tH-zbr"/>
                     </connections>
                 </tableViewController>

@@ -3,16 +3,43 @@ import UIKit
 
 import ConfettiKit
 
-import FRStretchImageView
 import FirebaseAuth
 import Firebase
 
 import MobileCenterCrashes
 
-class ProfileViewController : UITableViewController {
+protocol HeroStretchable {
+    var tableView: UITableView! { get }
+    var heroView: HeroView! { get }
+}
+
+extension HeroStretchable {
+    private var tableHeaderHeight: CGFloat {
+        return UIScreen.main.bounds.height / 2
+    }
     
-    @IBOutlet var profileTableView: UITableView!
-    @IBOutlet weak var profileImage: FRStretchImageView!
+    // Call this in viewDidLoad
+    func setupStretchyHero() {
+        tableView.tableHeaderView = nil
+        tableView.addSubview(heroView)
+        tableView.contentInset = UIEdgeInsets(top: tableHeaderHeight, left: 0, bottom: 0, right: 0)
+        tableView.contentOffset = CGPoint(x: 0, y: -tableHeaderHeight)
+    }
+    
+    // Call this in scrollViewDidScroll
+    func updateStretchyHero() {
+        var headerRect = CGRect(x: 0, y: -tableHeaderHeight, width: tableView.bounds.width, height: tableHeaderHeight)
+        if tableView.contentOffset.y < -tableHeaderHeight {
+            headerRect.origin.y = tableView.contentOffset.y
+            headerRect.size.height = -tableView.contentOffset.y
+        }
+        heroView.frame = headerRect
+    }
+}
+
+class ProfileViewController : UITableViewController, HeroStretchable {
+    
+    @IBOutlet weak var heroView: HeroView!
     
     var handle: AuthStateDidChangeListenerHandle?
     
@@ -27,7 +54,11 @@ class ProfileViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileImage.stretchHeightWhenPulledBy(scrollView: tableView)
+        setupStretchyHero()
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        updateStretchyHero()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,9 +68,10 @@ class ProfileViewController : UITableViewController {
             // Set user's facebook photo as the hero image
             if let facebookUserId = Auth.auth().currentUser?.providerData.first?.uid {
                 let photoUrl = URL(string: "https://graph.facebook.com/\(facebookUserId)/picture?height=500")
-                self.profileImage.sd_setImage(with: photoUrl)
+                self.heroView.heroImage.sd_setImage(with: photoUrl!)
+                //self.profileImage.sd_setImage(with: photoUrl)
             } else {
-                self.profileImage.image = #imageLiteral(resourceName: "stu")
+                //self.profileImage.image = #imageLiteral(resourceName: "stu")
             }
         }
     }
