@@ -32,9 +32,7 @@ class EventDetailViewController : UITableViewController,
     }
     
     func updateDisplay() {
-        if let imageView = heroView?.heroImage {
-            event.displayImage(in: imageView)
-        }
+        heroView?.event = event
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

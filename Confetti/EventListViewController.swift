@@ -51,7 +51,7 @@ class EventListViewController: UITableViewController, HeroStretchable {
                         .sorted(by: { $0.daysAway < $1.daysAway })
         
         if let hero = viewModels.first {            
-            heroView.setEvent(hero)
+            heroView.event = hero
         }
         
         tableView.reloadData()
