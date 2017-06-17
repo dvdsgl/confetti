@@ -290,7 +290,7 @@
                                     <outlet property="descriptionLabel" destination="ETe-7L-0a6" id="lpS-pY-e0Y"/>
                                     <outlet property="nameLabel" destination="Jud-hQ-N8I" id="vkb-5w-271"/>
                                     <outlet property="photoView" destination="nwU-YD-ntk" id="SKp-Qu-zGX"/>
-                                    <segue destination="V2r-Qg-27t" kind="show" identifier="showDetail" id="jjZ-WC-XEg"/>
+                                    <segue destination="6F9-o6-Rdr" kind="show" identifier="showDetail" id="cVN-Rj-aDr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -309,6 +309,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-180" y="-1129"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="Kq6-ea-fGg">
+            <objects>
+                <tableViewController title="Details" automaticallyAdjustsScrollViewInsets="NO" id="6F9-o6-Rdr" customClass="EventDetailViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ej4-Ub-Z2p">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="pir-rp-NAT" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="270"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="action" textLabel="WBM-AO-1GC" style="IBUITableViewCellStyleDefault" id="Igt-fJ-YHY">
+                                <rect key="frame" x="0.0" y="298" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Igt-fJ-YHY" id="FoY-oY-dnd">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WBM-AO-1GC">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6F9-o6-Rdr" id="y8P-K6-Vrz"/>
+                            <outlet property="delegate" destination="6F9-o6-Rdr" id="4DU-2M-ruP"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="mBP-dH-Sgm">
+                        <barButtonItem key="rightBarButtonItem" title="Pick Photo" id="vdC-q7-zma">
+                            <connections>
+                                <action selector="pickPhoto:" destination="6F9-o6-Rdr" id="7rO-jY-i76"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="heroView" destination="pir-rp-NAT" id="ntO-if-z8B"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N5N-yM-8Ue" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="510" y="-1129.2253521126761"/>
         </scene>
         <!--Add Event View Controller-->
         <scene sceneID="3fc-fv-6UI">
@@ -748,113 +802,11 @@
             </objects>
             <point key="canvasLocation" x="-928" y="-413"/>
         </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="9oV-9S-hYP">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="V2r-Qg-27t" customClass="DetailViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="4BA-Rj-0Da"/>
-                        <viewControllerLayoutGuide type="bottom" id="Cf5-qV-wVW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="S1K-aE-es2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dw0-d3-nwA">
-                                <rect key="frame" x="0.0" y="64" width="320" height="554"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0o-1Y-0mW" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="324" width="260" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="260" id="cqt-Cj-AMz"/>
-                                            <constraint firstAttribute="height" constant="50" id="jeE-hE-tmC"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                        <color key="tintColor" red="0.01176470588" green="0.60392156860000001" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Call"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                                <color key="value" red="1" green="0.0" blue="0.0099468241870000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8GB-qv-lVG" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="394" width="260" height="50"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                        <color key="tintColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Message"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                                <color key="value" red="0.74901960779999999" green="0.37254901959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixv-fR-Mbg" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="464" width="260" height="50"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                        <color key="tintColor" red="0.74901960779999999" green="0.37254901959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="FaceTime"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                                <color key="value" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stu" translatesAutoresizingMaskIntoConstraints="NO" id="pdV-4D-A8r" customClass="AvatarImageView" customModule="AvatarImageView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="8GB-qv-lVG" firstAttribute="centerX" secondItem="U0o-1Y-0mW" secondAttribute="centerX" id="4bW-9w-hpJ"/>
-                                    <constraint firstItem="Ixv-fR-Mbg" firstAttribute="height" secondItem="U0o-1Y-0mW" secondAttribute="height" id="DYr-yh-3mg"/>
-                                    <constraint firstAttribute="trailing" secondItem="pdV-4D-A8r" secondAttribute="trailing" id="GxU-tE-gLC"/>
-                                    <constraint firstItem="8GB-qv-lVG" firstAttribute="width" secondItem="U0o-1Y-0mW" secondAttribute="width" id="Q4G-fa-nWE"/>
-                                    <constraint firstItem="8GB-qv-lVG" firstAttribute="top" secondItem="U0o-1Y-0mW" secondAttribute="bottom" constant="20" id="QjO-Qw-jwK"/>
-                                    <constraint firstItem="pdV-4D-A8r" firstAttribute="width" secondItem="dw0-d3-nwA" secondAttribute="width" id="SYJ-M4-38E"/>
-                                    <constraint firstItem="Ixv-fR-Mbg" firstAttribute="width" secondItem="U0o-1Y-0mW" secondAttribute="width" id="ZgN-x9-0Py"/>
-                                    <constraint firstItem="Ixv-fR-Mbg" firstAttribute="top" secondItem="8GB-qv-lVG" secondAttribute="bottom" constant="20" id="asJ-ZC-TiW"/>
-                                    <constraint firstItem="pdV-4D-A8r" firstAttribute="top" secondItem="dw0-d3-nwA" secondAttribute="top" id="bCn-5Z-kUw"/>
-                                    <constraint firstItem="Ixv-fR-Mbg" firstAttribute="centerX" secondItem="U0o-1Y-0mW" secondAttribute="centerX" id="ciy-qh-2Lh"/>
-                                    <constraint firstItem="pdV-4D-A8r" firstAttribute="leading" secondItem="dw0-d3-nwA" secondAttribute="leading" id="enc-oY-2uk"/>
-                                    <constraint firstItem="8GB-qv-lVG" firstAttribute="height" secondItem="U0o-1Y-0mW" secondAttribute="height" id="gLi-0B-Rp3"/>
-                                    <constraint firstItem="U0o-1Y-0mW" firstAttribute="top" secondItem="pdV-4D-A8r" secondAttribute="bottom" constant="40" id="rcJ-ln-yqE"/>
-                                    <constraint firstItem="U0o-1Y-0mW" firstAttribute="centerX" secondItem="dw0-d3-nwA" secondAttribute="centerX" id="zFA-Bi-u4J"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="dw0-d3-nwA" firstAttribute="centerY" secondItem="S1K-aE-es2" secondAttribute="centerY" id="LNq-VQ-Mg8"/>
-                            <constraint firstItem="dw0-d3-nwA" firstAttribute="width" secondItem="S1K-aE-es2" secondAttribute="width" id="cqi-ll-owT"/>
-                            <constraint firstItem="pdV-4D-A8r" firstAttribute="height" secondItem="S1K-aE-es2" secondAttribute="height" multiplier="0.5" id="jLL-ip-pkA"/>
-                            <constraint firstItem="dw0-d3-nwA" firstAttribute="centerX" secondItem="S1K-aE-es2" secondAttribute="centerX" id="vR7-Po-w4Z"/>
-                            <constraint firstItem="dw0-d3-nwA" firstAttribute="height" secondItem="S1K-aE-es2" secondAttribute="height" id="y1R-Hv-d0J"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="pQA-3C-oMQ">
-                        <barButtonItem key="rightBarButtonItem" title="Pick Photo" id="Jo6-um-2eF">
-                            <connections>
-                                <action selector="pickPhoto:" destination="V2r-Qg-27t" id="crs-Ox-84M"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="imageView" destination="pdV-4D-A8r" id="KUE-WX-N0b"/>
-                        <outlet property="scrollView" destination="dw0-d3-nwA" id="loH-np-EVW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hlb-jo-bKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="604" y="-1129"/>
-        </scene>
     </scenes>
     <resources>
         <image name="AddButton" width="54" height="54"/>
         <image name="cake_icon" width="27" height="27"/>
         <image name="smile_icon" width="27" height="27"/>
-        <image name="stu" width="2048" height="1367"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="CSP-Gl-VIx"/>

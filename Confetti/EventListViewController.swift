@@ -18,7 +18,6 @@ class EventListViewController: UITableViewController, HeroStretchable {
     
     @IBOutlet var heroView: HeroView!
     
-    var detailViewController: DetailViewController? = nil
     var viewModels = [EventViewModel]()
     var registrations = [NotificationRegistration]()
     
@@ -60,33 +59,19 @@ class EventListViewController: UITableViewController, HeroStretchable {
     
     @IBAction func unwindToMain(segue: UIStoryboardSegue) {}
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Segues
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
         
         switch identifier {
         case "showDetail":
+            let controller = segue.destination as! EventDetailViewController
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = viewModels[indexPath.row]
-                let controller = segue.destination as! DetailViewController
-                controller.detailItem = object
-                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
+                controller.event = viewModels[indexPath.row]
             }
-        case "newEvent":
-            return
         default:
             return
         }
     }
-
-    // MARK: - Table View
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
