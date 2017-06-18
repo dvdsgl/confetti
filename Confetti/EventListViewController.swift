@@ -77,7 +77,7 @@ class EventListViewController: UITableViewController, HeroStretchable {
         case "showDetail":
             let controller = segue.destination as! EventDetailViewController
             if let indexPath = tableView.indexPathForSelectedRow {
-                controller.event = viewModels[indexPath.row]
+                controller.event = viewModels[indexPath.row + 1]
             }
         default:
             return
@@ -89,12 +89,12 @@ class EventListViewController: UITableViewController, HeroStretchable {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModels.count
+        return max(0, viewModels.count - 1)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EventTableViewCell
-        let event = viewModels[indexPath.row]
+        let event = viewModels[indexPath.row + 1]
         cell.setEvent(event)
         return cell
     }
@@ -111,7 +111,7 @@ class EventListViewController: UITableViewController, HeroStretchable {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            let viewModel = viewModels[indexPath.row]
+            let viewModel = viewModels[indexPath.row + 1]
             UserViewModel.current.deleteEvent(viewModel.event)
         default:
             return
