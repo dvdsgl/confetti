@@ -21,12 +21,18 @@ public class BirthdayViewModel: EventViewModel {
     }
     
     var nextAge: Int? {
-        guard let year = year else { return nil }
+        guard case let .birthday(month, day, maybeYear) = event.occasion else { return nil }
+        guard let year = maybeYear else { return nil }
         
-        let calendar = Calendar.current
         let components = DateComponents(year: year, month: month, day: day)
         let first = calendar.date(from: components)!
         
         return calendar.dateComponents([.year], from: first, to: nextOccurrence).year
+    }
+    
+    override var nextMatchingDateComponents: DateComponents? {
+        guard case let .birthday(month, day, _) = event.occasion else { return nil }
+        
+        return DateComponents(month: month, day: day)
     }
 }

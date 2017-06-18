@@ -79,10 +79,15 @@ public class EventViewModel {
     
     public var nextOccurrence: Date {
         return calendar.nextDate(after: startOfYesterday,
-                                 matching: DateComponents(month: month, day: day),
+                                 matching: nextMatchingDateComponents!,
                                  matchingPolicy: .nextTime,
                                  repeatedTimePolicy: .first,
                                  direction: .forward)!
+    }
+    
+    // This must be implemented by subclasses
+    var nextMatchingDateComponents: DateComponents? {
+        return nil
     }
     
     public var daysAway: Int {
@@ -149,26 +154,16 @@ public class EventViewModel {
         return formatter.shortMonthSymbols[month - 1]
     }
     
-    var date: DateComponents {
-        switch event.occasion {
-        case let .birthday(month, day, year),
-             let .anniversary(month, day, year):
-            return DateComponents(year: year, month: month, day: day)
-        case let .holiday(holiday):
-            return holiday.nextOccurrenceIn(region: .usa)
-        }
-    }
-    
     public var month: Int {
-        return date.month!
+        return calendar.component(.month, from: nextOccurrence)
     }
     
     public var day: Int {
-        return date.day!
+        return calendar.component(.day, from: nextOccurrence)
     }
     
-    public var year: Int? {
-        return date.year
+    public var year: Int {
+        return calendar.component(.year, from: nextOccurrence)
     }
 }
 

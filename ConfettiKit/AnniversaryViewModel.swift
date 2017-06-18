@@ -18,4 +18,9 @@ public class AnniversaryViewModel: BirthdayViewModel {
         }
         return base
     }
+    
+    override var nextMatchingDateComponents: DateComponents? {
+        guard case let .anniversary(month, day, _) = event.occasion else { return nil }
+        return DateComponents(month: month, day: day)
+    }
 }
