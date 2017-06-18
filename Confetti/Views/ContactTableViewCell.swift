@@ -6,6 +6,18 @@ import ConfettiKit
 import AvatarImageView
 import SDWebImage
 
+extension UIImageView {
+    func displayContact(_ contact: Contact) {
+        if let source = contact.imageSource {
+            switch source {
+            case let .data(data):
+                self.image = UIImage(data: data)
+            case let .url(url):
+                self.sd_setImage(with: URL(string: url)!)
+            }
+        }
+    }
+}
 
 class ContactTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
@@ -40,10 +52,7 @@ class ContactTableViewCell: UITableViewCell {
             
             photoView.configuration = AvatarConfig()
             photoView.dataSource = AvatarData(name: contact.name)
-            
-            if let imageData = contact.imageData {
-                photoView.image = UIImage(data: imageData)
-            }
+            photoView.displayContact(contact)
         }
     }
 }

@@ -14,6 +14,14 @@ extension CNContact: Contact {
     public var nick: String? {
         return nickname.isEmpty ? nil : nickname
     }
+    
+    public var imageSource: ImageSource? {
+        if let data = imageData {
+            return .data(data)
+        }
+        return nil
+    }
+    
 }
 
 extension UIImage {
@@ -74,15 +82,22 @@ struct NativeContactStore: ContactStore {
 }
 
 struct TestContactStore: ContactStore {
-
-    let contacts = [
-        ManualContact("David Appleseed"),
-        ManualContact("Stu Appleseed"),
-        ManualContact("Ellen Appleseed"),
-        ManualContact("Carrie Appleseed"),
-        ManualContact("Hannah Appleseed"),
-        ManualContact("Steve Appleseed")
-    ]
+    let contacts: [ManualContact] = [
+        "David Appleseed",
+        "Stu Appleseed",
+        "Ellen Appleseed",
+        "Carrie Appleseed",
+        "Hannah Appleseed",
+        "Vinicius Appleseed",
+        "Steve Appleseed"
+    ].map { name in
+        let nick = name.components(separatedBy: " ").first!
+        return ManualContact(
+            name,
+            nick: nick,
+            imageSource: .url("https://confettiapp.com/v1/test/faces/\(nick.lowercased()).jpg")
+        )
+    }
     
     func search(query: String) -> [Contact] {
         var filtered = contacts

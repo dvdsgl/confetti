@@ -26,14 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         case normal, testRun
     }
     
-    private(set) var runMode: RunMode  = .normal {
+    private(set) var runMode: RunMode = .normal {
         didSet {
             switch runMode {
+            case .normal:
+                UIView.setAnimationsEnabled(true)
             case .testRun:
                 UIView.setAnimationsEnabled(false)
-                break
-            default:
-                break
             }
         }
     }

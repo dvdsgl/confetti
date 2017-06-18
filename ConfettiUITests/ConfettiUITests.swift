@@ -22,7 +22,6 @@ func step(_ label: String, run: (()-> ())? = nil) {
 }
 
 class ConfettiUITests: XCTestCase {
-        
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
@@ -52,7 +51,7 @@ class ConfettiUITests: XCTestCase {
             let search = app.searchFields["Search Contacts"]
             search.tap()
             search.typeText(person)
-            app.staticTexts[person].tap()
+            app.tables["contacts"].cells.element(boundBy: 0).tap()
         }
         
         step("Save") {
@@ -70,8 +69,8 @@ class ConfettiUITests: XCTestCase {
         addEvent(person: "Ellen Appleseed")
         
         withoutScreenshots {
-            for name in ["Stu Appleseed", "Hannah Appleseed", "David Appleseed"] {
-                addEvent(person: name)
+            for name in ["David", "Hannah", "Stu", "Carrie", "Vinicius"] {
+                addEvent(person: "\(name) Appleseed")
             }
         }
         
@@ -90,12 +89,9 @@ class ConfettiUITests: XCTestCase {
 }
 
 extension XCUIElement {
-    func tapIfExists() -> Bool {
+    func tapIfExists() {
         if exists {
             tap()
-            return true
-        } else {
-            return false
         }
     }
 }

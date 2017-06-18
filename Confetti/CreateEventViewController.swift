@@ -12,10 +12,15 @@ import AvatarImageView
 
 extension Contact {
     func with(image: UIImage? = nil) -> Contact {
+        var imageSource: ImageSource?
+        if let data = image?.sd_imageData() {
+            imageSource = .data(data)
+        }
+        
         return ManualContact(
             name,
             nick: nick,
-            imageData: image?.sd_imageData()
+            imageSource: imageSource
         )
     }
     
@@ -48,11 +53,7 @@ class CreateEventViewController: UIViewController,
         }
         
         init(contact: Contact) {
-            if let data = contact.imageData {
-                avatar = UIImage(data: data)
-            } else {
-                avatar = nil
-            }
+            avatar = contact.image
             name = contact.name
         }
     }
@@ -91,7 +92,7 @@ class CreateEventViewController: UIViewController,
         UserViewModel.current.addEvent(event)
         
         let viewModel = EventViewModel.fromEvent(event)
-        if let imageData = contact.imageData {
+        if let imageData = contact.image?.sd_imageData() {
             viewModel.saveImage(data: imageData)
         }
         
