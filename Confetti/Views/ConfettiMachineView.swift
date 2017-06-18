@@ -77,6 +77,8 @@ class ConfettiMachineView: UIView {
         emitter.emitterCells = Colors.accents.map { createConfettiPiece(color: $0) }
         
         layer.addSublayer(emitter)
+        
+        clipsToBounds = true
     }
     
     override func layoutSubviews() {

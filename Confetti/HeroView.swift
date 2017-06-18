@@ -8,6 +8,7 @@ class HeroView: UIView {
     @IBOutlet var heroImage: UIImageView!
     @IBOutlet var pillView: CountdownPillView!
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var confettiMachine: ConfettiMachineView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,6 +37,8 @@ class HeroView: UIView {
          didSet {
             event.displayImage(in: heroImage)
             pillView.event = event
+            
+            confettiMachine.isRunning = event.daysAway == 0
         }
     }
 }
