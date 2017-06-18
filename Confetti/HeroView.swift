@@ -35,6 +35,7 @@ class HeroView: UIView {
     var event: EventViewModel! {
          didSet {
             event.displayImage(in: heroImage)
+            pillView.event = event
         }
     }
 }

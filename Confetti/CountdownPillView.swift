@@ -40,11 +40,13 @@ class CountdownPillView : UIView {
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
-    public func setEvent(_ event: EventViewModel) {
-        eventLabel.text = event.title
-        countdownMagnitudeLabel.text = String(event.countdownMagnitudeAndUnit.magnitude)
-        countdownUnitLabel.text = event.countdownMagnitudeAndUnit.unit
-        shortDateLabel.text = event.shortMonthName + " " + String(event.day)
+    var event: EventViewModel! {
+        didSet {
+            eventLabel.text = event.title
+            countdownMagnitudeLabel.text = String(event.countdownMagnitudeAndUnit.magnitude)
+            countdownUnitLabel.text = event.countdownMagnitudeAndUnit.unit
+            shortDateLabel.text = event.shortMonthName + " " + String(event.day)
+        }
     }
     
     override func layoutSubviews() {
