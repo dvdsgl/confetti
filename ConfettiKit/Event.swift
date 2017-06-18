@@ -29,9 +29,8 @@ extension Event: FirebaseData {
     }
     
     public static func fromFirebaseValue(_ value: FirebaseValue) -> Event? {
-        return Event(
-            person: Person.fromFirebaseValueAny(value["person"])!,
-            occasion: Occasion.fromFirebaseValueAny(value["occasion"])!
-        )
+        guard let person = Person.fromFirebaseValueAny(value["person"]) else { return nil }
+        guard let occasion = Occasion.fromFirebaseValueAny(value["occasion"]) else { return nil }
+        return Event(person: person, occasion: occasion)
     }
 }
