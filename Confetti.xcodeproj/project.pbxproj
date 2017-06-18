@@ -10,7 +10,7 @@
 		006F3C241EBFA9FF005D0EFD /* RoundRectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006F3C231EBFA9FF005D0EFD /* RoundRectangleButton.swift */; };
 		00D1604B1EEB54A5005047BF /* CountdownPillView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D1604A1EEB54A5005047BF /* CountdownPillView.xib */; };
 		3C0109DB1EE8DDE200BF206A /* CountdownPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0109DA1EE8DDE200BF206A /* CountdownPillView.swift */; };
-		3C1250D11ED873D100F6E345 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1250D01ED873D100F6E345 /* AddEventViewController.swift */; };
+		3C1250D11ED873D100F6E345 /* ChooseOccasionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1250D01ED873D100F6E345 /* ChooseOccasionViewController.swift */; };
 		3C1250D31ED8756000F6E345 /* ChooseContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1250D21ED8756000F6E345 /* ChooseContactViewController.swift */; };
 		3C1ED1211ED27287004A0053 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1ED1201ED27287004A0053 /* AddButton.swift */; };
 		3C6B9C3F1ED46D6A0092BD0F /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B9C3E1ED46D6A0092BD0F /* CustomTabBarController.swift */; };
@@ -23,6 +23,7 @@
 		6320BFFE1ED0E9C300F27446 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637523601ED0E2F100DF8F5A /* UserViewModel.swift */; };
 		6320C0001ED1212B00F27446 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6320BFFF1ED1212B00F27446 /* CreateEventViewController.swift */; };
 		633C96381EEC913700D4554D /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C96371EEC913700D4554D /* ContactTableViewCell.swift */; };
+		63424F5A1EF72B0E00AD4736 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63424F591EF72B0E00AD4736 /* CALayer.swift */; };
 		635A66DB1EF6ED0D00970048 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635A66DA1EF6ED0D00970048 /* Globals.swift */; };
 		636BD6AB1EEB37610001A983 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636BD6AA1EEB37610001A983 /* Contact.swift */; };
 		6384DA481EE8D3F800223EC8 /* AppDelegate+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6384DA471EE8D3F800223EC8 /* AppDelegate+Notifications.swift */; };
@@ -96,7 +97,7 @@
 		2FE7682F3E4A76FA241467F4 /* Pods_Confetti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Confetti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		370C42D4518DFC6F3462E898 /* Pods-ConfettiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConfettiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConfettiTests/Pods-ConfettiTests.release.xcconfig"; sourceTree = "<group>"; };
 		3C0109DA1EE8DDE200BF206A /* CountdownPillView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownPillView.swift; sourceTree = "<group>"; };
-		3C1250D01ED873D100F6E345 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		3C1250D01ED873D100F6E345 /* ChooseOccasionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseOccasionViewController.swift; sourceTree = "<group>"; };
 		3C1250D21ED8756000F6E345 /* ChooseContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseContactViewController.swift; sourceTree = "<group>"; };
 		3C1ED1201ED27287004A0053 /* AddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		3C6B9C3E1ED46D6A0092BD0F /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -107,6 +108,7 @@
 		630D47311EEF603E00266FA8 /* EventViewModel+Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "EventViewModel+Images.swift"; path = "View Models/EventViewModel+Images.swift"; sourceTree = "<group>"; };
 		6320BFFF1ED1212B00F27446 /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		633C96371EEC913700D4554D /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactTableViewCell.swift; path = Views/ContactTableViewCell.swift; sourceTree = "<group>"; };
+		63424F591EF72B0E00AD4736 /* CALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CALayer.swift; path = Views/CALayer.swift; sourceTree = "<group>"; };
 		635A66DA1EF6ED0D00970048 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		636BD6AA1EEB37610001A983 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = ../Confetti/Contact.swift; sourceTree = "<group>"; };
 		6375235E1ED0E26000DF8F5A /* FirebaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseData.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 		63C759CA1EBE5A2400939D7B /* Confetti */ = {
 			isa = PBXGroup;
 			children = (
+				63C759D41EBE5A2400939D7B /* Assets.xcassets */,
 				63B5B0CE1EF1E7A90062027A /* Confetti.entitlements */,
 				63A8980A1EC13EA400D16214 /* Resources */,
 				635A66DA1EF6ED0D00970048 /* Globals.swift */,
@@ -290,7 +293,6 @@
 				63CE74871EBEB2DD0018B77D /* Views */,
 				3C2DD65F1ED9DF9A00C442F5 /* Storyboards */,
 				63FB40E31EC16EF800BC37A4 /* Controllers */,
-				63C759D41EBE5A2400939D7B /* Assets.xcassets */,
 				63C759D91EBE5A2400939D7B /* Info.plist */,
 				63BDA3541EC15B840001EDBC /* GoogleService-Info.plist */,
 			);
@@ -320,6 +322,7 @@
 				3C0109DA1EE8DDE200BF206A /* CountdownPillView.swift */,
 				3C72E5481EF0DD5900051695 /* HeroView.xib */,
 				3C72E54A1EF0E00F00051695 /* HeroView.swift */,
+				63424F591EF72B0E00AD4736 /* CALayer.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -351,7 +354,7 @@
 				63C759CD1EBE5A2400939D7B /* EventListViewController.swift */,
 				63928AF51EF59EA600DB0909 /* EventDetailViewController.swift */,
 				3CA852801ED3E35F002E1A05 /* ProfileViewController.swift */,
-				3C1250D01ED873D100F6E345 /* AddEventViewController.swift */,
+				3C1250D01ED873D100F6E345 /* ChooseOccasionViewController.swift */,
 				3C1250D21ED8756000F6E345 /* ChooseContactViewController.swift */,
 				6320BFFF1ED1212B00F27446 /* CreateEventViewController.swift */,
 			);
@@ -696,9 +699,10 @@
 				6384DA481EE8D3F800223EC8 /* AppDelegate+Notifications.swift in Sources */,
 				3C1250D31ED8756000F6E345 /* ChooseContactViewController.swift in Sources */,
 				635A66DB1EF6ED0D00970048 /* Globals.swift in Sources */,
-				3C1250D11ED873D100F6E345 /* AddEventViewController.swift in Sources */,
+				3C1250D11ED873D100F6E345 /* ChooseOccasionViewController.swift in Sources */,
 				6320BFFE1ED0E9C300F27446 /* UserViewModel.swift in Sources */,
 				63CE74861EBEB2C10018B77D /* CountdownLabel.swift in Sources */,
+				63424F5A1EF72B0E00AD4736 /* CALayer.swift in Sources */,
 				63928AF61EF59EA600DB0909 /* EventDetailViewController.swift in Sources */,
 				3C0109DB1EE8DDE200BF206A /* CountdownPillView.swift in Sources */,
 			);
