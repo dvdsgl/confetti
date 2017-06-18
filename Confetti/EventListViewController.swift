@@ -34,7 +34,18 @@ class EventListViewController: UITableViewController, HeroStretchable {
         let onEventsChanged = UserViewModel.current.onEventsChanged {
             self.updateWith(events: $0)
         }
-        registrations.append(onEventsChanged)        
+        
+        registrations.append(onEventsChanged)
+        
+        heroView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(heroTapped(_:))))
+    }
+    
+    func heroTapped(_ sender: Any) {
+        guard let controller: EventDetailViewController = viewController("eventDetail") else {
+            return
+        }
+        controller.event = viewModels.first
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

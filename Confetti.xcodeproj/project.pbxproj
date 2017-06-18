@@ -23,6 +23,7 @@
 		6320BFFE1ED0E9C300F27446 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637523601ED0E2F100DF8F5A /* UserViewModel.swift */; };
 		6320C0001ED1212B00F27446 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6320BFFF1ED1212B00F27446 /* CreateEventViewController.swift */; };
 		633C96381EEC913700D4554D /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C96371EEC913700D4554D /* ContactTableViewCell.swift */; };
+		635A66DB1EF6ED0D00970048 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635A66DA1EF6ED0D00970048 /* Globals.swift */; };
 		636BD6AB1EEB37610001A983 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636BD6AA1EEB37610001A983 /* Contact.swift */; };
 		6384DA481EE8D3F800223EC8 /* AppDelegate+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6384DA471EE8D3F800223EC8 /* AppDelegate+Notifications.swift */; };
 		638BA7961EDCF3E000C86919 /* CreateEventSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638BA7951EDCF3E000C86919 /* CreateEventSpec.swift */; };
@@ -106,6 +107,7 @@
 		630D47311EEF603E00266FA8 /* EventViewModel+Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "EventViewModel+Images.swift"; path = "View Models/EventViewModel+Images.swift"; sourceTree = "<group>"; };
 		6320BFFF1ED1212B00F27446 /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		633C96371EEC913700D4554D /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactTableViewCell.swift; path = Views/ContactTableViewCell.swift; sourceTree = "<group>"; };
+		635A66DA1EF6ED0D00970048 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		636BD6AA1EEB37610001A983 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = ../Confetti/Contact.swift; sourceTree = "<group>"; };
 		6375235E1ED0E26000DF8F5A /* FirebaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseData.swift; sourceTree = "<group>"; };
 		637523601ED0E2F100DF8F5A /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = ConfettiKit/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -281,6 +283,7 @@
 			children = (
 				63B5B0CE1EF1E7A90062027A /* Confetti.entitlements */,
 				63A8980A1EC13EA400D16214 /* Resources */,
+				635A66DA1EF6ED0D00970048 /* Globals.swift */,
 				63C759CB1EBE5A2400939D7B /* AppDelegate.swift */,
 				6384DA471EE8D3F800223EC8 /* AppDelegate+Notifications.swift */,
 				630D47301EEF5FEE00266FA8 /* View Models */,
@@ -692,6 +695,7 @@
 				3C6B9C3F1ED46D6A0092BD0F /* CustomTabBarController.swift in Sources */,
 				6384DA481EE8D3F800223EC8 /* AppDelegate+Notifications.swift in Sources */,
 				3C1250D31ED8756000F6E345 /* ChooseContactViewController.swift in Sources */,
+				635A66DB1EF6ED0D00970048 /* Globals.swift in Sources */,
 				3C1250D11ED873D100F6E345 /* AddEventViewController.swift in Sources */,
 				6320BFFE1ED0E9C300F27446 /* UserViewModel.swift in Sources */,
 				63CE74861EBEB2C10018B77D /* CountdownLabel.swift in Sources */,
