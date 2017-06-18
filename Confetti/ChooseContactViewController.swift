@@ -6,24 +6,6 @@ import ConfettiKit
 import Contacts
 import ContactsUI
 
-extension CNContact: Contact {
-    public var name: String {
-        return CNContactFormatter.string(from: self, style: .fullName)!
-    }
-    
-    public var nick: String? {
-        return nickname.isEmpty ? nil : nickname
-    }
-    
-    public var imageSource: ImageSource? {
-        if let data = imageData {
-            return .data(data)
-        }
-        return nil
-    }
-    
-}
-
 extension UIImage {
     class func image(with color: UIColor) -> UIImage {
         let rect = CGRect(origin: CGPoint(x: 0, y:0), size: CGSize(width: 1, height: 1))
@@ -38,77 +20,6 @@ extension UIImage {
         UIGraphicsEndImageContext()
         
         return image!
-    }
-}
-
-protocol ContactStore {
-    func search(query: String) -> [Contact]
-}
-
-struct NativeContactStore: ContactStore {
-    let keys = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
-                CNContactNamePrefixKey as CNKeyDescriptor,
-                CNContactNameSuffixKey as CNKeyDescriptor,
-                CNContactGivenNameKey as CNKeyDescriptor,
-                CNContactFamilyNameKey as CNKeyDescriptor,
-                CNContactOrganizationNameKey as CNKeyDescriptor,
-                CNContactBirthdayKey as CNKeyDescriptor,
-                CNContactImageDataKey as CNKeyDescriptor,
-                CNContactThumbnailImageDataKey as CNKeyDescriptor,
-                CNContactImageDataAvailableKey as CNKeyDescriptor,
-                CNContactPhoneNumbersKey as CNKeyDescriptor,
-                CNContactEmailAddressesKey as CNKeyDescriptor]
-    
-    func search(query: String) -> [Contact] {
-        let store = CNContactStore()
-        let predicate: NSPredicate
-        
-        var contacts = [Contact]()
-        
-        if query.isEmpty {
-            predicate = CNContact.predicateForContactsInContainer(withIdentifier: store.defaultContainerIdentifier())
-        } else {
-            predicate = CNContact.predicateForContacts(matchingName: query)
-        }
-        do {
-            contacts = try store.unifiedContacts(matching: predicate, keysToFetch: keys)
-        }
-        catch {
-            print("Error!")
-        }
-        
-        return contacts
-    }
-}
-
-struct TestContactStore: ContactStore {
-    let contacts: [ManualContact] = [
-        "David Appleseed",
-        "Stu Appleseed",
-        "Ellen Appleseed",
-        "Carrie Appleseed",
-        "Hannah Appleseed",
-        "Vinicius Appleseed",
-        "Steve Appleseed"
-    ].map { name in
-        let nick = name.components(separatedBy: " ").first!
-        return ManualContact(
-            name,
-            nick: nick,
-            imageSource: .url("https://confettiapp.com/v1/test/faces/\(nick.lowercased()).jpg")
-        )
-    }
-    
-    func search(query: String) -> [Contact] {
-        var filtered = contacts
-        
-        if !query.isEmpty {
-            filtered = filtered.filter { contact in
-                return contact.name.lowercased().contains(query.lowercased())
-            }
-        }
-        
-        return filtered
     }
 }
 
