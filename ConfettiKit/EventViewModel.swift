@@ -41,9 +41,21 @@ public class EventViewModel {
     public var notifications: [NotificationSpec] {
         return [
             NotificationSpec(
-                id: "default",
+                id: "10 days out",
                 title: title,
-                message: description,
+                message: "\(title) is in 10 days. There's plenty of time to pick out a lovely gift.",
+                daysBefore: 10
+            ),
+            NotificationSpec(
+                id: "5 days out",
+                title: title,
+                message: "\(title) is in 5 days. There's just enough time to send something.",
+                daysBefore: 5
+            ),
+            NotificationSpec(
+                id: "day of",
+                title: title,
+                message: "Today is \(title). Get in touch!",
                 daysBefore: 0
             )
         ]
