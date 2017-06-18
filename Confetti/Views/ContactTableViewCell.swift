@@ -36,10 +36,10 @@ class ContactTableViewCell: UITableViewCell {
     
     var contact: Contact! {
         didSet {
-            nameLabel.text = contact.fullName
+            nameLabel.text = contact.name
             
             photoView.configuration = AvatarConfig()
-            photoView.dataSource = AvatarData(name: contact.fullName)
+            photoView.dataSource = AvatarData(name: contact.name)
             
             if let imageData = contact.imageData {
                 photoView.image = UIImage(data: imageData)

@@ -20,7 +20,7 @@ public class HolidayViewModel: EventViewModel {
     }
     
     public override var title: String {
-        return "\(holiday.rawValue) for \(event.person.firstName)"
+        return "\(holiday.rawValue) for \(event.person.preferredName)"
     }
     
     public override var description: String {

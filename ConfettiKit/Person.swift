@@ -1,31 +1,33 @@
 import Foundation
 
 public class Person {
-    public let firstName: String
+    public let name: String
+    public let nickname: String?
     public let photoUUID: UUID?
     
-    public init(firstName: String, photoUUID: UUID? = nil) {
-        self.firstName = firstName
+    public init(name: String, nickname: String? = nil, photoUUID: UUID? = nil) {
+        self.name = name
+        self.nickname = nickname
         self.photoUUID = photoUUID
     }
     
-    public convenience init(_ firstName: String) {
-        self.init(firstName: firstName)
-    }
-    
-    public func with(firstName: String? = nil, photoUUID: UUID? = nil) -> Person {
+    public func with(name: String? = nil, nickname: String? = nil, photoUUID: UUID? = nil) -> Person {
         let p = Person(
-            firstName: firstName ?? self.firstName,
+            name: name ?? self.name,
+            nickname: nickname ?? self.nickname,
             photoUUID: photoUUID ?? self.photoUUID
         )
         return p
     }
+    
+    public var preferredName: String { return nickname ?? name }
 }
 
 extension Person: FirebaseData {
     public var firebaseValue: FirebaseValue {
         return [
-            "firstName": firstName,
+            "name": name,
+            "nickname": nickname,
             "photoUUID": photoUUID?.uuidString
         ]
     }
@@ -37,8 +39,11 @@ extension Person: FirebaseData {
             photoUUID = UUID(uuidString: uuidString)
         }
         
+        guard let name = (value["name"] ?? value["firstName"]) as? String else { return nil }
+        
         return Person(
-            firstName: value["firstName"] as! String,
+            name: name,
+            nickname: value["nickname"] as? String,
             photoUUID: photoUUID
         )
     }

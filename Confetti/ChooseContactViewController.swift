@@ -7,11 +7,12 @@ import Contacts
 import ContactsUI
 
 extension CNContact: Contact {
-    public var firstName: String { return givenName }
-    public var lastName: String { return familyName }
-    
-    public var fullName: String {
+    public var name: String {
         return CNContactFormatter.string(from: self, style: .fullName)!
+    }
+    
+    public var nick: String? {
+        return nickname.isEmpty ? nil : nickname
     }
 }
 
@@ -75,12 +76,12 @@ struct NativeContactStore: ContactStore {
 struct TestContactStore: ContactStore {
 
     let contacts = [
-        ManualContact(firstName: "David", lastName: "Appleseed"),
-        ManualContact(firstName: "Stu", lastName: "Appleseed"),
-        ManualContact(firstName: "Ellen", lastName: "Appleseed"),
-        ManualContact(firstName: "Carrie", lastName: "Appleseed"),
-        ManualContact(firstName: "Hannah", lastName: "Appleseed"),
-        ManualContact(firstName: "Steve", lastName: "Appleseed")
+        ManualContact("David Appleseed"),
+        ManualContact("Stu Appleseed"),
+        ManualContact("Ellen Appleseed"),
+        ManualContact("Carrie Appleseed"),
+        ManualContact("Hannah Appleseed"),
+        ManualContact("Steve Appleseed")
     ]
     
     func search(query: String) -> [Contact] {
@@ -88,7 +89,7 @@ struct TestContactStore: ContactStore {
         
         if !query.isEmpty {
             filtered = filtered.filter { contact in
-                return contact.fullName.lowercased().contains(query.lowercased())
+                return contact.name.lowercased().contains(query.lowercased())
             }
         }
         

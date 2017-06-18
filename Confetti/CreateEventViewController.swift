@@ -13,14 +13,14 @@ import AvatarImageView
 extension Contact {
     func with(image: UIImage? = nil) -> Contact {
         return ManualContact(
-            firstName: firstName,
-            lastName: lastName,
+            name,
+            nick: nick,
             imageData: image?.sd_imageData()
         )
     }
     
     var person: Person {
-        return Person(firstName: firstName)
+        return Person(name: name, nickname: nick)
     }
 }
 
@@ -53,7 +53,7 @@ class CreateEventViewController: UIViewController,
             } else {
                 avatar = nil
             }
-            name = contact.fullName
+            name = contact.name
         }
     }
     
@@ -81,9 +81,8 @@ class CreateEventViewController: UIViewController,
     
     @IBAction func saveButton(_ sender: Any) {
         let date = Calendar.current.dateComponents([.year, .month, .day], from: datePicker.date)
-        let person = Person(contact.firstName)
         let event = createEventSpec.createEvent(
-            person: person,
+            person: contact.person,
             month: date.month!,
             day: date.day!,
             year: date.year

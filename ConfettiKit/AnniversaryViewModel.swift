@@ -3,9 +3,9 @@ import Foundation
 public class AnniversaryViewModel: BirthdayViewModel {
     public override var title: String {
         if let nextAge = nextAge, nextAge > 0 {
-            return "\(event.person.firstName)'s \(nextAge)\(nextAge.th) Anniversary"
+            return "\(event.person.preferredName)'s \(nextAge)\(nextAge.th) Anniversary"
         } else {
-            return "\(event.person.firstName)'s Anniversary"
+            return "\(event.person.preferredName)'s Anniversary"
         }
     }
     

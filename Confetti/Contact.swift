@@ -3,25 +3,21 @@ import Foundation
 import Contacts
 
 public protocol Contact {
-    var firstName: String { get }
-    var lastName: String { get }
     var imageData: Data? { get }
     
-    var fullName: String { get }
+    var name: String { get }
+    var nick: String? { get }
 }
 
 public struct ManualContact: Contact {
-    public var firstName, lastName: String
+    public var name: String
+    public var nick: String?
     
     public let imageData: Data?
     
-    public var fullName: String {
-        return "\(firstName) \(lastName)"
-    }
-    
-    public init(firstName: String, lastName: String, imageData: Data? = nil) {
-        self.firstName = firstName
-        self.lastName = lastName
+    public init(_ name: String, nick: String? = nil, imageData: Data? = nil) {
+        self.name = name
+        self.nick = nick
         self.imageData = imageData
     }
 }

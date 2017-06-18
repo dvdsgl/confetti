@@ -31,7 +31,7 @@ public class EventViewModel {
     }
     
     public var title: String {
-        return "\(event.person.firstName)'s Event"
+        return "\(event.person.preferredName)'s Event"
     }
     
     public var description: String {
