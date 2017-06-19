@@ -1,7 +1,7 @@
 ## Setup for development
 
 ```shell
-$ script/setup
+$ . script/setup
 ```
 
 ## Run UI tests in Mobile Center

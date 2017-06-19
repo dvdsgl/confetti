@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export MOBILE_CENTER_CURRENT_APP=confetti/confetti-swift
+
 if ! hash pod 2>/dev/null; then
   sudo gem install cocoapods
 fi
