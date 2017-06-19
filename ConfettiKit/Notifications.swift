@@ -6,11 +6,7 @@ public struct NotificationRegistration {
 
 public protocol NotificationProtocol {
     associatedtype TData
-    
     static var name: String { get }
-    
-    static func subscribe(_ onEventsUpdated: @escaping (TData) -> ()) -> NotificationRegistration
-    static func post(sender: Any, data: TData)
 }
 
 extension NotificationProtocol {
