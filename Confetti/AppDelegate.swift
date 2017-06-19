@@ -45,14 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
     }
     
-    var window: UIWindow!
+    var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         if ProcessInfo.processInfo.arguments.contains("test") {
             runMode = .testRun
         }
-        
+                
         FirebaseApp.configure()
         Database.database().isPersistenceEnabled = true
         
@@ -94,7 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func skipLogin(currentUser _: User) {
-        window.rootViewController = viewController("loggedInViewController")
+        window?.rootViewController = viewController("loggedInViewController")
     }
 }
 
