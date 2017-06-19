@@ -27,7 +27,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.99489795920000001" green="0.98979591840000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
@@ -305,7 +304,7 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Confetti" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" id="Zdf-7t-Un8"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="heroView" destination="Ftm-Gw-bJN" id="EJ1-x1-VhV"/>
@@ -367,7 +366,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5N-yM-8Ue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="510" y="-1129.2253521126761"/>
+            <point key="canvasLocation" x="533" y="-1129"/>
         </scene>
         <!--Choose Occasion View Controller-->
         <scene sceneID="3fc-fv-6UI">

@@ -31,6 +31,9 @@ class EventListViewController: UITableViewController, HeroStretchable {
         styleTransparentNavigationBar()
         setupStretchyHero()
         
+        // Remove the label from back button in nav bar
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "  ", style: .plain, target: nil, action: nil)
+        
         let onEventsChanged = UserViewModel.current.onEventsChanged {
             self.updateWith(events: $0)
         }
