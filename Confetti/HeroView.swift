@@ -10,6 +10,8 @@ class HeroView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var confettiMachine: ConfettiMachineView!
     
+    var topShade: CAGradientLayer!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -23,6 +25,15 @@ class HeroView: UIView {
     func commonInit() {
         Bundle(for: HeroView.self).loadNibNamed("HeroView", owner: self, options: nil)
         
+        topShade = CAGradientLayer()
+        topShade.colors = [
+            UIColor(white: 0, alpha: 0.5),
+            UIColor(white: 0, alpha: 0)
+        ].map { $0.cgColor }
+        
+        topShade.locations = [0, 1]
+        heroImage.layer.addSublayer(topShade)
+        
         contentView.translatesAutoresizingMaskIntoConstraints = false
         
         self.addSubview(contentView)
@@ -31,6 +42,11 @@ class HeroView: UIView {
         contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        topShade.frame = CGRect(x: 0, y: 0, width: bounds.width, height: 70)
     }
     
     var event: EventViewModel! {
