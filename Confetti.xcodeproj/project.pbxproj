@@ -470,11 +470,6 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = W9D824R4EW;
 						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.Push = {
-								enabled = 0;
-							};
-						};
 					};
 					63C759E81EBE5A2400939D7B = {
 						CreatedOnToolsVersion = 8.3.2;
