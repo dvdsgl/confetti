@@ -5,6 +5,7 @@ import ConfettiKit
 @IBDesignable
 class HeroView: UIView {
     
+    @IBOutlet weak var defaultImage: UIImageView!
     @IBOutlet var heroImage: UIImageView!
     @IBOutlet var pillView: CountdownPillView!
     @IBOutlet var contentView: UIView!
@@ -54,7 +55,12 @@ class HeroView: UIView {
             event.displayImage(in: heroImage)
             pillView.event = event
             
-            topShade.isHidden = event.person.photoUUID == nil
+            contentView.backgroundColor = Colors.accentFor(event.person.name)
+            
+            let hasImage = event.person.photoUUID != nil
+            topShade.isHidden = !hasImage
+            defaultImage.isHidden = hasImage
+            heroImage.isHidden = !hasImage
             
             confettiMachine.isRunning = event.daysAway == 0
         }

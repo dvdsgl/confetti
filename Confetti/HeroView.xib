@@ -13,46 +13,55 @@
             <connections>
                 <outlet property="confettiMachine" destination="sKp-mb-Qfv" id="cAJ-zd-qmO"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="eul-MN-0XY"/>
+                <outlet property="defaultImage" destination="9Sh-fA-ROl" id="4Ji-2F-8sW"/>
                 <outlet property="heroImage" destination="YCY-QR-ZRp" id="b9l-lf-oqo"/>
                 <outlet property="pillView" destination="Pxj-of-nsf" id="Eny-NX-gq6"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="343"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anonymous-profile-photo" translatesAutoresizingMaskIntoConstraints="NO" id="YCY-QR-ZRp">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="343"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stu" translatesAutoresizingMaskIntoConstraints="NO" id="YCY-QR-ZRp">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anonymous-profile-photo" translatesAutoresizingMaskIntoConstraints="NO" id="9Sh-fA-ROl">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKp-mb-Qfv" customClass="ConfettiMachineView" customModule="Confetti" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="343"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pxj-of-nsf" customClass="CountdownPillView" customModule="Confetti" customModuleProvider="target">
-                    <rect key="frame" x="10" y="272" width="251" height="60.5"/>
+                    <rect key="frame" x="10" y="263.5" width="251" height="60.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.1215686275" green="0.83529411760000005" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="9Sh-fA-ROl" secondAttribute="bottom" id="12n-wM-QR9"/>
+                <constraint firstItem="9Sh-fA-ROl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3df-bF-MdE"/>
                 <constraint firstItem="Pxj-of-nsf" firstAttribute="bottom" secondItem="YCY-QR-ZRp" secondAttribute="bottom" constant="-10" id="6cL-1Z-esA"/>
                 <constraint firstItem="YCY-QR-ZRp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Bb7-0e-g9R"/>
                 <constraint firstItem="YCY-QR-ZRp" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="E9D-pS-riK"/>
                 <constraint firstItem="YCY-QR-ZRp" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="ERb-ng-UKU"/>
+                <constraint firstItem="9Sh-fA-ROl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="I11-0h-FZ5"/>
                 <constraint firstItem="sKp-mb-Qfv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OWH-7f-FXe"/>
                 <constraint firstAttribute="bottom" secondItem="sKp-mb-Qfv" secondAttribute="bottom" id="ZV0-v8-Dy1"/>
                 <constraint firstItem="Pxj-of-nsf" firstAttribute="leading" secondItem="YCY-QR-ZRp" secondAttribute="leading" constant="10" id="fYd-L8-hlC"/>
+                <constraint firstAttribute="trailing" secondItem="9Sh-fA-ROl" secondAttribute="trailing" id="hWA-S9-Q34"/>
                 <constraint firstItem="sKp-mb-Qfv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lGG-Bx-0NO"/>
                 <constraint firstItem="YCY-QR-ZRp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nrs-0R-yph"/>
                 <constraint firstAttribute="trailing" secondItem="sKp-mb-Qfv" secondAttribute="trailing" id="zwF-bP-Sk1"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="33.5" y="-108.5"/>
+            <point key="canvasLocation" x="33.5" y="-104"/>
         </view>
     </objects>
     <resources>
         <image name="anonymous-profile-photo" width="297" height="291"/>
+        <image name="stu" width="2048" height="1367"/>
     </resources>
 </document>
