@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
     }
     
-    var window: UIWindow?
+    var window: UIWindow!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -94,17 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func skipLogin(currentUser _: User) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let login = storyboard.instantiateInitialViewController()!
-        window!.rootViewController = login
-        
-        let main = storyboard.instantiateViewController(withIdentifier: "loggedInViewController")
-        main.modalPresentationStyle = .fullScreen
-        
-        DispatchQueue.main.async {
-            login.present(main, animated: false)
-        }
+        window.rootViewController = viewController("loggedInViewController")
     }
 }
 
