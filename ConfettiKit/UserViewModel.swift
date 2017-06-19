@@ -47,7 +47,7 @@ public class UserViewModel {
         
         onEventsUpdated { events in
             self.events = events
-            Notifications.EventsChanged.post(sender: self, events: events)
+            Notifications.EventsChanged.post(sender: self, data: events)
         }
     }
     

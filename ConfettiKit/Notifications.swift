@@ -4,38 +4,53 @@ public struct NotificationRegistration {
     public let removeObserver: () -> ()
 }
 
-public struct Notifications {
-    static var center: NotificationCenter {
+public protocol NotificationProtocol {
+    associatedtype TData
+    
+    static var name: String { get }
+    
+    static func subscribe(_ onEventsUpdated: @escaping (TData) -> ()) -> NotificationRegistration
+    static func post(sender: Any, data: TData)
+}
+
+extension NotificationProtocol {
+    private static var center: NotificationCenter {
         return NotificationCenter.default
     }
     
-    public struct EventsChanged {
-        private static let name = Notification.Name(rawValue: "EventsChangedNotification")
+    private static var noteName: Notification.Name {
+        return Notification.Name(rawValue: name)
+    }
+    
+    public static func subscribe(_ receive: @escaping (TData) -> ()) -> NotificationRegistration {
+        let observer = center.addObserver(forName: noteName, object: nil, queue: nil, using: { note in
+            let data = note.userInfo!["data"] as! TData
+            receive(data)
+        })
         
-        private static let eventsKey = "events"
-        
-        public static func subscribe(_ onEventsUpdated: @escaping ([Event]) -> ()) -> NotificationRegistration {
-            let observer = center.addObserver(forName: name, object: nil, queue: nil, using: { note in
-                let events = note.userInfo![eventsKey] as! [Event]
-                onEventsUpdated(events)
-            })
-            
-            return NotificationRegistration {
-                center.removeObserver(observer)
-            }
+        return NotificationRegistration {
+            center.removeObserver(observer)
         }
-        
-        static func create(sender: Any, events: [Event]) -> Notification {
-            return Notification(
-                name: name,
-                object: sender,
-                userInfo: [
-                    eventsKey: events
-                ])
-        }
-        
-        public static func post(sender: Any, events: [Event]) {
-            center.post(create(sender: sender, events: events))
-        }
+    }
+    
+    public static func post(sender: Any, data: TData) {
+        let note = Notification(
+            name: noteName,
+            object: sender,
+            userInfo: ["data": data]
+        )
+        center.post(note)
+    }
+}
+
+public struct Notifications {
+    public struct EventsChanged: NotificationProtocol {
+        public typealias TData = [Event]
+        public static let name = "EventsChangedNotification"
+    }
+    
+    public struct EventOpened: NotificationProtocol {
+        public typealias TData = String
+        public static let name = "EventOpened"
     }
 }
