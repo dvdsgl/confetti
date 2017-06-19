@@ -54,6 +54,8 @@ class HeroView: UIView {
             event.displayImage(in: heroImage)
             pillView.event = event
             
+            topShade.isHidden = event.person.photoUUID == nil
+            
             confettiMachine.isRunning = event.daysAway == 0
         }
     }
