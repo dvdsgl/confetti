@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         MSMobileCenter.start("9c903184-9f6f-44d8-b1b4-01750b951ece", withServices:[
             MSAnalytics.self,
             MSCrashes.self,
-            // MSDistribute.self, // Disabled until we fix the build in Mobile Center
+            MSDistribute.self,
             MSPush.self
         ])
         
