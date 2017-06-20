@@ -17,7 +17,6 @@
                 <outlet property="countdownUnitLabel" destination="JRT-7N-ULo" id="5HG-J6-tCC"/>
                 <outlet property="eventLabel" destination="8Bw-U9-fYb" id="A4b-5A-X3W"/>
                 <outlet property="shortDateLabel" destination="udE-u4-qKa" id="wto-AE-9Cv"/>
-                <outlet property="stackedCountdownView" destination="5OA-5p-mqY" id="6M8-nR-MOm"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
