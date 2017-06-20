@@ -126,21 +126,21 @@ public class EventViewModel {
     public var countdownMagnitudeAndUnit: (magnitude: Int, unit: String) {
         switch (daysAway, weeksAway, monthsAway) {
         case (0, _, _):
-            return (0, "today")
+            return (0, "TODAY")
         case (1, _, _):
-            return (1, "day")
+            return (1, "DAY")
         case (2...EventViewModel.soonDaysAway, _, _):
-            return (daysAway, "days")
+            return (daysAway, "DAYS")
         case (_, 1, _):
-            return (1, "week")
+            return (1, "WEEK")
         case (_, 2..<4, _):
-            return (weeksAway, "weeks")
+            return (weeksAway, "WEEKS")
         case (_, _, 1):
-            return (1, "month")
+            return (1, "MONTH")
         case (_, _, let months) where months < 12:
-            return (months, "months")
+            return (months, "MONTHS")
         default:
-            return (1, "year")
+            return (1, "YEAR")
         }
     }
     
