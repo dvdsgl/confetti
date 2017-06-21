@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		006F3C241EBFA9FF005D0EFD /* RoundRectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006F3C231EBFA9FF005D0EFD /* RoundRectangleButton.swift */; };
+		00A106681EFB261500E610A7 /* TopAlignedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A106671EFB261500E610A7 /* TopAlignedLabel.swift */; };
 		00D1604B1EEB54A5005047BF /* CountdownPillView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D1604A1EEB54A5005047BF /* CountdownPillView.xib */; };
 		3C0109DB1EE8DDE200BF206A /* CountdownPillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0109DA1EE8DDE200BF206A /* CountdownPillView.swift */; };
 		3C1250D11ED873D100F6E345 /* ChooseOccasionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1250D01ED873D100F6E345 /* ChooseOccasionViewController.swift */; };
@@ -93,6 +94,7 @@
 
 /* Begin PBXFileReference section */
 		006F3C231EBFA9FF005D0EFD /* RoundRectangleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundRectangleButton.swift; sourceTree = "<group>"; };
+		00A106671EFB261500E610A7 /* TopAlignedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAlignedLabel.swift; sourceTree = "<group>"; };
 		00D1604A1EEB54A5005047BF /* CountdownPillView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountdownPillView.xib; sourceTree = "<group>"; };
 		0A41DBE0420DCA78EF793164 /* Pods-Confetti.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Confetti.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Confetti/Pods-Confetti.debug.xcconfig"; sourceTree = "<group>"; };
 		2FE7682F3E4A76FA241467F4 /* Pods_Confetti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Confetti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -324,6 +326,7 @@
 				3C72E5481EF0DD5900051695 /* HeroView.xib */,
 				3C72E54A1EF0E00F00051695 /* HeroView.swift */,
 				63424F591EF72B0E00AD4736 /* CALayer.swift */,
+				00A106671EFB261500E610A7 /* TopAlignedLabel.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 				3CA852811ED3E35F002E1A05 /* ProfileViewController.swift in Sources */,
 				3C6B9C3F1ED46D6A0092BD0F /* CustomTabBarController.swift in Sources */,
 				6384DA481EE8D3F800223EC8 /* AppDelegate+Notifications.swift in Sources */,
+				00A106681EFB261500E610A7 /* TopAlignedLabel.swift in Sources */,
 				3C1250D31ED8756000F6E345 /* ChooseContactViewController.swift in Sources */,
 				635A66DB1EF6ED0D00970048 /* Globals.swift in Sources */,
 				3C1250D11ED873D100F6E345 /* ChooseOccasionViewController.swift in Sources */,

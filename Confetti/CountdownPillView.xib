@@ -28,17 +28,17 @@
                     <rect key="frame" x="2" y="2" width="50" height="50"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aOf-Jv-Cnd">
-                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <rect key="frame" x="5" y="9" width="40" height="35"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pPC-3J-PyW">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="25"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="10" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pPC-3J-PyW">
+                                    <rect key="frame" x="0.0" y="0.0" width="40" height="19"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" text="MONTHS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JRT-7N-ULo">
-                                    <rect key="frame" x="0.0" y="25" width="50" height="25"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="254" verticalCompressionResistancePriority="747" text="MOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JRT-7N-ULo" customClass="TopAlignedLabel" customModule="Confetti" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="19" width="40" height="16"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -46,30 +46,30 @@
                             <constraints>
                                 <constraint firstItem="JRT-7N-ULo" firstAttribute="centerX" secondItem="aOf-Jv-Cnd" secondAttribute="centerX" id="MqQ-hR-5gR"/>
                                 <constraint firstItem="pPC-3J-PyW" firstAttribute="centerX" secondItem="aOf-Jv-Cnd" secondAttribute="centerX" id="Nmp-tM-tDx"/>
-                                <constraint firstItem="pPC-3J-PyW" firstAttribute="height" secondItem="JRT-7N-ULo" secondAttribute="height" id="Y9q-25-xiF"/>
+                                <constraint firstItem="pPC-3J-PyW" firstAttribute="height" secondItem="JRT-7N-ULo" secondAttribute="height" constant="3" id="Y9q-25-xiF"/>
                             </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" red="0.99607843139999996" green="0.0039215686269999999" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="5OA-5p-mqY" secondAttribute="height" multiplier="1:1" id="3VW-GV-j4F"/>
-                        <constraint firstAttribute="trailing" secondItem="aOf-Jv-Cnd" secondAttribute="trailing" id="8U8-wE-stR"/>
-                        <constraint firstItem="aOf-Jv-Cnd" firstAttribute="top" secondItem="5OA-5p-mqY" secondAttribute="top" id="AuB-er-H12"/>
-                        <constraint firstAttribute="bottom" secondItem="aOf-Jv-Cnd" secondAttribute="bottom" id="GeY-px-2XD"/>
-                        <constraint firstItem="aOf-Jv-Cnd" firstAttribute="leading" secondItem="5OA-5p-mqY" secondAttribute="leading" id="Z6W-BR-VMd"/>
+                        <constraint firstAttribute="trailing" secondItem="aOf-Jv-Cnd" secondAttribute="trailing" constant="5" id="8U8-wE-stR"/>
+                        <constraint firstItem="aOf-Jv-Cnd" firstAttribute="top" secondItem="5OA-5p-mqY" secondAttribute="top" constant="9" id="AuB-er-H12"/>
+                        <constraint firstAttribute="bottom" secondItem="aOf-Jv-Cnd" secondAttribute="bottom" constant="6" id="GeY-px-2XD"/>
+                        <constraint firstItem="aOf-Jv-Cnd" firstAttribute="leading" secondItem="5OA-5p-mqY" secondAttribute="leading" constant="5" id="Z6W-BR-VMd"/>
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vUm-UM-ehs">
-                    <rect key="frame" x="60" y="9" width="144.5" height="36.5"/>
+                    <rect key="frame" x="60" y="9" width="155" height="36.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Stu's 19th Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bw-U9-fYb">
-                            <rect key="frame" x="0.0" y="0.0" width="144.5" height="19.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="155" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="June 19th " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udE-u4-qKa">
-                            <rect key="frame" x="0.0" y="19.5" width="144.5" height="17"/>
+                            <rect key="frame" x="0.0" y="19.5" width="155" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -79,6 +79,7 @@
             </subviews>
             <color key="backgroundColor" red="0.1215686275" green="0.83529411760000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="vUm-UM-ehs" secondAttribute="trailing" constant="20" id="XXo-VK-lKp"/>
                 <constraint firstAttribute="bottom" secondItem="5OA-5p-mqY" secondAttribute="bottom" constant="2" id="fXZ-bm-t1M"/>
                 <constraint firstItem="5OA-5p-mqY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="gDJ-uE-u7V"/>
                 <constraint firstItem="vUm-UM-ehs" firstAttribute="leading" secondItem="5OA-5p-mqY" secondAttribute="trailing" constant="8" id="jqR-EI-LjA"/>
