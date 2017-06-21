@@ -32,25 +32,26 @@
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKp-mb-Qfv" customClass="ConfettiMachineView" customModule="Confetti" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pxj-of-nsf" customClass="CountdownPillView" customModule="Confetti" customModuleProvider="target">
+                            <rect key="frame" x="8" y="269" width="228" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </view>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pxj-of-nsf" customClass="CountdownPillView" customModule="Confetti" customModuleProvider="target">
-                    <rect key="frame" x="10" y="263.5" width="251" height="60.5"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.1215686275" green="0.83529411760000005" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="9Sh-fA-ROl" secondAttribute="bottom" id="12n-wM-QR9"/>
                 <constraint firstItem="9Sh-fA-ROl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3df-bF-MdE"/>
-                <constraint firstItem="Pxj-of-nsf" firstAttribute="bottom" secondItem="YCY-QR-ZRp" secondAttribute="bottom" constant="-10" id="6cL-1Z-esA"/>
                 <constraint firstItem="YCY-QR-ZRp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Bb7-0e-g9R"/>
                 <constraint firstItem="YCY-QR-ZRp" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="E9D-pS-riK"/>
                 <constraint firstItem="YCY-QR-ZRp" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="ERb-ng-UKU"/>
                 <constraint firstItem="9Sh-fA-ROl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="I11-0h-FZ5"/>
                 <constraint firstItem="sKp-mb-Qfv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OWH-7f-FXe"/>
                 <constraint firstAttribute="bottom" secondItem="sKp-mb-Qfv" secondAttribute="bottom" id="ZV0-v8-Dy1"/>
-                <constraint firstItem="Pxj-of-nsf" firstAttribute="leading" secondItem="YCY-QR-ZRp" secondAttribute="leading" constant="10" id="fYd-L8-hlC"/>
                 <constraint firstAttribute="trailing" secondItem="9Sh-fA-ROl" secondAttribute="trailing" id="hWA-S9-Q34"/>
                 <constraint firstItem="sKp-mb-Qfv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lGG-Bx-0NO"/>
                 <constraint firstItem="YCY-QR-ZRp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nrs-0R-yph"/>
