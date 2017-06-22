@@ -80,9 +80,9 @@ class EventDetailViewController : UITableViewController,
             self.pickPhoto()
         }))
         
-        alert.addAction(UIAlertAction(title: "Forget", style: .default, handler: { action in
+        alert.addAction(UIAlertAction(title: "Forget", style: .destructive, handler: { action in
             UserViewModel.current.deleteEvent(self.event.event)
-            // TODO: Update UI after deleting event 
+            // TODO: Update UI after deleting event
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
