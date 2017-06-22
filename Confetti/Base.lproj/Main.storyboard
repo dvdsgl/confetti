@@ -353,7 +353,7 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="mBP-dH-Sgm">
-                        <barButtonItem key="rightBarButtonItem" title="Pick Photo" id="vdC-q7-zma">
+                        <barButtonItem key="rightBarButtonItem" image="overflow-button" id="vdC-q7-zma">
                             <connections>
                                 <action selector="pickPhoto:" destination="6F9-o6-Rdr" id="7rO-jY-i76"/>
                             </connections>
@@ -841,6 +841,7 @@
         <image name="cake_icon" width="27" height="27"/>
         <image name="occasion-overlay-close" width="53" height="53"/>
         <image name="occasion-overlay-close-active" width="52" height="52"/>
+        <image name="overflow-button" width="22" height="22"/>
         <image name="smile_icon" width="27" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
