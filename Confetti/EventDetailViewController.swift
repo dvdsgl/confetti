@@ -56,7 +56,7 @@ class EventDetailViewController : UITableViewController,
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    @IBAction func pickPhoto(_ sender: Any) {
+    func pickPhoto() {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
@@ -70,5 +70,18 @@ class EventDetailViewController : UITableViewController,
             event.saveImage(image)
             updateDisplay()
         }
+    }
+    
+    
+    @IBAction func displayActionSheet(_ sender: Any) {
+        let alert = UIAlertController(title: "Options", message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Add Photo", style: .default, handler: { action in
+            self.pickPhoto()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+        self.present(alert, animated: true)
     }
 }

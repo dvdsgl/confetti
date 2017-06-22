@@ -355,7 +355,7 @@
                     <navigationItem key="navigationItem" id="mBP-dH-Sgm">
                         <barButtonItem key="rightBarButtonItem" image="overflow-button" id="vdC-q7-zma">
                             <connections>
-                                <action selector="pickPhoto:" destination="6F9-o6-Rdr" id="7rO-jY-i76"/>
+                                <action selector="displayActionSheet:" destination="6F9-o6-Rdr" id="YYI-rl-eDu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
