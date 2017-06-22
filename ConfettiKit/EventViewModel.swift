@@ -138,7 +138,7 @@ public class EventViewModel {
         case (_, _, 1):
             return (1, "MONTH")
         case (_, _, let months) where months < 12:
-            return (months, "MONTHS")
+            return (months, "MOS")
         default:
             return (1, "YEAR")
         }
