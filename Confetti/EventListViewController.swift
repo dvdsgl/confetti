@@ -70,8 +70,10 @@ class EventListViewController: UITableViewController, HeroStretchable {
         
         if viewModels.count == 0 {
             tableView.backgroundView = EmptyTableView()
+            heroView.isHidden = true
         } else {
             tableView.backgroundView = nil
+            heroView.isHidden = false
             tableView.reloadData()
         }
     }

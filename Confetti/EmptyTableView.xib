@@ -6,60 +6,70 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="secret_garden.otf">
+            <string>secret_garden</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmptyTableView">
             <connections>
-                <outlet property="contentView" destination="RiN-JR-Ssb" id="j0r-Kc-LEg"/>
+                <outlet property="contentView" destination="As5-Uu-zfS" id="pv2-Mn-FrZ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="RiN-JR-Ssb">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="324"/>
+        <view contentMode="scaleToFill" id="As5-Uu-zfS">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pc4-VH-YeM" userLabel="Slogan Container">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="324"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qar-uE-1Cf" userLabel="Slogan Container">
+                    <rect key="frame" x="0.0" y="284" width="375" height="284"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add birthdays, Mother's Day, and more. Confetti reminds you and helps you celebrate." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G64-eh-K3R">
-                            <rect key="frame" x="8" y="151" width="360" height="84"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="84" id="tmM-sb-J9M"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Never forget a special occasion." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGl-l3-Gq8">
-                            <rect key="frame" x="8" y="101" width="359" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Never forget a special occasion." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGl-l3-Gq8">
+                            <rect key="frame" x="8" y="115" width="359" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add birthdays, Mother's Day, and more. Confetti reminds you and helps you celebrate." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G64-eh-K3R">
+                            <rect key="frame" x="0.0" y="132" width="367" height="84"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="eGl-l3-Gq8" firstAttribute="leading" secondItem="pc4-VH-YeM" secondAttribute="leadingMargin" id="83e-al-E3h"/>
-                        <constraint firstItem="G64-eh-K3R" firstAttribute="top" secondItem="eGl-l3-Gq8" secondAttribute="bottom" constant="29" id="Dlb-9D-Cuf"/>
-                        <constraint firstItem="eGl-l3-Gq8" firstAttribute="trailing" secondItem="pc4-VH-YeM" secondAttribute="trailingMargin" id="JNx-ix-5R5"/>
-                        <constraint firstItem="eGl-l3-Gq8" firstAttribute="centerX" secondItem="G64-eh-K3R" secondAttribute="centerX" id="bdf-LL-PIN"/>
-                        <constraint firstAttribute="bottom" secondItem="G64-eh-K3R" secondAttribute="bottom" constant="89" id="vh1-Dk-Yoy"/>
-                        <constraint firstItem="eGl-l3-Gq8" firstAttribute="leading" secondItem="G64-eh-K3R" secondAttribute="leading" id="y73-uN-rMw"/>
-                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mBX-Xq-nfQ" userLabel="Top Container">
+                    <rect key="frame" x="0.0" y="-2" width="375" height="284"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tQO-Tj-m4y" customClass="ConfettiMachineView" customModule="Confetti" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="284"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.1215686275" green="0.83529411760000005" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isRunning" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confetti" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0N2-hv-PqX">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="284"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="secret_garden" family="secret garden" pointSize="170"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="pc4-VH-YeM" firstAttribute="leading" secondItem="RiN-JR-Ssb" secondAttribute="leading" id="4lu-ty-yBh"/>
-                <constraint firstItem="pc4-VH-YeM" firstAttribute="top" secondItem="RiN-JR-Ssb" secondAttribute="top" id="5CZ-lU-oq7"/>
-                <constraint firstAttribute="trailing" secondItem="pc4-VH-YeM" secondAttribute="trailing" id="XFD-rj-2pR"/>
-                <constraint firstAttribute="bottom" secondItem="pc4-VH-YeM" secondAttribute="bottom" id="Zlp-0Z-tcY"/>
-            </constraints>
-            <nil key="simulatedStatusBarMetrics"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="33.5" y="-117"/>
+            <point key="canvasLocation" x="33.5" y="447.5"/>
         </view>
     </objects>
 </document>
