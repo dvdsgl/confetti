@@ -68,7 +68,12 @@ class EventListViewController: UITableViewController, HeroStretchable {
             heroView.event = hero
         }
         
-        tableView.reloadData()
+        if viewModels.count == 0 {
+            tableView.backgroundView = EmptyTableView()
+        } else {
+            tableView.backgroundView = nil
+            tableView.reloadData()
+        }
     }
     
     @IBAction func unwindToMain(segue: UIStoryboardSegue) {}
