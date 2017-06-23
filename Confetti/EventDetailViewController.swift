@@ -82,7 +82,8 @@ class EventDetailViewController : UITableViewController,
         
         alert.addAction(UIAlertAction(title: "Forget", style: .destructive, handler: { action in
             UserViewModel.current.deleteEvent(self.event.event)
-            // TODO: Update UI after deleting event
+            
+            self.navigationController?.popViewController(animated: true)
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
