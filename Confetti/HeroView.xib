@@ -25,7 +25,7 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YCY-QR-ZRp">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.1215686275" green="0.83529411760000005" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anonymous-profile-photo" translatesAutoresizingMaskIntoConstraints="NO" id="9Sh-fA-ROl">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
