@@ -71,7 +71,7 @@ class ProfileViewController : UITableViewController, HeroStretchable {
                 let photoUrl = URL(string: "https://graph.facebook.com/\(facebookUserId)/picture?height=500")
                 self.heroView.heroImage.sd_setImage(with: photoUrl!)
             } else {
-                self.heroView.heroImage.image = #imageLiteral(resourceName: "stu")
+                return
             }
         }
     }

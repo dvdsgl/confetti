@@ -23,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stu" translatesAutoresizingMaskIntoConstraints="NO" id="YCY-QR-ZRp">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YCY-QR-ZRp">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </imageView>
@@ -68,6 +68,5 @@
     </objects>
     <resources>
         <image name="anonymous-profile-photo" width="297" height="291"/>
-        <image name="stu" width="2048" height="1367"/>
     </resources>
 </document>
