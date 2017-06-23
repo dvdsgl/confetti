@@ -74,7 +74,7 @@ class EventDetailViewController : UITableViewController,
     
     
     @IBAction func displayActionSheet(_ sender: Any) {
-        let alert = UIAlertController(title: "Options", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Add Photo", style: .default, handler: { action in
             self.pickPhoto()
