@@ -3,18 +3,42 @@ import Foundation
 
 import ConfettiKit
 
-class EventDetailViewController : UITableViewController,
-    UIImagePickerControllerDelegate,
-    UINavigationControllerDelegate,
-    HeroStretchable {
+protocol HeroStretchableScrollView {
+    var scrollView: UIScrollView! { get }
+    var heroView: HeroView! { get }
+}
+
+extension HeroStretchableScrollView {
+    private var heroViewHeight: CGFloat {
+        return UIScreen.main.bounds.height / 2
+    }
+    
+    // Call this in viewDidLoad
+    func setupStretchyHero() {
+        scrollView.addSubview(heroView)
+        scrollView.contentInset = UIEdgeInsets(top: heroViewHeight, left: 0, bottom: 0, right: 0)
+        scrollView.contentOffset = CGPoint(x: 0, y: -heroViewHeight)
+    }
+    
+    // Call this in scrollViewDidScroll
+    func updateStretchyHero() {
+        var headerRect = CGRect(x: 0, y: -heroViewHeight, width: scrollView.bounds.width, height: heroViewHeight)
+        if scrollView.contentOffset.y < -heroViewHeight {
+            headerRect.origin.y = scrollView.contentOffset.y
+            headerRect.size.height = -scrollView.contentOffset.y
+        }
+        heroView.frame = headerRect
+    }
+}
+
+class EventDetailViewController : UIViewController, UIImagePickerControllerDelegate,
+    UINavigationControllerDelegate, UIScrollViewDelegate, HeroStretchableScrollView {
     
     @IBOutlet weak var heroView: HeroView!
     
-    var event: EventViewModel! {
-        didSet {
-            updateDisplay()
-        }
-    }
+    var event: EventViewModel!
+    
+    @IBOutlet var scrollView: UIScrollView!
     
     enum Action: String {
         case call = "Call"
@@ -26,8 +50,10 @@ class EventDetailViewController : UITableViewController,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupStretchyHero()
         
+        self.scrollView.delegate = self
+        
+        setupStretchyHero()
         updateDisplay()
     }
     
@@ -35,25 +61,8 @@ class EventDetailViewController : UITableViewController,
         heroView?.event = event
     }
     
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        updateStretchyHero()
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "action", for: indexPath)
-        
-        let action = actions[indexPath.item]
-        cell.textLabel?.text = action.rawValue
-        
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return actions.count
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    func scrollViewDidScroll(_ scrollView: UIScrollView){
+        print(self.scrollView.contentOffset.y)
     }
     
     func pickPhoto() {
@@ -71,7 +80,6 @@ class EventDetailViewController : UITableViewController,
             updateDisplay()
         }
     }
-    
     
     @IBAction func displayActionSheet(_ sender: Any) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
