@@ -307,6 +307,7 @@
                     <navigationItem key="navigationItem" id="Zdf-7t-Un8"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="footerView" destination="2G4-Ae-ucl" id="lry-oq-5ki"/>
                         <outlet property="heroView" destination="Ftm-Gw-bJN" id="EJ1-x1-VhV"/>
                     </connections>
                 </tableViewController>
