@@ -327,24 +327,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ym6-ey-oAg">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ym6-ey-oAg">
+                                <rect key="frame" x="0.0" y="36" width="320" height="519"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUT-Fc-TXt" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtS-kx-45J" userLabel="Button Container">
+                                        <rect key="frame" x="0.0" y="284" width="320" height="235"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bno-Lg-b8d">
+                                                <rect key="frame" x="137" y="72.5" width="46" height="90"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ep1-2V-lAK" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enC-7w-Szg" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="30" width="46" height="30"/>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YaS-4o-cJI" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="60" width="46" height="30"/>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="bno-Lg-b8d" firstAttribute="centerX" secondItem="RtS-kx-45J" secondAttribute="centerX" id="UWC-hd-tla"/>
+                                            <constraint firstItem="bno-Lg-b8d" firstAttribute="centerY" secondItem="RtS-kx-45J" secondAttribute="centerY" id="pgI-XG-mAO"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="RtS-kx-45J" firstAttribute="centerX" secondItem="ym6-ey-oAg" secondAttribute="centerX" id="0k7-ug-NbH"/>
                                     <constraint firstAttribute="bottom" secondItem="tUT-Fc-TXt" secondAttribute="bottom" constant="258" id="AGN-kR-DBH"/>
                                     <constraint firstItem="tUT-Fc-TXt" firstAttribute="leading" secondItem="ym6-ey-oAg" secondAttribute="leading" id="JOd-jM-7zr"/>
                                     <constraint firstAttribute="trailing" secondItem="tUT-Fc-TXt" secondAttribute="trailing" id="ahi-Ke-bkI"/>
                                     <constraint firstItem="tUT-Fc-TXt" firstAttribute="centerX" secondItem="ym6-ey-oAg" secondAttribute="centerX" id="cjN-Yn-gn8"/>
+                                    <constraint firstItem="RtS-kx-45J" firstAttribute="top" secondItem="tUT-Fc-TXt" secondAttribute="bottom" id="jSV-sd-EkL"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="33Y-wO-ayR" firstAttribute="top" secondItem="RtS-kx-45J" secondAttribute="bottom" id="09H-YR-S6C"/>
+                            <constraint firstItem="RtS-kx-45J" firstAttribute="width" secondItem="jfP-YR-J5I" secondAttribute="width" id="88c-fx-3jV"/>
                             <constraint firstItem="ym6-ey-oAg" firstAttribute="leading" secondItem="jfP-YR-J5I" secondAttribute="leading" id="A0w-v0-vh4"/>
                             <constraint firstItem="ym6-ey-oAg" firstAttribute="bottom" secondItem="33Y-wO-ayR" secondAttribute="top" id="F1o-VP-PeL"/>
                             <constraint firstItem="tUT-Fc-TXt" firstAttribute="top" secondItem="jfP-YR-J5I" secondAttribute="top" id="NRe-Ps-OBn"/>
