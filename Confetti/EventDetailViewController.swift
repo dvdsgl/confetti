@@ -53,6 +53,7 @@ class EventDetailViewController : UIViewController, UIImagePickerControllerDeleg
         
         self.scrollView.delegate = self
         
+        styleTransparentNavigationBar()
         setupStretchyHero()
         updateDisplay()
     }

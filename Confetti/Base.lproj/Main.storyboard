@@ -318,51 +318,39 @@
         <!--Event Detail View Controller-->
         <scene sceneID="oQE-yZ-IHe">
             <objects>
-                <viewController storyboardIdentifier="eventDetail" id="yzR-77-9bZ" customClass="EventDetailViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventDetail" extendedLayoutIncludesOpaqueBars="YES" id="yzR-77-9bZ" customClass="EventDetailViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tlF-F3-7ui"/>
-                        <viewControllerLayoutGuide type="bottom" id="3ni-yW-SRM"/>
+                        <viewControllerLayoutGuide type="top" id="caI-ld-9SJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="33Y-wO-ayR"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="q0I-9D-P8H">
+                    <view key="view" contentMode="scaleToFill" id="jfP-YR-J5I">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMk-mr-fYU">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ym6-ey-oAg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SN1-sW-hfy" userLabel="scrollViewContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1sl-d0-tPs" userLabel="header" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="192"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                        </subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUT-Fc-TXt" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="1sl-d0-tPs" firstAttribute="leading" secondItem="SN1-sW-hfy" secondAttribute="leading" id="H0G-FM-WN0"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="SN1-sW-hfy" firstAttribute="bottom" secondItem="IMk-mr-fYU" secondAttribute="bottom" constant="20" symbolic="YES" id="5rT-gD-h5a"/>
-                                    <constraint firstItem="SN1-sW-hfy" firstAttribute="width" secondItem="IMk-mr-fYU" secondAttribute="width" id="DYR-5t-XnO"/>
-                                    <constraint firstItem="SN1-sW-hfy" firstAttribute="leading" secondItem="IMk-mr-fYU" secondAttribute="leading" id="Nbj-RV-qnr"/>
-                                    <constraint firstItem="SN1-sW-hfy" firstAttribute="top" secondItem="IMk-mr-fYU" secondAttribute="top" id="aOH-Q0-4jJ"/>
-                                    <constraint firstItem="SN1-sW-hfy" firstAttribute="trailing" secondItem="IMk-mr-fYU" secondAttribute="trailing" id="o4j-9W-52h"/>
-                                    <constraint firstItem="SN1-sW-hfy" firstAttribute="height" secondItem="IMk-mr-fYU" secondAttribute="height" id="uKG-Mx-2Bz"/>
+                                    <constraint firstAttribute="bottom" secondItem="tUT-Fc-TXt" secondAttribute="bottom" constant="258" id="AGN-kR-DBH"/>
+                                    <constraint firstItem="tUT-Fc-TXt" firstAttribute="leading" secondItem="ym6-ey-oAg" secondAttribute="leading" id="JOd-jM-7zr"/>
+                                    <constraint firstAttribute="trailing" secondItem="tUT-Fc-TXt" secondAttribute="trailing" id="ahi-Ke-bkI"/>
+                                    <constraint firstItem="tUT-Fc-TXt" firstAttribute="centerX" secondItem="ym6-ey-oAg" secondAttribute="centerX" id="cjN-Yn-gn8"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1sl-d0-tPs" firstAttribute="top" secondItem="tlF-F3-7ui" secondAttribute="bottom" id="9S4-4O-BZ2"/>
-                            <constraint firstItem="1sl-d0-tPs" firstAttribute="bottom" secondItem="3ni-yW-SRM" secondAttribute="top" constant="-263" id="KAq-Tk-8ce"/>
-                            <constraint firstItem="IMk-mr-fYU" firstAttribute="top" secondItem="tlF-F3-7ui" secondAttribute="bottom" id="XOs-vn-NvA"/>
-                            <constraint firstItem="IMk-mr-fYU" firstAttribute="centerX" secondItem="q0I-9D-P8H" secondAttribute="centerX" id="f61-Cv-58d"/>
-                            <constraint firstItem="IMk-mr-fYU" firstAttribute="width" secondItem="q0I-9D-P8H" secondAttribute="width" id="mYe-te-hQA"/>
-                            <constraint firstItem="IMk-mr-fYU" firstAttribute="bottom" secondItem="3ni-yW-SRM" secondAttribute="top" id="vQn-QG-42Z"/>
-                            <constraint firstItem="1sl-d0-tPs" firstAttribute="width" secondItem="q0I-9D-P8H" secondAttribute="width" id="xfk-K3-Fb2"/>
+                            <constraint firstItem="ym6-ey-oAg" firstAttribute="leading" secondItem="jfP-YR-J5I" secondAttribute="leading" id="A0w-v0-vh4"/>
+                            <constraint firstItem="ym6-ey-oAg" firstAttribute="bottom" secondItem="33Y-wO-ayR" secondAttribute="top" id="F1o-VP-PeL"/>
+                            <constraint firstItem="tUT-Fc-TXt" firstAttribute="top" secondItem="jfP-YR-J5I" secondAttribute="top" id="NRe-Ps-OBn"/>
+                            <constraint firstAttribute="trailing" secondItem="ym6-ey-oAg" secondAttribute="trailing" id="aZj-bd-W53"/>
+                            <constraint firstItem="ym6-ey-oAg" firstAttribute="top" secondItem="jfP-YR-J5I" secondAttribute="top" id="c4K-72-3Fw"/>
+                            <constraint firstItem="tUT-Fc-TXt" firstAttribute="height" secondItem="jfP-YR-J5I" secondAttribute="height" multiplier="0.5" id="l1g-In-ckt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wdi-zQ-FmH">
@@ -372,9 +360,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="heroView" destination="1sl-d0-tPs" id="svc-aQ-TZI"/>
-                        <outlet property="scrollView" destination="IMk-mr-fYU" id="avc-JC-7hJ"/>
+                        <outlet property="heroView" destination="tUT-Fc-TXt" id="zt8-1E-84J"/>
+                        <outlet property="scrollView" destination="ym6-ey-oAg" id="m2B-87-YMk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KHt-EN-T4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
