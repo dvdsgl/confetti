@@ -37,7 +37,6 @@ class EventDetailViewController : UIViewController, UIImagePickerControllerDeleg
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView){
-        print(self.scrollView.contentOffset.y)
         heroViewHeightConstraint.constant = -self.scrollView.contentOffset.y / 2
     }
     
