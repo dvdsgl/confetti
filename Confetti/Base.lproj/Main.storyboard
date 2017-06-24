@@ -294,7 +294,7 @@
                                     <outlet property="descriptionLabel" destination="ETe-7L-0a6" id="lpS-pY-e0Y"/>
                                     <outlet property="nameLabel" destination="Jud-hQ-N8I" id="vkb-5w-271"/>
                                     <outlet property="photoView" destination="nwU-YD-ntk" id="SKp-Qu-zGX"/>
-                                    <segue destination="yzR-77-9bZ" kind="show" identifier="showDetail" action="showDetailViewController:sender:" id="kfC-pl-OK8"/>
+                                    <segue destination="yzR-77-9bZ" kind="show" identifier="showDetail" id="m9M-cV-Fuz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
