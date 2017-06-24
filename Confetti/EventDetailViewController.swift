@@ -57,11 +57,6 @@ class EventDetailViewController : UIViewController, UIImagePickerControllerDeleg
         }
     }
     
-    func layoutSubviews()  {
-        let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.size.height)
-        scrollView.setContentOffset(bottomOffset, animated: false)
-    }
-    
     @IBAction func displayActionSheet(_ sender: Any) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
