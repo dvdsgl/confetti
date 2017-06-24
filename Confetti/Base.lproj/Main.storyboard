@@ -327,61 +327,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ym6-ey-oAg">
-                                <rect key="frame" x="0.0" y="36" width="320" height="519"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ym6-ey-oAg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUT-Fc-TXt" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtS-kx-45J" userLabel="Button Container">
-                                        <rect key="frame" x="0.0" y="284" width="320" height="235"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7A8-9j-U7I" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="64" width="320" height="440"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bno-Lg-b8d">
-                                                <rect key="frame" x="137" y="72.5" width="46" height="90"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ep1-2V-lAK" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enC-7w-Szg" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="30" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YaS-4o-cJI" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="60" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtS-kx-45J" userLabel="Button Container">
+                                                <rect key="frame" x="0.0" y="156" width="320" height="826"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUT-Fc-TXt" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="-128" width="320" height="284"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="bno-Lg-b8d" firstAttribute="centerX" secondItem="RtS-kx-45J" secondAttribute="centerX" id="UWC-hd-tla"/>
-                                            <constraint firstItem="bno-Lg-b8d" firstAttribute="centerY" secondItem="RtS-kx-45J" secondAttribute="centerY" id="pgI-XG-mAO"/>
+                                            <constraint firstItem="RtS-kx-45J" firstAttribute="leading" secondItem="tUT-Fc-TXt" secondAttribute="leading" id="9u0-tJ-KNO"/>
+                                            <constraint firstAttribute="bottom" secondItem="RtS-kx-45J" secondAttribute="bottom" constant="-542" id="Ixs-M7-oLq"/>
+                                            <constraint firstItem="RtS-kx-45J" firstAttribute="top" secondItem="tUT-Fc-TXt" secondAttribute="bottom" id="Sb2-2Z-dVA"/>
+                                            <constraint firstAttribute="trailing" secondItem="RtS-kx-45J" secondAttribute="trailing" id="jQx-tO-d7o"/>
+                                            <constraint firstItem="RtS-kx-45J" firstAttribute="trailing" secondItem="tUT-Fc-TXt" secondAttribute="trailing" id="kgK-6V-Uc6"/>
+                                            <constraint firstItem="RtS-kx-45J" firstAttribute="leading" secondItem="7A8-9j-U7I" secondAttribute="leading" id="tXb-Zu-ZBh"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="RtS-kx-45J" firstAttribute="centerX" secondItem="ym6-ey-oAg" secondAttribute="centerX" id="0k7-ug-NbH"/>
-                                    <constraint firstAttribute="bottom" secondItem="tUT-Fc-TXt" secondAttribute="bottom" constant="258" id="AGN-kR-DBH"/>
-                                    <constraint firstItem="tUT-Fc-TXt" firstAttribute="leading" secondItem="ym6-ey-oAg" secondAttribute="leading" id="JOd-jM-7zr"/>
-                                    <constraint firstAttribute="trailing" secondItem="tUT-Fc-TXt" secondAttribute="trailing" id="ahi-Ke-bkI"/>
-                                    <constraint firstItem="tUT-Fc-TXt" firstAttribute="centerX" secondItem="ym6-ey-oAg" secondAttribute="centerX" id="cjN-Yn-gn8"/>
-                                    <constraint firstItem="RtS-kx-45J" firstAttribute="top" secondItem="tUT-Fc-TXt" secondAttribute="bottom" id="jSV-sd-EkL"/>
+                                    <constraint firstItem="7A8-9j-U7I" firstAttribute="top" secondItem="ym6-ey-oAg" secondAttribute="top" constant="64" id="A4D-Qx-emO"/>
+                                    <constraint firstAttribute="bottom" secondItem="7A8-9j-U7I" secondAttribute="bottom" id="JVX-6x-3h2"/>
+                                    <constraint firstItem="7A8-9j-U7I" firstAttribute="centerX" secondItem="ym6-ey-oAg" secondAttribute="centerX" id="M0d-nN-gUq"/>
+                                    <constraint firstItem="7A8-9j-U7I" firstAttribute="leading" secondItem="ym6-ey-oAg" secondAttribute="leading" id="gMg-TT-gKH"/>
+                                    <constraint firstAttribute="trailing" secondItem="7A8-9j-U7I" secondAttribute="trailing" id="hS4-XR-bB4"/>
+                                    <constraint firstItem="7A8-9j-U7I" firstAttribute="centerY" secondItem="ym6-ey-oAg" secondAttribute="centerY" id="v2V-qS-7D1"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="33Y-wO-ayR" firstAttribute="top" secondItem="RtS-kx-45J" secondAttribute="bottom" id="09H-YR-S6C"/>
-                            <constraint firstItem="RtS-kx-45J" firstAttribute="width" secondItem="jfP-YR-J5I" secondAttribute="width" id="88c-fx-3jV"/>
-                            <constraint firstItem="ym6-ey-oAg" firstAttribute="leading" secondItem="jfP-YR-J5I" secondAttribute="leading" id="A0w-v0-vh4"/>
-                            <constraint firstItem="ym6-ey-oAg" firstAttribute="bottom" secondItem="33Y-wO-ayR" secondAttribute="top" id="F1o-VP-PeL"/>
-                            <constraint firstItem="tUT-Fc-TXt" firstAttribute="top" secondItem="jfP-YR-J5I" secondAttribute="top" id="NRe-Ps-OBn"/>
-                            <constraint firstAttribute="trailing" secondItem="ym6-ey-oAg" secondAttribute="trailing" id="aZj-bd-W53"/>
-                            <constraint firstItem="ym6-ey-oAg" firstAttribute="top" secondItem="jfP-YR-J5I" secondAttribute="top" id="c4K-72-3Fw"/>
-                            <constraint firstItem="tUT-Fc-TXt" firstAttribute="height" secondItem="jfP-YR-J5I" secondAttribute="height" multiplier="0.5" id="l1g-In-ckt"/>
+                            <constraint firstItem="tUT-Fc-TXt" firstAttribute="height" secondItem="jfP-YR-J5I" secondAttribute="height" multiplier="0.5" id="6ob-Xp-4nC"/>
+                            <constraint firstItem="ym6-ey-oAg" firstAttribute="width" secondItem="jfP-YR-J5I" secondAttribute="width" id="91R-xb-Qph"/>
+                            <constraint firstItem="ym6-ey-oAg" firstAttribute="centerY" secondItem="jfP-YR-J5I" secondAttribute="centerY" id="AYD-51-adl"/>
+                            <constraint firstItem="ym6-ey-oAg" firstAttribute="height" secondItem="jfP-YR-J5I" secondAttribute="height" id="dkZ-JJ-ONj"/>
+                            <constraint firstItem="tUT-Fc-TXt" firstAttribute="top" secondItem="jfP-YR-J5I" secondAttribute="top" id="kI9-3Z-Onq"/>
+                            <constraint firstItem="ym6-ey-oAg" firstAttribute="centerX" secondItem="jfP-YR-J5I" secondAttribute="centerX" id="lUh-OZ-Quj"/>
+                            <constraint firstItem="tUT-Fc-TXt" firstAttribute="width" secondItem="jfP-YR-J5I" secondAttribute="width" id="uDE-th-UG2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wdi-zQ-FmH">
@@ -394,12 +384,13 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="heroView" destination="tUT-Fc-TXt" id="zt8-1E-84J"/>
+                        <outlet property="heroViewHeightConstraint" destination="6ob-Xp-4nC" id="8WG-ha-KIE"/>
                         <outlet property="scrollView" destination="ym6-ey-oAg" id="m2B-87-YMk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KHt-EN-T4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="693.75" y="-1129.2253521126761"/>
+            <point key="canvasLocation" x="714" y="-1184"/>
         </scene>
         <!--Choose Occasion View Controller-->
         <scene sceneID="3fc-fv-6UI">

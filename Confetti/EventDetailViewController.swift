@@ -3,38 +3,11 @@ import Foundation
 
 import ConfettiKit
 
-protocol HeroStretchableScrollView {
-    var scrollView: UIScrollView! { get }
-    var heroView: HeroView! { get }
-}
-
-extension HeroStretchableScrollView {
-    private var heroViewHeight: CGFloat {
-        return UIScreen.main.bounds.height / 2
-    }
-    
-    // Call this in viewDidLoad
-    func setupStretchyHero() {
-        scrollView.addSubview(heroView)
-        scrollView.contentInset = UIEdgeInsets(top: heroViewHeight, left: 0, bottom: 0, right: 0)
-        scrollView.contentOffset = CGPoint(x: 0, y: -heroViewHeight)
-    }
-    
-    // Call this in scrollViewDidScroll
-    func updateStretchyHero() {
-        var headerRect = CGRect(x: 0, y: -heroViewHeight, width: scrollView.bounds.width, height: heroViewHeight)
-        if scrollView.contentOffset.y < -heroViewHeight {
-            headerRect.origin.y = scrollView.contentOffset.y
-            headerRect.size.height = -scrollView.contentOffset.y
-        }
-        heroView.frame = headerRect
-    }
-}
-
 class EventDetailViewController : UIViewController, UIImagePickerControllerDelegate,
-    UINavigationControllerDelegate, UIScrollViewDelegate, HeroStretchableScrollView {
+    UINavigationControllerDelegate, UIScrollViewDelegate {
     
     @IBOutlet weak var heroView: HeroView!
+    @IBOutlet var heroViewHeightConstraint: NSLayoutConstraint!
     
     var event: EventViewModel!
     
@@ -53,8 +26,9 @@ class EventDetailViewController : UIViewController, UIImagePickerControllerDeleg
         
         self.scrollView.delegate = self
         
+        heroViewHeightConstraint.constant = UIScreen.main.bounds.height / 2
+        
         styleTransparentNavigationBar()
-        setupStretchyHero()
         updateDisplay()
     }
     
@@ -64,6 +38,7 @@ class EventDetailViewController : UIViewController, UIImagePickerControllerDeleg
     
     func scrollViewDidScroll(_ scrollView: UIScrollView){
         print(self.scrollView.contentOffset.y)
+        heroViewHeightConstraint.constant = -self.scrollView.contentOffset.y / 2
     }
     
     func pickPhoto() {
@@ -80,6 +55,11 @@ class EventDetailViewController : UIViewController, UIImagePickerControllerDeleg
             event.saveImage(image)
             updateDisplay()
         }
+    }
+    
+    func layoutSubviews()  {
+        let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.size.height)
+        scrollView.setContentOffset(bottomOffset, animated: false)
     }
     
     @IBAction func displayActionSheet(_ sender: Any) {
