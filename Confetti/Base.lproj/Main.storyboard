@@ -334,11 +334,52 @@
                                         <rect key="frame" x="0.0" y="64" width="320" height="440"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtS-kx-45J" userLabel="Button Container">
-                                                <rect key="frame" x="0.0" y="156" width="320" height="826"/>
+                                                <rect key="frame" x="0.0" y="220" width="320" height="762"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSM-g4-zvK" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                                        <rect key="frame" x="50" y="30" width="220" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="FUt-UT-FVh"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Call"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                                <color key="value" red="0.74901960779999999" green="0.37254901959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wib-FR-dai" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                                        <rect key="frame" x="50" y="100" width="220" height="50"/>
+                                                        <state key="normal" title="Message"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptW-DY-ghJ" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                                        <rect key="frame" x="50" y="170" width="220" height="50"/>
+                                                        <state key="normal" title="FaceTime"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                                                <color key="value" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="wib-FR-dai" firstAttribute="centerX" secondItem="RtS-kx-45J" secondAttribute="centerX" id="0dQ-38-nZf"/>
+                                                    <constraint firstItem="wib-FR-dai" firstAttribute="width" secondItem="uSM-g4-zvK" secondAttribute="width" id="6ww-Ir-puN"/>
+                                                    <constraint firstItem="wib-FR-dai" firstAttribute="height" secondItem="uSM-g4-zvK" secondAttribute="height" id="I56-1B-Zdl"/>
+                                                    <constraint firstItem="ptW-DY-ghJ" firstAttribute="centerX" secondItem="RtS-kx-45J" secondAttribute="centerX" id="LMn-3Y-EHu"/>
+                                                    <constraint firstItem="uSM-g4-zvK" firstAttribute="centerX" secondItem="RtS-kx-45J" secondAttribute="centerX" id="MRe-uh-Y7l"/>
+                                                    <constraint firstItem="wib-FR-dai" firstAttribute="top" secondItem="uSM-g4-zvK" secondAttribute="bottom" constant="20" id="PJA-fX-z93"/>
+                                                    <constraint firstItem="uSM-g4-zvK" firstAttribute="leading" secondItem="RtS-kx-45J" secondAttribute="leading" constant="50" id="PTL-G0-OHg"/>
+                                                    <constraint firstItem="ptW-DY-ghJ" firstAttribute="width" secondItem="wib-FR-dai" secondAttribute="width" id="UU6-26-djE"/>
+                                                    <constraint firstItem="ptW-DY-ghJ" firstAttribute="height" secondItem="wib-FR-dai" secondAttribute="height" id="YxT-gr-OEm"/>
+                                                    <constraint firstItem="ptW-DY-ghJ" firstAttribute="top" secondItem="wib-FR-dai" secondAttribute="bottom" constant="20" id="lXz-g0-DuP"/>
+                                                    <constraint firstItem="uSM-g4-zvK" firstAttribute="trailing" secondItem="RtS-kx-45J" secondAttribute="trailing" constant="-50" id="o1P-sK-KTa"/>
+                                                    <constraint firstItem="uSM-g4-zvK" firstAttribute="top" secondItem="RtS-kx-45J" secondAttribute="top" constant="30" id="tdB-ec-8Iy"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUT-Fc-TXt" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-128" width="320" height="284"/>
+                                                <rect key="frame" x="0.0" y="-64" width="320" height="284"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
@@ -390,7 +431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KHt-EN-T4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="675" y="-1129"/>
+            <point key="canvasLocation" x="675" y="-1129.2253521126761"/>
         </scene>
         <!--Choose Occasion View Controller-->
         <scene sceneID="3fc-fv-6UI">
