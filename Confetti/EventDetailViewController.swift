@@ -74,4 +74,13 @@ class EventDetailViewController : UIViewController, UIImagePickerControllerDeleg
             
         self.present(alert, animated: true)
     }
+    
+    @IBAction func callButtonAction(_ sender: Any) {
+    }
+    
+    @IBAction func messageButtonAction(_ sender: Any) {
+    }
+    
+    @IBAction func faceTimeButtonAction(_ sender: Any) {
+    }
 }

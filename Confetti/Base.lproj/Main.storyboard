@@ -334,7 +334,7 @@
                                         <rect key="frame" x="0.0" y="64" width="320" height="440"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtS-kx-45J" userLabel="Button Container">
-                                                <rect key="frame" x="0.0" y="220" width="320" height="762"/>
+                                                <rect key="frame" x="0.0" y="156" width="320" height="826"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSM-g4-zvK" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
                                                         <rect key="frame" x="50" y="30" width="220" height="50"/>
@@ -347,10 +347,16 @@
                                                                 <color key="value" red="0.74901960779999999" green="0.37254901959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="callButtonAction:" destination="yzR-77-9bZ" eventType="touchUpInside" id="2vZ-RN-PGK"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wib-FR-dai" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
                                                         <rect key="frame" x="50" y="100" width="220" height="50"/>
                                                         <state key="normal" title="Message"/>
+                                                        <connections>
+                                                            <action selector="messageButtonAction:" destination="yzR-77-9bZ" eventType="touchUpInside" id="LYT-Wq-bX8"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptW-DY-ghJ" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
                                                         <rect key="frame" x="50" y="170" width="220" height="50"/>
@@ -360,6 +366,9 @@
                                                                 <color key="value" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="faceTimeButtonAction:" destination="yzR-77-9bZ" eventType="touchUpInside" id="vyI-K0-ITA"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -379,7 +388,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUT-Fc-TXt" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-64" width="320" height="284"/>
+                                                <rect key="frame" x="0.0" y="-128" width="320" height="284"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
