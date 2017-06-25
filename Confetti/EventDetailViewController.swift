@@ -24,7 +24,8 @@ class EventDetailViewController : UIViewController, UIImagePickerControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.scrollView.delegate = self
+        scrollView.delegate = self
+        scrollView.showsVerticalScrollIndicator = false
         
         heroViewHeightConstraint.constant = UIScreen.main.bounds.height / 2
         
