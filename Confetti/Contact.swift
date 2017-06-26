@@ -13,11 +13,14 @@ public protocol Contact {
     
     var name: String { get }
     var nick: String? { get }
+    var birthday: DateComponents? { get }
 }
 
 public struct ManualContact: Contact {
     public var name: String
     public var nick: String?
+    
+    public var birthday: DateComponents?
     
     public let imageSource: ImageSource?
     

@@ -61,6 +61,13 @@ class CreateEventViewController: UIViewController,
     override func viewDidLoad() {
         photoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action:#selector(choosePhoto(_:))))
         photoView.configuration = AvatarConfig()
+        
+        // TODO this is pretty haphazard now, and needs to be routed through CreateEventSpec
+        if let c = contact.birthday {
+            let cs = DateComponents(year: c.year ?? 2017, month: c.month!, day: c.day)
+            let d = Calendar.current.date(from: cs)
+            datePicker.setDate(d!, animated: false)
+        }
     }
     
     func updateDisplay() {
