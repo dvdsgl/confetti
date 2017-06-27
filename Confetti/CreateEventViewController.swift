@@ -62,11 +62,23 @@ class CreateEventViewController: UIViewController,
         photoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action:#selector(choosePhoto(_:))))
         photoView.configuration = AvatarConfig()
         
-        // TODO this is pretty haphazard now, and needs to be routed through CreateEventSpec
-        if let c = contact.birthday {
-            let cs = DateComponents(year: c.year ?? 2017, month: c.month!, day: c.day)
-            let d = Calendar.current.date(from: cs)
-            datePicker.setDate(d!, animated: false)
+        if let c = createEventSpec.initialDateFor(contact: contact) {
+            var date: Date?
+            
+            // TODO handle case of Birthdays without a year (we should not search)
+            if let _ = c.year {
+                date = Calendar.current.date(from: c)
+            } else {
+                date = Calendar.current.nextDate(after: Date(),
+                                                  matching: c,
+                                                  matchingPolicy: .nextTime,
+                                                  repeatedTimePolicy: .first,
+                                                  direction: .forward)
+            }
+            
+            if let date = date {
+                self.datePicker.setDate(date, animated: false)
+            }
         }
     }
     

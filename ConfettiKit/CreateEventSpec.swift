@@ -2,6 +2,7 @@ import Foundation
 
 public protocol CreateEventSpec {
     func createEvent(person: Person, month: Int, day: Int, year: Int?) -> Event
+    func initialDateFor(contact: Contact) -> DateComponents?
     
     var title: String { get }
     var description: String { get }
@@ -18,6 +19,10 @@ public struct CreateBirthdaySpec: CreateEventSpec {
                      occasion: .birthday(month: month, day: day, year: year)
         )
     }
+    
+    public func initialDateFor(contact: Contact) -> DateComponents? {
+        return contact.birthday
+    }
 }
 
 public struct CreateAnniversarySpec: CreateEventSpec {
@@ -30,6 +35,10 @@ public struct CreateAnniversarySpec: CreateEventSpec {
         return Event(person: person,
                      occasion: .anniversary(month: month, day: day, year: year)
         )
+    }
+    
+    public func initialDateFor(contact: Contact) -> DateComponents? {
+        return nil
     }
 }
 
@@ -44,6 +53,10 @@ public struct CreateMothersDaySpec: CreateEventSpec {
                      occasion: .holiday(holiday: .mothersDay)
         )
     }
+    
+    public func initialDateFor(contact: Contact) -> DateComponents? {
+        return HolidayViewModel.nextOccurrence[.usa]?[.mothersDay]
+    }
 }
 
 public struct CreateFathersDaySpec: CreateEventSpec {
@@ -56,5 +69,9 @@ public struct CreateFathersDaySpec: CreateEventSpec {
         return Event(person: person,
                      occasion: .holiday(holiday: .fathersDay)
         )
-    }    
+    }
+    
+    public func initialDateFor(contact: Contact) -> DateComponents? {
+        return HolidayViewModel.nextOccurrence[.usa]?[.fathersDay]
+    }
 }
