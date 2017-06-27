@@ -54,8 +54,7 @@ HeroStretchable {
             return cell
         default:
         let cell = tableView.dequeueReusableCell(withIdentifier: "action", for: indexPath) as! EventDetailViewCell
-            cell.setAction(action.rawValue)
-            cell.setColor(buttonColor)
+            cell.styleCell(buttonColor, action.rawValue)            
             return cell
         }
     }
