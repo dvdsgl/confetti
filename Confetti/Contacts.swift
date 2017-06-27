@@ -12,7 +12,6 @@ extension CNContact: Contact {
     public var nick: String? {
         return nickname.isEmpty ? nil : nickname
     }
-    
     public var imageSource: ImageSource? {
         if let data = imageData {
             return .data(data)
@@ -63,22 +62,32 @@ struct NativeContactStore: ContactStore {
 }
 
 struct TestContactStore: ContactStore {
-    let contacts: [ManualContact] = [
-        "David Appleseed",
-        "Stu Appleseed",
-        "Ellen Appleseed",
-        "Carrie Appleseed",
-        "Hannah Appleseed",
-        "Vinicius Appleseed",
-        "Steve Appleseed"
-        ].map { name in
+    let contacts: [ManualContact] = {
+        
+        let names = [
+            "David Appleseed",
+            "Stu Appleseed",
+            "Ellen Appleseed",
+            "Carrie Appleseed",
+            "Hannah Appleseed",
+            "Vinicius Appleseed",
+            "Steve Appleseed"
+        ]
+        
+        var today = Date().addingTimeInterval(60 * 30)
+        
+        return names.map { name in
             let nick = name.components(separatedBy: " ").first!
-            return ManualContact(
+            var contact = ManualContact(
                 name,
                 nick: nick,
                 imageSource: .url("https://confettiapp.com/v1/test/faces/\(nick.lowercased()).jpg")
             )
-    }
+            contact.birthday = Calendar.current.dateComponents([.year, .month, .day], from: today)
+            today = Calendar.current.date(byAdding: DateComponents(day: 1), to: today)!
+            return contact
+        }
+    }()
     
     func search(query: String) -> [Contact] {
         var filtered = contacts
