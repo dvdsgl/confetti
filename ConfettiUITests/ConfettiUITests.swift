@@ -65,6 +65,8 @@ class ConfettiUITests: XCTestCase {
         step("Login") {
             app.buttons["I'd rather not"].tapIfExists()
         }
+        
+        step("Empty view")
 
         addEvent(person: "Ellen Appleseed")
         
