@@ -328,6 +328,11 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="KhT-CD-Tc7" userLabel="Footer">
+                            <rect key="frame" x="0.0" y="370" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="action" id="IAT-QO-QSx" customClass="EventDetailViewCell" customModule="Confetti" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="300" width="320" height="70"/>
