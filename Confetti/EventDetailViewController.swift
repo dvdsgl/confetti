@@ -47,11 +47,22 @@ HeroStretchable {
         switch action {
         case .empty:
             let cell = UITableViewCell()
-            cell.backgroundColor = UIColor.white
+            cell.backgroundColor = UIColor.white            
             return cell
-        default:
+        case .call:
+        let cell = tableView.dequeueReusableCell(withIdentifier: "action", for: indexPath) as! EventDetailViewCell
+            cell.setAction(action.rawValue)
+            cell.setColor(Colors.purple)
+            return cell
+        case .message:
             let cell = tableView.dequeueReusableCell(withIdentifier: "action", for: indexPath) as! EventDetailViewCell
             cell.setAction(action.rawValue)
+            cell.setColor(Colors.pink)
+            return cell
+        case .faceTime:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "action", for: indexPath) as! EventDetailViewCell
+            cell.setAction(action.rawValue)
+            cell.setColor(Colors.green)
             return cell
         }
     }
