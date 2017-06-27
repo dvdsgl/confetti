@@ -25,6 +25,8 @@ HeroStretchable {
     
     let actions: [Action] = [.empty, .call, .message, .faceTime]
     
+    let buttonColors: [UIColor] = [UIColor.white, Colors.purple, Colors.pink, Colors.green]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStretchyHero()
@@ -43,26 +45,17 @@ HeroStretchable {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let action = actions[indexPath.item]
+        let buttonColor = buttonColors[indexPath.item]
         
         switch action {
         case .empty:
             let cell = UITableViewCell()
             cell.backgroundColor = UIColor.white            
             return cell
-        case .call:
+        default:
         let cell = tableView.dequeueReusableCell(withIdentifier: "action", for: indexPath) as! EventDetailViewCell
             cell.setAction(action.rawValue)
-            cell.setColor(Colors.purple)
-            return cell
-        case .message:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "action", for: indexPath) as! EventDetailViewCell
-            cell.setAction(action.rawValue)
-            cell.setColor(Colors.pink)
-            return cell
-        case .faceTime:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "action", for: indexPath) as! EventDetailViewCell
-            cell.setAction(action.rawValue)
-            cell.setColor(Colors.green)
+            cell.setColor(buttonColor)
             return cell
         }
     }
