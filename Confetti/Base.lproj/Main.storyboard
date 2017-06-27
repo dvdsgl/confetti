@@ -329,7 +329,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="action" id="IAT-QO-QSx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="action" id="IAT-QO-QSx" customClass="EventDetailViewCell" customModule="Confetti" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="300" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IAT-QO-QSx" id="pUH-Y9-vSt">
@@ -349,6 +349,9 @@
                                         <constraint firstItem="BNv-yZ-y8g" firstAttribute="leading" secondItem="pUH-Y9-vSt" secondAttribute="leading" constant="50" id="ru8-0n-8v3"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="actionButton" destination="BNv-yZ-y8g" id="FmQ-Cb-K4v"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

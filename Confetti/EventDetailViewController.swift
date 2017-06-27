@@ -50,8 +50,8 @@ HeroStretchable {
             cell.backgroundColor = UIColor.white
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "action", for: indexPath)
-//            cell.textLabel?.text = action.rawValue
+            let cell = tableView.dequeueReusableCell(withIdentifier: "action", for: indexPath) as! EventDetailViewCell
+            cell.setAction(action.rawValue)
             return cell
         }
     }
