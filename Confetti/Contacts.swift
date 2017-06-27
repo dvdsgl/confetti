@@ -65,26 +65,28 @@ struct TestContactStore: ContactStore {
     let contacts: [ManualContact] = {
         
         let names = [
-            "David Appleseed",
-            "Stu Appleseed",
-            "Ellen Appleseed",
-            "Carrie Appleseed",
-            "Hannah Appleseed",
-            "Vinicius Appleseed",
-            "Steve Appleseed"
+            ("David Appleseed", 0),
+            ("Stu Appleseed", 1),
+            ("Ellen Appleseed", 2),
+            ("Carrie Appleseed", 8),
+            ("Hannah Appleseed", 21),
+            ("Vinicius Appleseed", 40),
+            ("Steve Appleseed", 100)
         ]
         
-        var today = Date().addingTimeInterval(60 * 30)
+        let now = Date().addingTimeInterval(60 * 30)
         
-        return names.map { name in
+        return names.map { (name, daysAway) in
             let nick = name.components(separatedBy: " ").first!
             var contact = ManualContact(
                 name,
                 nick: nick,
                 imageSource: .url("https://confettiapp.com/v1/test/faces/\(nick.lowercased()).jpg")
             )
-            contact.birthday = Calendar.current.dateComponents([.year, .month, .day], from: today)
-            today = Calendar.current.date(byAdding: DateComponents(day: 1), to: today)!
+            
+            let target = Calendar.current.date(byAdding: DateComponents(day: daysAway), to:  now)!
+            contact.birthday = Calendar.current.dateComponents([.year, .month, .day], from: target)
+            
             return contact
         }
     }()
