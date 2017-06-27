@@ -50,7 +50,7 @@ class ConfettiUITests: XCTestCase {
         super.tearDown()
     }
     
-    func addEvent(person: String) {
+    func addEvent(person: String, waitForImages: Bool = false) {
         let app = XCUIApplication()
         
         step("Add event") {
@@ -59,6 +59,10 @@ class ConfettiUITests: XCTestCase {
         
         step("Choose Birthday") {
             app.buttons["Birthday"].tap()
+        }
+        
+        if waitForImages {
+            sleep(10)
         }
         
         step("Choose '\(person)'") {
@@ -83,7 +87,7 @@ class ConfettiUITests: XCTestCase {
         waitFor(element: app.buttons["Me"])
         step("Empty view")
 
-        addEvent(person: "Ellen Appleseed")
+        addEvent(person: "Ellen Appleseed", waitForImages: true)
         
         withoutScreenshots {
             for name in ["David", "Hannah", "Stu", "Carrie", "Vinicius"] {
