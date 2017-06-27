@@ -318,19 +318,19 @@
         <!--Event Detail View Controller-->
         <scene sceneID="3IP-qy-TfU">
             <objects>
-                <tableViewController storyboardIdentifier="eventDetail" id="aO8-RW-WbL" customClass="EventDetailViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="eventDetail" automaticallyAdjustsScrollViewInsets="NO" id="aO8-RW-WbL" customClass="EventDetailViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NpW-Ai-03w">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Oms-EE-zkh" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="212"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="272"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="action" id="IAT-QO-QSx">
-                                <rect key="frame" x="0.0" y="240" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="300" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IAT-QO-QSx" id="pUH-Y9-vSt">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
