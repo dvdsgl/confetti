@@ -47,7 +47,7 @@ HeroStretchable {
         switch action {
         case .empty:
             let cell = UITableViewCell()
-            cell.backgroundColor = UIColor.lightGray
+            cell.backgroundColor = UIColor.white
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "action", for: indexPath)
@@ -59,7 +59,7 @@ HeroStretchable {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 50        
+            return 50
         default:
             return 70
         }
