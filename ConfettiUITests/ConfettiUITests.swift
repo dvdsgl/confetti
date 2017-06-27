@@ -62,7 +62,7 @@ class ConfettiUITests: XCTestCase {
         }
         
         if waitForImages {
-            sleep(10)
+            sleep(5)
         }
         
         step("Choose '\(person)'") {
