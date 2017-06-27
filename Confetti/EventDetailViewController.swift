@@ -54,7 +54,9 @@ HeroStretchable {
             return cell
         default:
         let cell = tableView.dequeueReusableCell(withIdentifier: "action", for: indexPath) as! EventDetailViewCell
-            cell.styleCell(buttonColor, action.rawValue)            
+            cell.styleCell(buttonColor, action.rawValue)
+            cell.tapAction = { [weak self] (cell) in
+                print(action)}
             return cell
         }
     }
@@ -74,6 +76,7 @@ HeroStretchable {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        print(indexPath)
     }
     
     func pickPhoto() {

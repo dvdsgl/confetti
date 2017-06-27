@@ -339,6 +339,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNv-yZ-y8g" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
                                             <rect key="frame" x="50" y="10" width="220" height="50"/>
                                             <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="actionButtonTapped:" destination="IAT-QO-QSx" eventType="touchUpInside" id="vGO-iV-epo"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
