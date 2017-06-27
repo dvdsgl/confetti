@@ -51,7 +51,7 @@ HeroStretchable {
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "action", for: indexPath)
-            cell.textLabel?.text = action.rawValue
+//            cell.textLabel?.text = action.rawValue
             return cell
         }
     }
@@ -59,9 +59,9 @@ HeroStretchable {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 30
+            return 50        
         default:
-            return 50
+            return 70
         }
     }
     

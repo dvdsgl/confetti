@@ -319,7 +319,7 @@
         <scene sceneID="3IP-qy-TfU">
             <objects>
                 <tableViewController storyboardIdentifier="eventDetail" automaticallyAdjustsScrollViewInsets="NO" id="aO8-RW-WbL" customClass="EventDetailViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NpW-Ai-03w">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="NpW-Ai-03w">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -330,11 +330,24 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="action" id="IAT-QO-QSx">
-                                <rect key="frame" x="0.0" y="300" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="300" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IAT-QO-QSx" id="pUH-Y9-vSt">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNv-yZ-y8g" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
+                                            <rect key="frame" x="50" y="10" width="220" height="50"/>
+                                            <state key="normal" title="Button"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="BNv-yZ-y8g" firstAttribute="centerY" secondItem="pUH-Y9-vSt" secondAttribute="centerY" id="6tQ-4j-P5r"/>
+                                        <constraint firstItem="BNv-yZ-y8g" firstAttribute="bottom" secondItem="pUH-Y9-vSt" secondAttribute="bottom" constant="-10" id="dRE-lj-Vei"/>
+                                        <constraint firstItem="BNv-yZ-y8g" firstAttribute="trailing" secondItem="pUH-Y9-vSt" secondAttribute="trailing" constant="-50" id="dqf-Ki-Gdh"/>
+                                        <constraint firstItem="BNv-yZ-y8g" firstAttribute="top" secondItem="pUH-Y9-vSt" secondAttribute="top" constant="10" id="pAB-k3-vfS"/>
+                                        <constraint firstItem="BNv-yZ-y8g" firstAttribute="leading" secondItem="pUH-Y9-vSt" secondAttribute="leading" constant="50" id="ru8-0n-8v3"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
