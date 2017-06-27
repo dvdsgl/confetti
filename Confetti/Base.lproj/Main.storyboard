@@ -294,7 +294,7 @@
                                     <outlet property="descriptionLabel" destination="ETe-7L-0a6" id="lpS-pY-e0Y"/>
                                     <outlet property="nameLabel" destination="Jud-hQ-N8I" id="vkb-5w-271"/>
                                     <outlet property="photoView" destination="nwU-YD-ntk" id="SKp-Qu-zGX"/>
-                                    <segue destination="yzR-77-9bZ" kind="show" identifier="showDetail" id="m9M-cV-Fuz"/>
+                                    <segue destination="aO8-RW-WbL" kind="show" identifier="showDetail" id="Lvk-Nl-Vm3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -316,131 +316,41 @@
             <point key="canvasLocation" x="-180" y="-1129"/>
         </scene>
         <!--Event Detail View Controller-->
-        <scene sceneID="oQE-yZ-IHe">
+        <scene sceneID="3IP-qy-TfU">
             <objects>
-                <viewController storyboardIdentifier="eventDetail" extendedLayoutIncludesOpaqueBars="YES" id="yzR-77-9bZ" customClass="EventDetailViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="caI-ld-9SJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="33Y-wO-ayR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jfP-YR-J5I">
+                <tableViewController storyboardIdentifier="eventDetail" id="aO8-RW-WbL" customClass="EventDetailViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="NpW-Ai-03w">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ym6-ey-oAg">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7A8-9j-U7I" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="64" width="320" height="440"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtS-kx-45J" userLabel="Button Container">
-                                                <rect key="frame" x="0.0" y="156" width="320" height="826"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSM-g4-zvK" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                                        <rect key="frame" x="50" y="30" width="220" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="FUt-UT-FVh"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Call"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                                                <color key="value" red="0.74901960779999999" green="0.37254901959999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="callButtonAction:" destination="yzR-77-9bZ" eventType="touchUpInside" id="2vZ-RN-PGK"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wib-FR-dai" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                                        <rect key="frame" x="50" y="100" width="220" height="50"/>
-                                                        <state key="normal" title="Message"/>
-                                                        <connections>
-                                                            <action selector="messageButtonAction:" destination="yzR-77-9bZ" eventType="touchUpInside" id="LYT-Wq-bX8"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptW-DY-ghJ" customClass="RoundRectangleButton" customModule="Confetti" customModuleProvider="target">
-                                                        <rect key="frame" x="50" y="170" width="220" height="50"/>
-                                                        <state key="normal" title="FaceTime"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                                                <color key="value" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="faceTimeButtonAction:" destination="yzR-77-9bZ" eventType="touchUpInside" id="vyI-K0-ITA"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstItem="wib-FR-dai" firstAttribute="centerX" secondItem="RtS-kx-45J" secondAttribute="centerX" id="0dQ-38-nZf"/>
-                                                    <constraint firstItem="wib-FR-dai" firstAttribute="width" secondItem="uSM-g4-zvK" secondAttribute="width" id="6ww-Ir-puN"/>
-                                                    <constraint firstItem="wib-FR-dai" firstAttribute="height" secondItem="uSM-g4-zvK" secondAttribute="height" id="I56-1B-Zdl"/>
-                                                    <constraint firstItem="ptW-DY-ghJ" firstAttribute="centerX" secondItem="RtS-kx-45J" secondAttribute="centerX" id="LMn-3Y-EHu"/>
-                                                    <constraint firstItem="uSM-g4-zvK" firstAttribute="centerX" secondItem="RtS-kx-45J" secondAttribute="centerX" id="MRe-uh-Y7l"/>
-                                                    <constraint firstItem="wib-FR-dai" firstAttribute="top" secondItem="uSM-g4-zvK" secondAttribute="bottom" constant="20" id="PJA-fX-z93"/>
-                                                    <constraint firstItem="uSM-g4-zvK" firstAttribute="leading" secondItem="RtS-kx-45J" secondAttribute="leading" constant="50" id="PTL-G0-OHg"/>
-                                                    <constraint firstItem="ptW-DY-ghJ" firstAttribute="width" secondItem="wib-FR-dai" secondAttribute="width" id="UU6-26-djE"/>
-                                                    <constraint firstItem="ptW-DY-ghJ" firstAttribute="height" secondItem="wib-FR-dai" secondAttribute="height" id="YxT-gr-OEm"/>
-                                                    <constraint firstItem="ptW-DY-ghJ" firstAttribute="top" secondItem="wib-FR-dai" secondAttribute="bottom" constant="20" id="lXz-g0-DuP"/>
-                                                    <constraint firstItem="uSM-g4-zvK" firstAttribute="trailing" secondItem="RtS-kx-45J" secondAttribute="trailing" constant="-50" id="o1P-sK-KTa"/>
-                                                    <constraint firstItem="uSM-g4-zvK" firstAttribute="top" secondItem="RtS-kx-45J" secondAttribute="top" constant="30" id="tdB-ec-8Iy"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUT-Fc-TXt" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-128" width="320" height="284"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="RtS-kx-45J" firstAttribute="leading" secondItem="tUT-Fc-TXt" secondAttribute="leading" id="9u0-tJ-KNO"/>
-                                            <constraint firstAttribute="bottom" secondItem="RtS-kx-45J" secondAttribute="bottom" constant="-542" id="Ixs-M7-oLq"/>
-                                            <constraint firstItem="RtS-kx-45J" firstAttribute="top" secondItem="tUT-Fc-TXt" secondAttribute="bottom" id="Sb2-2Z-dVA"/>
-                                            <constraint firstAttribute="trailing" secondItem="RtS-kx-45J" secondAttribute="trailing" id="jQx-tO-d7o"/>
-                                            <constraint firstItem="RtS-kx-45J" firstAttribute="trailing" secondItem="tUT-Fc-TXt" secondAttribute="trailing" id="kgK-6V-Uc6"/>
-                                            <constraint firstItem="RtS-kx-45J" firstAttribute="leading" secondItem="7A8-9j-U7I" secondAttribute="leading" id="tXb-Zu-ZBh"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="7A8-9j-U7I" firstAttribute="top" secondItem="ym6-ey-oAg" secondAttribute="top" constant="64" id="A4D-Qx-emO"/>
-                                    <constraint firstAttribute="bottom" secondItem="7A8-9j-U7I" secondAttribute="bottom" id="JVX-6x-3h2"/>
-                                    <constraint firstItem="7A8-9j-U7I" firstAttribute="centerX" secondItem="ym6-ey-oAg" secondAttribute="centerX" id="M0d-nN-gUq"/>
-                                    <constraint firstItem="7A8-9j-U7I" firstAttribute="leading" secondItem="ym6-ey-oAg" secondAttribute="leading" id="gMg-TT-gKH"/>
-                                    <constraint firstAttribute="trailing" secondItem="7A8-9j-U7I" secondAttribute="trailing" id="hS4-XR-bB4"/>
-                                    <constraint firstItem="7A8-9j-U7I" firstAttribute="centerY" secondItem="ym6-ey-oAg" secondAttribute="centerY" id="v2V-qS-7D1"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="tUT-Fc-TXt" firstAttribute="height" secondItem="jfP-YR-J5I" secondAttribute="height" multiplier="0.5" id="6ob-Xp-4nC"/>
-                            <constraint firstItem="ym6-ey-oAg" firstAttribute="width" secondItem="jfP-YR-J5I" secondAttribute="width" id="91R-xb-Qph"/>
-                            <constraint firstItem="ym6-ey-oAg" firstAttribute="centerY" secondItem="jfP-YR-J5I" secondAttribute="centerY" id="AYD-51-adl"/>
-                            <constraint firstItem="ym6-ey-oAg" firstAttribute="height" secondItem="jfP-YR-J5I" secondAttribute="height" id="dkZ-JJ-ONj"/>
-                            <constraint firstItem="tUT-Fc-TXt" firstAttribute="top" secondItem="jfP-YR-J5I" secondAttribute="top" id="kI9-3Z-Onq"/>
-                            <constraint firstItem="ym6-ey-oAg" firstAttribute="centerX" secondItem="jfP-YR-J5I" secondAttribute="centerX" id="lUh-OZ-Quj"/>
-                            <constraint firstItem="tUT-Fc-TXt" firstAttribute="width" secondItem="jfP-YR-J5I" secondAttribute="width" id="uDE-th-UG2"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Wdi-zQ-FmH">
-                        <barButtonItem key="rightBarButtonItem" image="overflow-button" id="Jho-Ta-t9D">
-                            <connections>
-                                <action selector="displayActionSheet:" destination="yzR-77-9bZ" id="nmx-rh-iCA"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Oms-EE-zkh" customClass="HeroView" customModule="Confetti" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="212"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="action" id="IAT-QO-QSx">
+                                <rect key="frame" x="0.0" y="240" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IAT-QO-QSx" id="pUH-Y9-vSt">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aO8-RW-WbL" id="xSu-qc-LMN"/>
+                            <outlet property="delegate" destination="aO8-RW-WbL" id="8tv-WM-gcn"/>
+                        </connections>
+                    </tableView>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="heroView" destination="tUT-Fc-TXt" id="zt8-1E-84J"/>
-                        <outlet property="heroViewHeightConstraint" destination="6ob-Xp-4nC" id="8WG-ha-KIE"/>
-                        <outlet property="scrollView" destination="ym6-ey-oAg" id="m2B-87-YMk"/>
+                        <outlet property="heroView" destination="Oms-EE-zkh" id="ZQn-6F-Hl0"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KHt-EN-T4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jBS-Bw-aPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="675" y="-1129.2253521126761"/>
+            <point key="canvasLocation" x="714.375" y="-1126.056338028169"/>
         </scene>
         <!--Choose Occasion View Controller-->
         <scene sceneID="3fc-fv-6UI">
@@ -915,7 +825,6 @@
         <image name="cake_icon" width="27" height="27"/>
         <image name="occasion-overlay-close" width="53" height="53"/>
         <image name="occasion-overlay-close-active" width="52" height="52"/>
-        <image name="overflow-button" width="22" height="22"/>
         <image name="smile_icon" width="27" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
