@@ -31,6 +31,20 @@ class ConfettiUITests: XCTestCase {
         app.launch()
     }
     
+    func waitFor(element: XCUIElement, timeout: TimeInterval = 5,  file: String = #file, line: UInt = #line) {
+        let existsPredicate = NSPredicate(format: "exists == true")
+        
+        expectation(for: existsPredicate,
+                    evaluatedWith: element, handler: nil)
+        
+        waitForExpectations(timeout: timeout) { error in
+            if error != nil {
+                let message = "Failed to find \(element) after \(timeout) seconds."
+                self.recordFailure(withDescription: message, inFile: file, atLine: line, expected: true)
+            }
+        }
+    }
+    
     override func tearDown() {
         // Called after the invocation of each test method
         super.tearDown()
@@ -66,6 +80,7 @@ class ConfettiUITests: XCTestCase {
             app.buttons["I'd rather not"].tapIfExists()
         }
         
+        waitFor(element: app.buttons["Me"])
         step("Empty view")
 
         addEvent(person: "Ellen Appleseed")
