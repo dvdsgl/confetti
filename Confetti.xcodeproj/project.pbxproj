@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00619C501EFCA993007F71AF /* EmptyTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00619C4F1EFCA993007F71AF /* EmptyTableView.xib */; };
-		00619C521EFCAB16007F71AF /* EmptyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00619C511EFCAB16007F71AF /* EmptyTableView.swift */; };
 		006F3C241EBFA9FF005D0EFD /* RoundRectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006F3C231EBFA9FF005D0EFD /* RoundRectangleButton.swift */; };
 		00A106681EFB261500E610A7 /* TopAlignedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A106671EFB261500E610A7 /* TopAlignedLabel.swift */; };
 		00D1604B1EEB54A5005047BF /* CountdownPillView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D1604A1EEB54A5005047BF /* CountdownPillView.xib */; };
@@ -96,8 +94,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		00619C4F1EFCA993007F71AF /* EmptyTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyTableView.xib; sourceTree = "<group>"; };
-		00619C511EFCAB16007F71AF /* EmptyTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTableView.swift; sourceTree = "<group>"; };
 		006F3C231EBFA9FF005D0EFD /* RoundRectangleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundRectangleButton.swift; sourceTree = "<group>"; };
 		00A106671EFB261500E610A7 /* TopAlignedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAlignedLabel.swift; sourceTree = "<group>"; };
 		00D1604A1EEB54A5005047BF /* CountdownPillView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountdownPillView.xib; sourceTree = "<group>"; };
@@ -333,8 +329,6 @@
 				3C72E54A1EF0E00F00051695 /* HeroView.swift */,
 				63424F591EF72B0E00AD4736 /* CALayer.swift */,
 				00A106671EFB261500E610A7 /* TopAlignedLabel.swift */,
-				00619C4F1EFCA993007F71AF /* EmptyTableView.xib */,
-				00619C511EFCAB16007F71AF /* EmptyTableView.swift */,
 				3CB58D731F01F93E007C7D4B /* EventDetailViewCell.swift */,
 			);
 			name = Views;
@@ -528,7 +522,6 @@
 				63C759D31EBE5A2400939D7B /* Main.storyboard in Resources */,
 				00D1604B1EEB54A5005047BF /* CountdownPillView.xib in Resources */,
 				63A8980E1EC13EEB00D16214 /* secret_garden.otf in Resources */,
-				00619C501EFCA993007F71AF /* EmptyTableView.xib in Resources */,
 				3C72E5491EF0DD5900051695 /* HeroView.xib in Resources */,
 				63BDA3551EC15B840001EDBC /* GoogleService-Info.plist in Resources */,
 			);
@@ -715,7 +708,6 @@
 				6320BFFE1ED0E9C300F27446 /* UserViewModel.swift in Sources */,
 				63CE74861EBEB2C10018B77D /* CountdownLabel.swift in Sources */,
 				63424F5A1EF72B0E00AD4736 /* CALayer.swift in Sources */,
-				00619C521EFCAB16007F71AF /* EmptyTableView.swift in Sources */,
 				63928AF61EF59EA600DB0909 /* EventDetailViewController.swift in Sources */,
 				3C0109DB1EE8DDE200BF206A /* CountdownPillView.swift in Sources */,
 			);
