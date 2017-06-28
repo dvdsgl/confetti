@@ -18,6 +18,7 @@ class EventListViewController: UITableViewController, HeroStretchable {
     
     @IBOutlet var heroView: HeroView!
     @IBOutlet var footerView: UIView!
+    @IBOutlet var emptyTableView: UIView!
     
     var viewModels = [EventViewModel]()
     var registrations = [NotificationRegistration]()
@@ -70,7 +71,7 @@ class EventListViewController: UITableViewController, HeroStretchable {
         }
         
         if viewModels.count == 0 {
-            tableView.backgroundView = EmptyTableView()
+            tableView.backgroundView = emptyTableView
             heroView.isHidden = true
             footerView.isHidden = true
         } else {

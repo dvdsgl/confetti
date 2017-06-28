@@ -307,10 +307,83 @@
                     <navigationItem key="navigationItem" id="Zdf-7t-Un8"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="emptyTableView" destination="LS3-rw-xHp" id="NcS-kd-sHL"/>
                         <outlet property="footerView" destination="2G4-Ae-ucl" id="lry-oq-5ki"/>
                         <outlet property="heroView" destination="Ftm-Gw-bJN" id="EJ1-x1-VhV"/>
                     </connections>
                 </tableViewController>
+                <view contentMode="scaleToFill" id="LS3-rw-xHp">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSf-BK-dGJ" userLabel="Top Container">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                            <subviews>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45g-AC-sFG" customClass="ConfettiMachineView" customModule="Confetti" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                                    <color key="backgroundColor" red="0.1215686275" green="0.83529411760000005" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRunning" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confetti" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYw-AX-t0x">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                                    <fontDescription key="fontDescription" name="secret_garden" family="secret garden" pointSize="170"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="45g-AC-sFG" firstAttribute="centerX" secondItem="fSf-BK-dGJ" secondAttribute="centerX" id="8dr-fm-L4E"/>
+                                <constraint firstItem="jYw-AX-t0x" firstAttribute="centerX" secondItem="fSf-BK-dGJ" secondAttribute="centerX" id="Smx-NG-WVM"/>
+                                <constraint firstItem="45g-AC-sFG" firstAttribute="width" secondItem="fSf-BK-dGJ" secondAttribute="width" id="WjB-Pi-Yee"/>
+                                <constraint firstItem="jYw-AX-t0x" firstAttribute="height" secondItem="fSf-BK-dGJ" secondAttribute="height" id="YUB-ym-TiF"/>
+                                <constraint firstItem="45g-AC-sFG" firstAttribute="height" secondItem="fSf-BK-dGJ" secondAttribute="height" id="knG-Gi-YjP"/>
+                                <constraint firstItem="45g-AC-sFG" firstAttribute="top" secondItem="fSf-BK-dGJ" secondAttribute="top" id="lf2-Va-1wf"/>
+                                <constraint firstItem="jYw-AX-t0x" firstAttribute="centerY" secondItem="fSf-BK-dGJ" secondAttribute="centerY" id="lij-d9-tLR"/>
+                                <constraint firstItem="jYw-AX-t0x" firstAttribute="width" secondItem="fSf-BK-dGJ" secondAttribute="width" id="w0X-dC-mAc"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOd-WV-89o" userLabel="Slogan Container">
+                            <rect key="frame" x="0.0" y="240" width="320" height="240"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Never forget a special occasion." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cs4-aT-wjJ">
+                                    <rect key="frame" x="0.0" y="73" width="320" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add birthdays, Mother's Day, and more. Confetti reminds you and helps you celebrate." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8b-lu-xGJ">
+                                    <rect key="frame" x="48" y="109" width="224" height="47"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="m8b-lu-xGJ" firstAttribute="top" secondItem="Cs4-aT-wjJ" secondAttribute="bottom" constant="15" id="0du-Xz-JDy"/>
+                                <constraint firstItem="m8b-lu-xGJ" firstAttribute="centerX" secondItem="tOd-WV-89o" secondAttribute="centerX" id="3no-jl-ua8"/>
+                                <constraint firstItem="m8b-lu-xGJ" firstAttribute="width" secondItem="tOd-WV-89o" secondAttribute="width" multiplier="0.7" id="F61-IE-FgR"/>
+                                <constraint firstItem="Cs4-aT-wjJ" firstAttribute="width" secondItem="tOd-WV-89o" secondAttribute="width" id="OLt-Er-Ua8"/>
+                                <constraint firstItem="Cs4-aT-wjJ" firstAttribute="centerY" secondItem="tOd-WV-89o" secondAttribute="centerY" multiplier="0.7" id="tCi-uh-vLq"/>
+                                <constraint firstItem="Cs4-aT-wjJ" firstAttribute="centerX" secondItem="tOd-WV-89o" secondAttribute="centerX" id="vv1-wR-SWF"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="tOd-WV-89o" firstAttribute="top" secondItem="fSf-BK-dGJ" secondAttribute="bottom" id="7gJ-wn-7S0"/>
+                        <constraint firstItem="fSf-BK-dGJ" firstAttribute="width" secondItem="LS3-rw-xHp" secondAttribute="width" id="MG1-xD-YVC"/>
+                        <constraint firstItem="tOd-WV-89o" firstAttribute="width" secondItem="LS3-rw-xHp" secondAttribute="width" id="YO2-5i-OZS"/>
+                        <constraint firstItem="fSf-BK-dGJ" firstAttribute="height" secondItem="LS3-rw-xHp" secondAttribute="height" multiplier="0.5" id="a70-Nz-o8C"/>
+                        <constraint firstItem="tOd-WV-89o" firstAttribute="centerX" secondItem="LS3-rw-xHp" secondAttribute="centerX" id="amP-Zr-vCt"/>
+                        <constraint firstItem="fSf-BK-dGJ" firstAttribute="top" secondItem="LS3-rw-xHp" secondAttribute="top" id="e8Q-Uf-azg"/>
+                        <constraint firstItem="fSf-BK-dGJ" firstAttribute="centerX" secondItem="LS3-rw-xHp" secondAttribute="centerX" id="ujo-0d-2Md"/>
+                        <constraint firstItem="tOd-WV-89o" firstAttribute="height" secondItem="LS3-rw-xHp" secondAttribute="height" multiplier="0.5" id="xIt-zQ-h6G"/>
+                    </constraints>
+                </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-180" y="-1129"/>
@@ -367,6 +440,14 @@
                             <outlet property="delegate" destination="aO8-RW-WbL" id="8tv-WM-gcn"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="xFA-BK-od6">
+                        <barButtonItem key="leftBarButtonItem" title=" " id="5be-np-Vow"/>
+                        <barButtonItem key="rightBarButtonItem" image="overflow-button" id="YQ1-Ww-pXs">
+                            <connections>
+                                <action selector="displayActionSheet:" destination="aO8-RW-WbL" id="bba-vf-Sfw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="heroView" destination="Oms-EE-zkh" id="ZQn-6F-Hl0"/>
@@ -849,6 +930,7 @@
         <image name="cake_icon" width="27" height="27"/>
         <image name="occasion-overlay-close" width="53" height="53"/>
         <image name="occasion-overlay-close-active" width="52" height="52"/>
+        <image name="overflow-button" width="22" height="22"/>
         <image name="smile_icon" width="27" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
