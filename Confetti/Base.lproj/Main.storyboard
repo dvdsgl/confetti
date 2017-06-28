@@ -441,7 +441,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="xFA-BK-od6">
-                        <barButtonItem key="leftBarButtonItem" title=" " id="5be-np-Vow"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="1ve-Ad-EiQ"/>
                         <barButtonItem key="rightBarButtonItem" image="overflow-button" id="YQ1-Ww-pXs">
                             <connections>
                                 <action selector="displayActionSheet:" destination="aO8-RW-WbL" id="bba-vf-Sfw"/>
