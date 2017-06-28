@@ -66,10 +66,24 @@ HeroStretchable {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 50
+            return calculateContstraints().0
         default:
-            return 70
+            return calculateContstraints().1
         }
+    }
+    
+    func calculateContstraints() -> (CGFloat, CGFloat) {
+        let tableViewHeight = UIScreen.main.bounds.height / 4
+        let buttonsHeight = CGFloat(70)
+        
+        var headerHeight = CGFloat(10)
+        
+        //Make sure headerHeight is > 0 so we don't crash
+        if tableViewHeight - CGFloat(buttonsHeight*2) > 0 {
+            headerHeight = tableViewHeight - buttonsHeight*2
+        }
+        
+        return (headerHeight, buttonsHeight)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
