@@ -17,5 +17,5 @@ class EventDetailViewCell: UITableViewCell {
     
     @IBAction func actionButtonTapped(_ sender: Any) {
          tapAction?(self)
-    }
+    }        
 }

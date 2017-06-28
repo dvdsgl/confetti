@@ -31,6 +31,12 @@ HeroStretchable {
         super.viewDidLoad()
         setupStretchyHero()
         
+        // Make buttons respond normally
+        tableView.delaysContentTouches = false
+        for case let s as UIScrollView in tableView.subviews {
+            s.delaysContentTouches = false
+        }
+        
         styleTransparentNavigationBar()
         updateDisplay()
     }
