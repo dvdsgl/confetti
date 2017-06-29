@@ -1,3 +1,5 @@
+![Build status](https://build.mobile.azure.com/v0.1/apps/af271266-0fc9-4fa6-a683-2dc9fe2f9877/branches/master/badge)
+
 ## Setup for development
 
 ```shell
