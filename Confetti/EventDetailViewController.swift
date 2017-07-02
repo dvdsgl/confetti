@@ -80,7 +80,7 @@ HeroStretchable {
     
     func calculateContstraints() -> (CGFloat, CGFloat) {
         let tableViewHeight = UIScreen.main.bounds.height / 4
-        let buttonsHeight = CGFloat(70)
+        let buttonsHeight = CGFloat(60)
         
         var headerHeight = CGFloat(10)
         
