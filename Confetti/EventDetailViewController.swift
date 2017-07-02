@@ -84,11 +84,11 @@ HeroStretchable {
         
         var headerHeight = CGFloat(10)
         
-        // Make sure headerHeight is > 0 and at least 10
-        if tableViewHeight - CGFloat(buttonsHeight*2) > 10 {
+        // Make sure headerHeight is > 0 and at least 15
+        if tableViewHeight - CGFloat(buttonsHeight*2) > 15 {
             headerHeight = tableViewHeight - buttonsHeight*2
         } else {
-            headerHeight = 10
+            headerHeight = 15
         }
         
         return (headerHeight, buttonsHeight)
