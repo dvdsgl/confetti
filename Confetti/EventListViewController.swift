@@ -22,6 +22,7 @@ class EventListViewController: UITableViewController, HeroStretchable {
     
     var viewModels = [EventViewModel]()
     var registrations = [NotificationRegistration]()
+    var notificationInfo = [AnyHashable : Any]()
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
@@ -43,6 +44,9 @@ class EventListViewController: UITableViewController, HeroStretchable {
         registrations.append(onEventsChanged)
         
         heroView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(heroTapped(_:))))
+        
+        // Listen for notification
+        NotificationCenter.default.addObserver(self, selector: #selector(EventListViewController.performSegueForNotification), name: NSNotification.Name(rawValue: notificationKey), object: nil)
     }
     
     func heroTapped(_ sender: Any) {
@@ -51,6 +55,14 @@ class EventListViewController: UITableViewController, HeroStretchable {
         }
         controller.event = viewModels.first
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func performSegueForNotification(notification: NSNotification) {
+        // Set notification info to find correct event, is called in prepare(for segue: ...)
+        notificationInfo = notification.userInfo!
+        
+        tabBarController?.selectedIndex = 0
+        performSegue(withIdentifier: "showDetail", sender: Any?.self)
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -65,7 +77,6 @@ class EventListViewController: UITableViewController, HeroStretchable {
         viewModels = events
                         .map { EventViewModel.fromEvent($0) }
                         .sorted(by: { $0.daysAway < $1.daysAway })
-        
         if let hero = viewModels.first {            
             heroView.event = hero
         }
@@ -92,10 +103,24 @@ class EventListViewController: UITableViewController, HeroStretchable {
             let controller = segue.destination as! EventDetailViewController
             if let indexPath = tableView.indexPathForSelectedRow {
                 controller.event = viewModels[indexPath.row + 1]
+            } else {
+                // Handle the case of notifications
+                let controller = segue.destination as! EventDetailViewController
+                if let eventViewModel = getEventViewModelForNotifation() {
+                    controller.event = eventViewModel
+                } else { return }
             }
         default:
             return
         }
+    }
+    
+    func getEventViewModelForNotifation() -> EventViewModel? {
+        guard let events = UserViewModel.current.events else { return nil }
+        let eventKey = notificationInfo["eventKey"] as? String
+        let event = events.first(where:{String(describing: $0.key) == eventKey})
+        
+        return EventViewModel.fromEvent(event!)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

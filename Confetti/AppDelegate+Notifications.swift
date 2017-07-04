@@ -5,7 +5,7 @@ import ConfettiKit
 
 import MobileCenterPush
 
-extension AppDelegate {
+extension AppDelegate {        
     
     func setupNotifications() {
         let center = UNUserNotificationCenter.current()
@@ -47,6 +47,9 @@ extension AppDelegate {
             content.title = spec.title
             content.body = spec.message
             content.sound = UNNotificationSound.default()
+            
+            let eventKey = ["eventKey" : String(describing: viewModel.event.key)]
+            content.userInfo = eventKey
             
             let date = calendar.date(byAdding: .day, value: -spec.daysBefore, to: baseDate)!
             let trigger = UNCalendarNotificationTrigger(
@@ -91,7 +94,7 @@ extension AppDelegate {
         let newRequest = UNNotificationRequest(
             identifier: "sample",
             content: request.content,
-            trigger: UNTimeIntervalNotificationTrigger(timeInterval: 0.2 + withDelay, repeats: false)
+            trigger: UNTimeIntervalNotificationTrigger(timeInterval: 1.2 + withDelay, repeats: false)
         )
         
         UNUserNotificationCenter.current().add(newRequest, withCompletionHandler: { error in
@@ -117,7 +120,8 @@ extension AppDelegate {
             // The user dismissed the notification without taking action
         }
         else if response.actionIdentifier == UNNotificationDefaultActionIdentifier {
-            // The user launched the app
+            // Broadcast an internal notification letting the app know the user swiped on a notification
+            NotificationCenter.default.post(name: Notification.Name(rawValue: notificationKey), object: self, userInfo: response.notification.request.content.userInfo)
         }
         
         // Else handle any custom actions. . .

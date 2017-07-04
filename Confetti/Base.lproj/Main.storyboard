@@ -21,7 +21,7 @@
         <!--Events-->
         <scene sceneID="ihg-YM-a8f">
             <objects>
-                <navigationController id="4no-Gw-Lz8" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mainNav" id="4no-Gw-Lz8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Events" image="cake_icon" id="lpT-so-718"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vaG-ph-8eu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -215,7 +215,7 @@
         <!--Events-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Events" automaticallyAdjustsScrollViewInsets="NO" id="7bK-jq-Zjz" customClass="EventListViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="eventList" title="Events" automaticallyAdjustsScrollViewInsets="NO" id="7bK-jq-Zjz" customClass="EventListViewController" customModule="Confetti" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
