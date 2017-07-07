@@ -50,6 +50,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     var window: UIWindow?
     
+    func startMobileCenter() {
+        let services: [RunMode: [AnyClass]] = [
+        .normal: [
+                MSAnalytics.self,
+                MSCrashes.self,
+                MSDistribute.self,
+                MSPush.self
+        ],
+        .testRun:  [
+                MSAnalytics.self,
+                MSCrashes.self,
+                MSPush.self
+        ]]
+        
+        MSMobileCenter.start("9c903184-9f6f-44d8-b1b4-01750b951ece", withServices:services[runMode])
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         if ProcessInfo.processInfo.arguments.contains("test") {
@@ -59,13 +76,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         FirebaseApp.configure()
         Database.database().isPersistenceEnabled = true
         
-        MSMobileCenter.start("9c903184-9f6f-44d8-b1b4-01750b951ece", withServices:[
-            MSAnalytics.self,
-            MSCrashes.self,
-            MSDistribute.self,
-            MSPush.self
-        ])
-        
+        startMobileCenter()
+                
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         let _ = Notifications.EventsChanged.subscribe { events in
