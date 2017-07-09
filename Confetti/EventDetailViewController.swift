@@ -1,6 +1,8 @@
 import UIKit
 import Foundation
+
 import MessageUI
+import ContactsUI
 
 import ConfettiKit
 
@@ -8,6 +10,7 @@ class EventDetailViewController : UITableViewController,
     UIImagePickerControllerDelegate,
     UINavigationControllerDelegate,
     MFMessageComposeViewControllerDelegate,
+    CNContactPickerDelegate,
     HeroStretchable {
     
     @IBOutlet weak var heroView: HeroView!
@@ -70,8 +73,54 @@ class EventDetailViewController : UITableViewController,
         }
     }
     
+    func askToPickContact() {
+        let name = event.person.preferredName
+        let alert = UIAlertController(
+            title: nil,
+            message: "No contact info for \(name).",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "Pick from contacts", style: .default) { _ in
+            self.pickContact()
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in return })
+        
+        present(alert, animated: true)
+    }
+    
+    func pickContact() {
+        let picker = CNContactPickerViewController()
+        picker.delegate = self
+        present(picker, animated: true)
+    }
+    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        // Update the current event with the new contact info
+        let newPerson = event.person.with(emails: contact.emails, phones: contact.phones)
+        let newEvent = event.event.with(person: newPerson)
+        UserViewModel.current.updateEvent(newEvent)
+        
+        event.event = newEvent
+        
+        // Now retry the pending action
+        guard let action = actionPendingWhileChoosingContact else { return }
+        
+        picker.dismiss(animated: true) {
+            self.actionPendingWhileChoosingContact = nil
+            self.perform(action: action)
+        }
+    }
+    
+    var actionPendingWhileChoosingContact: Action?
+    
     func perform(action: Action) {
-        guard let phone = event.person.phones.first else { return }
+        guard let phone = event.person.phones.first else {
+            actionPendingWhileChoosingContact = action
+            askToPickContact()
+            return
+        }
         
         switch action {
         case .call:
