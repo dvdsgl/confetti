@@ -8,12 +8,25 @@ public enum ImageSource {
     case url(String)
 }
 
+public struct Labeled<T> {
+    let value: T
+    let label: String?
+    
+    public init(_ value: T, label: String? = nil) {
+        self.value = value
+        self.label = label
+    }
+}
+
 public protocol Contact {
     var imageSource: ImageSource? { get }
     
     var name: String { get }
     var nick: String? { get }
     var birthday: DateComponents? { get }
+    
+    var emails: [Labeled<String>] { get }
+    var phones: [Labeled<String>] { get }
 }
 
 public struct ManualContact: Contact {
@@ -21,6 +34,9 @@ public struct ManualContact: Contact {
     public var nick: String?
     
     public var birthday: DateComponents?
+    
+    public var emails = [Labeled<String>]()
+    public var phones = [Labeled<String>]()
     
     public let imageSource: ImageSource?
     

@@ -23,10 +23,6 @@ extension Contact {
             imageSource: imageSource
         )
     }
-    
-    var person: Person {
-        return Person(name: name, nickname: nick)
-    }
 }
 
 class CreateEventViewController: UIViewController,
@@ -86,7 +82,7 @@ class CreateEventViewController: UIViewController,
         photoView.dataSource = AvatarData(contact: contact)
         
         let date = Calendar.current.dateComponents([.year, .month, .day], from: datePicker.date)
-        let event = createEventSpec.createEvent(person: contact.person, month: date.month!, day: date.day!, year: date.year)
+        let event = createEventSpec.createEvent(contact: contact, month: date.month!, day: date.day!, year: date.year)
         let viewModel = EventViewModel.fromEvent(event)
         navBarItem.title = viewModel.title
     }
@@ -102,7 +98,7 @@ class CreateEventViewController: UIViewController,
     @IBAction func saveButton(_ sender: Any) {
         let date = Calendar.current.dateComponents([.year, .month, .day], from: datePicker.date)
         let event = createEventSpec.createEvent(
-            person: contact.person,
+            contact: contact,
             month: date.month!,
             day: date.day!,
             year: date.year

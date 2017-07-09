@@ -1,7 +1,18 @@
 import Foundation
 
+extension Contact {
+    var person: Person {
+        return Person(
+            name: name,
+            nickname: nick,
+            emails: emails,
+            phones: phones
+        )
+    }
+}
+
 public protocol CreateEventSpec {
-    func createEvent(person: Person, month: Int, day: Int, year: Int?) -> Event
+    func createEvent(contact: Contact, month: Int, day: Int, year: Int?) -> Event
     func initialDateFor(contact: Contact) -> DateComponents?
     
     var title: String { get }
@@ -14,8 +25,8 @@ public struct CreateBirthdaySpec: CreateEventSpec {
     public let title = "Whose Birthday?"
     public let description = "birthday"
     
-    public func createEvent(person: Person, month: Int, day: Int, year: Int?) -> Event {
-        return Event(person: person,
+    public func createEvent(contact: Contact, month: Int, day: Int, year: Int?) -> Event {
+        return Event(person: contact.person,
                      occasion: .birthday(month: month, day: day, year: year)
         )
     }
@@ -31,8 +42,8 @@ public struct CreateAnniversarySpec: CreateEventSpec {
     public let title = "Whose Anniversary?"
     public let description = "anniversary"
     
-    public func createEvent(person: Person, month: Int, day: Int, year: Int?) -> Event {
-        return Event(person: person,
+    public func createEvent(contact: Contact, month: Int, day: Int, year: Int?) -> Event {
+        return Event(person: contact.person,
                      occasion: .anniversary(month: month, day: day, year: year)
         )
     }
@@ -48,8 +59,8 @@ public struct CreateMothersDaySpec: CreateEventSpec {
     public let title = "Who's Mom?"
     public let description = "mother's day"
     
-    public func createEvent(person: Person, month: Int, day: Int, year: Int?) -> Event {
-        return Event(person: person,
+    public func createEvent(contact: Contact, month: Int, day: Int, year: Int?) -> Event {
+        return Event(person: contact.person,
                      occasion: .holiday(holiday: .mothersDay)
         )
     }
@@ -65,8 +76,8 @@ public struct CreateFathersDaySpec: CreateEventSpec {
     public let title = "Who's Dad?"
     public let description = "father's day"
     
-    public func createEvent(person: Person, month: Int, day: Int, year: Int?) -> Event {
-        return Event(person: person,
+    public func createEvent(contact: Contact, month: Int, day: Int, year: Int?) -> Event {
+        return Event(person: contact.person,
                      occasion: .holiday(holiday: .fathersDay)
         )
     }

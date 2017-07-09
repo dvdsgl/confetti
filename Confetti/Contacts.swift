@@ -12,6 +12,7 @@ extension CNContact: Contact {
     public var nick: String? {
         return nickname.isEmpty ? nil : nickname
     }
+    
     public var imageSource: ImageSource? {
         if let data = imageData {
             return .data(data)
@@ -19,6 +20,17 @@ extension CNContact: Contact {
         return nil
     }
     
+    public var emails: [Labeled<String>] {
+        return emailAddresses.map {
+            Labeled<String>($0.value as String, label: $0.label)
+        }
+    }
+    
+    public var phones: [Labeled<String>] {
+        return phoneNumbers.map {
+            Labeled<String>($0.value.stringValue, label: $0.label)
+        }
+    }
 }
 
 protocol ContactStore {
@@ -26,18 +38,21 @@ protocol ContactStore {
 }
 
 struct NativeContactStore: ContactStore {
-    let keys = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
-                CNContactNamePrefixKey as CNKeyDescriptor,
-                CNContactNameSuffixKey as CNKeyDescriptor,
-                CNContactGivenNameKey as CNKeyDescriptor,
-                CNContactFamilyNameKey as CNKeyDescriptor,
-                CNContactOrganizationNameKey as CNKeyDescriptor,
-                CNContactBirthdayKey as CNKeyDescriptor,
-                CNContactImageDataKey as CNKeyDescriptor,
-                CNContactThumbnailImageDataKey as CNKeyDescriptor,
-                CNContactImageDataAvailableKey as CNKeyDescriptor,
-                CNContactPhoneNumbersKey as CNKeyDescriptor,
-                CNContactEmailAddressesKey as CNKeyDescriptor]
+    let keys = [
+        CNContactNamePrefixKey,
+        CNContactNameSuffixKey,
+        CNContactGivenNameKey,
+        CNContactFamilyNameKey,
+        CNContactOrganizationNameKey,
+        CNContactBirthdayKey,
+        CNContactImageDataKey,
+        CNContactThumbnailImageDataKey,
+        CNContactImageDataAvailableKey,
+        CNContactPhoneNumbersKey,
+        CNContactEmailAddressesKey
+    ] as [CNKeyDescriptor] + [
+        CNContactFormatter.descriptorForRequiredKeys(for: .fullName)
+    ]
     
     func search(query: String) -> [Contact] {
         let store = CNContactStore()
