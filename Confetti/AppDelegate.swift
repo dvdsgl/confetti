@@ -40,6 +40,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
+    enum LaunchParamater {
+        case loggedOut
+        case loggedIn
+        case openEvent(withKey: String)
+    }
+    
+    func launchApp(withParameter param: LaunchParamater) {
+        switch param {
+        case .loggedOut:
+            // Set root view controller to login screen (automatic for now)
+            break
+        case .loggedIn:
+            window?.rootViewController = viewController("loggedInViewController")
+        case let .openEvent(withKey: key):
+            guard let tabs: CustomTabBarController = viewController("loggedInViewController") else { return }
+            guard let nav = tabs.viewControllers?.first as? UINavigationController else { return }
+            guard let eventList = nav.viewControllers.first as? EventListViewController else { return }
+            
+            eventList.launchEventKey = key
+            
+            window?.rootViewController = tabs
+        }
+    }
+    
     var versionNumber: String {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     }
@@ -87,10 +111,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             self.scheduleNotifications(for: events)
         }
 
-        if let user = Auth.auth().currentUser {
-            skipLogin(currentUser: user)
+        if let _ = Auth.auth().currentUser {
+            launchApp(withParameter: .loggedIn)
         } else {
-            // User Not logged in
+            launchApp(withParameter: .loggedOut)
         }
         
         if runMode != .testRun {
@@ -106,10 +130,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let handled = SDKApplicationDelegate.shared.application(app, open: url, options: options)
         
         return handled
-    }
-    
-    func skipLogin(currentUser _: User) {
-        window?.rootViewController = viewController("loggedInViewController")
     }
 }
 

@@ -48,7 +48,7 @@ extension AppDelegate {
             content.body = spec.message
             content.sound = UNNotificationSound.default()
             
-            let eventKey = ["eventKey" : String(describing: viewModel.event.key)]
+            let eventKey = ["eventKey": viewModel.event.key!]
             content.userInfo = eventKey
             
             let date = calendar.date(byAdding: .day, value: -spec.daysBefore, to: baseDate)!
@@ -120,8 +120,8 @@ extension AppDelegate {
             // The user dismissed the notification without taking action
         }
         else if response.actionIdentifier == UNNotificationDefaultActionIdentifier {
-            // Broadcast an internal notification letting the app know the user swiped on a notification
-            NotificationCenter.default.post(name: Notification.Name(rawValue: notificationKey), object: self, userInfo: response.notification.request.content.userInfo)
+            guard let eventKey = response.notification.request.content.userInfo["eventKey"] as? String else { return }
+            launchApp(withParameter: .openEvent(withKey: eventKey))
         }
         
         // Else handle any custom actions. . .

@@ -20,6 +20,8 @@ class EventListViewController: UITableViewController, HeroStretchable {
     @IBOutlet var footerView: UIView!
     @IBOutlet var emptyTableView: UIView!
     
+    var launchEventKey: String?
+    
     var viewModels = [EventViewModel]()
     var registrations = [NotificationRegistration]()
     var notificationInfo = [AnyHashable : Any]()
@@ -44,9 +46,6 @@ class EventListViewController: UITableViewController, HeroStretchable {
         registrations.append(onEventsChanged)
         
         heroView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(heroTapped(_:))))
-        
-        // Listen for notification
-        NotificationCenter.default.addObserver(self, selector: #selector(EventListViewController.performSegueForNotification), name: NSNotification.Name(rawValue: notificationKey), object: nil)
     }
     
     func heroTapped(_ sender: Any) {
@@ -57,12 +56,12 @@ class EventListViewController: UITableViewController, HeroStretchable {
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    func performSegueForNotification(notification: NSNotification) {
-        // Set notification info to find correct event, is called in prepare(for segue: ...)
-        notificationInfo = notification.userInfo!
-        
+    func displayEvent(withKey key: String) {
         tabBarController?.selectedIndex = 0
-        performSegue(withIdentifier: "showDetail", sender: Any?.self)
+        guard let details: EventDetailViewController = viewController("eventDetail") else { return }
+        guard let event = viewModels.first(where: { $0.event.key == key }) else { return }
+        details.event = event
+        navigationController?.pushViewController(details, animated: false)
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -91,6 +90,11 @@ class EventListViewController: UITableViewController, HeroStretchable {
             footerView.isHidden = false            
             tableView.reloadData()
         }
+        
+        if let key = launchEventKey {
+            launchEventKey = nil
+            displayEvent(withKey: key)
+        }
     }
     
     @IBAction func unwindToMain(segue: UIStoryboardSegue) {}
@@ -103,24 +107,10 @@ class EventListViewController: UITableViewController, HeroStretchable {
             let controller = segue.destination as! EventDetailViewController
             if let indexPath = tableView.indexPathForSelectedRow {
                 controller.event = viewModels[indexPath.row + 1]
-            } else {
-                // Handle the case of notifications
-                let controller = segue.destination as! EventDetailViewController
-                if let eventViewModel = getEventViewModelForNotifation() {
-                    controller.event = eventViewModel
-                } else { return }
             }
         default:
             return
         }
-    }
-    
-    func getEventViewModelForNotifation() -> EventViewModel? {
-        guard let events = UserViewModel.current.events else { return nil }
-        let eventKey = notificationInfo["eventKey"] as? String
-        let event = events.first(where:{String(describing: $0.key) == eventKey})
-        
-        return EventViewModel.fromEvent(event!)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
