@@ -1,12 +1,14 @@
 import UIKit
 import Foundation
+import MessageUI
 
 import ConfettiKit
 
 class EventDetailViewController : UITableViewController,
     UIImagePickerControllerDelegate,
     UINavigationControllerDelegate,
-HeroStretchable {
+    MFMessageComposeViewControllerDelegate,
+    HeroStretchable {
     
     @IBOutlet weak var heroView: HeroView!
     
@@ -60,13 +62,37 @@ HeroStretchable {
             cell.selectionStyle = .none
             return cell
         default:
-        let cell = tableView.dequeueReusableCell(withIdentifier: "action", for: indexPath) as! EventDetailViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "action", for: indexPath) as! EventDetailViewCell
             cell.styleCell(buttonColor, action.rawValue)
             cell.selectionStyle = .none
-            cell.tapAction = { [weak self] (cell) in
-                print(action)}
+            cell.tapAction = { _ in self.perform(action: action) }
             return cell
         }
+    }
+    
+    func perform(action: Action) {
+        guard let phone = event.person.phones.first else { return }
+        
+        switch action {
+        case .call:
+            guard let url = URL(string: "tel://\(phone.value)") else { break }
+            UIApplication.shared.open(url)
+        case .faceTime:
+            guard let url = URL(string: "facetime://\(phone.value)") else { break }
+            UIApplication.shared.open(url)
+        case .message:
+            let message = MFMessageComposeViewController()
+            message.body = "Happy Birthday!"
+            message.recipients = [phone.value]
+            message.messageComposeDelegate = self
+            present(message, animated: true)
+        default:
+            break
+        }
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        controller.dismiss(animated: true)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

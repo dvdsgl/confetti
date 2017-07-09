@@ -9,8 +9,8 @@ public enum ImageSource {
 }
 
 public struct Labeled<T> {
-    let value: T
-    let label: String?
+    public let value: T
+    public let label: String?
     
     public init(_ value: T, label: String? = nil) {
         self.value = value
