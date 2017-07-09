@@ -15,9 +15,6 @@ import UserNotifications
 
 import ConfettiKit
 
-// Globally define notification key to broadcast internal notifications
-let notificationKey = "com.confetti.event.notification"
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
