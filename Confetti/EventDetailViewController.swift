@@ -113,10 +113,23 @@ class EventDetailViewController : UITableViewController,
         }
     }
     
+    var preferredPhoneNumbers: [Labeled<String>] {
+        let weightOfLabel = [
+            CNLabelPhoneNumberiPhone: 3,
+            CNLabelPhoneNumberMobile: 2,
+            CNLabelPhoneNumberMain: 1,
+            CNLabelHome: -1
+        ]
+        
+        let weigh: (Labeled<String>) -> Int = { weightOfLabel[$0.label ?? ""] ?? 0 }
+        
+        return event.person.phones.sorted { weigh($0) > weigh($1) }
+    }
+    
     var actionPendingWhileChoosingContact: Action?
     
     func perform(action: Action) {
-        guard let phone = event.person.phones.first else {
+        guard let phone = preferredPhoneNumbers.first else {
             actionPendingWhileChoosingContact = action
             askToPickContact()
             return
