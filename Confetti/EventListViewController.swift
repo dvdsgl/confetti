@@ -123,6 +123,11 @@ class EventListViewController: UITableViewController, HeroStretchable {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EventTableViewCell
+        
+        // Rasterize cells to improve scrolling performance, since they don't change and contain large images
+        cell.layer.shouldRasterize = true
+        cell.layer.rasterizationScale = UIScreen.main.scale
+        
         let event = viewModels[indexPath.row + 1]
         cell.setEvent(event)
         return cell
