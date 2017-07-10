@@ -126,6 +126,14 @@ class EventDetailViewController : UITableViewController,
         return event.person.phones.sorted { weigh($0) > weigh($1) }
     }
     
+    func cleanedPhoneNumber(_ original: String) -> String {
+        var cleaned = original
+        for bad in " ()-".characters {
+            cleaned = cleaned.replacingOccurrences(of: "\(bad)", with: "")
+        }
+        return cleaned
+    }
+    
     var actionPendingWhileChoosingContact: Action?
     
     func perform(action: Action) {
@@ -135,12 +143,14 @@ class EventDetailViewController : UITableViewController,
             return
         }
         
+        let number = cleanedPhoneNumber(phone.value)
+        
         switch action {
         case .call:
-            guard let url = URL(string: "tel://\(phone.value)") else { break }
+            guard let url = URL(string: "tel://\(number)") else { break }
             UIApplication.shared.open(url)
         case .faceTime:
-            guard let url = URL(string: "facetime://\(phone.value)") else { break }
+            guard let url = URL(string: "facetime://\(number)") else { break }
             UIApplication.shared.open(url)
         case .message:
             let message = MFMessageComposeViewController()
