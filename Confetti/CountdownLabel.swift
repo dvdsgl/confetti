@@ -10,9 +10,8 @@ class CountdownLabel: UILabel {
     let backgroundColorSoon = Colors.pink
     let backgroundColorLater = Colors.lightGray
     
-    var event: EventViewModel? {
+    var event: EventViewModel! {
         didSet {
-            guard let event = event else { return }
             backgroundColor = event.isSoon ? backgroundColorSoon : backgroundColorLater
             text = event.countdown
             sizeToFit()
