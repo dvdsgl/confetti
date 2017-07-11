@@ -28,7 +28,8 @@ class LoginViewController: UIViewController {
         Auth.auth().signInAnonymously() { (user, error) in
             if let _ = error {
                 return
-            } else {
+            } else if let _ = user {
+                UserViewModel.current.beginSession()
                 self.performSegue(withIdentifier: "login", sender: self)
             }
         }
@@ -49,7 +50,8 @@ class LoginViewController: UIViewController {
                     if let _ = error {
                         // ...
                         return
-                    } else {
+                    } else if let _ = user {
+                        UserViewModel.current.beginSession()
                         self.performSegue(withIdentifier: "login", sender: self)
                     }
                 }

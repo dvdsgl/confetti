@@ -49,8 +49,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             // Set root view controller to login screen (automatic for now)
             break
         case .loggedIn:
+            UserViewModel.current.beginSession()
             window?.rootViewController = viewController("loggedInViewController")
+            
         case let .openEvent(withKey: key):
+            UserViewModel.current.beginSession()
             guard let tabs: CustomTabBarController = viewController("loggedInViewController") else { return }
             guard let nav = tabs.viewControllers?.first as? UINavigationController else { return }
             guard let eventList = nav.viewControllers.first as? EventListViewController else { return }

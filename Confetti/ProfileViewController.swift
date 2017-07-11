@@ -8,6 +8,10 @@ import Firebase
 
 import MobileCenterCrashes
 
+import FacebookLogin
+import Firebase
+import FirebaseAuth
+
 protocol HeroStretchable {
     var tableView: UITableView! { get }
     var heroView: HeroView! { get }
@@ -73,7 +77,7 @@ class ProfileViewController : UITableViewController, HeroStretchable {
             .showVersion
         ])
         
-        if UserViewModel.current.userAuth.isAnonymous {
+        if UserViewModel.current.isAnonymous {
             sections.append(anonymous)
         } else {
             sections.append(loggedIn)
@@ -173,7 +177,7 @@ class ProfileViewController : UITableViewController, HeroStretchable {
         case .logout:
             logOut()
         case .loginWithFacebook:
-            break
+            loginWithFacebook()
         case .crash:
             MSCrashes.generateTestCrash()
         case .testNotification:
@@ -189,5 +193,36 @@ class ProfileViewController : UITableViewController, HeroStretchable {
     func logOut() {
         UserViewModel.current.logout()
         AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+    }
+    
+    func loginWithFacebook() {
+        let loginManager = LoginManager()
+        loginManager.logIn([.publicProfile, .email], viewController: self) { loginResult in
+            switch loginResult {
+            case .failed(let error):
+                print(error)
+            case .cancelled:
+                print("User cancelled login.")
+            case .success(_, _, let accessToken):
+                let app = AppDelegate.shared
+                let savedEvents = Array(UserViewModel.current.events ?? [])
+                
+                let previousPage = app.window?.rootViewController
+                let launchScreen = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
+                
+                // Display launchscreen while we make some network requests
+                app.window?.rootViewController = launchScreen
+                
+                let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
+                Auth.auth().signIn(with: credential) { (user, error) in
+                    if let _ = error {
+                        app.window?.rootViewController = previousPage
+                    } else if let _ = user {
+                        app.launchApp(withParameter: .loggedIn)
+                        savedEvents.forEach { UserViewModel.current.addEvent($0) }
+                    }
+                }
+            }
+        }
     }
 }

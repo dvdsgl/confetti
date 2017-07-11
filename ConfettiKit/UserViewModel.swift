@@ -14,8 +14,12 @@ public class UserViewModel {
     
     var db: DatabaseReference!
     
-    var userAuth: User {
+    private var userAuth: User {
         return Auth.auth().currentUser!
+    }
+    
+    var isAnonymous: Bool {
+        return userAuth.isAnonymous
     }
     
     var userNode: DatabaseReference {
@@ -28,27 +32,42 @@ public class UserViewModel {
     
     public private(set) var events: [Event]?
     
+    var firebaseObservers = [UInt]()
+    
+    private func endPreviousSessionIfAny() {
+        firebaseObservers.forEach { db.removeObserver(withHandle: $0) }
+        firebaseObservers = []
+        events = nil
+    }
+    
+    func beginSession() {
+        endPreviousSessionIfAny()
+        
+        var userData = [AnyHashable: Any]()
+        if let email = userAuth.email {
+            userData["email"] = email
+        }
+        userNode.updateChildValues(userData)
+        
+        firebaseObservers.append(onEventsUpdated { events in
+            self.events = events
+            Notifications.EventsChanged.post(sender: self, data: events)
+        })
+    }
+    
     func logout() {
         if AppDelegate.shared.runMode == .testRun && userAuth.isAnonymous {
             userNode.removeValue()
             userAuth.delete()
         }
+        
+        endPreviousSessionIfAny()
+        
         try! Auth.auth().signOut()
     }
     
     private init() {
         db = Database.database().reference()
-        
-        var user = [AnyHashable: Any]()
-        if let email = userAuth.email {
-            user["email"] = email
-        }
-        userNode.updateChildValues(user)
-        
-        onEventsUpdated { events in
-            self.events = events
-            Notifications.EventsChanged.post(sender: self, data: events)
-        }
     }
     
     func onEventsChanged(_ onEventsUpdated: @escaping ([Event]) -> ()) -> NotificationRegistration {
@@ -58,11 +77,10 @@ public class UserViewModel {
         return Notifications.EventsChanged.subscribe(onEventsUpdated)
     }
 
-
-    private func onEventsUpdated(_ success: @escaping ([Event]) -> ()) {
+    private func onEventsUpdated(_ success: @escaping ([Event]) -> ()) -> UInt {
         let trace = Performance.startTrace(name: "UserViewModel.getEvents")
         
-        eventsNode.observe(.value, with: { snapshot in
+        return eventsNode.observe(.value, with: { snapshot in
             trace?.stop()
             
             var events = [Event]()
