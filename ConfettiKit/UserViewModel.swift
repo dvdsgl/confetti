@@ -111,4 +111,40 @@ public class UserViewModel {
         guard let key = event.key else { return }
         eventsNode.child(key).setValue(event.firebaseValue)
     }
+    public var profilePhotoUUID: UUID?
+    
+    fileprivate var imagesNode: StorageReference {
+        return Storage.storage().reference().child("images")
+    }
+    
+    var imageReference : StorageReference? {
+        guard let uuid = profilePhotoUUID else { return nil }
+        return imagesNode.child(uuid.uuidString)
+    }
+    
+    func saveImage(url: URL) {
+        let uuid = UUID() // we always allocate a new image, rather than replacing
+        let imageRef = imagesNode.child(uuid.uuidString)
+        
+        profilePhotoUUID = uuid
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: url)
+            
+            DispatchQueue.main.async {
+                let _ = imageRef.putData(data!,
+                                         metadata: metadata,
+                                         completion: { (metadata, error) in
+                                            if let _ = error {
+                                                print("Error uploading image:" + String(describing: error))
+                                            } else {
+                                                return
+                                            }
+                })
+            }
+        }
+    }
 }

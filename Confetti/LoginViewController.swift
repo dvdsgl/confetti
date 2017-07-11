@@ -52,6 +52,13 @@ class LoginViewController: UIViewController {
                         return
                     } else if let _ = user {
                         UserViewModel.current.beginSession()
+                        
+                        // Save profile image to firebase
+                        if let uid = Auth.auth().currentUser?.providerData.first?.uid {
+                            let photoUrl = URL(string: "https://graph.facebook.com/\(uid)/picture?height=500")
+                            UserViewModel.current.saveImage(url: photoUrl!)
+                        }
+                        
                         self.performSegue(withIdentifier: "login", sender: self)
                     }
                 }
