@@ -23,13 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     enum RunMode {
-        case normal, testRun
+        case normal, debug, testRun
     }
     
     private(set) var runMode: RunMode = .normal {
         didSet {
             switch runMode {
-            case .normal:
+            case .normal, .debug:
                 UIView.setAnimationsEnabled(true)
             case .testRun:
                 UIView.setAnimationsEnabled(false)
@@ -73,22 +73,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func startMobileCenter() {
         let services: [RunMode: [AnyClass]] = [
-        .normal: [
+            .testRun:  [
                 MSAnalytics.self,
                 MSCrashes.self,
-                MSDistribute.self,
+                // Distribution is turned off for tests
+                // MSDistribute.self,
                 MSPush.self
-        ],
-        .testRun:  [
-                MSAnalytics.self,
-                MSCrashes.self,
-                MSPush.self
-        ]]
+            ]
+        ]
         
-        MSMobileCenter.start("9c903184-9f6f-44d8-b1b4-01750b951ece", withServices:services[runMode])
+        let activeServices = services[runMode] ?? [
+            MSAnalytics.self,
+            MSCrashes.self,
+            MSDistribute.self,
+            MSPush.self
+        ]
+        
+        MSMobileCenter.start("9c903184-9f6f-44d8-b1b4-01750b951ece", withServices: activeServices)
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        #if DEBUG
+        runMode = .debug
+        #endif
         
         if ProcessInfo.processInfo.arguments.contains("test") {
             runMode = .testRun

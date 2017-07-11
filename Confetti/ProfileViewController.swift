@@ -115,19 +115,11 @@ class ProfileViewController : UITableViewController, HeroStretchable {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        #if DEBUG
-            return sections.count
-        #else
-            return 1
-        #endif
+        return AppDelegate.shared.runMode == .debug ? sections.count : 1
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        #if DEBUG
-            return sections[section].title
-        #else
-            return nil
-        #endif
+        return AppDelegate.shared.runMode == .debug ? sections[section].title : nil
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
