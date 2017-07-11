@@ -869,21 +869,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zSz-28-BoX">
-                                            <rect key="frame" x="57" y="18" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="58" y="18" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vvu-7G-nYG">
-                                            <rect key="frame" x="57" y="38.5" width="33" height="14.5"/>
+                                            <rect key="frame" x="58" y="38.5" width="33" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="smile_icon" id="dnN-3f-vgE">
-                                            <rect key="frame" x="15" y="21" width="27" height="27"/>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="facebook-icon" id="dnN-3f-vgE">
+                                            <rect key="frame" x="15" y="21" width="28" height="28"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </imageView>
                                     </subviews>
@@ -945,6 +945,7 @@
     <resources>
         <image name="AddButton" width="54" height="54"/>
         <image name="cake_icon" width="27" height="27"/>
+        <image name="facebook-icon" width="28" height="28"/>
         <image name="occasion-overlay-close" width="53" height="53"/>
         <image name="occasion-overlay-close-active" width="52" height="52"/>
         <image name="overflow-button" width="22" height="22"/>

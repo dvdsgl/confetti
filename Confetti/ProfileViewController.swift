@@ -45,21 +45,46 @@ class ProfileViewController : UITableViewController, HeroStretchable {
     
     enum Action: String {
         case logout = "Logout"
+        case loginWithFacebook = "Login with Facebook"
         case crash = "Crash the app!"
         case testNotification = "Send test notification"
         case showVersion = "showVersion"
     }
     
-    let sections: [(title: String, actions: [Action])] = [
-        (title: "Normal", actions: [
-            .logout
-        ]),
-        (title: "Debug", actions: [
-            .crash,
+    let actionSubtitles: [Action: String] = [
+        .logout: "Wait but why?",
+        .loginWithFacebook: "Please login to save & sync your events."
+    ]
+    
+    let sections: [(title: String, actions: [Action])] = {
+        var sections = [(title: String, actions: [Action])]()
+        
+        let loggedIn = (title: "Logged In", actions: [
+            Action.logout
+        ])
+        
+        let anonymous = (title: "Anonymous", actions: [
+            Action.loginWithFacebook
+        ])
+        
+        let debug = (title: "Debug", actions: [
+            Action.crash,
             .testNotification,
             .showVersion
         ])
-    ]
+        
+        if UserViewModel.current.userAuth.isAnonymous {
+            sections.append(anonymous)
+        } else {
+            sections.append(loggedIn)
+        }
+        
+        if AppDelegate.shared.runMode == .debug {
+            sections.append(debug)
+        }
+        
+        return sections
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,16 +135,22 @@ class ProfileViewController : UITableViewController, HeroStretchable {
             cell.textLabel?.text = "Version \(app.versionNumber) (\(app.buildNumber))"
         case let action:
             cell.textLabel?.text = action.rawValue
+            cell.detailTextLabel?.text = actionSubtitles[action]
         }
         return cell
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return AppDelegate.shared.runMode == .debug ? sections.count : 1
+        return sections.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return AppDelegate.shared.runMode == .debug ? sections[section].title : nil
+        if AppDelegate.shared.runMode == .debug {
+            return sections[section].title
+        } else {
+            // We don't show multiple sections in release, so we hide the titles
+            return nil
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -141,6 +172,8 @@ class ProfileViewController : UITableViewController, HeroStretchable {
         switch sections[indexPath.section].actions[indexPath.row] {
         case .logout:
             logOut()
+        case .loginWithFacebook:
+            break
         case .crash:
             MSCrashes.generateTestCrash()
         case .testNotification:
