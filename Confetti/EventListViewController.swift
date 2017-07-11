@@ -22,7 +22,14 @@ class EventListViewController: UITableViewController, HeroStretchable {
     
     var launchEventKey: String?
     
-    var viewModels = [EventViewModel]()
+    var viewModels = [EventViewModel]() {
+        didSet {
+            viewModelsWithoutHero = [EventViewModel](viewModels.dropFirst())
+        }
+    }
+    
+    private var viewModelsWithoutHero = [EventViewModel]()
+    
     var registrations = [NotificationRegistration]()
     var notificationInfo = [AnyHashable : Any]()
     
@@ -106,7 +113,7 @@ class EventListViewController: UITableViewController, HeroStretchable {
         case "showDetail":
             let controller = segue.destination as! EventDetailViewController
             if let indexPath = tableView.indexPathForSelectedRow {
-                controller.event = viewModels[indexPath.row + 1]
+                controller.event = viewModelsWithoutHero[indexPath.row]
             }
         default:
             return
@@ -118,7 +125,7 @@ class EventListViewController: UITableViewController, HeroStretchable {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return max(0, viewModels.count - 1)
+        return viewModelsWithoutHero.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -128,7 +135,7 @@ class EventListViewController: UITableViewController, HeroStretchable {
         cell.layer.shouldRasterize = true
         cell.layer.rasterizationScale = UIScreen.main.scale
         
-        let event = viewModels[indexPath.row + 1]
+        let event = viewModelsWithoutHero[indexPath.row]
         cell.setEvent(event)
         return cell
     }
@@ -145,7 +152,7 @@ class EventListViewController: UITableViewController, HeroStretchable {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            let viewModel = viewModels[indexPath.row + 1]
+            let viewModel = viewModelsWithoutHero[indexPath.row]
             UserViewModel.current.deleteEvent(viewModel.event)
         default:
             return
