@@ -50,7 +50,16 @@ class ProfileViewController : UITableViewController, HeroStretchable {
         case showVersion = "showVersion"
     }
     
-    let source: [Action] = [.logout, .crash, .testNotification, .showVersion]
+    let sections: [(title: String, actions: [Action])] = [
+        (title: "Normal", actions: [
+            .logout
+        ]),
+        (title: "Debug", actions: [
+            .crash,
+            .testNotification,
+            .showVersion
+        ])
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,9 +94,17 @@ class ProfileViewController : UITableViewController, HeroStretchable {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath)
+        let cell: UITableViewCell
+        switch indexPath.section {
+        case 0:
+            cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath)
+        case _:
+            cell = tableView.dequeueReusableCell(withIdentifier: "debug", for: indexPath)
+        }
         
-        switch source[indexPath.item] {
+        let section = sections[indexPath.section]
+        
+        switch section.actions[indexPath.row] {
         case .showVersion:
             let app = AppDelegate.shared
             cell.textLabel?.text = "Version \(app.versionNumber) (\(app.buildNumber))"
@@ -97,14 +114,39 @@ class ProfileViewController : UITableViewController, HeroStretchable {
         return cell
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        #if DEBUG
+            return sections.count
+        #else
+            return 1
+        #endif
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        #if DEBUG
+            return sections[section].title
+        #else
+            return nil
+        #endif
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return source.count
+        return sections[section].actions.count
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 70
+        case _:
+            return 46
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        switch source[indexPath.row] {
+        switch sections[indexPath.section].actions[indexPath.row] {
         case .logout:
             logOut()
         case .crash:
