@@ -114,7 +114,7 @@ public class EventViewModel {
             return "1 week"
         case (_, 2..<4, _):
             return "\(weeksAway) weeks"
-        case (_, _, 1):
+        case (_, _, 0...1):
             return "1 month"
         case (_, _, let months) where months < 12:
             return "\(months) months"
