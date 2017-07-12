@@ -131,10 +131,10 @@ public class UserViewModel {
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
         
-        DispatchQueue.global().async {
+        DispatchQueue.global(qos: .background).async {
             let data = try? Data(contentsOf: url)
             
-            DispatchQueue.main.async {
+            DispatchQueue.global(qos: .background).async {
                 let _ = imageRef.putData(data!,
                                          metadata: metadata,
                                          completion: { (metadata, error) in
