@@ -23,6 +23,22 @@ class HeroView: UIView {
         commonInit()
     }
     
+    enum RunMode {
+        case events, profile
+    }
+    
+    var runMode: RunMode = .events {
+        didSet {
+            switch runMode {
+            case .events:
+                return
+            case .profile:
+                pillView.isHidden = true
+            }
+            
+        }
+    }
+    
     func commonInit() {
         Bundle(for: HeroView.self).loadNibNamed("HeroView", owner: self, options: nil)
         

@@ -96,7 +96,7 @@ class ProfileViewController : UITableViewController, HeroStretchable {
         styleTransparentNavigationBar()
         
         //Turn off pillView on profile page
-        heroView.pillView.isHidden = true
+        heroView.runMode = .profile
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
