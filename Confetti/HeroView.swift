@@ -93,20 +93,4 @@ class HeroView: UIView {
         super.layoutSubviews()
         topShade.frame = CGRect(x: 0, y: 0, width: bounds.width, height: 70)
     }
-    
-//    var event: EventViewModel! {
-//         didSet {
-//            event.displayImage(in: heroImage)
-//            pillView.event = event
-//            
-//            contentView.backgroundColor = Colors.accentFor(event.person.name)
-//            
-//            let hasImage = event.person.photoUUID != nil
-//            topShade.isHidden = !hasImage
-//            defaultImage.isHidden = hasImage
-//            heroImage.isHidden = !hasImage
-//            
-//            confettiMachine.isRunning = event.daysAway == 0
-//        }
-//    }
 }
