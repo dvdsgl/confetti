@@ -124,7 +124,7 @@ class CreateEventViewController: UIViewController,
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         dismiss(animated: true)
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             contact = contact.with(image: image)
             updateDisplay()
         }
