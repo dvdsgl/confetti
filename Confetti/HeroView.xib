@@ -33,7 +33,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKp-mb-Qfv" customClass="ConfettiMachineView" customModule="Confetti" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
                     <subviews>
-                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pxj-of-nsf" customClass="CountdownPillView" customModule="Confetti" customModuleProvider="target">
+                        <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pxj-of-nsf" customClass="CountdownPillView" customModule="Confetti" customModuleProvider="target">
                             <rect key="frame" x="10" y="270" width="224.5" height="54"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="54" id="EHh-XR-srh"/>
@@ -42,6 +42,7 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="Pxj-of-nsf" firstAttribute="width" relation="lessThanOrEqual" secondItem="sKp-mb-Qfv" secondAttribute="width" constant="-20" id="TS7-T3-Xdf"/>
                         <constraint firstItem="Pxj-of-nsf" firstAttribute="bottom" secondItem="sKp-mb-Qfv" secondAttribute="bottom" constant="-10" id="Uen-uj-VD4"/>
                         <constraint firstItem="Pxj-of-nsf" firstAttribute="leading" secondItem="sKp-mb-Qfv" secondAttribute="leading" constant="10" id="WF8-eL-xxg"/>
                     </constraints>
