@@ -47,7 +47,7 @@ class EventDetailViewController : UITableViewController,
     }
     
     func updateDisplay() {
-        heroView?.event = event
+        heroView?.runMode = .event(event)
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

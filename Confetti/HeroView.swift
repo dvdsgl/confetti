@@ -1,6 +1,7 @@
 import Foundation
 import UIKit
 import ConfettiKit
+import FirebaseAuth
 
 @IBDesignable
 class HeroView: UIView {
@@ -24,18 +25,45 @@ class HeroView: UIView {
     }
     
     enum RunMode {
-        case events, profile
+        case event(EventViewModel), profile
     }
     
-    var runMode: RunMode = .events {
+    var runMode: RunMode = .profile {
         didSet {
             switch runMode {
-            case .events:
-                return
+            case let .event(event):
+                buildEvent(event: event)
             case .profile:
-                pillView.isHidden = true
+                buildProfilePage()
             }
+        }
+    }
+    
+    func buildEvent(event: EventViewModel) {
+        event.displayImage(in: heroImage)
+        pillView.event = event
+        
+        contentView.backgroundColor = Colors.accentFor(event.person.name)
+        
+        let hasImage = event.person.photoUUID != nil
+        topShade.isHidden = !hasImage
+        defaultImage.isHidden = hasImage
+        heroImage.isHidden = !hasImage
+        
+        confettiMachine.isRunning = event.daysAway == 0
+    }
+    
+    func buildProfilePage() {
+        pillView.isHidden = true
+        
+        let user = Auth.auth().currentUser
+        if let user = user {
+            let hasImage = user.photoURL != nil
+            topShade.isHidden = !hasImage
+            defaultImage.isHidden = hasImage
+            heroImage.isHidden = !hasImage
             
+            UserViewModel.current.displayImage(in: heroImage)
         }
     }
     
@@ -66,19 +94,19 @@ class HeroView: UIView {
         topShade.frame = CGRect(x: 0, y: 0, width: bounds.width, height: 70)
     }
     
-    var event: EventViewModel! {
-         didSet {
-            event.displayImage(in: heroImage)
-            pillView.event = event
-            
-            contentView.backgroundColor = Colors.accentFor(event.person.name)
-            
-            let hasImage = event.person.photoUUID != nil
-            topShade.isHidden = !hasImage
-            defaultImage.isHidden = hasImage
-            heroImage.isHidden = !hasImage
-            
-            confettiMachine.isRunning = event.daysAway == 0
-        }
-    }
+//    var event: EventViewModel! {
+//         didSet {
+//            event.displayImage(in: heroImage)
+//            pillView.event = event
+//            
+//            contentView.backgroundColor = Colors.accentFor(event.person.name)
+//            
+//            let hasImage = event.person.photoUUID != nil
+//            topShade.isHidden = !hasImage
+//            defaultImage.isHidden = hasImage
+//            heroImage.isHidden = !hasImage
+//            
+//            confettiMachine.isRunning = event.daysAway == 0
+//        }
+//    }
 }

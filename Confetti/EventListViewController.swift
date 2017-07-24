@@ -84,7 +84,7 @@ class EventListViewController: UITableViewController, HeroStretchable {
                         .map { EventViewModel.fromEvent($0) }
                         .sorted(by: { $0.daysAway < $1.daysAway })
         if let hero = viewModels.first {            
-            heroView.event = hero
+            heroView.runMode = .event(hero)
         }
         
         if viewModels.count == 0 {

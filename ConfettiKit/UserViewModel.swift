@@ -147,4 +147,10 @@ public class UserViewModel {
             }
         }
     }
+    
+    func displayImage(in view: UIImageView) {
+        if let imageRef = imageReference {
+            view.sd_setImage(with: imageRef)
+        }
+    }
 }
