@@ -69,3 +69,6 @@ fastlane/test_output
 /Carthage
 .DS_Store
 /build
+
+# Test Cloud Build folder
+ddp/
