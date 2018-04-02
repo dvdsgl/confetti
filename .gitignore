@@ -72,3 +72,5 @@ fastlane/test_output
 
 # Test Cloud Build folder
 ddp/
+
+/node_modules

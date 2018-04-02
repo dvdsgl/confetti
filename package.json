@@ -1,0 +1,23 @@
+{
+  "name": "confetti",
+  "version": "1.0.0",
+  "description": "![Build status](https://build.mobile.azure.com/v0.1/apps/af271266-0fc9-4fa6-a683-2dc9fe2f9877/branches/master/badge)",
+  "main": "index.js",
+  "scripts": {
+    "watch": "watch 'quicktype ConfettiKit/Models.ts -o ConfettiKit/Models.swift --no-initializers' ConfettiKit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvdsgl/confetti-swift.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dvdsgl/confetti-swift/issues"
+  },
+  "homepage": "https://github.com/dvdsgl/confetti-swift#readme",
+  "devDependencies": {
+    "quicktype": "^10.0.8",
+    "watch": "^1.0.2"
+  }
+}
