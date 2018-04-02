@@ -28,6 +28,8 @@ end
       pod 'MobileCenter'
       pod 'MobileCenter/MobileCenterDistribute'
       pod 'MobileCenter/MobileCenterPush'
+      
+      pod 'CodableFirebase'
     end
 end
 

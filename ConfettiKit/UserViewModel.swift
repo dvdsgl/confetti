@@ -86,6 +86,7 @@ public class UserViewModel {
             var events = [Event]()
             for eventNode in snapshot.children.allObjects as! [DataSnapshot] {
                 if let eventDict = eventNode.value as? [String: Any?] {
+                    JSONDecoder().decode(Event.self, from: eventDict)
                     if let event = Event.fromFirebaseValue(eventDict) {
                         event.key = eventNode.key
                         events.append(event)

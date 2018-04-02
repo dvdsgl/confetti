@@ -27,6 +27,8 @@
 		633C96381EEC913700D4554D /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633C96371EEC913700D4554D /* ContactTableViewCell.swift */; };
 		63424F5A1EF72B0E00AD4736 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63424F591EF72B0E00AD4736 /* CALayer.swift */; };
 		63424F5C1EF7494F00AD4736 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63424F5B1EF7494F00AD4736 /* Contacts.swift */; };
+		6358F6E42072A19900BB334E /* Models.ts in Resources */ = {isa = PBXBuildFile; fileRef = 6358F6E32072A19900BB334E /* Models.ts */; };
+		6358F6E62072A26E00BB334E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6358F6E52072A26E00BB334E /* Models.swift */; };
 		635A66DB1EF6ED0D00970048 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635A66DA1EF6ED0D00970048 /* Globals.swift */; };
 		636BD6AB1EEB37610001A983 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636BD6AA1EEB37610001A983 /* Contact.swift */; };
 		6384DA481EE8D3F800223EC8 /* AppDelegate+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6384DA471EE8D3F800223EC8 /* AppDelegate+Notifications.swift */; };
@@ -115,6 +117,8 @@
 		633C96371EEC913700D4554D /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactTableViewCell.swift; path = Views/ContactTableViewCell.swift; sourceTree = "<group>"; };
 		63424F591EF72B0E00AD4736 /* CALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CALayer.swift; path = Views/CALayer.swift; sourceTree = "<group>"; };
 		63424F5B1EF7494F00AD4736 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		6358F6E32072A19900BB334E /* Models.ts */ = {isa = PBXFileReference; explicitFileType = sourcecode.javascript; fileEncoding = 4; path = Models.ts; sourceTree = "<group>"; };
+		6358F6E52072A26E00BB334E /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		635A66DA1EF6ED0D00970048 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		636BD6AA1EEB37610001A983 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = ../Confetti/Contact.swift; sourceTree = "<group>"; };
 		6375235E1ED0E26000DF8F5A /* FirebaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseData.swift; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 		6384DA491EE8D54A00223EC8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6358F6E52072A26E00BB334E /* Models.swift */,
+				6358F6E32072A19900BB334E /* Models.ts */,
 				636BD6AA1EEB37610001A983 /* Contact.swift */,
 				63EADA011EBE95550041A272 /* Person.swift */,
 				63A899971EBE64B500C5FB04 /* Event.swift */,
@@ -470,16 +476,19 @@
 					63A899781EBE64A200C5FB04 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = W9D824R4EW;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 					63C759C71EBE5A2400939D7B = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = W9D824R4EW;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 					63C759E81EBE5A2400939D7B = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = W9D824R4EW;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 63C759C71EBE5A2400939D7B;
 					};
@@ -510,6 +519,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6358F6E42072A19900BB334E /* Models.ts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,6 +592,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Confetti/Pods-Confetti-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AvatarImageView/AvatarImageView.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/CodableFirebase/CodableFirebase.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -599,6 +610,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AvatarImageView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableFirebase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -624,11 +636,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Confetti/Pods-Confetti-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/MobileCenter/MobileCenterDistributeResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MobileCenter/MobileCenterDistributeResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MobileCenterDistributeResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -721,6 +733,7 @@
 				63FEA76F1ED0E8ED00F994B7 /* EventViewModel.swift in Sources */,
 				63FEA7691ED0E8ED00F994B7 /* Colors.swift in Sources */,
 				63FEA7731ED0E8ED00F994B7 /* FirebaseData.swift in Sources */,
+				6358F6E62072A26E00BB334E /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,7 +830,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.confetti.ConfettiKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -841,7 +855,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.confetti.ConfettiKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -955,7 +970,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.confetti.Confetti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -974,7 +990,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.confetti.Confetti;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -989,7 +1006,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.confetti.ConfettiUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Confetti;
 			};
 			name = Debug;
@@ -1004,7 +1022,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.confetti.ConfettiUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Confetti;
 			};
 			name = Release;
