@@ -55,7 +55,7 @@ class EventListViewController: UITableViewController, HeroStretchable {
         heroView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(heroTapped(_:))))
     }
     
-    func heroTapped(_ sender: Any) {
+    @objc func heroTapped(_ sender: Any) {
         guard let controller: EventDetailViewController = viewController("eventDetail") else {
             return
         }

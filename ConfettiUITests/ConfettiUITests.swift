@@ -40,7 +40,7 @@ class ConfettiUITests: XCTestCase {
         waitForExpectations(timeout: timeout) { error in
             if error != nil {
                 let message = "Failed to find \(element) after \(timeout) seconds."
-                self.recordFailure(withDescription: message, inFile: file, atLine: line, expected: true)
+                self.recordFailure(withDescription: message, inFile: file, atLine: Int(line), expected: true)
             }
         }
     }
