@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginTapped(_ sender: Any) {
         let loginManager = LoginManager()
-        loginManager.logIn([.publicProfile, .email], viewController: self) { loginResult in
+        loginManager.logIn(readPermissions: [.publicProfile, .email], viewController: self) { loginResult in
             switch loginResult {
             case .failed(let error):
                 print(error)

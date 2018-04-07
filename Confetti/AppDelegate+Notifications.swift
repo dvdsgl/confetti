@@ -3,7 +3,7 @@ import UserNotifications
 
 import ConfettiKit
 
-import MobileCenterPush
+import AppCenterPush
 
 extension AppDelegate {        
     

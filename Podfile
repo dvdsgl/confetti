@@ -2,7 +2,7 @@
 platform :ios, '10.3'
 
 def shared_pods
-  pod "DynamicColor", '~> 3.3'
+  pod "DynamicColor"
 end
 
 ["Confetti"].each do |t|
@@ -10,8 +10,8 @@ end
       use_frameworks!
       shared_pods
 
-      pod "AvatarImageView", '~> 2.0.3'
-      pod "SDWebImage", '~> 4.0.0'
+      pod "AvatarImageView"
+      pod "SDWebImage"
       pod "FRStretchImageView"
 
       pod 'FacebookCore'
@@ -25,9 +25,9 @@ end
       pod 'Firebase/Performance'
       pod 'FirebaseUI/Storage'
 
-      pod 'MobileCenter'
-      pod 'MobileCenter/MobileCenterDistribute'
-      pod 'MobileCenter/MobileCenterPush'
+      pod 'AppCenter'
+      pod 'AppCenter/Distribute'
+      pod 'AppCenter/Push'
     end
 end
 

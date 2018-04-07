@@ -6,7 +6,7 @@ import ConfettiKit
 import FirebaseAuth
 import Firebase
 
-import MobileCenterCrashes
+import AppCenterCrashes
 
 import FacebookLogin
 import Firebase
@@ -197,7 +197,7 @@ class ProfileViewController : UITableViewController, HeroStretchable {
     
     func loginWithFacebook() {
         let loginManager = LoginManager()
-        loginManager.logIn([.publicProfile, .email], viewController: self) { loginResult in
+        loginManager.logIn(readPermissions: [.publicProfile, .email], viewController: self) { loginResult in
             switch loginResult {
             case .failed(let error):
                 print(error)

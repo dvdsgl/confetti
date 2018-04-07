@@ -4,11 +4,11 @@ import FacebookCore
 
 import Firebase
 
-import MobileCenter
-import MobileCenterCrashes
-import MobileCenterAnalytics
-import MobileCenterDistribute
-import MobileCenterPush
+import AppCenter
+import AppCenterCrashes
+import AppCenterAnalytics
+import AppCenterDistribute
+import AppCenterPush
 
 import NotificationCenter
 import UserNotifications
@@ -92,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             MSPush.self
         ]
         
-        MSMobileCenter.start("9c903184-9f6f-44d8-b1b4-01750b951ece", withServices: activeServices)
+        MSAppCenter.start("9c903184-9f6f-44d8-b1b4-01750b951ece", withServices: activeServices)
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
