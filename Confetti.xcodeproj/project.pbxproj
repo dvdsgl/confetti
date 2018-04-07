@@ -28,6 +28,7 @@
 		63424F5A1EF72B0E00AD4736 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63424F591EF72B0E00AD4736 /* CALayer.swift */; };
 		63424F5C1EF7494F00AD4736 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63424F5B1EF7494F00AD4736 /* Contacts.swift */; };
 		635A66DB1EF6ED0D00970048 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635A66DA1EF6ED0D00970048 /* Globals.swift */; };
+		635BBE98207957A200C66BDE /* Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635BBE97207957A200C66BDE /* Migration.swift */; };
 		636BD6AB1EEB37610001A983 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636BD6AA1EEB37610001A983 /* Contact.swift */; };
 		6384DA481EE8D3F800223EC8 /* AppDelegate+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6384DA471EE8D3F800223EC8 /* AppDelegate+Notifications.swift */; };
 		638BA7961EDCF3E000C86919 /* CreateEventSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638BA7951EDCF3E000C86919 /* CreateEventSpec.swift */; };
@@ -116,6 +117,7 @@
 		63424F591EF72B0E00AD4736 /* CALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CALayer.swift; path = Views/CALayer.swift; sourceTree = "<group>"; };
 		63424F5B1EF7494F00AD4736 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		635A66DA1EF6ED0D00970048 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		635BBE97207957A200C66BDE /* Migration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Migration.swift; path = "/Users/david/Developer/confetti-swift/Confetti/Migration.swift"; sourceTree = "<absolute>"; };
 		636BD6AA1EEB37610001A983 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contact.swift; path = ../Confetti/Contact.swift; sourceTree = "<group>"; };
 		6375235E1ED0E26000DF8F5A /* FirebaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseData.swift; sourceTree = "<group>"; };
 		637523601ED0E2F100DF8F5A /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = ConfettiKit/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -292,6 +294,7 @@
 				63A8980A1EC13EA400D16214 /* Resources */,
 				635A66DA1EF6ED0D00970048 /* Globals.swift */,
 				63C759CB1EBE5A2400939D7B /* AppDelegate.swift */,
+				635BBE97207957A200C66BDE /* Migration.swift */,
 				6384DA471EE8D3F800223EC8 /* AppDelegate+Notifications.swift */,
 				63424F5B1EF7494F00AD4736 /* Contacts.swift */,
 				630D47301EEF5FEE00266FA8 /* View Models */,
@@ -595,6 +598,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -614,6 +618,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -729,6 +734,7 @@
 				63424F5A1EF72B0E00AD4736 /* CALayer.swift in Sources */,
 				63928AF61EF59EA600DB0909 /* EventDetailViewController.swift in Sources */,
 				3C0109DB1EE8DDE200BF206A /* CountdownPillView.swift in Sources */,
+				635BBE98207957A200C66BDE /* Migration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

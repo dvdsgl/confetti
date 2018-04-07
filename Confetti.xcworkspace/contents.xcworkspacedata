@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/david/Developer/confetti-swift/Confetti/Migration.swift">
+   </FileRef>
+   <FileRef
       location = "group:Confetti.xcodeproj">
    </FileRef>
    <FileRef
