@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cYo-MV-K1n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cYo-MV-K1n">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -13,9 +13,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-Light</string>
-        </array>
         <array key="secret_garden.otf">
             <string>secret_garden</string>
         </array>
@@ -146,7 +143,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="fM6-Iw-4D0" firstAttribute="top" secondItem="gXM-wy-16E" secondAttribute="bottom" constant="14" id="7jU-7M-2nv"/>
                                     <constraint firstItem="fM6-Iw-4D0" firstAttribute="width" secondItem="gXM-wy-16E" secondAttribute="width" id="GWJ-EV-QNK"/>
@@ -155,7 +151,7 @@
                                     <constraint firstItem="sFA-6E-6nD" firstAttribute="top" secondItem="fM6-Iw-4D0" secondAttribute="bottom" constant="14" id="NpV-Hw-HMR"/>
                                     <constraint firstItem="sFA-6E-6nD" firstAttribute="height" secondItem="gXM-wy-16E" secondAttribute="height" id="OHq-v9-e1t"/>
                                     <constraint firstItem="gXM-wy-16E" firstAttribute="centerX" secondItem="kPP-I7-M0V" secondAttribute="centerX" id="QFY-kX-Ipy"/>
-                                    <constraint firstAttribute="bottom" secondItem="VRc-Ks-A4p" secondAttribute="bottom" constant="20" symbolic="YES" id="T17-DM-DEj"/>
+                                    <constraint firstAttribute="bottom" secondItem="VRc-Ks-A4p" secondAttribute="bottom" constant="20" id="T17-DM-DEj"/>
                                     <constraint firstItem="sFA-6E-6nD" firstAttribute="centerX" secondItem="gXM-wy-16E" secondAttribute="centerX" id="TqE-m8-ZSw"/>
                                     <constraint firstItem="fM6-Iw-4D0" firstAttribute="centerY" secondItem="kPP-I7-M0V" secondAttribute="centerY" constant="-20" id="eam-Fg-MY1"/>
                                     <constraint firstItem="fM6-Iw-4D0" firstAttribute="height" secondItem="gXM-wy-16E" secondAttribute="height" id="hQI-Nj-6Oa"/>
@@ -164,7 +160,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1az-L2-6eU" userLabel="Top Container">
-                                <rect key="frame" x="0.0" y="-2" width="414" height="368"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAE-gH-Zt7" customClass="ConfettiMachineView" customModule="Confetti" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
@@ -195,8 +191,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1az-L2-6eU" firstAttribute="top" secondItem="5jo-T2-61j" secondAttribute="bottom" constant="-22" id="CLV-mE-D7U"/>
-                            <constraint firstItem="O3G-0Z-9Ap" firstAttribute="top" secondItem="kPP-I7-M0V" secondAttribute="bottom" id="Ca4-lf-dTh"/>
+                            <constraint firstItem="1az-L2-6eU" firstAttribute="top" secondItem="SLT-6B-ne5" secondAttribute="top" id="CLV-mE-D7U"/>
+                            <constraint firstAttribute="bottom" secondItem="kPP-I7-M0V" secondAttribute="bottom" id="Ca4-lf-dTh"/>
                             <constraint firstItem="kPP-I7-M0V" firstAttribute="leading" secondItem="SLT-6B-ne5" secondAttribute="leading" id="IWj-vT-0sx"/>
                             <constraint firstAttribute="trailing" secondItem="1az-L2-6eU" secondAttribute="trailing" id="TBk-ye-cCc"/>
                             <constraint firstItem="1az-L2-6eU" firstAttribute="leading" secondItem="SLT-6B-ne5" secondAttribute="leading" id="XDK-51-885"/>
@@ -242,13 +238,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jud-hQ-N8I">
-                                            <rect key="frame" x="72" y="19" width="258" height="21"/>
+                                            <rect key="frame" x="80" y="19" width="244" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nwU-YD-ntk" customClass="AvatarImageView" customModule="AvatarImageView">
-                                            <rect key="frame" x="12" y="15" width="50" height="50"/>
+                                            <rect key="frame" x="20" y="15" width="50" height="50"/>
                                             <color key="backgroundColor" red="1" green="0.0099468241871529806" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="30K-mH-Uhx"/>
@@ -256,13 +252,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETe-7L-0a6">
-                                            <rect key="frame" x="72" y="42" width="258" height="20"/>
+                                            <rect key="frame" x="80" y="42" width="244" height="20"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="auS-kG-FO7" customClass="CountdownLabel" customModule="Confetti" customModuleProvider="target">
-                                            <rect key="frame" x="340" y="30" width="60" height="20"/>
+                                            <rect key="frame" x="334" y="30" width="60" height="20"/>
                                             <color key="backgroundColor" red="0.9129173755645752" green="0.19869227707386017" blue="0.53340387344360352" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="Ucb-Va-yOc"/>
@@ -287,8 +283,8 @@
                                         <constraint firstItem="Jud-hQ-N8I" firstAttribute="trailing" secondItem="auS-kG-FO7" secondAttribute="leading" constant="-10" id="dKW-m8-Cc0"/>
                                         <constraint firstItem="nwU-YD-ntk" firstAttribute="centerY" secondItem="37f-cq-3Eg" secondAttribute="centerY" id="eRi-fG-aGX"/>
                                         <constraint firstItem="ETe-7L-0a6" firstAttribute="leading" secondItem="Jud-hQ-N8I" secondAttribute="leading" id="fQI-SF-NmN"/>
-                                        <constraint firstItem="nwU-YD-ntk" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" constant="4" id="oAh-qg-Nv5"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="auS-kG-FO7" secondAttribute="trailing" constant="6" id="u2E-B3-rER"/>
+                                        <constraint firstItem="nwU-YD-ntk" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" id="oAh-qg-Nv5"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="auS-kG-FO7" secondAttribute="trailing" id="u2E-B3-rER"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -358,7 +354,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add birthdays, Mother's Day, and more. Confetti reminds you and helps you celebrate." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8b-lu-xGJ">
-                                    <rect key="frame" x="48" y="109" width="224" height="46.666666666666686"/>
+                                    <rect key="frame" x="48" y="109.00000000000001" width="224" height="46.666666666666671"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -672,7 +668,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stuart Bray" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHz-SW-ETh">
-                                                    <rect key="frame" x="70" y="20" width="326" height="21"/>
+                                                    <rect key="frame" x="70" y="20" width="314" height="21"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -898,7 +894,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JIB-Lv-8eq">
-                                            <rect key="frame" x="20" y="0.0" width="379" height="40"/>
+                                            <rect key="frame" x="20" y="0.0" width="374" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
