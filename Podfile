@@ -38,5 +38,5 @@ end
 
 target 'ConfettiUITests' do
   use_frameworks!
-  pod 'VSMobileCenterExtensions'
+  pod 'AppCenterXCUITestExtensions'
 end

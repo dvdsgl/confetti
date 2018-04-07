@@ -11,6 +11,7 @@ PODS:
     - AppCenter/Core
   - AppCenter/Push (1.5.0):
     - AppCenter/Core
+  - AppCenterXCUITestExtensions (1.0.0)
   - AvatarImageView (2.1.1)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
@@ -110,12 +111,12 @@ PODS:
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
-  - VSMobileCenterExtensions (0.9.1)
 
 DEPENDENCIES:
   - AppCenter
   - AppCenter/Distribute
   - AppCenter/Push
+  - AppCenterXCUITestExtensions
   - AvatarImageView
   - DynamicColor
   - FacebookCore
@@ -129,11 +130,11 @@ DEPENDENCIES:
   - FirebaseUI/Storage
   - FRStretchImageView
   - SDWebImage
-  - VSMobileCenterExtensions
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AppCenter
+    - AppCenterXCUITestExtensions
     - AvatarImageView
     - Bolts
     - DynamicColor
@@ -160,10 +161,10 @@ SPEC REPOS:
     - nanopb
     - Protobuf
     - SDWebImage
-    - VSMobileCenterExtensions
 
 SPEC CHECKSUMS:
   AppCenter: 42c293f0de27e173aacd600a55a49da5317cd40e
+  AppCenterXCUITestExtensions: 8825ed941664fa21d6740a5ed6928a84c06623ac
   AvatarImageView: 50618694f9ce37d07fd0250145e733b34197fb5b
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   DynamicColor: c7adcfe871781a2b39877a5774e452ba51b79eb3
@@ -190,8 +191,7 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
-  VSMobileCenterExtensions: 5f8b4b284f6817c1d58e860bf7ad0945f1244733
 
-PODFILE CHECKSUM: 9d67d6c2c983b9cd7fe17cc10e1ab9e8610f3a8a
+PODFILE CHECKSUM: 16b54b214dc716fcbc7760dc5223ed497e986fb9
 
 COCOAPODS: 1.5.0

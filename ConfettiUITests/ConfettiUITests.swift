@@ -1,5 +1,5 @@
 import XCTest
-import VSMobileCenterExtensions
+import AppCenterXCUITestExtensions
 
 var screenshotsEnabledIfZero = 0
 
@@ -17,7 +17,7 @@ func step(_ label: String, run: (()-> ())? = nil) {
     run?()
     
     if screenshotsEnabled {
-        MCLabel.labelStep(label)
+        ACTLabel.labelStep(label)
     }
 }
 
@@ -28,7 +28,7 @@ class ConfettiUITests: XCTestCase {
         
         let app = XCUIApplication()
         app.launchArguments = ["test"]
-        app.launch()
+        ACTLaunch.launch(app)
     }
     
     func waitFor(element: XCUIElement, timeout: TimeInterval = 5,  file: String = #file, line: UInt = #line) {
