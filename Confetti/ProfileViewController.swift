@@ -12,8 +12,7 @@ import FacebookLogin
 import Firebase
 import FirebaseAuth
 
-protocol HeroStretchable {
-    var tableView: UITableView! { get }
+protocol HeroStretchable where Self: UITableViewController {
     var heroView: HeroView! { get }
 }
 
@@ -28,6 +27,11 @@ extension HeroStretchable {
         tableView.addSubview(heroView)
         tableView.contentInset = UIEdgeInsets(top: tableHeaderHeight, left: 0, bottom: 0, right: 0)
         tableView.contentOffset = CGPoint(x: 0, y: -tableHeaderHeight)
+        
+        // Make stretchy header not be too tall
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior = .never
+        }
     }
     
     // Call this in scrollViewDidScroll
