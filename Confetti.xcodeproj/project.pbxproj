@@ -403,7 +403,6 @@
 				63A899751EBE64A200C5FB04 /* Frameworks */,
 				63A899761EBE64A200C5FB04 /* Headers */,
 				63A899771EBE64A200C5FB04 /* Resources */,
-				EB6267965A95DF1DE7CD9CDD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -445,7 +444,6 @@
 				63C759E61EBE5A2400939D7B /* Frameworks */,
 				63C759E71EBE5A2400939D7B /* Resources */,
 				C5DCB7B85ED2E0F9050276EA /* [CP] Embed Pods Frameworks */,
-				A953C7C69AB015E32DEB0B81 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -631,30 +629,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Confetti/Pods-Confetti-resources.sh",
-				$PODS_CONFIGURATION_BUILD_DIR/AppCenter/AppCenterDistributeResources.bundle,
+				"${PODS_CONFIGURATION_BUILD_DIR}/AppCenter/AppCenterDistributeResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppCenterDistributeResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Confetti/Pods-Confetti-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A953C7C69AB015E32DEB0B81 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConfettiUITests/Pods-ConfettiUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C5DCB7B85ED2E0F9050276EA /* [CP] Embed Pods Frameworks */ = {
@@ -673,21 +656,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConfettiUITests/Pods-ConfettiUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EB6267965A95DF1DE7CD9CDD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConfettiKit/Pods-ConfettiKit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F07FEC67F180936878AF5127 /* [CP] Check Pods Manifest.lock */ = {
