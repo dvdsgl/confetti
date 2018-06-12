@@ -96,10 +96,11 @@ public class UserViewModel {
         })
     }
     
-    public func addEvent(_ event: Event) {
+    public func addEvent(_ event: Event) -> Event {
         let child = eventsNode.childByAutoId()
         event.key = child.key
         child.setValue(event.firebaseValue)
+        return event
     }
     
     public func deleteEvent(_ event: Event) {

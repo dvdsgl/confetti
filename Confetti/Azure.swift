@@ -3,14 +3,42 @@ import SQLite
 import Foundation
 import UIKit
 
-struct OldEvent {
-    let person: Person
+import ConfettiKit
+
+struct AkavacheOrAzureEvent {
+    let person: AkavacheOrAzurePerson
     let date: Date
-    let occasion: String
+    let occasionKind: String
     let hasYear: Bool
+    
+    func toEvent() -> Event {
+        return Event(person: person.toPerson(), occasion: occasion)
+    }
+    
+    var occasion: Occasion {
+        get {
+            let calendar = Calendar.current
+            let year = calendar.component(.year, from: date)
+            let month = calendar.component(.month, from: date)
+            let day = calendar.component(.day, from: date)
+            
+            switch occasionKind {
+            case "Birthday":
+                return .birthday(month: month, day: day, year: hasYear ? year : nil)
+            case "Anniversary":
+                return .anniversary(month: month, day: day, year: hasYear ? year : nil)
+            case "MothersDay":
+                return .holiday(holiday: .mothersDay)
+            case "FathersDay":
+                return .holiday(holiday: .fathersDay)
+            default:
+                fatalError("Unexpected occasion value")
+            }
+        }
+    }
 }
 
-struct Person: Codable {
+struct AkavacheOrAzurePerson: Codable {
     let id, firstName, lastName: String
     let nickName, photoKey: String?
     let emails: [String]
@@ -27,7 +55,7 @@ struct Person: Codable {
     }
     
     init(data: Data) throws {
-        self = try JSONDecoder().decode(Person.self, from: data)
+        self = try JSONDecoder().decode(AkavacheOrAzurePerson.self, from: data)
     }
     
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
@@ -48,6 +76,16 @@ struct Person: Codable {
     func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
         return String(data: try self.jsonData(), encoding: encoding)
     }
+    
+    func toPerson() -> Person {
+        return Person(
+            name: "\(firstName) \(lastName)".trimmingCharacters(in: .whitespacesAndNewlines),
+            nickname: nickName,
+            emails: emails.map{ Labeled($0) },
+            phones: phoneNumbers.map{ Labeled($0.number, label: $0.kind.description) },
+            photoUUID: nil
+        )
+    }
 }
 
 struct PhoneNumber: Codable {
@@ -60,9 +98,9 @@ struct PhoneNumber: Codable {
     }
 }
 
-class Migration {
-    static func getAzureEasyTableEvents() throws -> [OldEvent] {
-        var events = [OldEvent]()
+class Azure {
+    static func getEasyTableEvents() throws -> [AkavacheOrAzureEvent] {
+        var events = [AkavacheOrAzureEvent]()
         
         let documents = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let azuredb = documents.appendingPathComponent("confetti.db")
@@ -71,9 +109,9 @@ class Migration {
         for event in try db.prepare(Table("EventModel")) {
             let occasion = event[Expression<String>("occasion")]
             let date = Date(timeIntervalSince1970: Double(event[Expression<Int64>("date")]))
-            let person = try! Person(event[Expression<String>("person")])
+            let person = try! AkavacheOrAzurePerson(event[Expression<String>("person")])
             let hasYear = event[Expression<Bool>("specifiesYear")]
-            events.append(OldEvent(person: person, date: date, occasion: occasion, hasYear: hasYear))
+            events.append(AkavacheOrAzureEvent(person: person, date: date, occasionKind: occasion, hasYear: hasYear))
         }
         
         return events

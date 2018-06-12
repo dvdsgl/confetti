@@ -28,7 +28,6 @@ end
       pod 'AppCenter'
       pod 'AppCenter/Distribute'
       pod 'AppCenter/Push'
-      
       pod 'SQLite.swift'
     end
 end

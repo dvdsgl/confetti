@@ -136,7 +136,7 @@ DEPENDENCIES:
   - SQLite.swift
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AppCenter
     - AppCenterXCUITestExtensions
     - AvatarImageView
@@ -198,6 +198,6 @@ SPEC CHECKSUMS:
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
 
-PODFILE CHECKSUM: 32932be4969eb6c677f1951697d0b1cfa6fdbd58
+PODFILE CHECKSUM: a62fe469b07871a1b42a67d60b3936452a299eb0
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

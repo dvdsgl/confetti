@@ -50,6 +50,8 @@ class EventListViewController: UITableViewController, HeroStretchable {
             self.updateWith(events: $0)
         }
         
+        UserViewModel.current.performMigrations()
+        
         registrations.append(onEventsChanged)
         
         heroView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(heroTapped(_:))))

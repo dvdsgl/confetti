@@ -108,11 +108,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         FirebaseApp.configure()
         Database.database().isPersistenceEnabled = true
         
-        if let azureEvents = try? Migration.getAzureEasyTableEvents() {
-            // we got old azure events
-            print(azureEvents)
-        }
-        
         startMobileCenter()
                 
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
