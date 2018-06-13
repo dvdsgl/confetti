@@ -35,11 +35,11 @@ class EventTableViewCell: UITableViewCell {
     }
 
     public func setEvent(_ event: EventViewModel) {
-        nameLabel.text = event.person.name
+        nameLabel.text = event.person.fullName
         descriptionLabel.text = event.description
 
         photoView.configuration = AvatarConfig()
-        photoView.dataSource = AvatarData(name: event.person.name)
+        photoView.dataSource = AvatarData(name: event.person.fullName)
 
         event.displayImage(in: photoView)
         

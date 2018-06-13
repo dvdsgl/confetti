@@ -15,7 +15,7 @@ struct AkavacheOrAzureEvent {
         return Event(person: person.toPerson(), occasion: occasion)
     }
     
-    var occasion: Occasion {
+    var occasion: OccasionPattern {
         get {
             let calendar = Calendar.current
             let year = calendar.component(.year, from: date)
@@ -28,9 +28,9 @@ struct AkavacheOrAzureEvent {
             case "Anniversary":
                 return .anniversary(month: month, day: day, year: hasYear ? year : nil)
             case "MothersDay":
-                return .holiday(holiday: .mothersDay)
+                return .holiday(holiday: .motherSDay)
             case "FathersDay":
-                return .holiday(holiday: .fathersDay)
+                return .holiday(holiday: .fatherSDay)
             default:
                 fatalError("Unexpected occasion value")
             }
@@ -83,10 +83,11 @@ struct AkavacheOrAzurePerson: Codable {
     
     func toPerson() -> Person {
         return Person(
-            name: fullName,
+            emails: emails,
+            firstName: firstName,
+            lastName: lastName,
             nickname: nickName,
-            emails: emails.map{ Labeled($0) },
-            phones: phoneNumbers.map{ Labeled($0.number, label: $0.kind.description) },
+            phones: phoneNumbers.map{ Phone(label: $0.kind.description, value: $0.number) },
             photoUUID: nil
         )
     }

@@ -11,7 +11,7 @@ import FirebaseStorageUI
 import SDWebImage
 
 extension EventViewModel {
-    static fileprivate var imageCache = [UUID: UIImage]()
+    static fileprivate var imageCache = [String: UIImage]()
     
     func displayImage(in view: UIImageView) {
         if let cached = cachedImage {
@@ -28,7 +28,7 @@ extension EventViewModel {
     
     var imageReference: StorageReference? {
         guard let uuid = event.person.photoUUID else { return nil }
-        return imagesNode.child(uuid.uuidString)
+        return imagesNode.child(uuid)
     }
     
     fileprivate var imagesNode: StorageReference {
@@ -41,8 +41,8 @@ extension EventViewModel {
     }
     
     func saveImage(data: Data) {
-        let uuid = UUID() // we always allocate a new image, rather than replacing
-        let imageRef = imagesNode.child(uuid.uuidString)
+        let uuid = UUID().uuidString // we always allocate a new image, rather than replacing
+        let imageRef = imagesNode.child(uuid)
         
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"

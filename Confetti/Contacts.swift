@@ -5,7 +5,15 @@ import Contacts
 import ConfettiKit
 
 extension CNContact: Contact {
-    public var name: String {
+    public var firstName: String {
+        return givenName
+    }
+    
+    public var lastName: String? {
+        return familyName
+    }
+    
+    public var fullName: String {
         return CNContactFormatter.string(from: self, style: .fullName)!
     }
     
@@ -20,15 +28,13 @@ extension CNContact: Contact {
         return nil
     }
     
-    public var emails: [Labeled<String>] {
-        return emailAddresses.map {
-            Labeled<String>($0.value as String, label: $0.label)
-        }
+    public var emails: [String] {
+        return emailAddresses.map { $0.value as String }
     }
     
-    public var phones: [Labeled<String>] {
+    public var phones: [Phone] {
         return phoneNumbers.map {
-            Labeled<String>($0.value.stringValue, label: $0.label)
+            Phone(label: $0.label, value: $0.value.stringValue)
         }
     }
 }
@@ -93,8 +99,10 @@ struct TestContactStore: ContactStore {
         
         return names.map { (name, daysAway) in
             let nick = name.components(separatedBy: " ").first!
+            let names = name.components(separatedBy: " ")
             var contact = ManualContact(
-                name,
+                firstName: names[0],
+                lastName: names[1],
                 nick: nick,
                 imageSource: .url("https://confettiapp.com/v1/test/faces/\(nick.lowercased()).jpg")
             )
@@ -111,7 +119,7 @@ struct TestContactStore: ContactStore {
         
         if !query.isEmpty {
             filtered = filtered.filter { contact in
-                return contact.name.lowercased().contains(query.lowercased())
+                return contact.fullName.lowercased().contains(query.lowercased())
             }
         }
         

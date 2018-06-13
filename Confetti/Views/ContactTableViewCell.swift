@@ -48,10 +48,10 @@ class ContactTableViewCell: UITableViewCell {
     
     var contact: Contact! {
         didSet {
-            nameLabel.text = contact.name
+            nameLabel.text = contact.fullName
             
             photoView.configuration = AvatarConfig()
-            photoView.dataSource = AvatarData(name: contact.name)
+            photoView.dataSource = AvatarData(name: contact.fullName)
             photoView.displayContact(contact)
         }
     }

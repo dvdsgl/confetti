@@ -2,19 +2,19 @@ import Foundation
 
 public class HolidayViewModel: EventViewModel {
     
-    static let nextOccurrence: [Region: [Holiday: DateComponents]] = [
+    static let nextOccurrence: [Region: [OccasionKind: DateComponents]] = [
         .usa: [
             // Father's Day is the third Sunday of June
-            .fathersDay: DateComponents(month: 6, weekday: 1, weekdayOrdinal: 3),
+            .fatherSDay: DateComponents(month: 6, weekday: 1, weekdayOrdinal: 3),
             // Father's Day is the second Sunday in May
-            .mothersDay: DateComponents(month: 5, weekday: 1, weekdayOrdinal: 2)
+            .motherSDay: DateComponents(month: 5, weekday: 1, weekdayOrdinal: 2)
         ]
     ]
 
-    public let holiday: Holiday
+    public let holiday: OccasionKind
     public let region = Region.usa
     
-    public init(_ event: Event, holiday: Holiday) {
+    public init(_ event: Event, holiday: OccasionKind) {
         self.holiday = holiday
         super.init(event)
     }

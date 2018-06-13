@@ -72,7 +72,8 @@ class ProfileViewController : UITableViewController, HeroStretchable {
         ])
         
         let anonymous = (title: "Anonymous", actions: [
-            Action.loginWithFacebook
+            Action.loginWithFacebook,
+            .logout
         ])
         
         let debug = (title: "Debug", actions: [

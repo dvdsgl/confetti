@@ -6,6 +6,8 @@ import ConfettiKit
 import Firebase
 import FirebasePerformance
 
+import CodableFirebase
+
 // TODO Figure out how to get this into ConfettiKit
 // I couldn't figure out how to link Firebase twice
 public class UserViewModel {
@@ -79,28 +81,30 @@ public class UserViewModel {
 
     private func onEventsUpdated(_ success: @escaping ([Event]) -> ()) -> UInt {
         let trace = Performance.startTrace(name: "UserViewModel.getEvents")
-        
-        return eventsNode.observe(.value, with: { snapshot in
+ 
+        return eventsNode.observe(DataEventType.value, with: { (snapshot: DataSnapshot) in
             trace?.stop()
             
             var events = [Event]()
             for eventNode in snapshot.children.allObjects as! [DataSnapshot] {
-                if let eventDict = eventNode.value as? [String: Any?] {
-                    if let event = Event.fromFirebaseValue(eventDict) {
-                        event.key = eventNode.key
-                        events.append(event)
+                if let value = eventNode.value {
+                    if let event = try? FirebaseDecoder().decode(Event.self, from: value) {
+                        events.append(event.with(key: eventNode.key))
                     }
                 }
             }
+            
             success(events)
         })
     }
     
     public func addEvent(_ event: Event) -> Event {
         let child = eventsNode.childByAutoId()
-        event.key = child.key
-        child.setValue(event.firebaseValue)
-        return event
+        let keyedEvent = event.with(key: child.key)
+
+        child.setValue(try! FirebaseEncoder().encode(keyedEvent))
+        
+        return keyedEvent
     }
     
     public func deleteEvent(_ event: Event) {
@@ -110,7 +114,9 @@ public class UserViewModel {
     
     func updateEvent(_ event: Event) {
         guard let key = event.key else { return }
-        eventsNode.child(key).setValue(event.firebaseValue)
+        
+        let data = try! FirebaseEncoder().encode(event)
+        eventsNode.child(key).setValue(data)
     }
     public var profilePhotoUUID: UUID?
     

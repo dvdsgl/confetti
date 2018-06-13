@@ -11,3 +11,5 @@ if ! hash mobile-center 2>/dev/null; then
 fi
 
 pod install --repo-update
+
+npm install

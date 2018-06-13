@@ -43,7 +43,7 @@ class HeroView: UIView {
         event.displayImage(in: heroImage)
         pillView.event = event
         
-        contentView.backgroundColor = Colors.accentFor(event.person.name)
+        contentView.backgroundColor = Colors.accentFor(event.person.fullName)
         
         let hasImage = event.person.photoUUID != nil
         topShade.isHidden = !hasImage

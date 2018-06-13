@@ -113,7 +113,7 @@ class EventDetailViewController : UITableViewController,
         }
     }
     
-    var preferredPhoneNumbers: [Labeled<String>] {
+    var preferredPhoneNumbers: [Phone] {
         let weightOfLabel = [
             CNLabelPhoneNumberiPhone: 3,
             CNLabelPhoneNumberMobile: 2,
@@ -121,14 +121,14 @@ class EventDetailViewController : UITableViewController,
             CNLabelHome: -1
         ]
         
-        let weigh: (Labeled<String>) -> Int = { weightOfLabel[$0.label ?? ""] ?? 0 }
+        let weigh: (Phone) -> Int = { weightOfLabel[$0.label ?? ""] ?? 0 }
         
         return event.person.phones.sorted { weigh($0) > weigh($1) }
     }
     
     func cleanedPhoneNumber(_ original: String) -> String {
         var cleaned = original
-        for bad in " ()-".characters {
+        for bad in " ()-" {
             cleaned = cleaned.replacingOccurrences(of: "\(bad)", with: "")
         }
         return cleaned

@@ -10,7 +10,7 @@ public class EventViewModel {
     static let soonDaysAway = 20
     
     public static func fromEvent(_ event: Event) -> EventViewModel {
-        switch event.occasion {
+        switch event.occasion.pattern {
         case .holiday(let holiday):
             return HolidayViewModel(event, holiday: holiday)
         case .birthday(_, _, _):

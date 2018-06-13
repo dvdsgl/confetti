@@ -21,7 +21,7 @@ public class BirthdayViewModel: EventViewModel {
     }
     
     var nextAge: Int? {
-        guard case let .birthday(month, day, maybeYear) = event.occasion else { return nil }
+        guard case let .birthday(month, day, maybeYear) = event.occasion.pattern else { return nil }
         guard let year = maybeYear else { return nil }
         
         let components = DateComponents(year: year, month: month, day: day)
@@ -31,7 +31,7 @@ public class BirthdayViewModel: EventViewModel {
     }
     
     override var nextMatchingDateComponents: DateComponents? {
-        guard case let .birthday(month, day, _) = event.occasion else { return nil }
+        guard case let .birthday(month, day, _) = event.occasion.pattern else { return nil }
         
         return DateComponents(month: month, day: day)
     }

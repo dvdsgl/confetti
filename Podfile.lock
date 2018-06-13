@@ -19,6 +19,7 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - CodableFirebase (0.2.0)
   - DynamicColor (4.0.2)
   - FacebookCore (0.3.0):
     - Bolts (~> 1.8)
@@ -121,6 +122,7 @@ DEPENDENCIES:
   - AppCenter/Push
   - AppCenterXCUITestExtensions
   - AvatarImageView
+  - CodableFirebase
   - DynamicColor
   - FacebookCore
   - FacebookLogin
@@ -141,6 +143,7 @@ SPEC REPOS:
     - AppCenterXCUITestExtensions
     - AvatarImageView
     - Bolts
+    - CodableFirebase
     - DynamicColor
     - FacebookCore
     - FacebookLogin
@@ -172,6 +175,7 @@ SPEC CHECKSUMS:
   AppCenterXCUITestExtensions: 8825ed941664fa21d6740a5ed6928a84c06623ac
   AvatarImageView: 50618694f9ce37d07fd0250145e733b34197fb5b
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  CodableFirebase: 4b865f58c583a6c0ef8c81c6b12c6bf15ebd9181
   DynamicColor: c7adcfe871781a2b39877a5774e452ba51b79eb3
   FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
   FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
@@ -198,6 +202,6 @@ SPEC CHECKSUMS:
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
 
-PODFILE CHECKSUM: a62fe469b07871a1b42a67d60b3936452a299eb0
+PODFILE CHECKSUM: 468694675914897918c29816585b869174cc58e7
 
 COCOAPODS: 1.5.3

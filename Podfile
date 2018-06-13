@@ -1,6 +1,9 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '10.3'
 
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
 def shared_pods
   pod "DynamicColor"
 end
@@ -29,6 +32,7 @@ end
       pod 'AppCenter/Distribute'
       pod 'AppCenter/Push'
       pod 'SQLite.swift'
+      pod 'CodableFirebase'
     end
 end
 

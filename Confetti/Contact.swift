@@ -21,27 +21,40 @@ public struct Labeled<T> {
 public protocol Contact {
     var imageSource: ImageSource? { get }
     
-    var name: String { get }
+    var firstName: String { get }
+    var lastName: String? { get }
+    
     var nick: String? { get }
     var birthday: DateComponents? { get }
     
-    var emails: [Labeled<String>] { get }
-    var phones: [Labeled<String>] { get }
+    var emails: [String] { get }
+    var phones: [Phone] { get }
+}
+
+extension Contact {
+    public var fullName: String {
+        return "\(firstName) \(lastName ?? "")".trimmingCharacters(in: .whitespaces)
+    }
+    
+    public var preferredName: String { return nick ?? fullName }
 }
 
 public struct ManualContact: Contact {
-    public var name: String
+    public var firstName: String
+    public var lastName: String?
+    
     public var nick: String?
     
     public var birthday: DateComponents?
     
-    public var emails = [Labeled<String>]()
-    public var phones = [Labeled<String>]()
+    public var emails = [String]()
+    public var phones = [Phone]()
     
     public let imageSource: ImageSource?
     
-    public init(_ name: String, nick: String? = nil, imageSource: ImageSource? = nil) {
-        self.name = name
+    public init(firstName: String, lastName: String? = nil, nick: String? = nil, imageSource: ImageSource? = nil) {
+        self.firstName = firstName
+        self.lastName = lastName
         self.nick = nick
         self.imageSource = imageSource
     }

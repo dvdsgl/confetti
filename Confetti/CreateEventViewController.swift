@@ -18,7 +18,8 @@ extension Contact {
         }
         
         return ManualContact(
-            name,
+            firstName: firstName,
+            lastName: lastName,
             nick: nick,
             imageSource: imageSource
         )
@@ -50,7 +51,7 @@ class CreateEventViewController: UIViewController,
         
         init(contact: Contact) {
             avatar = contact.image
-            name = contact.name
+            name = contact.fullName
         }
     }
     
@@ -97,14 +98,14 @@ class CreateEventViewController: UIViewController,
     
     @IBAction func saveButton(_ sender: Any) {
         let date = Calendar.current.dateComponents([.year, .month, .day], from: datePicker.date)
-        let event = createEventSpec.createEvent(
+        var event = createEventSpec.createEvent(
             contact: contact,
             month: date.month!,
             day: date.day!,
             year: date.year
         )
         
-        UserViewModel.current.addEvent(event)
+        event = UserViewModel.current.addEvent(event)
         
         let viewModel = EventViewModel.fromEvent(event)
         if let imageData = contact.image?.sd_imageData() {

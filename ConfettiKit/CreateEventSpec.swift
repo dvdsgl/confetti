@@ -3,10 +3,12 @@ import Foundation
 extension Contact {
     var person: Person {
         return Person(
-            name: name,
-            nickname: nick,
             emails: emails,
-            phones: phones
+            firstName: firstName,
+            lastName: lastName,
+            nickname: nick,
+            phones: phones,
+            photoUUID: nil
         )
     }
 }
@@ -61,12 +63,12 @@ public struct CreateMothersDaySpec: CreateEventSpec {
     
     public func createEvent(contact: Contact, month: Int, day: Int, year: Int?) -> Event {
         return Event(person: contact.person,
-                     occasion: .holiday(holiday: .mothersDay)
+                     occasion: .holiday(holiday: .motherSDay)
         )
     }
     
     public func initialDateFor(contact: Contact) -> DateComponents? {
-        return HolidayViewModel.nextOccurrence[.usa]?[.mothersDay]
+        return HolidayViewModel.nextOccurrence[.usa]?[.motherSDay]
     }
 }
 
@@ -78,11 +80,11 @@ public struct CreateFathersDaySpec: CreateEventSpec {
     
     public func createEvent(contact: Contact, month: Int, day: Int, year: Int?) -> Event {
         return Event(person: contact.person,
-                     occasion: .holiday(holiday: .fathersDay)
+                     occasion: .holiday(holiday: .fatherSDay)
         )
     }
     
     public func initialDateFor(contact: Contact) -> DateComponents? {
-        return HolidayViewModel.nextOccurrence[.usa]?[.fathersDay]
+        return HolidayViewModel.nextOccurrence[.usa]?[.fatherSDay]
     }
 }
