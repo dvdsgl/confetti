@@ -39,8 +39,8 @@ struct AkavacheOrAzureEvent {
 }
 
 struct AkavacheOrAzurePerson: Codable {
-    let id, firstName, lastName: String
-    let nickName, photoKey: String?
+    let id, firstName : String
+    let nickName, photoKey, lastName: String?
     let emails: [String]
     let phoneNumbers: [PhoneNumber]
     
@@ -77,9 +77,13 @@ struct AkavacheOrAzurePerson: Codable {
         return String(data: try self.jsonData(), encoding: encoding)
     }
     
+    var fullName: String {
+        return "\(firstName) \(lastName ?? "")".trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
     func toPerson() -> Person {
         return Person(
-            name: "\(firstName) \(lastName)".trimmingCharacters(in: .whitespacesAndNewlines),
+            name: fullName,
             nickname: nickName,
             emails: emails.map{ Labeled($0) },
             phones: phoneNumbers.map{ Labeled($0.number, label: $0.kind.description) },
