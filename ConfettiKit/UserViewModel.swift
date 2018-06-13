@@ -82,7 +82,7 @@ public class UserViewModel {
     private func onEventsUpdated(_ success: @escaping ([Event]) -> ()) -> UInt {
         let trace = Performance.startTrace(name: "UserViewModel.getEvents")
  
-        return eventsNode.observe(DataEventType.value, with: { (snapshot: DataSnapshot) in
+        return eventsNode.observe(.value, with: { snapshot in
             trace?.stop()
             
             var events = [Event]()
