@@ -73,26 +73,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     var window: UIWindow?
-    
-    func startMobileCenter() {
-        let services: [RunMode: [AnyClass]] = [
-            .testRun:  [
+   
+    var appCenterServices: [AnyClass] {
+        switch runMode {
+        case .testRun:
+            return [
                 MSAnalytics.self,
                 MSCrashes.self,
-                // Distribution is turned off for tests
-                // MSDistribute.self,
+                // MSDistribute.self, // Distribution is turned off for tests
                 MSPush.self
             ]
-        ]
-        
-        let activeServices = services[runMode] ?? [
-            MSAnalytics.self,
-            MSCrashes.self,
-            MSDistribute.self,
-            MSPush.self
-        ]
-        
-        MSAppCenter.start("9c903184-9f6f-44d8-b1b4-01750b951ece", withServices: activeServices)
+        default:
+            return [
+                MSAnalytics.self,
+                MSCrashes.self,
+                MSDistribute.self,
+                MSPush.self
+            ]
+        }
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -108,7 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         FirebaseApp.configure()
         Database.database().isPersistenceEnabled = true
         
-        startMobileCenter()
+        MSAppCenter.start("9c903184-9f6f-44d8-b1b4-01750b951ece", withServices: appCenterServices)
                 
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
