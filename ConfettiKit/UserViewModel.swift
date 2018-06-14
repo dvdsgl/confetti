@@ -8,6 +8,8 @@ import FirebasePerformance
 
 import CodableFirebase
 
+import AppCenterAnalytics
+
 // TODO Figure out how to get this into ConfettiKit
 // I couldn't figure out how to link Firebase twice
 public class UserViewModel {
@@ -88,8 +90,13 @@ public class UserViewModel {
             var events = [Event]()
             for eventNode in snapshot.children.allObjects as! [DataSnapshot] {
                 if let value = eventNode.value {
-                    if let event = try? FirebaseDecoder().decode(Event.self, from: value) {
+                    do {
+                        let event = try FirebaseDecoder().decode(Event.self, from: value)
                         events.append(event.with(key: eventNode.key))
+                    } catch let error {
+                        MSAnalytics.trackEvent("Could not decode Event", withProperties: [
+                            "description": error.localizedDescription
+                        ])
                     }
                 }
             }

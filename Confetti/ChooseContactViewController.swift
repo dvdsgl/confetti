@@ -69,9 +69,22 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
         searchContacts(query: searchText)
     }
     
+    func createManualContact(name: String) -> Contact {
+        let names = name.components(separatedBy: " ")
+        switch names.count {
+        case 0, 1:
+            return ManualContact(firstName: name)
+        default:
+            let first = names[0]
+            let rest = names.dropFirst().joined(separator: " ")
+            return ManualContact(firstName: first, lastName: rest, nick: nil, imageSource: nil)
+        }
+    }
+    
     func searchContacts(query: String?) {
         let searchText = query ?? ""
         contacts = contactStore.search(query: searchText)
+        contacts.append(createManualContact(name: searchText))
         tableView.reloadData()
     }
     
@@ -82,6 +95,11 @@ class ChooseContactViewController : UIViewController, UISearchBarDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contact", for: indexPath) as! ContactTableViewCell
         cell.contact = contacts[indexPath.row]
+        if cell.contact is ManualContact {
+            cell.nameLabel.textColor = Colors.pink
+        } else {
+            cell.nameLabel.textColor = UIColor.darkText
+        }
         return cell
     }
     

@@ -123,7 +123,7 @@ class EventDetailViewController : UITableViewController,
         
         let weigh: (Phone) -> Int = { weightOfLabel[$0.label ?? ""] ?? 0 }
         
-        return event.person.phones.sorted { weigh($0) > weigh($1) }
+        return (event.person.phones ?? []).sorted { weigh($0) > weigh($1) }
     }
     
     func cleanedPhoneNumber(_ original: String) -> String {

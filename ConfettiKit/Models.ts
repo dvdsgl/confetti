@@ -15,8 +15,8 @@ firstName: string;
     
     photoUUID?: string;
     
-    emails: string[];
-    phones: { label?: string, value: string }[];
+    emails?: string[];
+    phones?: { label?: string, value: string }[];
 }
 
 export class Occasion {
