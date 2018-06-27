@@ -11,3 +11,5 @@ $ . script/setup
 ```shell
 $ script/test
 ```
+
+Add me please!
