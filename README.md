@@ -6,7 +6,7 @@
 $ . script/setup
 ```
 
-## Run UI tests in Mobile Center
+## Run UI tests in App Center
 
 ```shell
 $ script/test
